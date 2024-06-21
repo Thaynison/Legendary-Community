@@ -23,9 +23,9 @@
 <p>Para instalar o modpack, siga estas etapas:</p>
 
 <ol>
-    <li>Certifique-se de ter o Minecraft Forge instalado em seu computador.</li>
+    <li>Certifique-se de ter o Minecraft e o Fabric instalado em seu computador.</li>
     <li>Faça o download do modpack através do link fornecido.</li>
-    <li>Abra o Minecraft Launcher e selecione o perfil do Forge.</li>
+    <li>Abra o Minecraft Launcher e selecione o perfil do Fabric</li>
     <li>Inicie o jogo e divirta-se!</li>
 </ol>
 
