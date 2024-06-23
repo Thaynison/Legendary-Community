@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bot Info</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1>Informações do Bot</h1>
+    <p>Nome: <%= bot.user ? bot.user.username : "Desconectado" %></p>
+    <p>ID: <%= bot.user ? bot.user.id : "Desconectado" %></p>
+    <p>Status: <%= bot.user ? "Online" : "Desconectado" %></p>
+</body>
+</html>
