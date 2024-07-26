@@ -103,7 +103,7 @@ footer.section {
   padding-bottom: 2rem;
 }
 
-.article:not(:first-child) {
+. :not(:first-child) {
   margin-top: 1.5rem;
 }
 
@@ -266,6 +266,20 @@ a.is-muted:hover {
 
 .produto-sidebar .field .control.is-fullwidth {
   flex-grow: 1;
+}
+
+.responsive-iframe-container {
+  position: relative;
+  overflow: hidden;
+  padding-top: 150%; /* 16:9 Aspect Ratio */
+}
+
+.responsive-iframe-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 @media screen and (min-width: 1024px) {

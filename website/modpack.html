@@ -6,6 +6,7 @@
   <title>.+* Legendary Community *+.</title>
   <link rel="stylesheet" href="assets/css/bulma.min.css">
   <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/modpack.css">
   <link rel="icon" href="assets/img/icon_server.png" type="image/png">
 </head>
 
@@ -73,62 +74,25 @@
 <main class="section">
   <div class="container">
     <article class="article">
-      <h1 class="article-title"><i class="fas fa-list-ul"></i> Lista de regras</h1>
-      <div class="article-content">
-        <p>
-          <b>Abuso de bugs</b><br>
-          Se um jogador encontrar um bug, ele deve reportá-lo imediatamente à equipe de administração. Jogadores que explorarem bugs para ganho pessoal estarão sujeitos a punições, incluindo advertências, suspensão temporária ou banimento permanente, dependendo da gravidade da infração.
-          
-          <br><br>
-
-          <b>Comportamento tóxico</b><br>
-          Comportamentos tóxicos, como assédio, bullying, ofensas ou qualquer forma de discriminação, não serão tolerados. Jogadores que exibirem comportamentos tóxicos poderão receber penalidades que variam de advertências a banimentos permanentes, dependendo da gravidade do comportamento.
-
-          <br><br>
-
-          <b>Uso de hacks, macros, etc.</b><br>
-          Jogadores não devem usar hacks, cheats, macros ou qualquer outro tipo de automação que interfira na experiência justa de jogo. Detecção ou denúncia de tal comportamento resultará em medidas disciplinares imediatas, incluindo banimento permanente do servidor.
-        </p>
-      </div>
-    </article>
-
-    <article class="article">
-      <h1 class="article-title"><i class="fas fa-ban"></i> Tabela de punições</h1>
-      <div class="article-content">
-      <table class="table is-fullwidth is-striped is-bordered is-narrow">
-        <thead>
-            <tr>
-              <th>Infração</th>
-              <th>1ª ocorrência</th>
-              <th>2ª ocorrência</th>
-              <th>3ª ocorrência</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Abuso de bugs</td>
-              <td>Banimento de 24 horas</td>
-              <td>Banimento de 1 semana</td>
-              <td>Banimento permanente</td>
-            </tr>
-            <tr>
-              <td>Comportamento tóxico</td>
-              <td>Mute de 2 horas</td>
-              <td>Mute de 24 horas</td>
-              <td>Banimento permanente</td>
-            </tr>
-            <tr>
-              <td>Uso de hacks, macros, etc.</td>
-              <td>Banimento de 1 semana</td>
-              <td>Banimento de 4 semanas</td>
-              <td>Banimento permanente</td>
-            </tr>
-          </tbody>
-        </table>
+      <h1 class="article-title"><i class="fas fa-vote-yea"></i> Download Modpacks</h1>
+      <div class="article-content" style="background-color: transparent;">
+        <div class="container section">
+          <!-- <h2 class="text-center mb-5">Última Versão Disponível</h2>z -->
+          <div class="row justify-content-center">
+            <div class="col-md-5 modpack-card" style="background-image: url('assets/img/survival.png');">
+              <button id="downloadBtnVanilla" class="btn btn-primary btn-lg">Baixar Modpack</button>
+            </div>
+            <!--  -->
+            <div class="col-md-5 modpack-card" style="background-image: url('assets/img/industrial.png');">
+              <button id="downloadBtnIndustrial" class="btn btn-primary btn-lg">Baixar Modpack</button>
+            </div>
+          </div>
+        </div>
       </div>
     </article>
   </div>
 </main>
+
 
 <footer class="section">
   <div class="container">
@@ -142,6 +106,42 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="assets/js/scripts.js"></script>
 <script defer src="https://use.fontawesome.com/releases/v5.12.1/js/all.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    document.getElementById('downloadBtnVanilla').addEventListener('click', function() {
+        fetch('https://api.github.com/repos/Thaynison/Legendary-Community/releases/latest')
+            .then(response => response.json())
+            .then(data => {
+                const asset = data.assets[0];
+                if (asset) {
+                    window.location.href = asset.browser_download_url;
+                } else {
+                    alert('Nenhum arquivo disponível para download.');
+                }
+            })
+            .catch(error => {
+                console.error('Erro ao obter a última release:', error);
+                alert('Erro ao obter a última release.');
+            });
+    });
+
+    document.getElementById('downloadBtnIndustrial').addEventListener('click', function() {
+        fetch('https://api.github.com/repos/Thaynison/Legendary-Community-Industrial/releases/latest')
+            .then(response => response.json())
+            .then(data => {
+                const asset = data.assets[0];
+                if (asset) {
+                    window.location.href = asset.browser_download_url;
+                } else {
+                    alert('Nenhum arquivo disponível para download.');
+                }
+            })
+            .catch(error => {
+                console.error('Erro ao obter a última release:', error);
+                alert('Erro ao obter a última release.');
+            });
+    });
+</script>
 
 </body>
 
