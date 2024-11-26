@@ -1,0 +1,157 @@
+{
+    "products": {
+        "null": {
+            "valor": "",
+            "nome": "",
+            "descricao": "",
+            "img": "",
+            "cod_ref": ""
+        },
+        "bank": {
+            "valor": "15,00",
+            "nome": "Comando Bank",
+            "descricao": "lp user %player% permission set bank.use true",
+            "img": "../assets/img/bank.png",
+            "cod_ref": "LC00001"
+        },
+        "fly": {
+            "valor": "15,00",
+            "nome": "Comando Fly",
+            "descricao": "lp user %player% permission set essentials.fly true",
+            "img": "../assets/img/fly.png",
+            "cod_ref": "LC00002"
+        },
+        "echest": {
+            "valor": "15,00",
+            "nome": "Comando Echest",
+            "descricao": "lp user %player% permission set essentials.echest true",
+            "img": "../assets/img/echest.png",
+            "cod_ref": "LC00003"
+        },
+        "craft": {
+            "valor": "15,00",
+            "nome": "Comando Craft",
+            "descricao": "lp user %player% permission set craft.use true",
+            "img": "../assets/img/craft.png",
+            "cod_ref": "LC00004"
+        },
+        "100000_money": {
+            "valor": "24,90",
+            "nome": "Money R$100.000",
+            "descricao": "eco give %player% 100000",
+            "img": "../assets/img/100000_money.png",
+            "cod_ref": "LC00006"
+        },
+        "500000_money": {
+            "valor": "49,90",
+            "nome": "Money R$500.000",
+            "descricao": "eco give %player% 500000",
+            "img": "../assets/img/500000_money.png",
+            "cod_ref": "LC00007"
+        },
+        "1000000_money": {
+            "valor": "95,90",
+            "nome": "Money R$1.000.000",
+            "descricao": "eco give %player% 1000000",
+            "img": "../assets/img/1000000_money.png",
+            "cod_ref": "LC00008"
+        },
+        "5000000_money": {
+            "valor": "150,90",
+            "nome": "Money R$5.000.000",
+            "descricao": "eco give %player% 5000000",
+            "img": "../assets/img/5000000_money.png",
+            "cod_ref": "LC00009"
+        },
+        "caixa_avancada": {
+            "valor": "10,90",
+            "nome": "Caixa Avançada",
+            "descricao": "crazycrates give virtual Advanced 1 %player%",
+            "img": "../assets/img/caixa_avancada.png",
+            "cod_ref": "LC00010"
+        },
+        "caixa_drops": {
+            "valor": "5,90",
+            "nome": "Caixa Drops",
+            "descricao": "crazycrates give virtual Drops 1 %player%",
+            "img": "../assets/img/caixa_drops.png",
+            "cod_ref": "LC00011"
+        },
+        "vip_eterno_30": {
+            "valor": "85,00",
+            "nome": "Vip Eterno 30d",
+            "descricao": "lp user %player% parent addtemp vip-eterno 30d",
+            "commandreset": "lp user %player% parent removetemp default 30d",
+            "img": "../assets/img/vip_eterno_30.png",
+            "cod_ref": "LC00012"
+        },
+        "vip_eterno_60": {
+            "valor": "95,00",
+            "nome": "Vip Eterno 60d",
+            "descricao": "lp user %player% parent addtemp vip-eterno 60d",
+            "commandreset": "lp user %player% parent removetemp default 60d",
+            "img": "../assets/img/vip_eterno_60.png",
+            "cod_ref": "LC00013"
+        },
+        "vip_eterno_90": {
+            "valor": "120,90",
+            "nome": "Vip Eterno 90d",
+            "descricao": "lp user %player% parent addtemp vip-eterno 90d",
+            "commandreset": "lp user %player% parent removetemp default 90d",
+            "img": "../assets/img/vip_eterno_90.png",
+            "cod_ref": "LC00014"
+        },
+        "vip_eterno": {
+            "valor": "250,00",
+            "nome": "Vip Eterno",
+            "descricao": "lp user %player% parent addtemp vip-eterno 365d",
+            "commandreset": "lp user %player% parent removetemp default 365d",
+            "img": "../assets/img/vip_eterno.png",
+            "cod_ref": "LC00015"
+        },
+        "vip_king": {
+            "valor": "65,00",
+            "nome": "Vip King 30d",
+            "descricao": "lp user %player% parent addtemp vip-king 30d",
+            "commandreset": "lp user %player% parent removetemp default 30d",
+            "img": "../assets/img/vip_king.png",
+            "cod_ref": "LC00016"
+        },
+        "vip_wizzard": {
+            "valor": "30,00",
+            "nome": "Vip Wizzard 30d",
+            "descricao": "lp user %player% parent addtemp vip-wizzard 30d",
+            "commandreset": "lp user %player% parent removetemp default 30d",
+            "img": "../assets/img/vip_wizzard.png",
+            "cod_ref": "LC00017"
+        },
+        "vip_warrior": {
+            "valor": "15,00",
+            "nome": "Vip Warrior 30d",
+            "descricao": "lp user %player% parent addtemp vip-warrior 30d",
+            "commandreset": "lp user %player% parent removetemp default 30d",
+            "img": "../assets/img/vip_warrior.png",
+            "cod_ref": "LC00018"
+        }
+    },
+    "form_pagaments": {
+        "null": {
+            "title": ""
+        },
+        "pix": {
+            "title": "Pix"
+        },
+        "boleto": {
+            "title": "Boleto"
+        },
+        "cartao_credito": {
+            "title": "Cartão de Credito"
+        },
+        "nubank": {
+            "title": "Nubank"
+        },
+        "mercado_pago": {
+            "title": "Mercado Pago"
+        }
+    }
+}

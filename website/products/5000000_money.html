@@ -75,13 +75,16 @@
     <div class="columns">
       <div class="column">
         <article class="article">
-          <h1 class="article-title"><i class="fas fa-gem"></i> Coins</h1>
+          <h1 class="article-title"><i class="fas fa-gem"></i> Money</h1>
           <div class="article-content">
             <p><b>Vantagens</b></p>
             
             <ul class="list">
-              <li><i class="fas fa-check"></i> Compra de itens específicos</li>
-              <li><i class="fas fa-check"></i> Compra de Minions</li>
+              <li><i class="fas fa-check"></i> Compra de itens dentro do servidor</li>
+              <li><i class="fas fa-check"></i> Compra de Minions no servidor</li>
+              <li><i class="fas fa-check"></i> Compra de Chunkloaders no servidor</li>
+              <li><i class="fas fa-check"></i> Compra de Spawn de Boss no servidor</li>
+              <li><i class="fas fa-check"></i> Etc</li>
             </ul>
 
           </div>
@@ -91,8 +94,8 @@
         <article class="article produto-sidebar">
           <h1 class="article-title"><i class="fas fa-shopping-cart"></i> Adquirir agora</h1>
           <div class="article-content">
-            <img src="../assets/img/coins_2550000.png">
-            <h1>R$120,90</h1>
+            <img src="../assets/img/5000000_money.png">
+            <h1>R$150,90</h1>
 
             <div class="field has-addons">
               <div class="control is-fullwidth">
@@ -101,7 +104,14 @@
               <div class="control">
                 <a class="button is-success">
                   <span class="icon"><i class="fas fa-shopping-cart"></i></span>
-                  <span>Comprar</span>
+                  <span class="redirect" onclick="redirecionar()">
+                    Comprar
+                  </span>
+                  <script>
+                    function redirecionar() {
+                      window.location.href = "https://mpago.la/2UQHLTm";
+                    }
+                  </script>
                 </a>
               </div>
             </div>

@@ -91,7 +91,7 @@
           <h1 class="article-title"><i class="fas fa-shopping-cart"></i> Adquirir agora</h1>
           <div class="article-content">
             <img src="../assets/img/echest.png">
-            <h1>R$5,00</h1>
+            <h1>R$15,00</h1>
 
             <div class="field has-addons">
               <div class="control is-fullwidth">
@@ -100,7 +100,14 @@
               <div class="control">
                 <a class="button is-success">
                   <span class="icon"><i class="fas fa-shopping-cart"></i></span>
-                  <span>Comprar</span>
+                  <span class="redirect" onclick="redirecionar()">
+                    Comprar
+                  </span>
+                  <script>
+                    function redirecionar() {
+                      window.location.href = "https://mpago.la/1LKLyLW";
+                    }
+                  </script>
                 </a>
               </div>
             </div>

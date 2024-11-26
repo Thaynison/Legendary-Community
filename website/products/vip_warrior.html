@@ -139,7 +139,14 @@
               <div class="control">
                 <a class="button is-success">
                   <span class="icon"><i class="fas fa-shopping-cart"></i></span>
-                  <span>Comprar</span>
+                  <span class="redirect" onclick="redirecionar()">
+                    Comprar
+                  </span>
+                  <script>
+                    function redirecionar() {
+                      window.location.href = "https://mpago.la/2n8xx5c";
+                    }
+                  </script>
                 </a>
               </div>
             </div>
@@ -160,7 +167,6 @@
 </footer>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="assets/js/scripts.js"></script>
 <script defer src="https://use.fontawesome.com/releases/v5.12.1/js/all.js"></script>
 
 </body>

@@ -75,7 +75,7 @@
     <div class="columns">
       <div class="column">
         <article class="article">
-          <h1 class="article-title"><i class="fas fa-gem"></i> Bank</h1>
+          <h1 class="article-title"><i class="fas fa-gem"></i> Comando Bank</h1>
           <div class="article-content">
             <p><b>Vantagens</b></p>
             
@@ -92,7 +92,7 @@
             <h1 class="article-title"><i class="fas fa-shopping-cart"></i> Adquirir agora</h1>
             <div class="article-content">
                 <img src="../assets/img/bank.png">
-                <h1 id="product-price">R$5,00</h1>
+                <h1 id="product-price">R$15,00</h1>
     
                 <div class="field has-addons">
                     <div class="control is-fullwidth">
@@ -100,8 +100,15 @@
                     </div>
                     <div class="control">
                         <a id="buy-button" class="button is-success">
-                            <span class="icon"><i class="fas fa-shopping-cart"></i></span>
-                            <span>Comprar</span>
+                          <span class="icon"><i class="fas fa-shopping-cart"></i></span>
+                          <span class="redirect" onclick="redirecionar()">
+                            Comprar
+                          </span>
+                          <script>
+                            function redirecionar() {
+                              window.location.href = "https://mpago.la/2zYD2zg";
+                            }
+                          </script>
                         </a>
                     </div>
                 </div>
@@ -123,7 +130,6 @@
 </footer>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="assets/js/scripts.js"></script>
 <script defer src="https://use.fontawesome.com/releases/v5.12.1/js/all.js"></script>
 </body>
 

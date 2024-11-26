@@ -6,6 +6,7 @@
   <title>.+* Legendary Community *+.</title>
   <link rel="stylesheet" href="../assets/css/bulma.min.css">
   <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/notify.css">
   <link rel="icon" href="../assets/img/icon_server.png" type="image/png">
 </head>
 
@@ -70,54 +71,6 @@
   </div>
 </header>
 
-<main class="section">
-  <div class="container">
-    <div class="columns">
-      <div class="column">
-        <article class="article">
-          <h1 class="article-title"><i class="fas fa-gem"></i> Craftable</h1>
-          <div class="article-content">
-            <p><b>Vantagens</b></p>
-            
-            <ul class="list">
-              <li><i class="fas fa-check"></i> Acesso vitalício ao comando CRAFT dentro do servidor</li>
-            </ul>
-
-          </div>
-        </article>
-      </div>
-      <div class="column is-4">
-        <article class="article produto-sidebar">
-          <h1 class="article-title"><i class="fas fa-shopping-cart"></i> Adquirir agora</h1>
-          <div class="article-content">
-            <img src="../assets/img/craft.png">
-            <h1>R$5,00</h1>
-
-            <div class="field has-addons">
-              <div class="control is-fullwidth">
-                <input class="input" type="text" placeholder="Seu nome de usuário">
-              </div>
-              <div class="control">
-                <a class="button is-success">
-                  <span class="icon"><i class="fas fa-shopping-cart"></i></span>
-                  <span class="redirect" onclick="redirecionar()">
-                    Comprar
-                  </span>
-                  <script>
-                    function redirecionar() {
-                      window.location.href = "https://mpago.la/2De3XJX";
-                    }
-                  </script>
-                </a>
-              </div>
-            </div>
-          </div>
-        </article>
-      </div>
-    </div>
-  </div>
-</main>
-
 <footer class="section">
   <div class="container">
     <article class="footer">
@@ -128,9 +81,23 @@
 </footer>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="assets/js/scripts.js"></script>
 <script defer src="https://use.fontawesome.com/releases/v5.12.1/js/all.js"></script>
+<script src="../assets/js/products.js"></script>
+<script>
+  function gerarSequencia() {
+    const caracteres = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+    let resultado = '';
+    for (let i = 0; i < 8; i++) {
+      resultado += caracteres.charAt(Math.floor(Math.random() * caracteres.length));
+    }
+    return resultado;
+  }
 
+  const sequencia = gerarSequencia();
+  localStorage.setItem('chave', sequencia);
+
+  window.location.href = `codigo.html?token=${sequencia}`;
+</script>
 </body>
 
 </html>

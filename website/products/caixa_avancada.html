@@ -91,7 +91,7 @@
           <h1 class="article-title"><i class="fas fa-shopping-cart"></i> Adquirir agora</h1>
           <div class="article-content">
             <img src="../assets/img/caixa_avancada.png">
-            <h1>R$50,00</h1>
+            <h1>R$10,90</h1>
 
             <div class="field has-addons">
               <div class="control is-fullwidth">
@@ -100,7 +100,14 @@
               <div class="control">
                 <a class="button is-success">
                   <span class="icon"><i class="fas fa-shopping-cart"></i></span>
-                  <span>Comprar</span>
+                  <span class="redirect" onclick="redirecionar()">
+                    Comprar
+                  </span>
+                  <script>
+                    function redirecionar() {
+                      window.location.href = "https://mpago.la/29n4wcT";
+                    }
+                  </script>
                 </a>
               </div>
             </div>
@@ -121,7 +128,6 @@
 </footer>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="assets/js/scripts.js"></script>
 <script defer src="https://use.fontawesome.com/releases/v5.12.1/js/all.js"></script>
 
 </body>

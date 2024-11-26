@@ -6,7 +6,9 @@
   <title>.+* Legendary Community *+.</title>
   <link rel="stylesheet" href="../assets/css/bulma.min.css">
   <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/notify.css">
   <link rel="icon" href="../assets/img/icon_server.png" type="image/png">
+  
 </head>
 
 <body>
@@ -73,44 +75,73 @@
 <main class="section">
   <div class="container">
     <div class="columns">
+      <!-- Coluna principal -->
       <div class="column">
         <article class="article">
-          <h1 class="article-title"><i class="fas fa-gem"></i> Coins</h1>
+          <h1 class="article-title">
+            <i class="fas fa-gem"></i> Pagamento Aprovado!
+          </h1>
           <div class="article-content">
-            <p><b>Vantagens</b></p>
+            <p><strong>Dados da compra:</strong></p>
             
-            <ul class="list">
-              <li><i class="fas fa-check"></i> Compra de itens específicos</li>
-              <li><i class="fas fa-check"></i> Compra de Minions</li>
-            </ul>
-
-          </div>
-        </article>
-      </div>
-      <div class="column is-4">
-        <article class="article produto-sidebar">
-          <h1 class="article-title"><i class="fas fa-shopping-cart"></i> Adquirir agora</h1>
-          <div class="article-content">
-            <img src="../assets/img/coins_1000.png">
-            <h1>R$4,90</h1>
-
-            <div class="field has-addons">
-              <div class="control is-fullwidth">
-                <input class="input" type="text" placeholder="Seu nome de usuário">
+            <form id="payment-details-form" class="form">
+              <!-- Nome de usuário -->
+              <div class="field">
+                <label class="label" for="usuario">Usuário</label>
+                <div class="control">
+                  <input 
+                    class="input" 
+                    type="text" 
+                    name="usuario" 
+                    id="usuario" 
+                    placeholder="Insira seu nome de usuário">
+                </div>
               </div>
-              <div class="control">
-                <a class="button is-success">
-                  <span class="icon"><i class="fas fa-shopping-cart"></i></span>
-                  <span>Comprar</span>
-                </a>
+              
+              <!-- Produtos -->
+              <div class="field">
+                <label class="label" for="products">Produto</label>
+                <div class="control">
+                  <div class="select is-fullwidth">
+                    <select name="products" id="products">
+                    </select>
+                  </div>
+                </div>
               </div>
-            </div>
+              
+              <!-- Forma de pagamento -->
+              <div class="field">
+                <label class="label" for="form_pagaments">Forma de Pagamento</label>
+                <div class="control">
+                  <div class="select is-fullwidth">
+                    <select name="form_pagaments" id="form_pagaments">
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Botão de enviar -->
+              <div class="field">
+                <div class="control">
+                  <button 
+                    type="button" 
+                    class="button is-primary" 
+                    id="send-button">
+                    Enviar
+                  </button>
+                </div>
+              </div>
+            </form>
           </div>
         </article>
       </div>
     </div>
   </div>
+
+  <!-- Contêiner de mensagens -->
+  <div id="message-container" class="notification-container"></div>
 </main>
+
 
 <footer class="section">
   <div class="container">
@@ -122,9 +153,23 @@
 </footer>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="assets/js/scripts.js"></script>
 <script defer src="https://use.fontawesome.com/releases/v5.12.1/js/all.js"></script>
+<script src="../assets/js/products.js"></script>
+<script>
+  // Função para obter parâmetros da URL
+  function obterParametro(nome) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(nome);
+  }
 
+  const chaveUrl = obterParametro('token'); // Pega o token da URL
+  const chaveSalva = localStorage.getItem('chave'); // Recupera a chave salva
+
+  if (chaveUrl !== chaveSalva) {
+    // Se o token não corresponder, redireciona para uma página de erro
+    window.location.href = '../index.html'; // Crie essa página ou redirecione para uma existente
+  }
+</script>
 </body>
 
 </html>

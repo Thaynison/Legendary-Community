@@ -21,17 +21,34 @@ ip.addEventListener('click', function () {
 //
 //  STATUS DO SERVIDOR
 //
-$.getJSON('https://api.minetools.eu/ping/' + ip.innerText + '/25565', function(data) {
+$.getJSON('https://api.minetools.eu/ping/' + ipSpan.innerText + '/25565', function(data) {
   if (data.error) {
     $('#status').html('<i class="fas fa-times"></i> Servidor offline');
     $('#motd').html('-');
     $('#online').html('-');
+    $('#players-list').html('<p>Não foi possível obter os jogadores.</p>');
   } else {
     $('#status').html('<i class="fas fa-check"></i> Servidor online');
     $('#motd').html(data.description.replace(/§(.+?)/gi, ''));
     $('#online').html(data.players.online);
+
+    // Renderizar lista de jogadores
+    if (data.players.sample) {
+      let playerNames = data.players.sample.map(player => `
+        <li>
+          <img src="http://cravatar.eu/head/${player.name}/128.png" alt="${player.name}">
+          <h1>${player.name}</h1>
+          <h2 class="cor-a">Membro</h2>
+        </li>
+      `).join('');
+      $('#players-list').html(playerNames);
+    } else {
+      $('#players-list').html('<p>Nenhum jogador online no momento.</p>');
+    }
   }
 });
+
+
 
 //
 //  MENU MOBILE
