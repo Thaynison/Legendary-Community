@@ -94,7 +94,7 @@
             "cod_ref": "LC00013"
         },
         "vip_eterno_90": {
-            "valor": "120,90",
+            "valor": "120,00",
             "nome": "Vip Eterno 90d",
             "descricao": "lp user %player% parent addtemp vip-eterno 90d",
             "commandreset": "lp user %player% parent removetemp default 90d",
