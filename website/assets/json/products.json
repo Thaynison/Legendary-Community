@@ -132,6 +132,15 @@
             "commandreset": "lp user %player% parent removetemp default 30d",
             "img": "../assets/img/vip_warrior.png",
             "cod_ref": "LC00018"
+        },
+        "produto_teste": {
+            "valor": "0,50",
+            "nome": "Comando Echest",
+            "descricao": "lp user %player% permission set essentials.echest true",
+            "commandreset": "lp user %player% parent removetemp default 30d",
+            "img": "../assets/img/echest.png",
+            "cod_ref": "LC00019",
+            "mercado_pago": "https://mpago.la/1AgyQ26"
         }
     },
     "form_pagaments": {
