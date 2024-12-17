@@ -23,7 +23,7 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 function verificarBanimento(userid) {
-    const apiUrl = `https://legendarycommunity.com.br/dashboard/API/verificar_ban.php?userid=${userid}`;
+    const apiUrl = `http://legendarycommunity.com.br:9955/dashboard/API/verificar_ban.php?userid=${userid}`;
     
     fetch(apiUrl)
         .then(response => response.json())
@@ -42,7 +42,7 @@ function verificarBanimento(userid) {
 }
 
 function getHistoricoCompras(userid) {
-    const apiUrl = `https://legendarycommunity.com.br/dashboard/API/api.php?userid=${userid}`;
+    const apiUrl = `http://legendarycommunity.com.br:9955/dashboard/API/api.php?userid=${userid}`;
     
     fetch(apiUrl)
         .then(response => response.json())

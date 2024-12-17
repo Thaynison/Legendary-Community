@@ -261,7 +261,7 @@ function redirecionarPara_PainelStaff() {
   const avatar = document.getElementById('avatar').src;
 
   // Fazendo a requisição para a API1 para pegar o UUID do usuário
-  fetch(`https://legendarycommunity.com.br/dashboard/API/api_staff1.php?userid=${userid}`)
+  fetch(`http://legendarycommunity.com.br:9955/dashboard/API/api_staff1.php?userid=${userid}`)
       .then(response => response.json())
       .then(data => {
           if (data && data.length > 0) {
@@ -269,7 +269,7 @@ function redirecionarPara_PainelStaff() {
               const uuid = data[0].uuid;
 
               // Fazendo a requisição para a API2 para verificar o grupo principal
-              fetch(`https://legendarycommunity.com.br/dashboard/API/api_staff2.php?uuid=${uuid}`)
+              fetch(`http://legendarycommunity.com.br:9955/dashboard/API/api_staff2.php?uuid=${uuid}`)
                   .then(response => response.json())
                   .then(data => {
                       if (data.is_fundador) {

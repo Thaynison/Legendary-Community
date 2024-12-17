@@ -8,7 +8,7 @@ function submitFormData() {
     formData.append("ban_reason", document.getElementById("ban-reason").value);
 
     // Enviar os dados para a API
-    fetch('https://legendarycommunity.com.br/dashboard/API/api_registrar_ban.php', {
+    fetch('http://legendarycommunity.com.br:9955/dashboard/API/api_registrar_ban.php', {
         method: 'POST',
         body: formData
     })
