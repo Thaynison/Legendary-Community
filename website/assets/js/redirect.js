@@ -1,6 +1,7 @@
 // LOGIN SYSTEM
 const CLIENT_ID = '1254263114619162734';
-const REDIRECT_URI = 'http://127.0.0.1:5501/dashboard.html';
+// const REDIRECT_URI = 'http://127.0.0.1:5501/dashboard.html';
+const REDIRECT_URI = 'https://www.legendarycommunity.com.br/dashboard.html';
 
 function loginWithDiscord() {
     window.location.href = `https://discord.com/api/oauth2/authorize?client_id=${CLIENT_ID}&redirect_uri=${encodeURIComponent(REDIRECT_URI)}&response_type=token&scope=identify`;
