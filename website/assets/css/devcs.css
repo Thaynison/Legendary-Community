@@ -1,0 +1,104 @@
+
+.form-register-ban {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 600px;
+    margin: 20px auto;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.form-register-ban .form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.form-register-ban label {
+    font-weight: bold;
+    color: #333;
+    font-size: 14px;
+}
+.form-register-ban input[type="text"], input[type="url"], textarea {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    transition: border-color 0.3s;
+}
+.form-register-ban input[type="text"]:focus, input[type="url"]:focus, textarea:focus {
+    border-color: #db34cd;
+    outline: none;
+}
+.form-register-ban textarea {
+    resize: vertical;
+}
+.form-register-ban button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #db34cd;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.form-register-ban button:hover {
+    background-color: #2980b9;
+}
+
+
+/* SALE */
+
+
+.form-register-sale {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 600px;
+    margin: 20px auto;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.form-register-sale .form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.form-register-sale label {
+    font-weight: bold;
+    color: #333;
+    font-size: 14px;
+}
+.form-register-sale input[type="text"], input[type="url"], input[type="number"], input[type="date"], textarea {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    transition: border-color 0.3s;
+}
+.form-register-sale input[type="text"]:focus, input[type="url"]:focus, input[type="number"]:focus, input[type="date"]:focus,  textarea:focus {
+    border-color: #db34cd;
+    outline: none;
+}
+.form-register-sale textarea {
+    resize: vertical;
+}
+.form-register-sale button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #db34cd;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.form-register-sale button:hover {
+    background-color: #2980b9;
+}

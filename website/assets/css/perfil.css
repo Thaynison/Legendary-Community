@@ -1,0 +1,101 @@
+.article-content.historio {
+    max-height: 400px; /* Defina a altura máxima conforme necessário */
+    overflow-y: auto; /* Permite a rolagem vertical */
+    scrollbar-width: thin; /* Define a largura da barra de rolagem (para Firefox) */
+    scrollbar-color: rgba(0, 0, 0, 0.5) transparent; /* Define a cor da barra de rolagem e da área de fundo (para Firefox) */
+}
+
+/* Para navegadores Webkit, como o Chrome */
+.article-content.historio::-webkit-scrollbar {
+    width: 8px; /* Largura da barra de rolagem */
+}
+
+.article-content.historio::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.5); /* Cor da barra de rolagem */
+    border-radius: 10px; /* Arredonda os cantos da barra de rolagem */
+}
+
+.article-content.historio::-webkit-scrollbar-track {
+    background: transparent; /* Fundo transparente para a área da barra de rolagem */
+}
+
+.article-content.banimento {
+    max-height: 400px; /* Defina a altura máxima conforme necessário */
+    overflow-y: auto; /* Permite a rolagem vertical */
+    scrollbar-width: thin; /* Define a largura da barra de rolagem (para Firefox) */
+    scrollbar-color: rgba(0, 0, 0, 0.5) transparent; /* Define a cor da barra de rolagem e da área de fundo (para Firefox) */
+}
+
+/* Para navegadores Webkit, como o Chrome */
+.article-content.banimento::-webkit-scrollbar {
+    width: 8px; /* Largura da barra de rolagem */
+}
+
+.article-content.banimento::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.5); /* Cor da barra de rolagem */
+    border-radius: 10px; /* Arredonda os cantos da barra de rolagem */
+}
+
+.article-content.banimento::-webkit-scrollbar-track {
+    background: transparent; /* Fundo transparente para a área da barra de rolagem */
+}
+
+.article-content {
+    padding: 20px;
+    text-align: center;
+}
+
+.avatar-container {
+    margin-bottom: 20px;
+}
+
+.avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    object-fit: cover;
+}
+
+.username {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.status-approved {
+    /* color: #a7288c; */
+    font-weight: bold;
+}
+
+.ip-copy-container {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.ip-input {
+    flex: 1;
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    margin-right: 10px;
+}
+
+.copy-btn {
+    background-color: #b300aab7;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.copy-btn:hover {
+    background-color: #b300aa;
+}
+
+.copy-btn i {
+    margin-right: 5px;
+}

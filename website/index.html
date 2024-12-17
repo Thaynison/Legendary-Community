@@ -6,6 +6,7 @@
   <title>.+* Legendary Community *+.</title>
   <link rel="stylesheet" href="assets/css/bulma.min.css">
   <link rel="stylesheet" href="assets/css/style.css">
+  <script src="/assets/js/redirect.js"></script>
   <link rel="icon" href="assets/img/icon_server.png" type="image/png">
 </head>
 
@@ -31,36 +32,11 @@
       <div class="navbar-menu">
         <div class="navbar-start">
           <a href="index.html" class="navbar-item"><i class="fas fa-home"></i> Início</a>
-          <a href="regras.html" class="navbar-item"><i class="fas fa-book"></i> Regras</a>
-          <a href="votar.html" class="navbar-item"><i class="fas fa-vote-yea"></i> Votar</a>
-          <!-- <a href="#" target="_blank" class="navbar-item"><i class="fas fa-comments"></i> Fórum</a> -->
-           <!--  -->
-           <div class="navbar-item has-dropdown is-hoverable">
-            <a href="modpack.html" class="navbar-item"><i class="fas fa-gamepad"></i> Modpack</a>
-            <div class="navbar-dropdown">
-              <a href="modpack.html" class="navbar-item"><i class="fas fa-gamepad"></i> Modpacks</a>
-              <a href="launchers.html" class="navbar-item"><i class="fas fa-gamepad"></i> Launchers</a>
-              <hr class="navbar-divider">
-              <a href="termos.html" class="navbar-item">Detalhes de Instalações</a>
-            </div>
-          </div>
-          <!--  -->
-          <div class="navbar-item has-dropdown is-hoverable">
-            <a href="loja.html" class="navbar-link"><i class="fas fa-shopping-cart"></i> Loja</a>
-            <div class="navbar-dropdown">
-              <a href="loja.html#vip" class="navbar-item"><i class="fas fa-gem"></i> VIPs</a>
-              <!-- <a href="loja.html#chave" class="navbar-item"><i class="fas fa-key"></i> Chaves</a> -->
-              <a href="loja.html#moedas" class="navbar-item"><i class="fas fa-coins"></i> Moedas</a>
-              <a href="loja.html#unban" class="navbar-item"><i class="fas fa-ban"></i> Unban</a>
-              <a href="loja.html#aleatorio" class="navbar-item"><i class="fas fa-plus"></i> Adições</a>
-              <hr class="navbar-divider">
-              <a href="termos.html" class="navbar-item">Informações importantes</a>
-            </div>
-          </div>
           <a href="https://discord.gg/DVA2hq4SaN" class="navbar-item"><i class="fab fa-discord"></i> Discord</a>
         </div>
     
         <div class="navbar-end">
+          <a onclick="loginWithDiscord()" class="navbar-item"><i class="fas fa-user"></i> Login</a>
           <a id="ip" class="navbar-item">
             <i class="fas fa-copy"></i> <span>legendarycommunity.com.br:25567</span>
             <textarea></textarea>
@@ -99,12 +75,17 @@
               <li>
                 <img src="http://cravatar.eu/head/Thaynison/128.png">
                 <h1>Thaynison</h1>
-                <h2 class="cor-0">Desenvolvedor</h2>
+                <h2 class="cor-d">Fundador</h2>
               </li>
               <li>
                 <img src="http://cravatar.eu/head/Sumarih_/128.png">
                 <h1>Sumarih_</h1>
                 <h2 class="cor-d">Fundador</h2>
+              </li>
+              <li>
+                <img src="http://cravatar.eu/head/vitinboliu/128.png">
+                <h1>vitinboliu</h1>
+                <h2 class="cor-a">Ajudante</h2>
               </li>
             </ul>
           </div>
@@ -154,7 +135,6 @@
 <script src="assets/js/scripts.js"></script>
 <script defer src="https://use.fontawesome.com/releases/v5.12.1/js/all.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
 </body>
 
 </html>

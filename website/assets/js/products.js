@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
   
     // Payload para o webhook
     const payload = {
-      username: "Legendary Community", // Nome do bot
+      username: "Legendary Site", // Nome do bot
       avatar_url: "https://i.imgur.com/rc1RZRu.png", // URL para o avatar do bot
       embeds: [
         {
@@ -128,7 +128,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Payload para o webhook do console
     const payloadConsole = {
-      username: "Legendary Community", // Nome do bot
+      username: "Legendary Site", // Nome do bot
       avatar_url: "https://i.imgur.com/rc1RZRu.png", // URL para o avatar do bot
       content: `${produtoDescricao}`,
     };

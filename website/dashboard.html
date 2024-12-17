@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>.+* Legendary Community *+.</title>
+  <link rel="stylesheet" href="assets/css/bulma.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="/assets/js/redirect.js"></script>
+  <script src="/assets/js/bots.js"></script>
+  <link rel="icon" href="assets/img/icon_server.png" type="image/png">
+
+  <script>
+    const hash = window.location.hash.substr(1);
+    const params = new URLSearchParams(hash);
+    const accessToken = params.get('access_token');
+
+    if (accessToken) {
+        fetch('https://discord.com/api/users/@me', {
+            headers: {
+                'Authorization': `Bearer ${accessToken}`
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById('avatar').src = `https://cdn.discordapp.com/avatars/${data.id}/${data.avatar}.png`;
+            document.getElementById('username').textContent = data.username;
+            document.getElementById('userid').textContent = `${data.id}`;
+        })
+        .catch(error => {
+            console.error('Erro ao obter os dados do usuário:', error);
+        });
+    } else {
+        window.location.href = 'index.html';
+    }
+  </script>
+</head>
+<body>
+
+<header class="section">
+  <div class="logo container">
+    <a href="#" onclick="redirecionarParaDashboard()">
+      <img src="assets/img/logo.png">
+    </a>
+  </div>
+
+  <div class="container">
+    <nav class="navbar">
+      <div class="navbar-brand">
+        <a class="navbar-burger burger">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+    
+      <div class="navbar-menu">
+        <div class="navbar-start">
+          <a href="#" onclick="redirecionarParaDashboard()" class="navbar-item"><i class="fas fa-home"></i> Início</a>
+          <a href="#" onclick="redirecionarParaRegras()" class="navbar-item"><i class="fas fa-book"></i> Regras</a>
+          <a href="#" onclick="redirecionarParaVotar()" class="navbar-item"><i class="fas fa-vote-yea"></i> Votar</a>
+           <!--  -->
+           <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-item"><i class="fas fa-gamepad"></i> Modpack</a>
+            <div class="navbar-dropdown">
+              <a href="#" onclick="redirecionarParaModpack()" class="navbar-item"><i class="fas fa-gamepad"></i> Modpacks</a>
+              <a href="#" onclick="redirecionarParaLaunchers()" class="navbar-item"><i class="fas fa-gamepad"></i> Launchers</a>
+              <hr class="navbar-divider">
+              <a href="#" onclick="redirecionarParaInstalacoes()" class="navbar-item">Detalhes de Instalações</a>
+            </div>
+          </div>
+          <!--  -->
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link"><i class="fas fa-shopping-cart"></i> Loja</a>
+            <div class="navbar-dropdown">
+              <a href="#" onclick="redirecionarParaloja()" class="navbar-item"><i class="fas fa-gem"></i> VIPs</a>
+              <hr class="navbar-divider">
+              <a href="#" onclick="redirecionarParaTermos()" class="navbar-item">Informações importantes</a>
+            </div>
+          </div>
+          <a href="https://discord.gg/DVA2hq4SaN" class="navbar-item"><i class="fab fa-discord"></i> Discord</a>
+
+
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-item"><img id="avatar" class="img-fluid rounded-circle" alt="Avatar do usuário" style="max-width: 150px;"></a>
+            <div class="navbar-dropdown">
+              <a href="#" onclick="redirecionarParaPerfil()" class="navbar-item"><i class="fas fa-user"></i> Perfil</a>
+              <a href="#" onclick="redirecionarParaSuporte()" class="navbar-item"><i class="fas fa-book"></i> Suporte</a>
+              <a id="logout-button" class="navbar-item"><i class="fas fa-sign-out-alt"></i> Sair</a>
+              <a href="" id="username" hidden></a>
+              <a href="" id="userid" hidden></a>
+              <a href="" id="renomeado" hidden></a>
+              <a href="" id="cargos" hidden></a>
+            </div>
+          </div>
+        </div>
+          
+        <div class="navbar-end">
+          <a id="ip" class="navbar-item">
+            <i class="fas fa-copy"></i> <span>legendarycommunity.com.br:25567</span>
+            <textarea></textarea>
+          </a>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main class="section">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <article class="article">
+          <h1 class="article-title"><i class="fas fa-gamepad"></i> Sobre o servidor</h1>
+          <div class="article-thumbnail" style="background-image:url(assets/img/miniatura2.png)"></div>
+          <div class="article-content">
+            <p>Legendary Community é uma comunidade de minecraft aberta com varios servidores de Minecraft dinâmico que combina a emoção da exploração com tecnologia industrial avançada, oferecendo aos jogadores uma experiência de jogo única e imersiva.</p>
+            <ul class="list">
+              <li><i class="fas fa-check"></i> Sistema keys e drops</li>
+              <li><i class="fas fa-check"></i> Economia balanceada</li>
+              <li><i class="fas fa-check"></i> Sistema de Máquinas Avançadas</li>
+              <li><i class="fas fa-check"></i> VIPs possuem vantagens exclusivas</li>
+              <li><i class="fas fa-check"></i> PvP 24h nas arenas e no mundo normal</li>
+              <li><i class="fas fa-check"></i> Eventos diários com premiações diversas</li>
+              <li><i class="fas fa-check"></i> Sistema de mudar skin, mesmo sem Minecraft original</li>
+            </ul>
+          </div>
+        </article>
+        <br>
+        <article class="article">
+          <h1 class="article-title"><i class="fas fa-users"></i> Conheça nossa equipe</h1>
+          <div class="article-content">
+            <ul class="equipe">
+              <li>
+                <img src="http://cravatar.eu/head/Thaynison/128.png">
+                <h1>Thaynison</h1>
+                <h2 class="cor-0">Desenvolvedor</h2>
+              </li>
+              <li>
+                <img src="http://cravatar.eu/head/Sumarih_/128.png">
+                <h1>Sumarih_</h1>
+                <h2 class="cor-d">Fundador</h2>
+              </li>
+              <li>
+                <img src="http://cravatar.eu/head/vitinboliu/128.png">
+                <h1>vitinboliu</h1>
+                <h2 class="cor-a">Ajudante</h2>
+              </li>
+            </ul>
+          </div>
+        </article>
+        <br>
+        <article class="article">
+          <h1 class="article-title"><i class="fas fa-users"></i> Jogadores Online</h1>
+          <div class="article-content">
+            <ul class="equipe" id="players-list">
+
+            </ul>
+          </div>
+        </article>         
+      </div>
+      <div class="column is-4">
+        <article class="article">
+          <h1 id="status" class="article-title"><i class="fas fa-sync is-spinning"></i> Atualizando...</h1>
+          <div class="article-content">
+            <b>Jogadores Online:</b> <span id="online">[...]</span><br>
+            <b>MOTD:</b> <span id="motd">[...]</span>
+          </div>
+        </article>
+        <br>
+        <article class="article">
+          <h1 class="article-title"><i class="fab fa-discord"></i> Entre em nosso Discord</h1>
+          <div class="article-content" style="background-color: transparent;">
+            <div class="responsive-iframe-container">
+              <iframe src="https://discord.com/widget?id=1250486201459277946&theme=dark" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+            </div>  
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="section">
+  <div class="container">
+    <article class="footer">
+      <span>Legendary Community <script>document.write(new Date().getFullYear())</script> &copy; Todos os direitos reservados.</span>
+      <a href="https://thaynison.vercel.app" target="_blank" class="is-muted"><i class="fas fa-tools"></i> Desenvolvido por Thaynison</a>
+    </article>
+  </div>
+</footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="assets/js/scripts.js"></script>
+<script defer src="https://use.fontawesome.com/releases/v5.12.1/js/all.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  document.getElementById('logout-button').addEventListener('click', function () {
+      localStorage.removeItem('discord_access_token');
+      sessionStorage.removeItem('discord_access_token');
+      const currentUrl = window.location.href.split('#')[0];
+      window.history.replaceState(null, null, currentUrl);
+      window.location.href = 'index.html';
+  });
+</script>
+</body>
+
+</html>

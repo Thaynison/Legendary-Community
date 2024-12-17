@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>.+* Legendary Community *+.</title>
+  <link rel="stylesheet" href="assets/css/bulma.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/devcs.css">
+  <script src="/assets/js/redirect.js"></script>
+  <link rel="icon" href="assets/img/icon_server.png" type="image/png">
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+        const params = new URLSearchParams(window.location.search);
+        const username = params.get('username');
+        const userid = params.get('userid');
+        const avatar = params.get('avatar');
+        document.getElementById('username').textContent = username;
+        document.getElementById('userid').textContent = userid;
+        document.getElementById('avatar').src = avatar;
+    });
+</script>
+<style>
+  .avisos5 {
+      display: none;
+  }
+  .avisos4 {
+      display: none;
+  }
+</style>
+</head>
+
+<body>
+
+  <header class="section">
+    <div class="logo container">
+      <a href="#" onclick="redirecionarParaDashboard()">
+        <img src="assets/img/logo.png">
+      </a>
+    </div>
+  
+    <div class="container">
+      <nav class="navbar">
+        <div class="navbar-brand">
+          <a class="navbar-burger burger">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+      
+        <div class="navbar-menu">
+          <div class="navbar-start">
+            <a href="#" onclick="redirecionarParaDashboard()" class="navbar-item"><i class="fas fa-home"></i> Início</a>
+            <a href="#" onclick="redirecionarParaRegras()" class="navbar-item"><i class="fas fa-book"></i> Regras</a>
+            <a href="#" onclick="redirecionarParaVotar()" class="navbar-item"><i class="fas fa-vote-yea"></i> Votar</a>
+             <!--  -->
+             <div class="navbar-item has-dropdown is-hoverable">
+              <a class="navbar-item"><i class="fas fa-gamepad"></i> Modpack</a>
+              <div class="navbar-dropdown">
+                <a href="#" onclick="redirecionarParaModpack()" class="navbar-item"><i class="fas fa-gamepad"></i> Modpacks</a>
+                <a href="#" onclick="redirecionarParaLaunchers()" class="navbar-item"><i class="fas fa-gamepad"></i> Launchers</a>
+                <hr class="navbar-divider">
+                <a href="#" onclick="redirecionarParaInstalacoes()" class="navbar-item">Detalhes de Instalações</a>
+              </div>
+            </div>
+            <!--  -->
+            <div class="navbar-item has-dropdown is-hoverable">
+              <a class="navbar-link"><i class="fas fa-shopping-cart"></i> Loja</a>
+              <div class="navbar-dropdown">
+                <a href="#" onclick="redirecionarParaloja()" class="navbar-item"><i class="fas fa-gem"></i> VIPs</a>
+                <hr class="navbar-divider">
+                <a href="#" onclick="redirecionarParaTermos()" class="navbar-item">Informações importantes</a>
+              </div>
+            </div>
+            <a href="https://discord.gg/DVA2hq4SaN" class="navbar-item"><i class="fab fa-discord"></i> Discord</a>
+  
+  
+            <div class="navbar-item has-dropdown is-hoverable">
+              <a class="navbar-item"><img id="avatar" class="img-fluid rounded-circle" alt="Avatar do usuário" style="max-width: 150px;"></a>
+              <div class="navbar-dropdown">
+                <a href="#" onclick="redirecionarParaPerfil()" class="navbar-item"><i class="fas fa-user"></i> Perfil</a>
+                <a id="logout-button" class="navbar-item"><i class="fas fa-sign-out-alt"></i> Sair</a>
+                <a href="" id="username" hidden></a>
+                <a href="" id="userid" hidden></a>
+              </div>
+            </div>
+          </div>
+            
+          <div class="navbar-end">
+            <a id="ip" class="navbar-item">
+              <i class="fas fa-copy"></i> <span>legendarycommunity.com.br:25567</span>
+              <textarea></textarea>
+            </a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container">
+        <div class="columns">
+            <div class="column is-4">
+                <article class="article">
+                    <div class="article-header">
+                        <h1 id="infor" class="article-title"><i class="fas fa-sync is-spinning"></i> Ações</h1>
+                    </div>
+                    <div class="article-content painelstaff">
+                        <!-- Botões para alterar o conteúdo dentro de "Lista de Jogadores" -->
+                        <a class="button is-primary" onclick="changeContent('register-ban')">Registrar Ban</a>
+                        <br>
+                        <a class="button is-primary" onclick="changeContent('register-sale')">Registrar Venda</a>
+                        <br>
+                        <a class="button is-primary" onclick="changeContent('create-post')">Criar Publicação</a>
+                    </div>
+                </article>
+            </div>
+
+            <div class="column">
+                <article class="article">
+                    <h1 class="article-title"><i class="fas fa-gamepad"></i> Painel</h1>
+                    <div class="article-content">
+                        <div id="content-area">
+                          
+                      </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+  </main>
+
+<footer class="section">
+  <div class="container">
+    <article class="footer">
+      <span>Legendary Community <script>document.write(new Date().getFullYear())</script> &copy; Todos os direitos reservados.</span>
+      <a href="https://thaynison.vercel.app" target="_blank" class="is-muted"><i class="fas fa-tools"></i> Desenvolvido por Thaynison</a>
+    </article>
+  </div>
+</footer>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="assets/js/scripts.js"></script>
+<script defer src="https://use.fontawesome.com/releases/v5.12.1/js/all.js"></script>
+<script>
+  function changeContent(contentType) {
+      var contentArea = document.getElementById("content-area");
+
+      switch(contentType) {
+          case 'register-ban':
+              contentArea.innerHTML = `
+                      <form class="form-register-ban">
+                          <div class="form-field">
+                              <label for="userid">Informar ID do Discord:</label>
+                              <input type="text" id="userid" name="userid" placeholder="Digite o User ID" required>
+                          </div>
+                          <div class="form-field">
+                              <label for="ip_ban">Informar IP Banido:</label>
+                              <input type="text" id="ip_ban" name="ip_ban" placeholder="Digite o IP Banido" required>
+                          </div>
+                          <div class="form-field">
+                              <label for="discord_ban">Informar Nome do Discord:</label>
+                              <input type="text" id="discord_ban" name="discord_ban" placeholder="Digite o nome do Discord" required>
+                          </div>
+                          <div class="form-field">
+                              <label for="username">Informar Nome do Minecraft:</label>
+                              <input type="text" id="username" name="username" placeholder="Digite o nome do Minecraft" required>
+                          </div>
+                          <div class="form-field">
+                              <label for="print">Informar Link do Print:</label>
+                              <input type="url" id="print" name="print" placeholder="Cole o link do print" required>
+                          </div>
+                          <div class="form-field">
+                              <label for="motivo">Informar Motivo do Banimento:</label>
+                              <textarea id="motivo" name="motivo" placeholder="Descreva o motivo do banimento" rows="4" required></textarea>
+                          </div>
+                          <button type="submit" class="button is-primary">Registrar Banumento</button>
+                      </form>
+              `;
+              const form = document.querySelector('.form-register-ban');
+              form.addEventListener('submit', function(event) {
+                  event.preventDefault();
+                  const formData = new FormData(form);
+                  fetch('http://legendarycommunity.com.br:9955/dashboard/API/api_registrar_ban.php', {
+                      method: 'POST',
+                      body: formData
+                  })
+                  .then(response => response.json())
+                  .then(data => {
+                      if (data.success) {
+                          document.querySelector('.avisos5').style.display = 'flex';
+                          setTimeout(function() {
+                              document.querySelector('.avisos5').style.display = 'none';
+                          }, 5000);
+                          form.reset();
+                      } else if (data.error) {
+                          document.querySelector('.avisos4').style.display = 'flex';
+                          setTimeout(function() {
+                              document.querySelector('.avisos4').style.display = 'none';
+                          }, 5000);
+                          form.reset();
+                      }
+                  })
+                  .catch(error => {
+                      document.querySelector('.avisos4').style.display = 'flex';
+                      setTimeout(function() {
+                          document.querySelector('.avisos4').style.display = 'none';
+                      }, 5000);
+                      form.reset();
+                  });
+              });
+              break;
+          case 'register-sale':
+              contentArea.innerHTML = `
+                      <form class="form-register-sale">
+                          <div class="form-field">
+                              <label for="username">Informar Nome do Minecraft:</label>
+                              <input type="text" id="username" name="username" placeholder="Digite o nome do Minecraft" required>
+                          </div>
+                          <div class="form-field">
+                              <label for="userid">Informar ID do Discord:</label>
+                              <input type="text" id="userid" name="userid" placeholder="Digite o User ID do Discord" required>
+                          </div>
+                          <div class="form-field">
+                              <label for="codigo">Codigo do Produto:</label>
+                              <input type="text" id="codigo" name="codigo" placeholder="Digite o codigo do Produto" required>
+                          </div>
+                          <div class="form-field">
+                              <label for="produto">Informar Nome do Produto:</label>
+                              <input type="text" id="produto" name="produto" placeholder="Digite o nome do Produto" required>
+                          </div>
+                          <div class="form-field">
+                              <label for="valor">Informar Valor do Produto:</label>
+                              <input type="number" id="valor" name="valor" placeholder="Digite o valor do Produto" required>
+                          </div>
+                          <div class="form-field">
+                              <label for="data_compra">Informar Data da Compra:</label>
+                              <input type="date" id="data_compra" name="data_compra" placeholder="Digite a data da Compra" required>
+                          </div>
+                          <button type="submit" class="button is-primary">Registrar Venda</button>
+                      </form>
+              `;
+              const form2 = document.querySelector('.form-register-sale');
+              form2.addEventListener('submit', function(event) {
+                  event.preventDefault();
+                  const formData = new FormData(form2);
+                  fetch('http://legendarycommunity.com.br:9955/dashboard/API/api_registrar_venda.php', {
+                      method: 'POST',
+                      body: formData
+                  })
+                  .then(response => response.json())
+                  .then(data => {
+                      if (data.success) {
+                          document.querySelector('.avisos5').style.display = 'flex';
+                          setTimeout(function() {
+                              document.querySelector('.avisos5').style.display = 'none';
+                          }, 5000);
+                          form2.reset();
+                      } else if (data.error) {
+                          document.querySelector('.avisos4').style.display = 'flex';
+                          setTimeout(function() {
+                              document.querySelector('.avisos4').style.display = 'none';
+                          }, 5000);
+                          form2.reset();
+                      }
+                  })
+                  .catch(error => {
+                      document.querySelector('.avisos4').style.display = 'flex';
+                      setTimeout(function() {
+                          document.querySelector('.avisos4').style.display = 'none';
+                      }, 5000);
+                      form2.reset();
+                  });
+              });
+              break;
+          case 'create-post':
+              contentArea.innerHTML = "<h2>Criar Publicação</h2><p>Informações Em Breve.</p>";
+              break;
+          default:
+              contentArea.innerHTML = "<p>Escolha uma opção.</p>";
+      }
+  }
+</script>
+</body>
+<link rel="stylesheet" href="assets/css/avisos4.css">
+<div class="avisos5">
+    <section class="avisosdados">
+      <h1><img src="/assets/img/icon_server.png">Importante:</h1>
+    </section>
+    <section class="avisostexts">
+        <h1>Sucesso, informações salvas!</h1>
+    </section>
+    <section class="avisosdireitos">
+        <h1>Legendary Community® Todos os direitos reservados.</h1>
+    </section>
+</div>
+
+<div class="avisos4">
+  <section class="avisosdados">
+    <h1><img src="/assets/img/icon_server.png">Importante:</h1>
+  </section>
+  <section class="avisostexts">
+      <h1>Algu deu Errado, Você as informações não foram salvas!</h1>
+  </section>
+  <section class="avisosdireitos">
+      <h1>Legendary Community® Todos os direitos reservados.</h1>
+  </section>
+</div>
+
+</html>

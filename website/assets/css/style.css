@@ -367,3 +367,32 @@ a.is-muted:hover {
 .cor-7{color:#bebebe}
 .cor-8{color:#3f3f3f}
 .cor-0{color:#000}
+
+  /* Estilo dos botões */
+  .painelstaff .button {
+    border-radius: 8px; /* Borda arredondada */
+    padding: 12px 20px; /* Espaçamento interno */
+    font-size: 16px; /* Fonte legível */
+    font-weight: 600; /* Peso da fonte */
+    transition: all 0.3s ease; /* Transição suave */
+    margin-bottom: 10px; /* Espaçamento entre os botões */
+    width: 100%; /* Botões com largura total */
+  }
+  
+.painelstaff .button.is-primary {
+    background-color: #9b4caf; /* Cor de fundo verde */
+    color: #fff; /* Texto branco */
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  }
+  
+.painelstaff .button.is-primary:hover {
+    background-color: #ad5cc5; /* Cor mais escura no hover */
+    transform: translateY(-2px); /* Efeito de movimento */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Sombra mais intensa */
+  }
+  
+.painelstaff .button:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(255, 165, 0, 0.6); /* Destaque no foco */
+  }
