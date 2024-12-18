@@ -25,7 +25,7 @@ window.addEventListener('DOMContentLoaded', () => {
 function verificarBanimento(userid) {
     const apiUrl = `http://legendarycommunity.com.br:9966/dashboard/API/verificar_ban.php?userid=${userid}`;
     
-    fetch(apiUrl)
+    fetch(apiUrl, { mode: 'no-cors' })
         .then(response => response.json())
         .then(data => {
             if (data.banido) {
@@ -44,7 +44,7 @@ function verificarBanimento(userid) {
 function getHistoricoBan(userid) {
     const apiUrl = `http://legendarycommunity.com.br:9966/dashboard/API/ban_verificado.php?userid=${userid}`;
     
-    fetch(apiUrl)
+    fetch(apiUrl, { mode: 'no-cors' })
         .then(response => response.json())
         .then(data => {
             if (data.error) {
