@@ -24,7 +24,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 function verificarBanimento(userid) {
     const apiUrl = `https://dash.legendarycommunity.com.br/api/verificar_ban.php?userid=${userid}`;
-    
+
     fetch(apiUrl)
         .then(response => {
             if (!response.ok) {
@@ -33,12 +33,22 @@ function verificarBanimento(userid) {
             return response.json();
         })
         .then(data => {
+            // Exibir os dados recebidos para debug
+            console.log('Resposta da API:', data);
+
             const statusElement = document.querySelector('.status-approved');
-            if (data.banido) {
+
+            if (data.banido === true) {
+                // Usuário está banido
                 statusElement.innerHTML = '<p style="color: red;">ALLOWLIST BANIDA</p>';
                 document.getElementById('ban-info').style.display = 'block';
-            } else {
+            } else if (data.banido === false) {
+                // Usuário não está banido
                 statusElement.innerHTML = '<p style="color: #a7288c;">ALLOWLIST APROVADA</p>';
+            } else {
+                // Caso de erro inesperado
+                statusElement.innerHTML = '<p style="color: orange;">Erro: resposta inesperada da API.</p>';
+                console.warn('Resposta inesperada da API:', data);
             }
         })
         .catch(error => {
