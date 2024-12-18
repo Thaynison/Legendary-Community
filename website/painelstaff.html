@@ -182,7 +182,7 @@
               form.addEventListener('submit', function(event) {
                   event.preventDefault();
                   const formData = new FormData(form);
-                  fetch('http://legendarycommunity.com.br:9966/dashboard/API/api_registrar_ban.php', {
+                  fetch('https://dash.legendarycommunity.com.br/api/api_registrar_ban.php', {
                       method: 'POST',
                       body: formData
                   })
@@ -245,7 +245,7 @@
               form2.addEventListener('submit', function(event) {
                   event.preventDefault();
                   const formData = new FormData(form2);
-                  fetch('http://legendarycommunity.com.br:9966/dashboard/API/api_registrar_venda.php', {
+                  fetch('https://dash.legendarycommunity.com.br/api/api_registrar_venda.php', {
                       method: 'POST',
                       body: formData
                   })
