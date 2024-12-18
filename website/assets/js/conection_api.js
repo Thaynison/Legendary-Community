@@ -1,27 +1,3 @@
-// window.addEventListener('DOMContentLoaded', () => {
-//     const params = new URLSearchParams(window.location.search);
-//     const username = params.get('username');
-//     const userid = params.get('userid');
-    
-//     // const cleanUserId = userid ? userid.replace(/\D/g, '') : null;
-
-//     // console.log(cleanUserId);
-
-//     const avatar = params.get('avatar');
-//     document.getElementById('username').textContent = username;
-//     document.getElementById('username2').textContent = username;
-//     document.getElementById('userid').textContent = userid;
-//     document.getElementById('avatar').src = avatar;
-//     document.getElementById('avatar2').src = avatar;
-
-//     // if (cleanUserId) {
-//     //     verificarBanimento(cleanUserId);
-//     //     getHistoricoCompras(cleanUserId);
-//     // } else {
-//     //     document.querySelector('.status-approved').innerHTML = '<p>ID de usuário não encontrado.</p>';
-//     // }
-// });
-
 window.addEventListener('DOMContentLoaded', () => {
     const params = new URLSearchParams(window.location.search);
     const username = params.get('username');

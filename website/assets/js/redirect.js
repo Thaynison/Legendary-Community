@@ -1,7 +1,7 @@
 // LOGIN SYSTEM
 const CLIENT_ID = '1254263114619162734';
-// const REDIRECT_URI = 'http://127.0.0.1:5500/dashboard.html';
-const REDIRECT_URI = 'https://www.legendarycommunity.com.br/dashboard.html';
+const REDIRECT_URI = 'http://127.0.0.1:5500/dashboard.html';
+// const REDIRECT_URI = 'https://www.legendarycommunity.com.br/dashboard.html';
 
 function loginWithDiscord() {
     window.location.href = `https://discord.com/api/oauth2/authorize?client_id=${CLIENT_ID}&redirect_uri=${encodeURIComponent(REDIRECT_URI)}&response_type=token&scope=identify`;
@@ -87,24 +87,8 @@ function redirecionarParaPerfil() {
   window.location.href = `perfil.html?username=${encodeURIComponent(username)}&userid=${encodeURIComponent(userid)}&avatar=${encodeURIComponent(avatar)}`;
 }
 
-function redirecionarParaSuporte() {
-    const username = document.getElementById('username').textContent;
-    const userid = document.getElementById('userid').textContent;
-    const avatar = document.getElementById('avatar').src;
-
-  window.location.href = `suporte.html?username=${encodeURIComponent(username)}&userid=${encodeURIComponent(userid)}&avatar=${encodeURIComponent(avatar)}`;
-}
-
 function CodigoPenalWithDiscord() {
     window.location.href = `relicario.html`;
-}
-
-function redirecionarParaSuporte() {
-    const username = document.getElementById('username').textContent;
-    const userid = document.getElementById('userid').textContent;
-    const avatar = document.getElementById('avatar').src;
-
-  window.location.href = `suporte.html?username=${encodeURIComponent(username)}&userid=${encodeURIComponent(userid)}&avatar=${encodeURIComponent(avatar)}`;
 }
 
 // INFO BAN
@@ -253,6 +237,14 @@ function redirecionarPara_caixa_drops() {
     const avatar = document.getElementById('avatar').src;
 
   window.location.href = `products/caixa_drops.html?username=${encodeURIComponent(username)}&userid=${encodeURIComponent(userid)}&avatar=${encodeURIComponent(avatar)}`;
+}
+
+function redirecionarParaSuporte() {
+  const username = document.getElementById('username').textContent;
+  const userid = document.getElementById('userid').textContent;
+  const avatar = document.getElementById('avatar').src;
+
+window.location.href = `suporte.html?username=${encodeURIComponent(username)}&userid=${encodeURIComponent(userid)}&avatar=${encodeURIComponent(avatar)}`;
 }
 
 function redirecionarPara_PainelStaff() {

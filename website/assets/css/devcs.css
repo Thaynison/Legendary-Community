@@ -102,3 +102,56 @@
 .form-register-sale button:hover {
     background-color: #2980b9;
 }
+
+/* SUPORTE */
+
+
+.form-register-ticket {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 600px;
+    margin: 20px auto;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.form-register-ticket .form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.form-register-ticket label {
+    font-weight: bold;
+    color: #333;
+    font-size: 14px;
+}
+.form-register-ticket input[type="text"], input[type="url"], input[type="number"], input[type="date"], textarea {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    transition: border-color 0.3s;
+}
+.form-register-ticket input[type="text"]:focus, input[type="url"]:focus, input[type="number"]:focus, input[type="date"]:focus,  textarea:focus {
+    border-color: #db34cd;
+    outline: none;
+}
+.form-register-ticket textarea {
+    resize: vertical;
+}
+.form-register-ticket button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #db34cd;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.form-register-ticket button:hover {
+    background-color: #2980b9;
+}
