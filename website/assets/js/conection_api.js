@@ -24,31 +24,15 @@ window.addEventListener('DOMContentLoaded', () => {
 
 function verificarBanimento(userid) {
     const apiUrl = `https://dash.legendarycommunity.com.br/api/verificar_ban.php?userid=${userid}`;
-
+    
     fetch(apiUrl)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(`Erro na resposta da API: ${response.status}`);
-            }
-            return response.json();
-        })
+        .then(response => response.json())
         .then(data => {
-            // Exibir os dados recebidos para debug
-            console.log('Resposta da API:', data);
-
-            const statusElement = document.querySelector('.status-approved');
-
-            if (data.banido === true) {
-                // Usuário está banido
-                statusElement.innerHTML = '<p style="color: red;">ALLOWLIST BANIDA</p>';
+            if (data.banido) {
+                document.querySelector('.status-approved').innerHTML = '<p class="status-approved" style="color: red";>ALLOWLIST BANIDA</p>';
                 document.getElementById('ban-info').style.display = 'block';
-            } else if (data.banido === false) {
-                // Usuário não está banido
-                statusElement.innerHTML = '<p style="color: #a7288c;">ALLOWLIST APROVADA</p>';
             } else {
-                // Caso de erro inesperado
-                statusElement.innerHTML = '<p style="color: orange;">Erro: resposta inesperada da API.</p>';
-                console.warn('Resposta inesperada da API:', data);
+                document.querySelector('.status-approved').innerHTML = '<p class="status-approved" style="color: #a7288c";>ALLOWLIST APROVADA</p>';
             }
         })
         .catch(error => {
@@ -56,7 +40,6 @@ function verificarBanimento(userid) {
             document.querySelector('.status-approved').innerHTML = '<p>Erro ao verificar o status da conta.</p>';
         });
 }
-
 
 function getHistoricoCompras(userid) {
     const apiUrl = `https://dash.legendarycommunity.com.br/api/api.php?userid=${userid}`;
