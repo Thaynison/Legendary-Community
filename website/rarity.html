@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  <title>.+* Legendary Community *+.</title>
+  <link rel="stylesheet" href="assets/css/bulma.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="/assets/js/redirect.js"></script>
+  <link rel="icon" href="assets/img/icon_server.png" type="image/png">
+  <script>
+      window.addEventListener('DOMContentLoaded', () => {
+          const params = new URLSearchParams(window.location.search);
+          const username = params.get('username');
+          const userid = params.get('userid');
+          const avatar = params.get('avatar');
+          document.getElementById('username').textContent = username;
+          document.getElementById('userid').textContent = userid;
+          document.getElementById('avatar').src = avatar;
+      });
+  </script>
+</head>
+
+<body>
+
+  <header class="section">
+    <div class="logo container">
+      <a href="#" onclick="redirecionarParaDashboard()">
+        <img src="assets/img/logo.png">
+      </a>
+    </div>
+  
+    <div class="container">
+      <nav class="navbar">
+        <div class="navbar-brand">
+          <a class="navbar-burger burger">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+      
+        <div class="navbar-menu">
+          <div class="navbar-start">
+            <a href="#" onclick="redirecionarParaDashboard()" class="navbar-item"><i class="fas fa-home"></i> Início</a>
+            <a href="#" onclick="redirecionarParaRegras()" class="navbar-item"><i class="fas fa-book"></i> Regras</a>
+            <a href="#" onclick="redirecionarParaVotar()" class="navbar-item"><i class="fas fa-vote-yea"></i> Votar</a>
+             <!--  -->
+             <div class="navbar-item has-dropdown is-hoverable">
+              <a class="navbar-item"><i class="fas fa-gamepad"></i> Modpack</a>
+              <div class="navbar-dropdown">
+                <a href="#" onclick="redirecionarParaModpack()" class="navbar-item"><i class="fas fa-gamepad"></i> Modpacks</a>
+                <a href="#" onclick="redirecionarParaLaunchers()" class="navbar-item"><i class="fas fa-gamepad"></i> Launchers</a>
+                <hr class="navbar-divider">
+                <a href="#" onclick="redirecionarParaInstalacoes()" class="navbar-item">Detalhes de Instalações</a>
+              </div>
+            </div>
+            <!--  -->
+            <div class="navbar-item has-dropdown is-hoverable">
+              <a class="navbar-link"><i class="fas fa-shopping-cart"></i> Loja</a>
+              <div class="navbar-dropdown">
+                <a href="#" onclick="redirecionarParaloja()" class="navbar-item"><i class="fas fa-gem"></i> VIPs</a>
+                <hr class="navbar-divider">
+                <a href="#" onclick="redirecionarParaTermos()" class="navbar-item">Informações importantes</a>
+              </div>
+            </div>
+            <a href="https://discord.gg/DVA2hq4SaN" class="navbar-item"><i class="fab fa-discord"></i> Discord</a>
+  
+  
+            <div class="navbar-item has-dropdown is-hoverable">
+              <a class="navbar-item"><img id="avatar" class="img-fluid rounded-circle" alt="Avatar do usuário" style="max-width: 150px;"></a>
+              <div class="navbar-dropdown">
+                <a href="#" onclick="redirecionarParaPerfil()" class="navbar-item"><i class="fas fa-user"></i> Perfil</a>
+                <a href="#" onclick="redirecionarParaSuporte()" class="navbar-item"><i class="fas fa-book"></i> Suporte</a>
+                <a id="logout-button" class="navbar-item"><i class="fas fa-sign-out-alt"></i> Sair</a>
+                <a href="" id="username" hidden></a>
+                <a href="" id="userid" hidden></a>
+              </div>
+            </div>
+          </div>
+            
+          <div class="navbar-end">
+            <a id="ip" class="navbar-item">
+              <i class="fas fa-copy"></i> <span>legendarycommunity.com.br:25567</span>
+              <textarea></textarea>
+            </a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+<main class="section">
+  <div class="container">
+
+<script src="/assets/js/rarity_system.js"></script>
+
+    <article id="rarity" class="article">
+      <h1 class="article-title"><i class="fas fa-gem"></i> Sistema de Raridade</h1>
+      <div class="article-content">
+        <ul class="produtos">
+
+        </ul>
+      </div>
+    </article>
+
+    
+    
+  </div>
+</main>
+
+<footer class="section">
+  <div class="container">
+    <article class="footer">
+      <span>Legendary Community <script>document.write(new Date().getFullYear())</script> &copy; Todos os direitos reservados.</span>
+      <a href=" " target="_blank" class="is-muted"><i class="fas fa-tools"></i> Desenvolvido por Thaynison</a>
+    </article>
+  </div>
+</footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="assets/js/scripts.js"></script>
+<script defer src="https://use.fontawesome.com/releases/v5.12.1/js/all.js"></script>
+
+</body>
+
+</html>

@@ -158,12 +158,22 @@ function changeContent(contentType) {
                             <label for="motivo">Informar Motivo do Banimento:</label>
                             <textarea id="motivo" name="motivo" placeholder="Descreva o motivo do banimento" rows="4" required></textarea>
                         </div>
-                        <button type="submit" class="button is-primary">Registrar Banumento</button>
+                        <button type="submit" class="button is-primary" id="submitBtn2">Registrar Banumento</button>
                     </form>
             `;
             const form = document.querySelector('.form-register-ban');
+            const submitBtn2 = document.getElementById('submitBtn2');
+            let isSubmitting2 = false;  // Flag to prevent multiple submissions
+
             form.addEventListener('submit', function(event) {
                 event.preventDefault();
+
+                // Prevent multiple submissions
+                if (isSubmitting2) return;
+
+                isSubmitting2 = true;  // Set flag to true
+                submitBtn2.disabled = true;  // Disable the submit button to prevent multiple clicks
+                                
                 const formData = new FormData(form);
                 fetch('https://dash.legendarycommunity.com.br/api/api_registrar_ban.php', {
                     method: 'POST',
@@ -191,6 +201,10 @@ function changeContent(contentType) {
                         document.querySelector('.avisos4').style.display = 'none';
                     }, 5000);
                     form.reset();
+                })
+                .finally(() => {
+                    isSubmitting2 = false;  // Reset flag
+                    submitBtn2.disabled = false;  // Re-enable the submit button
                 });
             });
             break;
@@ -221,12 +235,22 @@ function changeContent(contentType) {
                             <label for="data_compra">Informar Data da Compra:</label>
                             <input type="date" id="data_compra" name="data_compra" placeholder="Digite a data da Compra" required>
                         </div>
-                        <button type="submit" class="button is-primary">Registrar Venda</button>
+                        <button type="submit" class="button is-primary" id="submitBtn3">Registrar Venda</button>
                     </form>
             `;
             const form2 = document.querySelector('.form-register-sale');
+            const submitBtn3 = document.getElementById('submitBtn3');
+            let isSubmitting3 = false;  // Flag to prevent multiple submissions
+
             form2.addEventListener('submit', function(event) {
                 event.preventDefault();
+
+                // Prevent multiple submissions
+                if (isSubmitting3) return;
+
+                isSubmitting3 = true;  // Set flag to true
+                submitBtn3.disabled = true;  // Disable the submit button to prevent multiple clicks
+
                 const formData = new FormData(form2);
                 fetch('https://dash.legendarycommunity.com.br/api/api_registrar_venda.php', {
                     method: 'POST',
@@ -254,6 +278,10 @@ function changeContent(contentType) {
                         document.querySelector('.avisos4').style.display = 'none';
                     }, 5000);
                     form2.reset();
+                })
+                .finally(() => {
+                    isSubmitting3 = false;  // Reset flag
+                    submitBtn3.disabled = false;  // Re-enable the submit button
                 });
             });
             break;
@@ -276,12 +304,24 @@ function changeContent(contentType) {
                         <label for="print">Informar Print do Item:</label>
                         <input type="url" id="print" name="print" placeholder="Insira a Print do Item" required>
                     </div>
-                    <button type="submit" class="button is-primary">Registrar Venda</button>
+                    <button type="submit" class="button is-primary" id="submitBtn">Registrar Venda</button>
                 </form>
             `;
             const form3 = document.querySelector('.form-register-rarity');
+            const submitBtn = document.getElementById('submitBtn');
+            let isSubmitting = false;  // Flag to prevent multiple submissions
+
             form3.addEventListener('submit', function(event) {
                 event.preventDefault();
+
+
+                // Prevent multiple submissions
+                if (isSubmitting) return;
+
+                isSubmitting = true;  // Set flag to true
+                submitBtn.disabled = true;  // Disable the submit button to prevent multiple clicks
+        
+                                
                 const formData = new FormData(form3);
                 fetch('https://dash.legendarycommunity.com.br/api/api_registrar_rarity.php', {
                     method: 'POST',
@@ -309,6 +349,10 @@ function changeContent(contentType) {
                         document.querySelector('.avisos4').style.display = 'none';
                     }, 5000);
                     form3.reset();
+                })
+                .finally(() => {
+                    isSubmitting = false;  // Reset flag
+                    submitBtn.disabled = false;  // Re-enable the submit button
                 });
             });
             break;
