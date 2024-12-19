@@ -1,67 +1,97 @@
-/* Background para o modal */
+/* Overlay de fundo para o modal */
 .alert-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
-    display: none; /* Inicia escondido */
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none; /* Oculto inicialmente */
     justify-content: center;
     align-items: center;
     z-index: 1000;
 }
 
-/* Container do modal */
+/* Contêiner do modal */
 .alert-modal {
-    background-color: #fff;
-    border-radius: 8px;
-    width: 400px;
+    background-color: #2b2b2b; /* Fundo escuro para um design moderno */
+    border-radius: 10px;
+    width: 500px;
     max-width: 90%;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    animation: slide-down 0.3s ease-out;
+    padding: 20px 30px;
+    color: #ffffff; /* Texto claro para contraste */
+    font-family: 'Arial', sans-serif;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+    animation: fadeIn 0.3s ease-out;
 }
 
-/* Animação para o modal */
-@keyframes slide-down {
+/* Animação de entrada */
+@keyframes fadeIn {
     from {
-        transform: translateY(-50%);
         opacity: 0;
+        transform: scale(0.9);
     }
     to {
-        transform: translateY(0);
         opacity: 1;
+        transform: scale(1);
     }
 }
 
 /* Título do alerta */
 .alert-modal h2 {
     font-size: 1.5rem;
-    margin-bottom: 10px;
-    color: #333;
+    margin-bottom: 15px;
+    text-align: center;
+    border-bottom: 2px solid #00bcd4; /* Linha decorativa */
+    padding-bottom: 10px;
 }
 
 /* Corpo do alerta */
 .alert-modal p {
     font-size: 1rem;
-    color: #555;
-    margin-bottom: 20px;
+    line-height: 1.5;
+    margin: 10px 0;
+    text-align: center;
+    color: #d1d1d1; /* Texto levemente claro */
 }
 
-/* Botão do alerta */
+/* Botão de ação */
 .alert-modal button {
-    background-color: #007bff;
-    color: #fff;
+    background-color: #00bcd4; /* Cor principal baseada na linha decorativa */
+    color: #ffffff;
     padding: 10px 20px;
     font-size: 1rem;
     border: none;
-    border-radius: 4px;
+    border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.2s;
+    text-transform: uppercase;
+    margin: 20px auto 0;
+    display: block;
+    transition: background-color 0.3s ease;
 }
 
 .alert-modal button:hover {
-    background-color: #0056b3;
+    background-color: #0097a7; /* Tom mais escuro ao passar o mouse */
+}
+
+/* Ícone de alerta no topo */
+.alert-icon {
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #00bcd4;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.alert-icon i {
+    color: #ffffff;
+    font-size: 1.5rem;
 }
