@@ -49,24 +49,25 @@ function getHistoricoTickets(userid) {
                                         <th>Username</th>
                                         <th>Descrição</th>
                                         <th>Print</th>
+                                        <th>Status</th>
                                     </tr>
                                 </thead><tbody>`;
 
                 if (Array.isArray(data)) {
-                    data.forEach(tickets => {
+                    data.forEach(ticket => {
                         const statusInfo = getStatusInfo(ticket.status);
                         htmlContent += `<tr>
-                                            <td>${tickets.id_ticket}</td>
-                                            <td>${tickets.username}</td>
-                                            <td>${tickets.descricao}</td>
-                                            <td><button class="eye-button" onclick="showImage('${tickets.print}', event)">👁️</button></td>
+                                            <td>${ticket.id_ticket}</td>
+                                            <td>${ticket.username}</td>
+                                            <td>${ticket.descricao}</td>
+                                            <td><button class="eye-button" onclick="showImage('${ticket.print}', event)">👁️</button></td>
                                             <td>
                                                 <span title="${statusInfo.title}">${statusInfo.emoji}</span>
                                             </td>
                                         </tr>`;
                     });
                 } else {
-                    htmlContent += '<tr><td colspan="2">Nenhum ban encontrado.</td></tr>';
+                    htmlContent += '<tr><td colspan="5">Nenhum ticket encontrado.</td></tr>';
                 }
 
                 htmlContent += '</tbody></table>';
@@ -77,6 +78,7 @@ function getHistoricoTickets(userid) {
             document.querySelector('.form-lista-de-ticket').innerHTML = `<p>Erro ao carregar os dados. Tente novamente mais tarde.</p>`;
         });
 }
+
 
 function showImage(imageUrl) {
     event.preventDefault();
