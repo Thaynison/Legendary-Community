@@ -27,11 +27,6 @@
     background-size: cover;
 }
 
-.article-thumbnail-posts {
-    background-color: #f0f0f0; /* Cor de fundo */
-    background-size: contain;
-}
-
 .observer-target {
     width: 100%;
     height: 1px;
