@@ -39,17 +39,17 @@ function getHistoricoTicketsSTAFF() {
                 return;
             }
 
-            // Função para mapear o status para emojis
-            const getStatusEmoji = (status) => {
+            // Função para mapear o status para emojis e títulos
+            const getStatusInfo = (status) => {
                 switch (status) {
                     case 'Concluido':
-                        return '✅';
+                        return { emoji: '✅', title: 'Concluído' };
                     case 'Reprovado':
-                        return '❌';
+                        return { emoji: '❌', title: 'Reprovado' };
                     case 'Em Analise':
-                        return '🔎';
+                        return { emoji: '🔎', title: 'Em Análise' };
                     default:
-                        return '❓'; // Emoji para status desconhecido
+                        return { emoji: '❓', title: 'Desconhecido' };
                 }
             };
 
@@ -68,6 +68,7 @@ function getHistoricoTicketsSTAFF() {
             `;
 
             data.forEach(ticket => {
+                const statusInfo = getStatusInfo(ticket.status);
                 htmlContent += `
                     <tr>
                         <td>${ticket.id_ticket}</td>
@@ -77,7 +78,7 @@ function getHistoricoTicketsSTAFF() {
                             <button class="eye-button" onclick="showImage('${ticket.print}', event)">👁️</button>
                         </td>
                         <td>
-                            ${getStatusEmoji(ticket.status)}
+                            <span title="${statusInfo.title}">${statusInfo.emoji}</span>
                         </td>
                     </tr>`;
             });
@@ -90,6 +91,7 @@ function getHistoricoTicketsSTAFF() {
             container.innerHTML = `<p class="error">Erro ao carregar os dados: ${error.message}</p>`;
         });
 }
+
 
 function showImage(imageUrl) {
     event.preventDefault();
