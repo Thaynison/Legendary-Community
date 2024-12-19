@@ -43,11 +43,12 @@ document.addEventListener("DOMContentLoaded", function () {
         alertBox.addEventListener('mouseover', () => {
             alertBox.classList.add('show');
         });
+    }
 
-        // Quando o mouse sair do alerta, o alerta desaparece
-        alertBox.addEventListener('mouseout', () => {
+    function hideAlert() {
+        if (alertBox) {
             alertBox.classList.remove('show');
-        });
+        }
     }
 
     function formatLore(lore) {
@@ -85,8 +86,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
             const button = li.querySelector("a");
             button.addEventListener("mouseover", function () {
-                const lore = decodeURIComponent(button.getAttribute("data-lore"));
-                showAlert(lore, "info"); // Mostra o alerta customizado com a lore
+                if (!alertBox) { // Só cria um alerta se não houver um visível
+                    const lore = decodeURIComponent(button.getAttribute("data-lore"));
+                    showAlert(lore, "info"); // Mostra o alerta customizado com a lore
+                }
+            });
+
+            button.addEventListener("mouseout", function () {
+                hideAlert(); // Esconde o alerta quando o mouse sair do item
             });
 
             produtosUl.appendChild(li);
