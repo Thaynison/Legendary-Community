@@ -91,7 +91,14 @@ function CodigoPenalWithDiscord() {
     window.location.href = `relicario.html`;
 }
 
-// REDIRECT
+// RARITY
+
+function redirecionarParaIndex() {
+
+window.location.href = `index.html`;
+}
+
+// RARITY
 
 function redirecionarParaRarity() {
   const username = document.getElementById('username').textContent;
