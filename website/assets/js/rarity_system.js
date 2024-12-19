@@ -48,11 +48,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 </div>
             `;
 
-            // Adiciona evento de hover para exibir a lore ao passar o mouse
             const button = li.querySelector("a");
             button.addEventListener("mouseover", function () {
                 const lore = decodeURIComponent(button.getAttribute("data-lore"));
-                alert(lore); // Aqui pode ser feito de outra forma, como exibir em um tooltip
+                alert(lore);
             });
 
             produtosUl.appendChild(li);
