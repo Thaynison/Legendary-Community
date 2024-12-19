@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function showAlert(message, type = "info") {
         const alertBox = document.createElement('div');
-        alertBox.classList.add('alert', type, 'show');
+        alertBox.classList.add('alert', type);
 
         const closeButton = document.createElement('button');
         closeButton.classList.add('close-btn');
@@ -28,11 +28,15 @@ document.addEventListener("DOMContentLoaded", function () {
         alertBox.appendChild(closeButton);
         document.body.appendChild(alertBox);
 
-        // Adiciona um listener de mouseover para que o alerta não desapareça enquanto o mouse estiver sobre ele
+        // Mostra o alerta
+        alertBox.classList.add('show');
+
+        // Adiciona evento de mouseover para que o alerta não desapareça enquanto o mouse estiver sobre ele
         alertBox.addEventListener('mouseover', () => {
             alertBox.classList.add('show');
         });
 
+        // Quando o mouse sair do alerta, o alerta desaparece
         alertBox.addEventListener('mouseout', () => {
             alertBox.classList.remove('show');
         });
