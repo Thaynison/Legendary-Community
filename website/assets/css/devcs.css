@@ -155,3 +155,46 @@
 .form-register-ticket button:hover {
     background-color: #2980b9;
 }
+
+
+/* Estilo básico para o emoji */
+.form-list-tickets span {
+    position: relative;
+    cursor: pointer;
+}
+
+/* Tooltip estilizado */
+.form-list-tickets span::after {
+    content: attr(title); /* Usando o atributo title para mostrar o texto */
+    position: absolute;
+    bottom: 125%; /* Exibe o tooltip acima do emoji */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 8px;
+    border-radius: 5px;
+    font-size: 14px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none; /* Impede que o tooltip interfira com a interação */
+    transition: opacity 0.3s ease;
+    visibility: hidden;
+    z-index: 10;
+}
+
+/* Mostrar o tooltip quando o mouse está sobre o emoji */
+.form-list-tickets span:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Sombra suave para o tooltip */
+.form-list-tickets span::after {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Animação de transição suave */
+.form-list-tickets span::after {
+    transition: opacity 0.3s, bottom 0.3s ease-in-out;
+}

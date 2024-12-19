@@ -43,13 +43,13 @@ function getHistoricoTicketsSTAFF() {
             const getStatusInfo = (status) => {
                 switch (status) {
                     case 'Concluido':
-                        return { emoji: '✅', title: 'Concluído' };
+                        return { emoji: '✅', title: 'Ticket Concluído' };
                     case 'Reprovado':
-                        return { emoji: '❌', title: 'Reprovado' };
+                        return { emoji: '❌', title: 'Ticket Reprovado' };
                     case 'Em Analise':
-                        return { emoji: '🔎', title: 'Em Análise' };
+                        return { emoji: '🔎', title: 'Ticket Em Análise' };
                     default:
-                        return { emoji: '❓', title: 'Desconhecido' };
+                        return { emoji: '❓', title: 'Ticket Desconhecido' };
                 }
             };
 
