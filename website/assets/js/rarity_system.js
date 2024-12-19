@@ -1,5 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     const apiUrl = "https://dash.legendarycommunity.com.br/api/api_buscar_rarity_itens.php";
+    
+    let alertBox = null; // Variável para armazenar o alerta único
 
     async function fetchRarityItems() {
         try {
@@ -16,17 +18,23 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function showAlert(message, type = "info") {
-        const alertBox = document.createElement('div');
-        alertBox.classList.add('alert', type);
+        // Verifica se já existe um alerta na página
+        if (!alertBox) {
+            alertBox = document.createElement('div');
+            alertBox.classList.add('alert', type);
 
-        const closeButton = document.createElement('button');
-        closeButton.classList.add('close-btn');
-        closeButton.textContent = '×';
-        closeButton.onclick = () => alertBox.classList.remove('show'); // Fecha o alerta ao clicar
+            const closeButton = document.createElement('button');
+            closeButton.classList.add('close-btn');
+            closeButton.textContent = '×';
+            closeButton.onclick = () => alertBox.classList.remove('show'); // Fecha o alerta ao clicar
 
+            alertBox.appendChild(closeButton);
+            document.body.appendChild(alertBox);
+        }
+
+        // Atualiza o conteúdo do alerta
         alertBox.innerHTML = message;
-        alertBox.appendChild(closeButton);
-        document.body.appendChild(alertBox);
+        alertBox.appendChild(closeButton); // Re-add o botão de fechar (caso tenha sido removido)
 
         // Mostra o alerta
         alertBox.classList.add('show');
