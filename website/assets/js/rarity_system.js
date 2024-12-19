@@ -11,8 +11,27 @@ document.addEventListener("DOMContentLoaded", function () {
             displayItems(items);
         } catch (error) {
             console.error("Erro ao buscar os itens:", error);
-            alert("Não foi possível carregar os itens. Tente novamente mais tarde.");
+            showAlert("Não foi possível carregar os itens. Tente novamente mais tarde.", "error");
         }
+    }
+
+    function showAlert(message, type = "info") {
+        const alertBox = document.createElement('div');
+        alertBox.classList.add('alert', type, 'show');
+
+        const closeButton = document.createElement('button');
+        closeButton.classList.add('close-btn');
+        closeButton.textContent = '×';
+        closeButton.onclick = () => alertBox.classList.remove('show');
+
+        alertBox.innerHTML = message;
+        alertBox.appendChild(closeButton);
+        document.body.appendChild(alertBox);
+
+        setTimeout(() => {
+            alertBox.classList.remove('show');
+            document.body.removeChild(alertBox);
+        }, 5000); // O alerta desaparecerá após 5 segundos
     }
 
     function formatLore(lore) {
@@ -51,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const button = li.querySelector("a");
             button.addEventListener("mouseover", function () {
                 const lore = decodeURIComponent(button.getAttribute("data-lore"));
-                alert(lore);
+                showAlert(lore, "info"); // Mostra o alerta customizado com a lore
             });
 
             produtosUl.appendChild(li);
