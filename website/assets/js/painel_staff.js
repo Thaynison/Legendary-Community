@@ -257,6 +257,61 @@ function changeContent(contentType) {
                 });
             });
             break;
+        case 'register-rarity':
+            contentArea.innerHTML = `
+                <form class="form-register-rarity">
+                    <div class="form-field">
+                        <label for="item">Informar Nome do Item:</label>
+                        <input type="text" id="item" name="item" placeholder="Digite o Nome do Item" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="lore">Informar Lore do Item:</label>
+                        <textarea id="lore" name="lore" placeholder="Digite a Lore do Item" rows="10" required></textarea>
+                    </div>
+                    <div class="form-field">
+                        <label for="price">Informar Valor do Item:</label>
+                        <input type="number" id="price" name="price" placeholder="Digite o valor do Item" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="print">Informar Print do Item:</label>
+                        <input type="url" id="print" name="print" placeholder="Insira a Print do Item" required>
+                    </div>
+                    <button type="submit" class="button is-primary">Registrar Venda</button>
+                </form>
+            `;
+            const form3 = document.querySelector('.form-register-rarity');
+            form3.addEventListener('submit', function(event) {
+                event.preventDefault();
+                const formData = new FormData(form3);
+                fetch('https://dash.legendarycommunity.com.br/api/api_registrar_rarity.php', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        document.querySelector('.avisos5').style.display = 'flex';
+                        setTimeout(function() {
+                            document.querySelector('.avisos5').style.display = 'none';
+                        }, 5000);
+                        form3.reset();
+                    } else if (data.error) {
+                        document.querySelector('.avisos4').style.display = 'flex';
+                        setTimeout(function() {
+                            document.querySelector('.avisos4').style.display = 'none';
+                        }, 5000);
+                        form3.reset();
+                    }
+                })
+                .catch(error => {
+                    document.querySelector('.avisos4').style.display = 'flex';
+                    setTimeout(function() {
+                        document.querySelector('.avisos4').style.display = 'none';
+                    }, 5000);
+                    form3.reset();
+                });
+            });
+            break;
         case 'list-tickets':
             contentArea.innerHTML = `
                 <form class="form-list-tickets">
