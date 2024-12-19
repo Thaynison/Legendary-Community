@@ -22,6 +22,7 @@ fetch('https://dash.legendarycommunity.com.br/api/api_buscar_posts.php')
                             <li><i class="fas fa-calendar"></i> ${post.data}</li>
                         </ul>
                     </div>
+                    <br>
                 `;
 
                 // Adiciona o post à div principal
