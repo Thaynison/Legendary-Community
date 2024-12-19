@@ -194,6 +194,7 @@ a.is-muted:hover {
 }
 
 .equipe img {
+  height: 50px;
   transition: all .2s ease;
 }
 
@@ -202,8 +203,8 @@ a.is-muted:hover {
 }
 
 .equipe h1, .produtos h1 {
-  font-size: 1.5rem;
-  line-height: 1.25;
+  font-size: 1rem;
+  line-height: 0.85;
 }
 
 .equipe h2 {

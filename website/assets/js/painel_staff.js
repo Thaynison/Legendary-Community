@@ -363,7 +363,75 @@ function changeContent(contentType) {
             getHistoricoTicketsSTAFF();
             break;
         case 'create-post':
-            contentArea.innerHTML = "<h2>Criar Publicação</h2><p>Informações Em Breve.</p>";
+            contentArea.innerHTML = `
+                <form class="form-create-post">
+                    <div class="form-field">
+                        <label for="titulo">Informar Tituto da Publicação:</label>
+                        <input type="text" id="titulo" name="titulo" placeholder="Digite o Titulo da Publicação" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="descricao">Informar Descrição da Publicação:</label>
+                        <textarea id="descricao" name="descricao" placeholder="Digite a Descrição da Publicação" rows="10" required></textarea>
+                    </div>
+                    <div class="form-field">
+                        <label for="print">Informar Print da Publicação:</label>
+                        <input type="url" id="print" name="print" placeholder="Insira a Print da Publicação" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="autor">Informar Autor da Publicação:</label>
+                        <input type="text" id="autor" name="autor" placeholder="Insira o Nome do Autor da Publicação" required>
+                    </div>
+                    <button type="submit" class="button is-primary" id="submitBtn4">Registrar Venda</button>
+                </form>
+            `;
+            const form4 = document.querySelector('.form-create-post');
+            const submitBtn4 = document.getElementById('submitBtn4');
+            let isSubmitting4 = false;  // Flag to prevent multiple submissions
+
+            form3.addEventListener('submit', function(event) {
+                event.preventDefault();
+
+
+                // Prevent multiple submissions
+                if (isSubmitting) return;
+
+                isSubmitting4 = true;  // Set flag to true
+                submitBtn4.disabled = true;  // Disable the submit button to prevent multiple clicks
+        
+                                
+                const formData = new FormData(form3);
+                fetch('https://dash.legendarycommunity.com.br/api/api_registrar_post.php', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        document.querySelector('.avisos5').style.display = 'flex';
+                        setTimeout(function() {
+                            document.querySelector('.avisos5').style.display = 'none';
+                        }, 5000);
+                        form3.reset();
+                    } else if (data.error) {
+                        document.querySelector('.avisos4').style.display = 'flex';
+                        setTimeout(function() {
+                            document.querySelector('.avisos4').style.display = 'none';
+                        }, 5000);
+                        form3.reset();
+                    }
+                })
+                .catch(error => {
+                    document.querySelector('.avisos4').style.display = 'flex';
+                    setTimeout(function() {
+                        document.querySelector('.avisos4').style.display = 'none';
+                    }, 5000);
+                    form3.reset();
+                })
+                .finally(() => {
+                    isSubmitting4 = false;  // Reset flag
+                    submitBtn4.disabled = false;  // Re-enable the submit button
+                });
+            });
             break;
         default:
             contentArea.innerHTML = "<p>Escolha uma opção.</p>";
