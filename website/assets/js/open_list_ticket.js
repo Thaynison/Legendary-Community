@@ -138,12 +138,22 @@ function changeContent(contentType) {
                         <input type="url" id="print" name="print" placeholder="Anexar a URL da Print" required>
                         <a href="https://imgur.com/" target="_blank"><i class="fas fa-gamepad"></i> Site para upar foto</a>
                     </div>
-                    <button type="submit" class="button is-primary">Abrir Ticket</button>
+                    <button type="submit" class="button is-primary" id="submitBtn">Abrir Ticket</button>
                 </form>
             `;
             const form2 = document.querySelector('.form-register-ticket');
+            const submitBtn = document.getElementById('submitBtn');
+            let isSubmitting = false;  // Flag to prevent multiple submissions
+        
             form2.addEventListener('submit', function(event) {
                 event.preventDefault();
+        
+                // Prevent multiple submissions
+                if (isSubmitting) return;
+        
+                isSubmitting = true;  // Set flag to true
+                submitBtn.disabled = true;  // Disable the submit button to prevent multiple clicks
+        
                 const formData = new FormData(form2);
                 fetch('https://dash.legendarycommunity.com.br/api/api_registrar_ticket.php', {
                     method: 'POST',
@@ -171,9 +181,13 @@ function changeContent(contentType) {
                         document.querySelector('.avisos4').style.display = 'none';
                     }, 5000);
                     form2.reset();
+                })
+                .finally(() => {
+                    isSubmitting = false;  // Reset flag
+                    submitBtn.disabled = false;  // Re-enable the submit button
                 });
             });
-            break;
+            break;        
         case 'lista-de-ticket':
             contentArea.innerHTML = `
                 <form class="form-lista-de-ticket">
