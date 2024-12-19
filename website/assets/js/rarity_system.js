@@ -52,11 +52,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 const lore = decodeURIComponent(button.getAttribute("data-lore"));
                 const tooltip = document.createElement('div');
                 tooltip.classList.add('lore-tooltip');
+                tooltip.classList.add('show'); // Aplica a classe de exibição
                 tooltip.innerHTML = lore;
 
                 // Posiciona o tooltip
-                tooltip.style.top = `${event.clientY + 10}px`;
-                tooltip.style.left = `${event.clientX + 10}px`;
+                tooltip.style.top = `${event.clientY + 15}px`;
+                tooltip.style.left = `${event.clientX + 15}px`;
 
                 document.body.appendChild(tooltip);
 
