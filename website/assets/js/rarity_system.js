@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 <h1>${item.item}</h1>
                 <h2>${item.price} <small>/mês</small></h2>
                 <div class="buttons is-centered">
-                    <a href="#" onclick="viewalertlore()" class="button is-primary">
+                    <a href="#" onclick="viewalertlore('${ticket.lore}', event)" class="button is-primary">
                         <span class="icon is-small"><i class="fas fa-eye"></i></span>
                     </a>
                 </div>
@@ -40,3 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Inicializa a busca de itens
     fetchRarityItems();
 });
+
+function showImage(imageUrl) {
+    
+}
