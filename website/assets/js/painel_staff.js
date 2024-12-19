@@ -3,14 +3,10 @@ window.addEventListener('DOMContentLoaded', () => {
     const username = params.get('username');
     const userid = params.get('userid');
     const avatar = params.get('avatar');
+    
     document.getElementById('username').textContent = username;
-    document.getElementById('username2').textContent = username;
     document.getElementById('userid').textContent = userid;
-    document.getElementById('userid2').textContent = userid;
     document.getElementById('avatar').src = avatar;
-    document.getElementById('avatar2').src = avatar;
-
-    document.getElementById('userid2').value = userid;
 
     if (userid) {
         getHistoricoTicketsSTAFF();
