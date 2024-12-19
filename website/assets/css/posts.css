@@ -18,3 +18,11 @@
 .article .criar-div::-webkit-scrollbar-track {
     background: transparent; /* Fundo transparente para a área da barra de rolagem */
 }
+
+.article-thumbnail-posts {
+    width: 100%;
+    height: 300px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
