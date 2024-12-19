@@ -11,7 +11,7 @@
   <script src="/assets/js/bots.js"></script>
   <link rel="icon" href="assets/img/icon_server.png" type="image/png">
 
-  <script>
+<script>
     const hash = window.location.hash.substr(1);
     const params = new URLSearchParams(hash);
     const accessToken = params.get('access_token');
@@ -24,6 +24,12 @@
         })
         .then(response => response.json())
         .then(data => {
+            // Armazenar as informações no localStorage
+            localStorage.setItem('username', data.username);
+            localStorage.setItem('userid', data.id);
+            localStorage.setItem('avatar', `https://cdn.discordapp.com/avatars/${data.id}/${data.avatar}.png`);
+
+            // Atualizar a UI
             document.getElementById('avatar').src = `https://cdn.discordapp.com/avatars/${data.id}/${data.avatar}.png`;
             document.getElementById('username').textContent = data.username;
             document.getElementById('userid').textContent = data.id;
@@ -34,7 +40,8 @@
     } else {
         window.location.href = 'index.html';
     }
-  </script>
+</script>
+
 </head>
 <body>
 
@@ -75,6 +82,8 @@
             <a class="navbar-link"><i class="fas fa-shopping-cart"></i> Loja</a>
             <div class="navbar-dropdown">
               <a href="#" onclick="redirecionarParaloja()" class="navbar-item"><i class="fas fa-gem"></i> VIPs</a>
+              <hr class="navbar-divider">
+              <a href="#" onclick="redirecionarParaRarity()" class="navbar-item"><i class="fas fa-gem"></i> Rarity's</a>
               <hr class="navbar-divider">
               <a href="#" onclick="redirecionarParaTermos()" class="navbar-item">Informações importantes</a>
             </div>
@@ -150,6 +159,11 @@
               <li>
                 <img src="http://cravatar.eu/head/niizinho/128.png">
                 <h1>niizinho</h1>
+                <h2 class="cor-b">Ajudante</h2>
+              </li>
+              <li>
+                <img src="http://cravatar.eu/head/EvelynBetteher/128.png">
+                <h1>EvelynBetteher</h1>
                 <h2 class="cor-b">Ajudante</h2>
               </li>
             </ul>

@@ -91,6 +91,16 @@ function CodigoPenalWithDiscord() {
     window.location.href = `relicario.html`;
 }
 
+// REDIRECT
+
+function redirecionarParaRarity() {
+  const username = document.getElementById('username').textContent;
+  const userid = document.getElementById('userid').textContent;
+  const avatar = document.getElementById('avatar').src;
+
+window.location.href = `rarity.html?username=${encodeURIComponent(username)}&userid=${encodeURIComponent(userid)}&avatar=${encodeURIComponent(avatar)}`;
+}
+
 // INFO BAN
 
 function redirecionarParaInfoBan() {

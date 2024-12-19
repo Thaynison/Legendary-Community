@@ -92,7 +92,6 @@ function getHistoricoTicketsSTAFF() {
         });
 }
 
-
 function showImage(imageUrl) {
     event.preventDefault();
     const modal = document.createElement('div');
