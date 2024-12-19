@@ -16,6 +16,11 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function formatLore(lore) {
+        // Verifica se lore é uma string, caso contrário, assume que já é um array
+        if (typeof lore === 'string') {
+            lore = lore.split('\n'); // Se for string, divide por novas linhas
+        }
+
         return lore.map(line => {
             if (line.trim() === "") return ""; // Remove linhas vazias
             return `<p>${line.replace(/&([0-9a-fk-or])/g, '<span style="color:$1">')}&nbsp;</p>`; // Converte as cores do item
