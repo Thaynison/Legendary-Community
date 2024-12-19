@@ -16,24 +16,25 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function formatLore(lore) {
+        // Verifica se lore é uma string, caso contrário, assume que já é um array
         if (typeof lore === 'string') {
-            lore = lore.split('\n');
+            lore = lore.split('\n'); // Se for string, divide por novas linhas
         }
 
         return lore.map(line => {
-            if (line.trim() === "") return ""; 
-            return `<p>${line.replace(/&([0-9a-fk-or])/g, '<span style="color:$1">')}&nbsp;</p>`;
-        }).join('');
+            if (line.trim() === "") return ""; // Remove linhas vazias
+            return `<p>${line.replace(/&([0-9a-fk-or])/g, '<span style="color:$1">')}&nbsp;</p>`; // Converte as cores do item
+        }).join(''); // Junta as linhas formatadas em uma única string
     }
 
     function displayItems(items) {
         const produtosUl = document.querySelector(".produtos");
-        produtosUl.innerHTML = ""; 
+        produtosUl.innerHTML = ""; // Limpa a lista antes de adicionar os itens
 
         items.forEach(item => {
             const li = document.createElement("li");
 
-            const loreFormatted = formatLore(item.lore); 
+            const loreFormatted = formatLore(item.lore); // Formata a lore
 
             li.innerHTML = `
                 <img src="${item.print}" alt="${item.item}">
@@ -47,24 +48,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 </div>
             `;
 
+            // Adiciona evento de hover para exibir a lore ao passar o mouse
             const button = li.querySelector("a");
-            button.addEventListener("mouseover", function (event) {
+            button.addEventListener("mouseover", function () {
                 const lore = decodeURIComponent(button.getAttribute("data-lore"));
-                const tooltip = document.createElement('div');
-                tooltip.classList.add('lore-tooltip');
-                tooltip.classList.add('show'); // Aplica a classe de exibição
-                tooltip.innerHTML = lore;
-
-                // Posiciona o tooltip
-                tooltip.style.top = `${event.clientY + 15}px`;
-                tooltip.style.left = `${event.clientX + 15}px`;
-
-                document.body.appendChild(tooltip);
-
-                // Remove o tooltip quando o mouse sai
-                button.addEventListener('mouseout', function () {
-                    tooltip.remove();
-                });
+                alert(lore); // Aqui pode ser feito de outra forma, como exibir em um tooltip
             });
 
             produtosUl.appendChild(li);
