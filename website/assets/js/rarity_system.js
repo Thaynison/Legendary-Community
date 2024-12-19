@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 <h1>${item.item}</h1>
                 <h2>${item.price} <small>/mês</small></h2>
                 <div class="buttons is-centered">
-                    <a href="#" onclick="viewalertlore('${ticket.lore}', event)" class="button is-primary">
+                    <a href="#" onclick="viewalertlore('${item.lore}', event)" class="button is-primary">
                         <span class="icon is-small"><i class="fas fa-eye"></i></span>
                     </a>
                 </div>
@@ -41,6 +41,25 @@ document.addEventListener("DOMContentLoaded", function () {
     fetchRarityItems();
 });
 
-function showImage(imageUrl) {
-    
+function viewalertlore(loreView) {
+    // Divide a lore em linhas, remove as linhas vazias e as aspas
+    const lines = loreView.split('","').map(line => line.replace(/["]/g, '').trim()).filter(line => line !== "");
+
+    // Cria um alerta com a lore formatada
+    const formattedLore = lines.map(line => `<p>${line}</p>`).join('');
+
+    // Exibe o alerta com a lore formatada
+    const alertBox = document.createElement("div");
+    alertBox.classList.add("alert", "alert-info");
+    alertBox.innerHTML = `<span>${formattedLore}</span>`;
+
+    // Adiciona o alerta ao corpo do documento
+    document.body.appendChild(alertBox);
+
+    // Você pode também adicionar um botão de fechamento, se necessário:
+    const closeButton = document.createElement("button");
+    closeButton.innerText = "Fechar";
+    closeButton.classList.add("close-alert");
+    closeButton.onclick = () => alertBox.remove();
+    alertBox.appendChild(closeButton);
 }

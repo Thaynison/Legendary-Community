@@ -1,0 +1,44 @@
+/* Estilo para o alerta */
+.rarity .alert {
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8); /* Fundo escuro com transparência */
+    color: #fff; /* Texto branco */
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 80%;
+    width: 400px;
+    z-index: 9999; /* Certifica que o alerta ficará sobre outros elementos */
+    font-family: Arial, sans-serif;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    overflow-y: auto;
+    max-height: 70vh; /* Limita a altura máxima do alerta */
+    white-space: pre-wrap; /* Para manter a formatação original */
+}
+
+/* Estilo para as linhas de lore */
+.rarity .alert p {
+    margin: 10px 0;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Estilo para o botão de fechamento */
+.rarity .close-alert {
+    background-color: #e74c3c; /* Cor vermelha para o botão de fechamento */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+/* Efeito de hover no botão de fechamento */
+.rarity .close-alert:hover {
+    background-color: #c0392b;
+}
