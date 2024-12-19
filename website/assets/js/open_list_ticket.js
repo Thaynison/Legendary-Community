@@ -134,9 +134,9 @@ function changeContent(contentType) {
                         <textarea id="descricao" name="descricao" placeholder="Informar Descrição do Ticket" required></textarea>
                     </div>
                     <div class="form-field">
-                        <a href="https://imgur.com/"><i class="fas fa-gamepad"></i> Site para upar foto</a>
                         <label for="print">Anexar Print:</label>
                         <input type="url" id="print" name="print" placeholder="Anexar Print" required>
+                        <a href="https://imgur.com/" target="_blank"><i class="fas fa-gamepad"></i> Site para upar foto</a>
                     </div>
                     <button type="submit" class="button is-primary">Abrir Ticket</button>
                 </form>
