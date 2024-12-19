@@ -37,3 +37,20 @@
     height: 1px;
     margin-top: -1px;
 }
+
+
+
+
+/* Para navegadores Webkit, como o Chrome */
+.article .jogadores::-webkit-scrollbar {
+    width: 8px; /* Largura da barra de rolagem */
+}
+
+.article .jogadores::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.5); /* Cor da barra de rolagem */
+    border-radius: 10px; /* Arredonda os cantos da barra de rolagem */
+}
+
+.article .jogadores::-webkit-scrollbar-track {
+    background: transparent; /* Fundo transparente para a área da barra de rolagem */
+}
