@@ -22,16 +22,20 @@ document.addEventListener("DOMContentLoaded", function () {
         const closeButton = document.createElement('button');
         closeButton.classList.add('close-btn');
         closeButton.textContent = '×';
-        closeButton.onclick = () => alertBox.classList.remove('show');
+        closeButton.onclick = () => alertBox.classList.remove('show'); // Fecha o alerta ao clicar
 
         alertBox.innerHTML = message;
         alertBox.appendChild(closeButton);
         document.body.appendChild(alertBox);
 
-        setTimeout(() => {
+        // Adiciona um listener de mouseover para que o alerta não desapareça enquanto o mouse estiver sobre ele
+        alertBox.addEventListener('mouseover', () => {
+            alertBox.classList.add('show');
+        });
+
+        alertBox.addEventListener('mouseout', () => {
             alertBox.classList.remove('show');
-            document.body.removeChild(alertBox);
-        }, 5000); // O alerta desaparecerá após 5 segundos
+        });
     }
 
     function formatLore(lore) {
