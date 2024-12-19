@@ -15,6 +15,13 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    function formatLore(lore) {
+        return lore.map(line => {
+            if (line.trim() === "") return ""; // Remove linhas vazias
+            return `<p>${line.replace(/&([0-9a-fk-or])/g, '<span style="color:$1">')}&nbsp;</p>`; // Converte as cores do item
+        }).join(''); // Junta as linhas formatadas em uma única string
+    }
+
     function displayItems(items) {
         const produtosUl = document.querySelector(".produtos");
         produtosUl.innerHTML = ""; // Limpa a lista antes de adicionar os itens
@@ -22,48 +29,30 @@ document.addEventListener("DOMContentLoaded", function () {
         items.forEach(item => {
             const li = document.createElement("li");
 
-            console.log(item.lore)
-            
+            const loreFormatted = formatLore(item.lore); // Formata a lore
+
             li.innerHTML = `
                 <img src="${item.print}" alt="${item.item}">
                 <h1>${item.item}</h1>
                 <h2>${item.price} <small>/mês</small></h2>
                 <div class="buttons is-centered">
-                    <a href="#" onclick="viewalertlore('${item.lore}', event)" class="button is-primary">
+                    <a href="#" class="button is-primary" 
+                       data-lore="${encodeURIComponent(loreFormatted)}">
                         <span class="icon is-small"><i class="fas fa-eye"></i></span>
                     </a>
                 </div>
             `;
 
+            // Adiciona evento de hover para exibir a lore ao passar o mouse
+            const button = li.querySelector("a");
+            button.addEventListener("mouseover", function () {
+                const lore = decodeURIComponent(button.getAttribute("data-lore"));
+                alert(lore); // Aqui pode ser feito de outra forma, como exibir em um tooltip
+            });
+
             produtosUl.appendChild(li);
         });
     }
 
-    // Inicializa a busca de itens
     fetchRarityItems();
 });
-
-function viewalertlore(loreView, event) {
-    event.preventDefault(); // Impede que o link seja seguido
-
-    // Divide a lore em linhas, remove as linhas vazias e as aspas
-    const lines = loreView.split('","').map(line => line.replace(/["]/g, '').trim()).filter(line => line !== "");
-
-    // Cria um alerta com a lore formatada
-    const formattedLore = lines.map(line => `<p>${line}</p>`).join('');
-
-    // Exibe o alerta com a lore formatada
-    const alertBox = document.createElement("div");
-    alertBox.classList.add("alert", "alert-info");
-    alertBox.innerHTML = `<span>${formattedLore}</span>`;
-
-    // Adiciona o alerta ao corpo do documento
-    document.body.appendChild(alertBox);
-
-    // Adiciona um botão de fechamento, se necessário:
-    const closeButton = document.createElement("button");
-    closeButton.innerText = "Fechar";
-    closeButton.classList.add("close-alert");
-    closeButton.onclick = () => alertBox.remove();
-    alertBox.appendChild(closeButton);
-}
