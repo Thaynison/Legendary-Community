@@ -28,6 +28,20 @@ function getHistoricoTickets(userid) {
             if (data.error) {
                 document.querySelector('.form-lista-de-ticket').innerHTML = `<p>${data.error}</p>`;
             } else {
+
+                const getStatusInfo = (status) => {
+                    switch (status) {
+                        case 'Concluido':
+                            return { emoji: '✅', title: 'Ticket Concluído' };
+                        case 'Reprovado':
+                            return { emoji: '❌', title: 'Ticket Reprovado' };
+                        case 'Em Analise':
+                            return { emoji: '🔎', title: 'Ticket Em Análise' };
+                        default:
+                            return { emoji: '❓', title: 'Ticket Desconhecido' };
+                    }
+                };
+
                 let htmlContent = '<table class="table is-fullwidth">';
                 htmlContent += `<thead>
                                     <tr>
@@ -40,11 +54,15 @@ function getHistoricoTickets(userid) {
 
                 if (Array.isArray(data)) {
                     data.forEach(tickets => {
+                        const statusInfo = getStatusInfo(ticket.status);
                         htmlContent += `<tr>
                                             <td>${tickets.id_ticket}</td>
                                             <td>${tickets.username}</td>
                                             <td>${tickets.descricao}</td>
                                             <td><button class="eye-button" onclick="showImage('${tickets.print}', event)">👁️</button></td>
+                                            <td>
+                                                <span title="${statusInfo.title}">${statusInfo.emoji}</span>
+                                            </td>
                                         </tr>`;
                     });
                 } else {
