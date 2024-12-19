@@ -57,7 +57,7 @@ fetch('https://dash.legendarycommunity.com.br/api/api_buscar_posts.php')
         } else {
             document.querySelector('.criar-div').innerHTML = `
             <div class="article-content">
-                <h2 class="post-title">Nenhuma publicação localizada!</h2>
+                <h2 class="post-title">Nenhuma publicação localizada.</h2>
             </div>
             `;
         }

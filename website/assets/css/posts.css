@@ -1,22 +1,21 @@
 .article .criar-div {
-    max-height: 490px; /* Defina a altura máxima conforme necessário */
-    overflow-y: auto; /* Permite a rolagem vertical */
-    scrollbar-width: thin; /* Define a largura da barra de rolagem (para Firefox) */
-    scrollbar-color: rgba(0, 0, 0, 0.5) transparent; /* Define a cor da barra de rolagem e da área de fundo (para Firefox) */
+    max-height: 490px; 
+    overflow-y: auto;
+    scrollbar-width: thin; 
+    scrollbar-color: rgba(0, 0, 0, 0.5) transparent;
 }
 
-/* Para navegadores Webkit, como o Chrome */
 .article .criar-div::-webkit-scrollbar {
-    width: 8px; /* Largura da barra de rolagem */
+    width: 8px;
 }
 
 .article .criar-div::-webkit-scrollbar-thumb {
-    background-color: rgba(0, 0, 0, 0.5); /* Cor da barra de rolagem */
-    border-radius: 10px; /* Arredonda os cantos da barra de rolagem */
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
 }
 
 .article .criar-div::-webkit-scrollbar-track {
-    background: transparent; /* Fundo transparente para a área da barra de rolagem */
+    background: transparent;
 }
 
 .article-thumbnail-posts {
@@ -33,17 +32,22 @@
     margin-top: -1px;
 }
 
-
-/* Para navegadores Webkit, como o Chrome */
 .article .jogadores::-webkit-scrollbar {
-    width: 8px; /* Largura da barra de rolagem */
+    width: 8px;
+}
+
+.article .jogadores {
+    max-height: 100px; 
+    overflow-y: auto;
+    scrollbar-width: thin; 
+    scrollbar-color: rgba(0, 0, 0, 0.5) transparent;
 }
 
 .article .jogadores::-webkit-scrollbar-thumb {
-    background-color: rgba(0, 0, 0, 0.5); /* Cor da barra de rolagem */
-    border-radius: 10px; /* Arredonda os cantos da barra de rolagem */
+    background-color: rgba(0, 0, 0, 0.5); 
+    border-radius: 10px;
 }
 
 .article .jogadores::-webkit-scrollbar-track {
-    background: transparent; /* Fundo transparente para a área da barra de rolagem */
+    background: transparent;
 }
