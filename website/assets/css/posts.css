@@ -37,7 +37,7 @@
 }
 
 .article .jogadores {
-    max-height: 200px; 
+    max-height: 300px; 
     overflow-y: auto;
     scrollbar-width: thin; 
     scrollbar-color: rgba(0, 0, 0, 0.5) transparent;
