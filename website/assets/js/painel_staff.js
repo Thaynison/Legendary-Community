@@ -3,7 +3,7 @@ window.addEventListener('DOMContentLoaded', () => {
     const username = params.get('username');
     const userid = params.get('userid');
     const avatar = params.get('avatar');
-    
+
     document.getElementById('username').textContent = username;
     document.getElementById('userid').textContent = userid;
     document.getElementById('avatar').src = avatar;
@@ -39,6 +39,20 @@ function getHistoricoTicketsSTAFF() {
                 return;
             }
 
+            // Função para mapear o status para emojis
+            const getStatusEmoji = (status) => {
+                switch (status) {
+                    case 'Concluido':
+                        return '✅';
+                    case 'Reprovado':
+                        return '❌';
+                    case 'Em Analise':
+                        return '🔎';
+                    default:
+                        return '❓'; // Emoji para status desconhecido
+                }
+            };
+
             let htmlContent = `
                 <table class="table is-fullwidth">
                     <thead>
@@ -47,6 +61,7 @@ function getHistoricoTicketsSTAFF() {
                             <th>Username</th>
                             <th>Descrição</th>
                             <th>Print</th>
+                            <th>Status</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -61,6 +76,9 @@ function getHistoricoTicketsSTAFF() {
                         <td>
                             <button class="eye-button" onclick="showImage('${ticket.print}', event)">👁️</button>
                         </td>
+                        <td>
+                            ${getStatusEmoji(ticket.status)}
+                        </td>
                     </tr>`;
             });
 
@@ -72,7 +90,6 @@ function getHistoricoTicketsSTAFF() {
             container.innerHTML = `<p class="error">Erro ao carregar os dados: ${error.message}</p>`;
         });
 }
-
 
 function showImage(imageUrl) {
     event.preventDefault();
