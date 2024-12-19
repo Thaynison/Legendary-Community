@@ -5,12 +5,13 @@ document.addEventListener("DOMContentLoaded", function () {
         try {
             const response = await fetch(apiUrl);
             if (!response.ok) {
-                throw new Error(`Erro na requisição: ${response.status}`);
+                throw new Error(`Erro na requisição: ${response.status} ${response.statusText}`);
             }
             const items = await response.json();
             displayItems(items);
         } catch (error) {
             console.error("Erro ao buscar os itens:", error);
+            alert("Não foi possível carregar os itens. Tente novamente mais tarde.");
         }
     }
 
