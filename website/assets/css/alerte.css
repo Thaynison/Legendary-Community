@@ -43,7 +43,7 @@
     font-size: 1.5rem;
     margin-bottom: 15px;
     text-align: center;
-    border-bottom: 2px solid #00bcd4; /* Linha decorativa */
+    border-bottom: 2px solid #c200d4; /* Linha decorativa */
     padding-bottom: 10px;
 }
 
@@ -58,7 +58,7 @@
 
 /* Botão de ação */
 .alert-modal button {
-    background-color: #00bcd4; /* Cor principal baseada na linha decorativa */
+    background-color: #c200d4; /* Cor principal baseada na linha decorativa */
     color: #ffffff;
     padding: 10px 20px;
     font-size: 1rem;
@@ -72,7 +72,7 @@
 }
 
 .alert-modal button:hover {
-    background-color: #0097a7; /* Tom mais escuro ao passar o mouse */
+    background-color: #a7009f; /* Tom mais escuro ao passar o mouse */
 }
 
 /* Ícone de alerta no topo */
@@ -81,7 +81,7 @@
     top: -25px;
     left: 50%;
     transform: translateX(-50%);
-    background-color: #00bcd4;
+    background-color: #c200d4;
     width: 50px;
     height: 50px;
     border-radius: 50%;
