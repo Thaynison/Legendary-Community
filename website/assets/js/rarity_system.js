@@ -23,8 +23,8 @@ document.addEventListener("DOMContentLoaded", function () {
             const li = document.createElement("li");
 
             li.innerHTML = `
-                <img src="${item.image_url}" alt="${item.name}">
-                <h1>${item.name}</h1>
+                <img src="${item.print}" alt="${item.item}">
+                <h1>${item.item}</h1>
                 <h2>${item.price} <small>/mês</small></h2>
                 <div class="buttons is-centered">
                     <a href="#" onclick="viewalertlore()" class="button is-primary">
