@@ -135,7 +135,7 @@ function changeContent(contentType) {
                     </div>
                     <div class="form-field">
                         <label for="print">Anexar Print:</label>
-                        <input type="url" id="print" name="print" placeholder="Anexar Print" required>
+                        <input type="url" id="print" name="print" placeholder="Anexar a URL da Print" required>
                         <a href="https://imgur.com/" target="_blank"><i class="fas fa-gamepad"></i> Site para upar foto</a>
                     </div>
                     <button type="submit" class="button is-primary">Abrir Ticket</button>
