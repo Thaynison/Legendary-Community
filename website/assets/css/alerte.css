@@ -1,5 +1,5 @@
 /* Estilo para o alerta */
-.rarity .alert {
+.alert {
     position: fixed;
     top: 20%;
     left: 50%;
@@ -19,14 +19,14 @@
 }
 
 /* Estilo para as linhas de lore */
-.rarity .alert p {
+.alert p {
     margin: 10px 0;
     font-size: 16px;
     line-height: 1.6;
 }
 
 /* Estilo para o botão de fechamento */
-.rarity .close-alert {
+.close-alert {
     background-color: #e74c3c; /* Cor vermelha para o botão de fechamento */
     color: white;
     border: none;
@@ -39,6 +39,6 @@
 }
 
 /* Efeito de hover no botão de fechamento */
-.rarity .close-alert:hover {
+.close-alert:hover {
     background-color: #c0392b;
 }
