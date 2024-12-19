@@ -138,8 +138,16 @@
 <script src="assets/js/scripts.js"></script>
 <script defer src="https://use.fontawesome.com/releases/v5.12.1/js/all.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-
+<script>
+    function copyToClipboard() {
+        var input = document.getElementById("ip");
+    
+        input.select();
+        input.setSelectionRange(0, 99999);
+    
+        document.execCommand("copy");
+    }
+</script>
 </body>
 
 </html>
