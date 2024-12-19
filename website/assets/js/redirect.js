@@ -111,6 +111,16 @@ function redirecionarParaInfoBan() {
 window.location.href = `infoban.html?username=${encodeURIComponent(username)}&userid=${encodeURIComponent(userid)}&avatar=${encodeURIComponent(avatar)}`;
 }
 
+// INFO PUBLICAÇÕES
+
+function redirecionarParaPublicacoes() {
+  // const username = document.getElementById('username').textContent;
+  // const userid = document.getElementById('userid').textContent;
+  // const avatar = document.getElementById('avatar').src;
+
+window.location.href = `posts.html`;
+}
+
 // PRODUTOS 
 
 function redirecionarPara_vip_warrior() {
