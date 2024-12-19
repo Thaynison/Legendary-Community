@@ -34,8 +34,6 @@
 }
 
 
-
-
 /* Para navegadores Webkit, como o Chrome */
 .article .jogadores::-webkit-scrollbar {
     width: 8px; /* Largura da barra de rolagem */

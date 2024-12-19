@@ -55,7 +55,11 @@ fetch('https://dash.legendarycommunity.com.br/api/api_buscar_posts.php')
 
             observer.observe(observerTarget);
         } else {
-            document.querySelector('.criar-div').innerHTML = "<p>Nenhuma publicação encontrada.</p>";
+            document.querySelector('.criar-div').innerHTML = `
+            <div class="article-content">
+                <h2 class="post-title">Nenhuma publicação localizada!</h2>
+            </div>
+            `;
         }
     })
     .catch(error => {
