@@ -381,7 +381,7 @@ function changeContent(contentType) {
                         <label for="autor">Informar Autor da Publicação:</label>
                         <input type="text" id="autor" name="autor" placeholder="Insira o Nome do Autor da Publicação" required>
                     </div>
-                    <button type="submit" class="button is-primary" id="submitBtn4">Registrar Venda</button>
+                    <button type="submit" class="button is-primary" id="submitBtn4">Criar Publicação</button>
                 </form>
             `;
             const form4 = document.querySelector('.form-create-post');
