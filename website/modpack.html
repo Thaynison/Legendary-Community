@@ -8,20 +8,7 @@
   <link rel="stylesheet" href="assets/css/bulma.min.css">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/modpack.css">
-  <script src="/assets/js/redirect.js"></script>
   <link rel="icon" href="assets/img/icon_server.png" type="image/png">
-  <script>
-    window.addEventListener('DOMContentLoaded', () => {
-        const params = new URLSearchParams(window.location.search);
-        const username = params.get('username');
-        const userid = params.get('userid');
-        const avatar = params.get('avatar');
-        document.getElementById('username').textContent = username;
-        document.getElementById('userid').textContent = userid;
-        document.getElementById('avatar').src = avatar;
-    });
-</script>
-  <meta http-equiv="Content-Security-Policy" content="default-src https: http:; script-src https: http:; style-src https: http:;">
 </head>
 
 <body>
@@ -130,42 +117,10 @@
 <script src="assets/js/scripts.js"></script>
 <script defer src="https://use.fontawesome.com/releases/v5.12.1/js/all.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-<script>
-    document.getElementById('downloadBtnVanilla').addEventListener('click', function() {
-        fetch('https://api.github.com/repos/Thaynison/Legendary-Community/releases/latest')
-            .then(response => response.json())
-            .then(data => {
-                const asset = data.assets[0];
-                if (asset) {
-                    window.location.href = asset.browser_download_url;
-                } else {
-                    alert('Nenhum arquivo disponível para download.');
-                }
-            })
-            .catch(error => {
-                console.error('Erro ao obter a última release:', error);
-                alert('Erro ao obter a última release.');
-            });
-    });
-
-    document.getElementById('downloadBtnIndustrial').addEventListener('click', function() {
-        fetch('https://api.github.com/repos/Thaynison/Legendary-Community-Industrial/releases/latest')
-            .then(response => response.json())
-            .then(data => {
-                const asset = data.assets[0];
-                if (asset) {
-                    window.location.href = asset.browser_download_url;
-                } else {
-                    alert('Nenhum arquivo disponível para download.');
-                }
-            })
-            .catch(error => {
-                console.error('Erro ao obter a última release:', error);
-                alert('Erro ao obter a última release.');
-            });
-    });
-</script>
-
+<script src="/assets/js/modpack.js"></script>
+<script src="/assets/js/redirect.js"></script>
+<script src="/assets/js/sair.js"></script>
+<script src="/assets/js/connect_discord.js"></script>
 </body>
 
 </html>
