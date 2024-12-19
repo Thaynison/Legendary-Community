@@ -41,7 +41,9 @@ document.addEventListener("DOMContentLoaded", function () {
     fetchRarityItems();
 });
 
-function viewalertlore(loreView) {
+function viewalertlore(loreView, event) {
+    event.preventDefault(); // Impede que o link seja seguido
+
     // Divide a lore em linhas, remove as linhas vazias e as aspas
     const lines = loreView.split('","').map(line => line.replace(/["]/g, '').trim()).filter(line => line !== "");
 
@@ -56,7 +58,7 @@ function viewalertlore(loreView) {
     // Adiciona o alerta ao corpo do documento
     document.body.appendChild(alertBox);
 
-    // Você pode também adicionar um botão de fechamento, se necessário:
+    // Adiciona um botão de fechamento, se necessário:
     const closeButton = document.createElement("button");
     closeButton.innerText = "Fechar";
     closeButton.classList.add("close-alert");
