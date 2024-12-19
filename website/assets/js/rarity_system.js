@@ -22,6 +22,8 @@ document.addEventListener("DOMContentLoaded", function () {
         items.forEach(item => {
             const li = document.createElement("li");
 
+            console.log(item.lore)
+            
             li.innerHTML = `
                 <img src="${item.print}" alt="${item.item}">
                 <h1>${item.item}</h1>
