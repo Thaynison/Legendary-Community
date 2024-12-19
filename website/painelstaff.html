@@ -9,18 +9,8 @@
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/devcs.css">
   <script src="/assets/js/redirect.js"></script>
+  <script src="/assets/js/painel_staff.js"></script>
   <link rel="icon" href="assets/img/icon_server.png" type="image/png">
-  <script>
-    window.addEventListener('DOMContentLoaded', () => {
-        const params = new URLSearchParams(window.location.search);
-        const username = params.get('username');
-        const userid = params.get('userid');
-        const avatar = params.get('avatar');
-        document.getElementById('username').textContent = username;
-        document.getElementById('userid').textContent = userid;
-        document.getElementById('avatar').src = avatar;
-    });
-</script>
 <style>
   .avisos5 {
       display: none;
@@ -113,6 +103,8 @@
                         <br>
                         <a class="button is-primary" onclick="changeContent('register-sale')">Registrar Venda</a>
                         <br>
+                        <a class="button is-primary" onclick="changeContent('list-tickets')">Tickets Abertos</a>
+                        <br>
                         <a class="button is-primary" onclick="changeContent('create-post')">Criar Publicação</a>
                     </div>
                 </article>
@@ -132,6 +124,7 @@
     </div>
   </main>
 
+  
 <footer class="section">
   <div class="container">
     <article class="footer">
@@ -140,149 +133,7 @@
     </article>
   </div>
 </footer>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="assets/js/scripts.js"></script>
-<script defer src="https://use.fontawesome.com/releases/v5.12.1/js/all.js"></script>
-<script>
-  function changeContent(contentType) {
-      var contentArea = document.getElementById("content-area");
 
-      switch(contentType) {
-          case 'register-ban':
-              contentArea.innerHTML = `
-                      <form class="form-register-ban">
-                          <div class="form-field">
-                              <label for="userid">Informar ID do Discord:</label>
-                              <input type="text" id="userid" name="userid" placeholder="Digite o User ID" required>
-                          </div>
-                          <div class="form-field">
-                              <label for="ip_ban">Informar IP Banido:</label>
-                              <input type="text" id="ip_ban" name="ip_ban" placeholder="Digite o IP Banido" required>
-                          </div>
-                          <div class="form-field">
-                              <label for="discord_ban">Informar Nome do Discord:</label>
-                              <input type="text" id="discord_ban" name="discord_ban" placeholder="Digite o nome do Discord" required>
-                          </div>
-                          <div class="form-field">
-                              <label for="username">Informar Nome do Minecraft:</label>
-                              <input type="text" id="username" name="username" placeholder="Digite o nome do Minecraft" required>
-                          </div>
-                          <div class="form-field">
-                              <label for="print">Informar Link do Print:</label>
-                              <input type="url" id="print" name="print" placeholder="Cole o link do print" required>
-                          </div>
-                          <div class="form-field">
-                              <label for="motivo">Informar Motivo do Banimento:</label>
-                              <textarea id="motivo" name="motivo" placeholder="Descreva o motivo do banimento" rows="4" required></textarea>
-                          </div>
-                          <button type="submit" class="button is-primary">Registrar Banumento</button>
-                      </form>
-              `;
-              const form = document.querySelector('.form-register-ban');
-              form.addEventListener('submit', function(event) {
-                  event.preventDefault();
-                  const formData = new FormData(form);
-                  fetch('https://dash.legendarycommunity.com.br/api/api_registrar_ban.php', {
-                      method: 'POST',
-                      body: formData
-                  })
-                  .then(response => response.json())
-                  .then(data => {
-                      if (data.success) {
-                          document.querySelector('.avisos5').style.display = 'flex';
-                          setTimeout(function() {
-                              document.querySelector('.avisos5').style.display = 'none';
-                          }, 5000);
-                          form.reset();
-                      } else if (data.error) {
-                          document.querySelector('.avisos4').style.display = 'flex';
-                          setTimeout(function() {
-                              document.querySelector('.avisos4').style.display = 'none';
-                          }, 5000);
-                          form.reset();
-                      }
-                  })
-                  .catch(error => {
-                      document.querySelector('.avisos4').style.display = 'flex';
-                      setTimeout(function() {
-                          document.querySelector('.avisos4').style.display = 'none';
-                      }, 5000);
-                      form.reset();
-                  });
-              });
-              break;
-          case 'register-sale':
-              contentArea.innerHTML = `
-                      <form class="form-register-sale">
-                          <div class="form-field">
-                              <label for="username">Informar Nome do Minecraft:</label>
-                              <input type="text" id="username" name="username" placeholder="Digite o nome do Minecraft" required>
-                          </div>
-                          <div class="form-field">
-                              <label for="userid">Informar ID do Discord:</label>
-                              <input type="text" id="userid" name="userid" placeholder="Digite o User ID do Discord" required>
-                          </div>
-                          <div class="form-field">
-                              <label for="codigo">Codigo do Produto:</label>
-                              <input type="text" id="codigo" name="codigo" placeholder="Digite o codigo do Produto" required>
-                          </div>
-                          <div class="form-field">
-                              <label for="produto">Informar Nome do Produto:</label>
-                              <input type="text" id="produto" name="produto" placeholder="Digite o nome do Produto" required>
-                          </div>
-                          <div class="form-field">
-                              <label for="valor">Informar Valor do Produto:</label>
-                              <input type="number" id="valor" name="valor" placeholder="Digite o valor do Produto" required>
-                          </div>
-                          <div class="form-field">
-                              <label for="data_compra">Informar Data da Compra:</label>
-                              <input type="date" id="data_compra" name="data_compra" placeholder="Digite a data da Compra" required>
-                          </div>
-                          <button type="submit" class="button is-primary">Registrar Venda</button>
-                      </form>
-              `;
-              const form2 = document.querySelector('.form-register-sale');
-              form2.addEventListener('submit', function(event) {
-                  event.preventDefault();
-                  const formData = new FormData(form2);
-                  fetch('https://dash.legendarycommunity.com.br/api/api_registrar_venda.php', {
-                      method: 'POST',
-                      body: formData
-                  })
-                  .then(response => response.json())
-                  .then(data => {
-                      if (data.success) {
-                          document.querySelector('.avisos5').style.display = 'flex';
-                          setTimeout(function() {
-                              document.querySelector('.avisos5').style.display = 'none';
-                          }, 5000);
-                          form2.reset();
-                      } else if (data.error) {
-                          document.querySelector('.avisos4').style.display = 'flex';
-                          setTimeout(function() {
-                              document.querySelector('.avisos4').style.display = 'none';
-                          }, 5000);
-                          form2.reset();
-                      }
-                  })
-                  .catch(error => {
-                      document.querySelector('.avisos4').style.display = 'flex';
-                      setTimeout(function() {
-                          document.querySelector('.avisos4').style.display = 'none';
-                      }, 5000);
-                      form2.reset();
-                  });
-              });
-              break;
-          case 'create-post':
-              contentArea.innerHTML = "<h2>Criar Publicação</h2><p>Informações Em Breve.</p>";
-              break;
-          default:
-              contentArea.innerHTML = "<p>Escolha uma opção.</p>";
-      }
-  }
-</script>
-</body>
 <link rel="stylesheet" href="assets/css/avisos4.css">
 <div class="avisos5">
     <section class="avisosdados">
@@ -308,4 +159,8 @@
   </section>
 </div>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="assets/js/scripts.js"></script>
+<script defer src="https://use.fontawesome.com/releases/v5.12.1/js/all.js"></script>
+</body>
 </html>
