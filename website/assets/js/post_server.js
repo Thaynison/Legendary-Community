@@ -3,12 +3,23 @@ let posts = [];
 let currentBatch = 0; // Lote atual
 const batchSize = 10; // Número de posts por lote
 
-// Função para formatar a descrição em <p>
+// Função para formatar a descrição
 function formatDescription(description) {
     if (typeof description === 'string') {
         description = description.split('\n');
     }
-    return description.map(line => `<p>${line}</p>`).join('');
+    return description
+        .map(line => {
+            // Verifica se o texto está entre aspas
+            if (line.trim().startsWith('"') && line.trim().endsWith('"')) {
+                // Remove aspas e formata como título
+                return `<h2>${line.trim().slice(1, -1)}</h2>`;
+            } else {
+                // Formata como texto normal
+                return `<p>${line}</p>`;
+            }
+        })
+        .join('');
 }
 
 // Função para renderizar um lote de posts
