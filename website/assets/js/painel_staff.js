@@ -306,13 +306,13 @@ function changeContent(contentType) {
                     <div class="form-field">
                         <label for="rarity">Selecionar Raridade:</label>
                         <select id="rarity" name="rarity" required>
-                            <option value="comum">Comum</option>
-                            <option value="raro">Raro</option>
-                            <option value="epico">Épico</option>
-                            <option value="lendario">Lendário</option>
-                            <option value="divino">Divino</option>
+                            <option value="Comum">Comum</option>
+                            <option value="Raro">Raro</option>
+                            <option value="Épico">Épico</option>
+                            <option value="Lendário">Lendário</option>
+                            <option value="Divino">Divino</option>
                         </select>
-                    <button type="submit" class="button is-primary" id="submitBtn">Registrar Venda</button>
+                    <button type="submit" class="button is-primary" id="submitBtn">Criar Rarity</button>
                 </form>
             `;
             const form3 = document.querySelector('.form-register-rarity');
