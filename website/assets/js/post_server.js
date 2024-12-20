@@ -3,6 +3,14 @@ let posts = [];
 let currentBatch = 0; // Lote atual
 const batchSize = 10; // Número de posts por lote
 
+// Função para formatar a descrição em <p>
+function formatDescription(description) {
+    if (typeof description === 'string') {
+        description = description.split('\n');
+    }
+    return description.map(line => `<p>${line}</p>`).join('');
+}
+
 // Função para renderizar um lote de posts
 function renderPostsBatch() {
     const criarDiv = document.querySelector('.criar-div');
@@ -15,12 +23,15 @@ function renderPostsBatch() {
         const postDiv = document.createElement('div');
         postDiv.classList.add('post');
 
+        // Formata a descrição
+        const formattedDescription = formatDescription(post.descricao);
+
         // Estrutura do post
         postDiv.innerHTML = `
             <div class="article-thumbnail-posts" style="background-image:url(${post.print})"></div>
             <div class="article-content">
                 <h2 class="post-title">${post.titulo}</h2>
-                <p>${post.descricao}</p>
+                ${formattedDescription}
                 <ul class="list">
                     <li><i class="fas fa-user"></i> ${post.autor}</li>
                     <li><i class="fas fa-calendar"></i> ${post.data}</li>
