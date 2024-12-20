@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
             li.innerHTML = `
                 <img src="${item.print}" alt="${item.item}">
                 <h1>${item.item}</h1>
-                <h2>${formattedPrice} <small>/mês</small></h2>
+                <h2>${formattedPrice}</h2>
                 <div class="buttons is-centered">
                     <a href="#" class="button is-primary" 
                        data-lore="${encodeURIComponent(loreFormatted)}">
