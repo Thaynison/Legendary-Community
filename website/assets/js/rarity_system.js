@@ -35,6 +35,13 @@ document.addEventListener("DOMContentLoaded", function () {
         return lore.map(line => `<p>${line}</p>`).join('');
     }
 
+    function formatPrice(price) {
+        return new Intl.NumberFormat("pt-BR", {
+            style: "currency",
+            currency: "BRL"
+        }).format(price);
+    }
+
     function displayItems(items) {
         const produtosUl = document.querySelector(".produtos");
         produtosUl.innerHTML = "";
@@ -42,11 +49,12 @@ document.addEventListener("DOMContentLoaded", function () {
         items.forEach(item => {
             const li = document.createElement("li");
             const loreFormatted = formatLore(item.lore);
+            const formattedPrice = formatPrice(item.price);
 
             li.innerHTML = `
                 <img src="${item.print}" alt="${item.item}">
                 <h1>${item.item}</h1>
-                <h2>${item.price} <small>/mês</small></h2>
+                <h2>${formattedPrice} <small>/mês</small></h2>
                 <div class="buttons is-centered">
                     <a href="#" class="button is-primary" 
                        data-lore="${encodeURIComponent(loreFormatted)}">
