@@ -388,7 +388,7 @@ function changeContent(contentType) {
             const submitBtn4 = document.getElementById('submitBtn4');
             let isSubmitting4 = false;  // Flag to prevent multiple submissions
 
-            form3.addEventListener('submit', function(event) {
+            form4.addEventListener('submit', function(event) {
                 event.preventDefault();
 
 
@@ -399,7 +399,7 @@ function changeContent(contentType) {
                 submitBtn4.disabled = true;  // Disable the submit button to prevent multiple clicks
         
                                 
-                const formData = new FormData(form3);
+                const formData = new FormData(form4);
                 fetch('https://dash.legendarycommunity.com.br/api/api_registrar_post.php', {
                     method: 'POST',
                     body: formData
@@ -411,13 +411,13 @@ function changeContent(contentType) {
                         setTimeout(function() {
                             document.querySelector('.avisos5').style.display = 'none';
                         }, 5000);
-                        form3.reset();
+                        form4.reset();
                     } else if (data.error) {
                         document.querySelector('.avisos4').style.display = 'flex';
                         setTimeout(function() {
                             document.querySelector('.avisos4').style.display = 'none';
                         }, 5000);
-                        form3.reset();
+                        form4.reset();
                     }
                 })
                 .catch(error => {
@@ -425,7 +425,7 @@ function changeContent(contentType) {
                     setTimeout(function() {
                         document.querySelector('.avisos4').style.display = 'none';
                     }, 5000);
-                    form3.reset();
+                    form4.reset();
                 })
                 .finally(() => {
                     isSubmitting4 = false;  // Reset flag
