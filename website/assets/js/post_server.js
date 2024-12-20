@@ -40,7 +40,7 @@ function renderPostsBatch() {
         // Estrutura do post
         postDiv.innerHTML = `
             <div class="article-thumbnail-posts" style="background-image:url(${post.print})"></div>
-            <div class="article-content">
+            <div class="article-content posts">
                 <h1 class="post-title">${post.titulo}</h1>
                 ${formattedDescription}
                 <ul class="list">

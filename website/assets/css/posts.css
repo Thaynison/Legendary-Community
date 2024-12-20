@@ -1,5 +1,5 @@
-.article .article-content h1 {
-    font-size: 4rem; /* Tamanho do texto */
+.article .posts h1 {
+    font-size: 1.5rem; /* Tamanho do texto */
     font-weight: bold; /* Negrito */
     color: #020202; /* Cor do texto */
     margin-top: 20px; /* Espaço acima do título */
@@ -9,8 +9,8 @@
     font-family: 'Arial', sans-serif; /* Família da fonte */
 }
 
-.article .article-content h2 {
-    font-size: 2rem; /* Tamanho do texto */
+.article .posts h2 {
+    font-size: 1rem; /* Tamanho do texto */
     font-weight: bold; /* Negrito */
     color: #333; /* Cor do texto */
     margin-top: 20px; /* Espaço acima do título */
@@ -21,7 +21,7 @@
 }
 
 /* Estilos para o parágrafo p */
-.article .article-content p {
+.article .posts p {
     font-size: 1rem; /* Tamanho do texto */
     color: #666; /* Cor do texto */
     line-height: 1.6; /* Espaçamento entre linhas */
