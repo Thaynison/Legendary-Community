@@ -393,7 +393,7 @@ function changeContent(contentType) {
 
 
                 // Prevent multiple submissions
-                if (isSubmitting) return;
+                if (isSubmitting4) return;
 
                 isSubmitting4 = true;  // Set flag to true
                 submitBtn4.disabled = true;  // Disable the submit button to prevent multiple clicks
