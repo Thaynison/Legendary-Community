@@ -251,16 +251,19 @@
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
 .form-register-rarity .form-field {
     display: flex;
     flex-direction: column;
     gap: 5px;
 }
+
 .form-register-rarity label {
     font-weight: bold;
     color: #333;
     font-size: 14px;
 }
+
 .form-register-rarity input[type="text"], input[type="url"], input[type="number"], input[type="date"], textarea {
     padding: 10px;
     font-size: 14px;
@@ -269,13 +272,30 @@
     background-color: #fff;
     transition: border-color 0.3s;
 }
-.form-register-rarity input[type="text"]:focus, input[type="url"]:focus, input[type="number"]:focus, input[type="date"]:focus,  textarea:focus {
+
+.form-register-rarity input[type="text"]:focus, input[type="url"]:focus, input[type="number"]:focus, input[type="date"]:focus, textarea:focus {
     border-color: #db34cd;
     outline: none;
 }
+
 .form-register-rarity textarea {
     resize: vertical;
 }
+
+.form-register-rarity select {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    transition: border-color 0.3s;
+}
+
+.form-register-rarity select:focus {
+    border-color: #db34cd;
+    outline: none;
+}
+
 .form-register-rarity button {
     padding: 10px 20px;
     font-size: 16px;
@@ -286,6 +306,7 @@
     cursor: pointer;
     transition: background-color 0.3s;
 }
+
 .form-register-rarity button:hover {
     background-color: #2980b9;
 }
