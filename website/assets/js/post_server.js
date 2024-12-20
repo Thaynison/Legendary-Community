@@ -11,7 +11,7 @@ function formatDescription(description) {
     return description
         .map(line => {
             // Verifica se o texto está entre aspas
-            if (line.trim().startsWith('**') && line.trim().endsWith('**')) {
+            if (line.trim().startsWith('*') && line.trim().endsWith('*')) {
                 // Remove aspas e formata como título
                 return `<h2>${line.trim().slice(1, -1)}</h2>`;
             } else {
