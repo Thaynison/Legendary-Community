@@ -42,6 +42,23 @@ document.addEventListener("DOMContentLoaded", function () {
         }).format(price);
     }
 
+    function getRarityColor(rarity) {
+        switch (rarity) {
+            case "Comum":
+                return "#545454";
+            case "Raro":
+                return "#ffbd59";
+            case "Épico":
+                return "#8c52ff";
+            case "Lendário":
+                return "#ff009d";
+            case "Divino":
+                return "#5ce1e6";
+            default:
+                return "#000000"; // cor padrão, caso a raridade não seja reconhecida
+        }
+    }
+
     function displayItems(items) {
         const produtosUl = document.querySelector(".produtos");
         produtosUl.innerHTML = "";
@@ -51,10 +68,13 @@ document.addEventListener("DOMContentLoaded", function () {
             const loreFormatted = formatLore(item.lore);
             const formattedPrice = formatPrice(item.price);
 
+            const rarityColor = getRarityColor(item.rarity);
+
             li.innerHTML = `
                 <img src="${item.print}" alt="${item.item}">
                 <h1>${item.item}</h1>
-                <h2>${formattedPrice}</h2>
+                <h2 style="color: ${rarityColor};">${formattedPrice}</h2>
+                <h2 style="color: ${rarityColor};">${item.rarity}</h2>
                 <div class="buttons is-centered">
                     <a href="#" class="button is-primary" 
                        data-lore="${encodeURIComponent(loreFormatted)}">
