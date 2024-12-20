@@ -1,3 +1,35 @@
+.article .article-content h1 {
+    font-size: 4rem; /* Tamanho do texto */
+    font-weight: bold; /* Negrito */
+    color: #020202; /* Cor do texto */
+    margin-top: 20px; /* Espaço acima do título */
+    margin-bottom: 10px; /* Espaço abaixo do título */
+    text-transform: uppercase; /* Transforma o texto em maiúsculas */
+    letter-spacing: 1px; /* Espaçamento entre letras */
+    font-family: 'Arial', sans-serif; /* Família da fonte */
+}
+
+.article .article-content h2 {
+    font-size: 2rem; /* Tamanho do texto */
+    font-weight: bold; /* Negrito */
+    color: #333; /* Cor do texto */
+    margin-top: 20px; /* Espaço acima do título */
+    margin-bottom: 10px; /* Espaço abaixo do título */
+    text-transform: uppercase; /* Transforma o texto em maiúsculas */
+    letter-spacing: 1px; /* Espaçamento entre letras */
+    font-family: 'Arial', sans-serif; /* Família da fonte */
+}
+
+/* Estilos para o parágrafo p */
+.article .article-content p {
+    font-size: 1rem; /* Tamanho do texto */
+    color: #666; /* Cor do texto */
+    line-height: 1.6; /* Espaçamento entre linhas */
+    margin-bottom: 15px; /* Espaço abaixo do parágrafo */
+    font-family: 'Arial', sans-serif; /* Família da fonte */
+}
+
+/* Estilos para a área com a rolagem de posts */
 .article .criar-div {
     max-height: 490px; 
     overflow-y: auto;
@@ -18,6 +50,7 @@
     background: transparent;
 }
 
+/* Estilos para a miniatura do post */
 .article-thumbnail-posts {
     width: 100%;
     height: 300px;
@@ -26,21 +59,23 @@
     background-size: cover;
 }
 
+/* Estilos para o alvo do observador de rolagem */
 .observer-target {
     width: 100%;
     height: 1px;
     margin-top: -1px;
 }
 
-.article .jogadores::-webkit-scrollbar {
-    width: 8px;
-}
-
+/* Estilos para a área de jogadores com rolagem */
 .article .jogadores {
     max-height: 300px; 
     overflow-y: auto;
     scrollbar-width: thin; 
     scrollbar-color: rgba(0, 0, 0, 0.5) transparent;
+}
+
+.article .jogadores::-webkit-scrollbar {
+    width: 8px;
 }
 
 .article .jogadores::-webkit-scrollbar-thumb {

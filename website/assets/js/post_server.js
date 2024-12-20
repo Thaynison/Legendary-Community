@@ -41,7 +41,7 @@ function renderPostsBatch() {
         postDiv.innerHTML = `
             <div class="article-thumbnail-posts" style="background-image:url(${post.print})"></div>
             <div class="article-content">
-                <h2 class="post-title">${post.titulo}</h2>
+                <h1 class="post-title">${post.titulo}</h1>
                 ${formattedDescription}
                 <ul class="list">
                     <li><i class="fas fa-user"></i> ${post.autor}</li>
