@@ -381,6 +381,16 @@ function changeContent(contentType) {
                         <label for="autor">Informar Autor da Publicação:</label>
                         <input type="text" id="autor" name="autor" placeholder="Insira o Nome do Autor da Publicação" required>
                     </div>
+                    <div class="form-field">
+                        <label for="rarity">Selecionar Raridade:</label>
+                        <select id="rarity" name="rarity" required>
+                            <option value="comum">Comum</option>
+                            <option value="raro">Raro</option>
+                            <option value="epico">Épico</option>
+                            <option value="lendario">Lendário</option>
+                            <option value="divino">Divino</option>
+                        </select>
+                    </div>
                     <button type="submit" class="button is-primary" id="submitBtn4">Criar Publicação</button>
                 </form>
             `;
