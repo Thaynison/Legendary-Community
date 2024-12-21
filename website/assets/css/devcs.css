@@ -480,3 +480,118 @@
 .form-list-devolutions span::after {
     transition: opacity 0.3s, bottom 0.3s ease-in-out;
 }
+
+
+/* EMPRESTIMO */
+
+
+.form-create-emprestimo {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 600px;
+    margin: 20px auto;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-create-emprestimo .form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.form-create-emprestimo label {
+    font-weight: bold;
+    color: #333;
+    font-size: 14px;
+}
+
+.form-create-emprestimo input[type="text"], input[type="url"], input[type="number"], input[type="date"], textarea {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    transition: border-color 0.3s;
+}
+
+.form-create-emprestimo input[type="text"]:focus, input[type="url"]:focus, input[type="number"]:focus, input[type="date"]:focus, textarea:focus {
+    border-color: #db34cd;
+    outline: none;
+}
+
+.form-create-emprestimo textarea {
+    resize: vertical;
+}
+
+.form-create-emprestimo select {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    transition: border-color 0.3s;
+}
+
+.form-create-emprestimo select:focus {
+    border-color: #db34cd;
+    outline: none;
+}
+
+.form-create-emprestimo button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #db34cd;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.form-create-emprestimo button:hover {
+    background-color: #2980b9;
+}
+
+
+/* STAFF LISTA DEVOLUÇÕES*/
+
+.form-list-emprestimo span {
+    position: relative;
+    cursor: pointer;
+}
+
+.form-list-emprestimo span::after {
+    content: attr(title);
+    position: absolute;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 8px;
+    border-radius: 5px;
+    font-size: 14px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    visibility: hidden;
+    z-index: 10;
+}
+
+.form-list-emprestimo span:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+.form-list-emprestimo span::after {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form-list-emprestimo span::after {
+    transition: opacity 0.3s, bottom 0.3s ease-in-out;
+}

@@ -636,6 +636,89 @@ function changeContent(contentType) {
                 </form>`;
             getHistoricoDevolutionsSTAFF();
             break;
+        case 'create-emprestimo':
+            contentArea.innerHTML = `
+                <form class="form-create-emprestimo">
+                    <div class="form-field">
+                        <label for="userid">Informar ID discord do Membro:</label>
+                        <input type="text" id="userid" name="userid" placeholder="Digite o ID discord do Membro" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="userid">Informar nick do membro no Minecraft:</label>
+                        <input type="text" id="userid" name="userid" placeholder="Digite o nick do membro no Minecraft" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="userid2">Informar ID discord do Agiota:</label>
+                        <input type="text" id="userid2" name="userid2" placeholder="Digite o ID discord do Agiota" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="userid">Informar nick do membro no Minecraft:</label>
+                        <input type="text" id="userid" name="userid" placeholder="Digite o nick do membro no Minecraft" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="id_ticket">Informar ID do Ticket:</label>
+                        <input type="text" id="id_ticket" name="id_ticket" placeholder="Insira o ID do Ticket" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="descricao">Informar Descrição da Publicação:</label>
+                        <textarea id="descricao" name="descricao" placeholder="Digite a Descrição da Publicação" rows="10" required></textarea>
+                    </div>
+                    <div class="form-field">
+                        <label for="print">Informar Print da Devolução:</label>
+                        <input type="url" id="print" name="print" placeholder="Insira a Print da Devolução" required>
+                    </div>
+                    <button type="submit" class="button is-primary" id="submitBtn6">Criar Publicação</button>
+                </form>
+            `;
+            const form6 = document.querySelector('.form-create-emprestimo');
+            const submitBtn6 = document.getElementById('submitBtn6');
+            let isSubmitting6 = false;  // Flag to prevent multiple submissions
+
+            form6.addEventListener('submit', function(event) {
+                event.preventDefault();
+
+
+                // Prevent multiple submissions
+                if (isSubmitting6) return;
+
+                isSubmitting6 = true;  // Set flag to true
+                submitBtn6.disabled = true;  // Disable the submit button to prevent multiple clicks
+        
+                                
+                const formData = new FormData(form6);
+                fetch('https://dash.legendarycommunity.com.br/api/api_registrar_devolution.php', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        document.querySelector('.avisos5').style.display = 'flex';
+                        setTimeout(function() {
+                            document.querySelector('.avisos5').style.display = 'none';
+                        }, 5000);
+                        form6.reset();
+                    } else if (data.error) {
+                        document.querySelector('.avisos4').style.display = 'flex';
+                        setTimeout(function() {
+                            document.querySelector('.avisos4').style.display = 'none';
+                        }, 5000);
+                        form6.reset();
+                    }
+                })
+                .catch(error => {
+                    document.querySelector('.avisos4').style.display = 'flex';
+                    setTimeout(function() {
+                        document.querySelector('.avisos4').style.display = 'none';
+                    }, 5000);
+                    form6.reset();
+                })
+                .finally(() => {
+                    isSubmitting6 = false;  // Reset flag
+                    submitBtn6.disabled = false;  // Re-enable the submit button
+                });
+            });
+            break;
         default:
             contentArea.innerHTML = "<p>Escolha uma opção.</p>";
     }
