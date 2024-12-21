@@ -29,23 +29,23 @@
 }
 
 /* Estilos para a área com a rolagem de rarity */
-.article .criar-div {
-    max-height: 490px; 
+.article .produtos {
+    max-height: 500px; 
     overflow-y: auto;
     scrollbar-width: thin; 
     scrollbar-color: rgba(0, 0, 0, 0.5) transparent;
 }
 
-.article .criar-div::-webkit-scrollbar {
+.article .produtos::-webkit-scrollbar {
     width: 8px;
 }
 
-.article .criar-div::-webkit-scrollbar-thumb {
+.article .produtos::-webkit-scrollbar-thumb {
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 10px;
 }
 
-.article .criar-div::-webkit-scrollbar-track {
+.article .produtos::-webkit-scrollbar-track {
     background: transparent;
 }
 
