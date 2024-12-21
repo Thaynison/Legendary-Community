@@ -10,6 +10,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     if (userid) {
         getHistoricoTicketsSTAFF();
+        getHistoricoDevolutionsSTAFF();
     } else {
         console.log("erro no userid")
     }
@@ -92,7 +93,118 @@ function getHistoricoTicketsSTAFF() {
         });
 }
 
+function getHistoricoDevolutionsSTAFF() {
+    const apiUrl = `https://dash.legendarycommunity.com.br/api/api_buscar_devolution.php`;
+
+    fetch(apiUrl)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`Erro na API: ${response.statusText}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            const container = document.querySelector('.form-list-devolutions');
+
+            if (data.error) {
+                container.innerHTML = `<p class="error">${data.error}</p>`;
+                return;
+            }
+
+            if (!Array.isArray(data) || data.length === 0) {
+                container.innerHTML = `<p class="info">Nenhuma devolução encontrado.</p>`;
+                return;
+            }
+
+            // Função para mapear o status para emojis e títulos
+            const getStatusInfoDevolucao = (status) => {
+                switch (status) {
+                    case 'Concluido':
+                        return { emoji: '✅', title: 'Devolução Concluída' };
+                    case 'Reprovado':
+                        return { emoji: '❌', title: 'Devolução Reprovada' };
+                    case 'Em Analise':
+                        return { emoji: '🔎', title: 'Devolução Em Análise' };
+                    default:
+                        return { emoji: '❓', title: 'Devolução Desconhecida' };
+                }
+            };
+
+            let htmlContent = `
+                <table class="table is-fullwidth">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Username</th>
+                            <th>Descrição</th>
+                            <th>Print</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+            `;
+
+            data.forEach(devolucao => {
+                const statusInfodevolucao = getStatusInfoDevolucao(devolucao.status);
+                htmlContent += `
+                    <tr>
+                        <td>${devolucao.id_ticket}</td>
+                        <td>${devolucao.username}</td>
+                        <td>${devolucao.descricao}</td>
+                        <td>
+                            <button class="eye-button" onclick="showImageDevolution('${devolucao.print}', event)">👁️</button>
+                        </td>
+                        <td>
+                            <span title="${statusInfodevolucao.title}">${statusInfodevolucao.emoji}</span>
+                        </td>
+                    </tr>`;
+            });
+
+            htmlContent += '</tbody></table>';
+            container.innerHTML = htmlContent;
+        })
+        .catch(error => {
+            const container = document.querySelector('.form-list-devolutions');
+            container.innerHTML = `<p class="error">Erro ao carregar os dados: ${error.message}</p>`;
+        });
+}
+
+
 function showImage(imageUrl) {
+    event.preventDefault();
+    const modal = document.createElement('div');
+    modal.style.position = 'fixed';
+    modal.style.top = '0';
+    modal.style.left = '0';
+    modal.style.width = '100%';
+    modal.style.height = '100%';
+    modal.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+    modal.style.display = 'flex';
+    modal.style.alignItems = 'center';
+    modal.style.justifyContent = 'center';
+    modal.style.zIndex = '9999';
+    const img = document.createElement('img');
+    img.src = imageUrl;
+    img.style.maxWidth = '90%';
+    img.style.maxHeight = '90%';
+    const closeButton = document.createElement('button');
+    closeButton.innerText = 'Fechar';
+    closeButton.style.position = 'absolute';
+    closeButton.style.top = '10px';
+    closeButton.style.right = '10px';
+    closeButton.style.padding = '10px';
+    closeButton.style.backgroundColor = 'white';
+    closeButton.style.border = 'none';
+    closeButton.style.cursor = 'pointer';
+    closeButton.addEventListener('click', () => {
+        document.body.removeChild(modal);
+    });
+    modal.appendChild(img);
+    modal.appendChild(closeButton);
+    document.body.appendChild(modal);
+}
+
+function showImageDevolution(imageUrl) {
     event.preventDefault();
     const modal = document.createElement('div');
     modal.style.position = 'fixed';
@@ -390,7 +502,6 @@ function changeContent(contentType) {
                         <label for="autor">Informar Autor da Publicação:</label>
                         <input type="text" id="autor" name="autor" placeholder="Insira o Nome do Autor da Publicação" required>
                     </div>
-                    </div>
                     <button type="submit" class="button is-primary" id="submitBtn4">Criar Publicação</button>
                 </form>
             `;
@@ -442,6 +553,88 @@ function changeContent(contentType) {
                     submitBtn4.disabled = false;  // Re-enable the submit button
                 });
             });
+            break;
+        case 'create-devolutions':
+            contentArea.innerHTML = `
+                <form class="form-create-devolutions">
+                    <div class="form-field">
+                        <label for="userid">Informar ID discord do Membro:</label>
+                        <input type="text" id="userid" name="userid" placeholder="Digite o ID discord do Membro" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="userid">Informar nick do membro no Minecraft:</label>
+                        <input type="text" id="userid" name="userid" placeholder="Digite o nick do membro no Minecraft" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="id_ticket">Informar ID do Ticket:</label>
+                        <input type="text" id="id_ticket" name="id_ticket" placeholder="Insira o ID do Ticket" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="descricao">Informar Descrição da Publicação:</label>
+                        <textarea id="descricao" name="descricao" placeholder="Digite a Descrição da Publicação" rows="10" required></textarea>
+                    </div>
+                    <div class="form-field">
+                        <label for="print">Informar Print da Devolução:</label>
+                        <input type="url" id="print" name="print" placeholder="Insira a Print da Devolução" required>
+                    </div>
+                    <button type="submit" class="button is-primary" id="submitBtn5">Criar Publicação</button>
+                </form>
+            `;
+            const form5 = document.querySelector('.form-create-devolutions');
+            const submitBtn5 = document.getElementById('submitBtn5');
+            let isSubmitting5 = false;  // Flag to prevent multiple submissions
+
+            form5.addEventListener('submit', function(event) {
+                event.preventDefault();
+
+
+                // Prevent multiple submissions
+                if (isSubmitting5) return;
+
+                isSubmitting5 = true;  // Set flag to true
+                submitBtn5.disabled = true;  // Disable the submit button to prevent multiple clicks
+        
+                                
+                const formData = new FormData(form5);
+                fetch('https://dash.legendarycommunity.com.br/api/api_registrar_devolution.php', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        document.querySelector('.avisos5').style.display = 'flex';
+                        setTimeout(function() {
+                            document.querySelector('.avisos5').style.display = 'none';
+                        }, 5000);
+                        form5.reset();
+                    } else if (data.error) {
+                        document.querySelector('.avisos4').style.display = 'flex';
+                        setTimeout(function() {
+                            document.querySelector('.avisos4').style.display = 'none';
+                        }, 5000);
+                        form5.reset();
+                    }
+                })
+                .catch(error => {
+                    document.querySelector('.avisos4').style.display = 'flex';
+                    setTimeout(function() {
+                        document.querySelector('.avisos4').style.display = 'none';
+                    }, 5000);
+                    form5.reset();
+                })
+                .finally(() => {
+                    isSubmitting5 = false;  // Reset flag
+                    submitBtn5.disabled = false;  // Re-enable the submit button
+                });
+            });
+            break;
+        case 'list-devolutions':
+            contentArea.innerHTML = `
+                <form class="form-list-devolutions">
+                    <p>Carregando histórico de devoluções...</p>
+                </form>`;
+            getHistoricoDevolutionsSTAFF();
             break;
         default:
             contentArea.innerHTML = "<p>Escolha uma opção.</p>";
