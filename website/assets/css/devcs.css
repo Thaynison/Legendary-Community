@@ -481,6 +481,45 @@
     transition: opacity 0.3s, bottom 0.3s ease-in-out;
 }
 
+/* PLAYER DEVOLUCAO*/
+
+.form-lista-de-devolucoes span {
+    position: relative;
+    cursor: pointer;
+}
+
+.form-lista-de-devolucoes span::after {
+    content: attr(title);
+    position: absolute;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 8px;
+    border-radius: 5px;
+    font-size: 14px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    visibility: hidden;
+    z-index: 10;
+}
+
+.form-lista-de-devolucoes span:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+.form-lista-de-devolucoes span::after {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form-lista-de-devolucoes span::after {
+    transition: opacity 0.3s, bottom 0.3s ease-in-out;
+}
+
 
 /* EMPRESTIMO */
 
@@ -557,7 +596,7 @@
 }
 
 
-/* STAFF LISTA DEVOLUÇÕES*/
+/* STAFF LISTA EMPRESTIMO*/
 
 .form-list-emprestimo span {
     position: relative;
@@ -593,5 +632,44 @@
 }
 
 .form-list-emprestimo span::after {
+    transition: opacity 0.3s, bottom 0.3s ease-in-out;
+}
+
+/* PLAYER EMPRESTIMO*/
+
+.form-lista-de-emprestimos span {
+    position: relative;
+    cursor: pointer;
+}
+
+.form-lista-de-emprestimos span::after {
+    content: attr(title);
+    position: absolute;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 8px;
+    border-radius: 5px;
+    font-size: 14px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    visibility: hidden;
+    z-index: 10;
+}
+
+.form-lista-de-emprestimos span:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+.form-lista-de-emprestimos span::after {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form-lista-de-emprestimos span::after {
     transition: opacity 0.3s, bottom 0.3s ease-in-out;
 }

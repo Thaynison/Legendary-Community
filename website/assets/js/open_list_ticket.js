@@ -121,8 +121,8 @@ function getHistoricoEmprestimos(userid) {
                 <table class="table is-fullwidth">
                     <thead>
                         <tr>
-                            <th>Agiota</th>
                             <th>Cidadão</th>
+                            <th>Agiota</th>
                             <th>Valor</th>
                             <th>Parcelas</th>
                             <th>Data</th>
@@ -136,8 +136,8 @@ function getHistoricoEmprestimos(userid) {
                 const statusInfoEmprestimo = getStatusInfoEmprestimo(emprestimo.status);
                 htmlContent += `
                     <tr>
-                        <td>${emprestimo.agiota}</td>
                         <td>${emprestimo.username}</td>
+                        <td>${emprestimo.agiota}</td>
                         <td>${emprestimo.price}</td>
                         <td>${emprestimo.parcelas}</td>
                         <td>${emprestimo.data}</td>
