@@ -30,7 +30,7 @@
 
 /* Estilos para a área com a rolagem de rarity */
 .article .produtos {
-    max-height: 500px; 
+    max-height: 490px; 
     overflow-y: auto;
     scrollbar-width: thin; 
     scrollbar-color: rgba(0, 0, 0, 0.5) transparent;
