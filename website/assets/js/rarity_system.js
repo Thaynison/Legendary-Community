@@ -65,11 +65,19 @@ document.addEventListener("DOMContentLoaded", function () {
         return rarityColors[rarity] || "#000000"; // cor padrão
     }
 
-    // Ordenar os itens pela raridade
-    function sortItemsByRarity(items) {
+    // Ordenar os itens pela raridade e preço
+    function sortItemsByRarityAndPrice(items) {
         const rarityOrder = ["Divino", "Lendário", "Épico", "Raro", "Comum"];
+        
         return items.sort((a, b) => {
-            return rarityOrder.indexOf(a.rarity) - rarityOrder.indexOf(b.rarity);
+            // Primeiro, ordena pela raridade
+            const rarityComparison = rarityOrder.indexOf(a.rarity) - rarityOrder.indexOf(b.rarity);
+            if (rarityComparison !== 0) {
+                return rarityComparison;
+            }
+
+            // Se as raridades são iguais, ordena pelo preço (menor para maior)
+            return a.price - b.price;
         });
     }
 
@@ -78,8 +86,8 @@ document.addEventListener("DOMContentLoaded", function () {
         const produtosUl = document.querySelector(".produtos");
         produtosUl.innerHTML = "";
 
-        // Ordena os itens pela raridade
-        const sortedItems = sortItemsByRarity(items);
+        // Ordena os itens pela raridade e preço
+        const sortedItems = sortItemsByRarityAndPrice(items);
 
         sortedItems.forEach(item => {
             const li = document.createElement("li");
