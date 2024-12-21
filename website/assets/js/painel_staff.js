@@ -135,7 +135,7 @@ function getHistoricoDevolutionsSTAFF() {
                 <table class="table is-fullwidth">
                     <thead>
                         <tr>
-                            <th>ID</th>
+                            <th>ID Ticket</th>
                             <th>Username</th>
                             <th>Descrição</th>
                             <th>Print</th>
