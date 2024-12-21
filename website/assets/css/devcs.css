@@ -157,7 +157,7 @@
 }
 
 
-/* STAFF */
+/* STAFF LISTA TICKETS*/
 
 .form-list-tickets span {
     position: relative;
@@ -439,4 +439,44 @@
 
 .form-create-devolutions button:hover {
     background-color: #2980b9;
+}
+
+
+/* STAFF LISTA DEVOLUÇÕES*/
+
+.form-list-devolutions span {
+    position: relative;
+    cursor: pointer;
+}
+
+.form-list-devolutions span::after {
+    content: attr(title);
+    position: absolute;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 8px;
+    border-radius: 5px;
+    font-size: 14px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    visibility: hidden;
+    z-index: 10;
+}
+
+.form-list-devolutions span:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+.form-list-devolutions span::after {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form-list-devolutions span::after {
+    transition: opacity 0.3s, bottom 0.3s ease-in-out;
 }
