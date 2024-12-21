@@ -21,13 +21,10 @@ document.addEventListener('contextmenu', function (e) {
 
 // Permite cópia apenas via função
 function copyToClipboard() {
-    var input = document.createElement("textarea");
-    input.value = document.getElementById("ip").textContent;
+    var input = document.getElementById("ip");
 
-    document.body.appendChild(input);
     input.select();
     input.setSelectionRange(0, 99999);
 
     document.execCommand("copy");
-    document.body.removeChild(input);
 }
