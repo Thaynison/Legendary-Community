@@ -1,20 +1,16 @@
 .article .rarity h1 {
-    font-size: 1.5rem; /* Tamanho do texto */
+    font-size: 1rem; /* Tamanho do texto */
     font-weight: bold; /* Negrito */
     color: #020202; /* Cor do texto */
-    margin-top: 20px; /* Espaço acima do título */
-    margin-bottom: 10px; /* Espaço abaixo do título */
     text-transform: uppercase; /* Transforma o texto em maiúsculas */
     letter-spacing: 1px; /* Espaçamento entre letras */
     font-family: 'Arial', sans-serif; /* Família da fonte */
 }
 
 .article .rarity h2 {
-    font-size: 1rem; /* Tamanho do texto */
+    font-size: 0.5rem; /* Tamanho do texto */
     font-weight: bold; /* Negrito */
     color: #333; /* Cor do texto */
-    margin-top: 20px; /* Espaço acima do título */
-    margin-bottom: 10px; /* Espaço abaixo do título */
     text-transform: uppercase; /* Transforma o texto em maiúsculas */
     letter-spacing: 1px; /* Espaçamento entre letras */
     font-family: 'Arial', sans-serif; /* Família da fonte */
@@ -22,8 +18,7 @@
 
 /* Estilos para o parágrafo p */
 .article .rarity p {
-    font-size: 1rem; /* Tamanho do texto */
-    color: #666; /* Cor do texto */
+    font-size: 0.5rem; /* Tamanho do texto */
     line-height: 1.6; /* Espaçamento entre linhas */
     margin-bottom: 15px; /* Espaço abaixo do parágrafo */
     font-family: 'Arial', sans-serif; /* Família da fonte */
