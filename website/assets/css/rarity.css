@@ -1,0 +1,88 @@
+.article .rarity h1 {
+    font-size: 1.5rem; /* Tamanho do texto */
+    font-weight: bold; /* Negrito */
+    color: #020202; /* Cor do texto */
+    margin-top: 20px; /* Espaço acima do título */
+    margin-bottom: 10px; /* Espaço abaixo do título */
+    text-transform: uppercase; /* Transforma o texto em maiúsculas */
+    letter-spacing: 1px; /* Espaçamento entre letras */
+    font-family: 'Arial', sans-serif; /* Família da fonte */
+}
+
+.article .rarity h2 {
+    font-size: 1rem; /* Tamanho do texto */
+    font-weight: bold; /* Negrito */
+    color: #333; /* Cor do texto */
+    margin-top: 20px; /* Espaço acima do título */
+    margin-bottom: 10px; /* Espaço abaixo do título */
+    text-transform: uppercase; /* Transforma o texto em maiúsculas */
+    letter-spacing: 1px; /* Espaçamento entre letras */
+    font-family: 'Arial', sans-serif; /* Família da fonte */
+}
+
+/* Estilos para o parágrafo p */
+.article .rarity p {
+    font-size: 1rem; /* Tamanho do texto */
+    color: #666; /* Cor do texto */
+    line-height: 1.6; /* Espaçamento entre linhas */
+    margin-bottom: 15px; /* Espaço abaixo do parágrafo */
+    font-family: 'Arial', sans-serif; /* Família da fonte */
+}
+
+/* Estilos para a área com a rolagem de rarity */
+.article .criar-div {
+    max-height: 490px; 
+    overflow-y: auto;
+    scrollbar-width: thin; 
+    scrollbar-color: rgba(0, 0, 0, 0.5) transparent;
+}
+
+.article .criar-div::-webkit-scrollbar {
+    width: 8px;
+}
+
+.article .criar-div::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+.article .criar-div::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* Estilos para a miniatura do post */
+.article-thumbnail-rarity {
+    width: 100%;
+    height: 300px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Estilos para o alvo do observador de rolagem */
+.observer-target {
+    width: 100%;
+    height: 1px;
+    margin-top: -1px;
+}
+
+/* Estilos para a área de jogadores com rolagem */
+.article .jogadores {
+    max-height: 300px; 
+    overflow-y: auto;
+    scrollbar-width: thin; 
+    scrollbar-color: rgba(0, 0, 0, 0.5) transparent;
+}
+
+.article .jogadores::-webkit-scrollbar {
+    width: 8px;
+}
+
+.article .jogadores::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.5); 
+    border-radius: 10px;
+}
+
+.article .jogadores::-webkit-scrollbar-track {
+    background: transparent;
+}
