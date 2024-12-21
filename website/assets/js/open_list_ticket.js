@@ -255,22 +255,45 @@ function showImageDevolution(imageUrl) {
     modal.style.alignItems = 'center';
     modal.style.justifyContent = 'center';
     modal.style.zIndex = '9999';
+
     const img = document.createElement('img');
     img.src = imageUrl;
     img.style.maxWidth = '90%';
     img.style.maxHeight = '90%';
+
     const closeButton = document.createElement('button');
     closeButton.innerText = 'Fechar';
     closeButton.style.position = 'absolute';
-    closeButton.style.top = '10px';
-    closeButton.style.right = '10px';
-    closeButton.style.padding = '10px';
-    closeButton.style.backgroundColor = 'white';
+    closeButton.style.top = '20px';
+    closeButton.style.right = '20px';
+    closeButton.style.padding = '10px 20px';
+    closeButton.style.backgroundColor = '#ff69b4'; // Fundo rosa
+    closeButton.style.color = 'white'; // Cor da fonte branca
     closeButton.style.border = 'none';
+    closeButton.style.borderRadius = '8px';
+    closeButton.style.fontSize = '16px';
+    closeButton.style.fontWeight = 'bold';
     closeButton.style.cursor = 'pointer';
+    closeButton.style.boxShadow = '0px 4px 6px rgba(0, 0, 0, 0.1)';
+    closeButton.style.transition = 'background-color 0.3s ease, transform 0.2s ease';
+
+    closeButton.addEventListener('mouseover', () => {
+        closeButton.style.backgroundColor = '#ff85c1'; // Tom mais claro ao passar o mouse
+    });
+    closeButton.addEventListener('mouseout', () => {
+        closeButton.style.backgroundColor = '#ff69b4'; // Retorna ao fundo original
+    });
+    closeButton.addEventListener('mousedown', () => {
+        closeButton.style.transform = 'scale(0.95)'; // Efeito de clique
+    });
+    closeButton.addEventListener('mouseup', () => {
+        closeButton.style.transform = 'scale(1)'; // Volta ao tamanho original
+    });
+
     closeButton.addEventListener('click', () => {
         document.body.removeChild(modal);
     });
+
     modal.appendChild(img);
     modal.appendChild(closeButton);
     document.body.appendChild(modal);
@@ -289,22 +312,45 @@ function showImage(imageUrl) {
     modal.style.alignItems = 'center';
     modal.style.justifyContent = 'center';
     modal.style.zIndex = '9999';
+
     const img = document.createElement('img');
     img.src = imageUrl;
     img.style.maxWidth = '90%';
     img.style.maxHeight = '90%';
+
     const closeButton = document.createElement('button');
     closeButton.innerText = 'Fechar';
     closeButton.style.position = 'absolute';
-    closeButton.style.top = '10px';
-    closeButton.style.right = '10px';
-    closeButton.style.padding = '10px';
-    closeButton.style.backgroundColor = 'white';
+    closeButton.style.top = '20px';
+    closeButton.style.right = '20px';
+    closeButton.style.padding = '10px 20px';
+    closeButton.style.backgroundColor = '#ff69b4'; // Fundo rosa
+    closeButton.style.color = 'white'; // Cor da fonte branca
     closeButton.style.border = 'none';
+    closeButton.style.borderRadius = '8px';
+    closeButton.style.fontSize = '16px';
+    closeButton.style.fontWeight = 'bold';
     closeButton.style.cursor = 'pointer';
+    closeButton.style.boxShadow = '0px 4px 6px rgba(0, 0, 0, 0.1)';
+    closeButton.style.transition = 'background-color 0.3s ease, transform 0.2s ease';
+
+    closeButton.addEventListener('mouseover', () => {
+        closeButton.style.backgroundColor = '#ff85c1'; // Tom mais claro ao passar o mouse
+    });
+    closeButton.addEventListener('mouseout', () => {
+        closeButton.style.backgroundColor = '#ff69b4'; // Retorna ao fundo original
+    });
+    closeButton.addEventListener('mousedown', () => {
+        closeButton.style.transform = 'scale(0.95)'; // Efeito de clique
+    });
+    closeButton.addEventListener('mouseup', () => {
+        closeButton.style.transform = 'scale(1)'; // Volta ao tamanho original
+    });
+
     closeButton.addEventListener('click', () => {
         document.body.removeChild(modal);
     });
+
     modal.appendChild(img);
     modal.appendChild(closeButton);
     document.body.appendChild(modal);
