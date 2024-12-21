@@ -11,6 +11,7 @@ window.addEventListener('DOMContentLoaded', () => {
     if (userid) {
         getHistoricoTicketsSTAFF();
         getHistoricoDevolutionsSTAFF();
+        getHistoricoEmprestimosSTAFF();
     } else {
         console.log("erro no userid")
     }
@@ -165,6 +166,82 @@ function getHistoricoDevolutionsSTAFF() {
         })
         .catch(error => {
             const container = document.querySelector('.form-list-devolutions');
+            container.innerHTML = `<p class="error">Erro ao carregar os dados: ${error.message}</p>`;
+        });
+}
+
+function getHistoricoEmprestimosSTAFF() {
+    const apiUrl = `https://dash.legendarycommunity.com.br/api/api_buscar_emprestimo.php`;
+
+    fetch(apiUrl)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`Erro na API: ${response.statusText}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            const container = document.querySelector('.form-list-emprestimo');
+
+            if (data.error) {
+                container.innerHTML = `<p class="error">${data.error}</p>`;
+                return;
+            }
+
+            if (!Array.isArray(data) || data.length === 0) {
+                container.innerHTML = `<p class="info">Nenhuma devolução encontrado.</p>`;
+                return;
+            }
+
+            // Função para mapear o status para emojis e títulos
+            const getStatusInfoEmprestimo = (status) => {
+                switch (status) {
+                    case 'Concluido':
+                        return { emoji: '✅', title: 'Emprestimo Pago' };
+                    case 'Reprovado':
+                        return { emoji: '❌', title: 'Emprestimo Cancelado' };
+                    case 'Em Analise':
+                        return { emoji: '🧭', title: 'Emprestimo Em Pagamento' };
+                    default:
+                        return { emoji: '❓', title: 'Emprestimo Desconhecido' };
+                }
+            };
+
+            let htmlContent = `
+                <table class="table is-fullwidth">
+                    <thead>
+                        <tr>
+                            <th>Agiota</th>
+                            <th>Cidadão</th>
+                            <th>Valor</th>
+                            <th>Parcelas</th>
+                            <th>Data</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+            `;
+
+            data.forEach(emprestimo => {
+                const statusInfoEmprestimo = getStatusInfoEmprestimo(emprestimo.status);
+                htmlContent += `
+                    <tr>
+                        <td>${emprestimo.agiota}</td>
+                        <td>${emprestimo.username}</td>
+                        <td>${emprestimo.price}</td>
+                        <td>${emprestimo.parcelas}</td>
+                        <td>${emprestimo.data}</td>
+                        <td>
+                            <span title="${statusInfoEmprestimo.title}">${statusInfoEmprestimo.emoji}</span>
+                        </td>
+                    </tr>`;
+            });
+
+            htmlContent += '</tbody></table>';
+            container.innerHTML = htmlContent;
+        })
+        .catch(error => {
+            const container = document.querySelector('.form-list-emprestimo');
             container.innerHTML = `<p class="error">Erro ao carregar os dados: ${error.message}</p>`;
         });
 }
@@ -562,22 +639,22 @@ function changeContent(contentType) {
                         <input type="text" id="userid" name="userid" placeholder="Digite o ID discord do Membro" required>
                     </div>
                     <div class="form-field">
-                        <label for="userid">Informar nick do membro no Minecraft:</label>
-                        <input type="text" id="userid" name="userid" placeholder="Digite o nick do membro no Minecraft" required>
+                        <label for="username">Informar nick do membro no Minecraft:</label>
+                        <input type="text" id="username" name="username" placeholder="Digite o nick do membro no Minecraft" required>
                     </div>
                     <div class="form-field">
                         <label for="id_ticket">Informar ID do Ticket:</label>
                         <input type="text" id="id_ticket" name="id_ticket" placeholder="Insira o ID do Ticket" required>
                     </div>
                     <div class="form-field">
-                        <label for="descricao">Informar Descrição da Publicação:</label>
-                        <textarea id="descricao" name="descricao" placeholder="Digite a Descrição da Publicação" rows="10" required></textarea>
+                        <label for="descricao">Informar Descrição da Devolução:</label>
+                        <textarea id="descricao" name="descricao" placeholder="Digite a Descrição da Devolução" rows="6" required></textarea>
                     </div>
                     <div class="form-field">
                         <label for="print">Informar Print da Devolução:</label>
                         <input type="url" id="print" name="print" placeholder="Insira a Print da Devolução" required>
                     </div>
-                    <button type="submit" class="button is-primary" id="submitBtn5">Criar Publicação</button>
+                    <button type="submit" class="button is-primary" id="submitBtn5">Criar Devolução</button>
                 </form>
             `;
             const form5 = document.querySelector('.form-create-devolutions');
@@ -644,30 +721,26 @@ function changeContent(contentType) {
                         <input type="text" id="userid" name="userid" placeholder="Digite o ID discord do Membro" required>
                     </div>
                     <div class="form-field">
-                        <label for="userid">Informar nick do membro no Minecraft:</label>
-                        <input type="text" id="userid" name="userid" placeholder="Digite o nick do membro no Minecraft" required>
+                        <label for="username">Informar nick do membro no Minecraft:</label>
+                        <input type="text" id="username" name="username" placeholder="Digite o nick do membro no Minecraft" required>
                     </div>
                     <div class="form-field">
                         <label for="userid2">Informar ID discord do Agiota:</label>
                         <input type="text" id="userid2" name="userid2" placeholder="Digite o ID discord do Agiota" required>
                     </div>
                     <div class="form-field">
-                        <label for="userid">Informar nick do membro no Minecraft:</label>
-                        <input type="text" id="userid" name="userid" placeholder="Digite o nick do membro no Minecraft" required>
+                        <label for="agiota">Informar nick do Agiota:</label>
+                        <input type="text" id="agiota" name="agiota" placeholder="Digite o nick do membro no Minecraft" required>
                     </div>
                     <div class="form-field">
-                        <label for="id_ticket">Informar ID do Ticket:</label>
-                        <input type="text" id="id_ticket" name="id_ticket" placeholder="Insira o ID do Ticket" required>
+                        <label for="price">Informar Valor do Emprestimo:</label>
+                        <input type="number" id="price" name="price" placeholder="Insira o Valor do Emprestimo" required>
                     </div>
                     <div class="form-field">
-                        <label for="descricao">Informar Descrição da Publicação:</label>
-                        <textarea id="descricao" name="descricao" placeholder="Digite a Descrição da Publicação" rows="10" required></textarea>
+                        <label for="parcelas">Informar Valor de Parcelas:</label>
+                        <input type="number" id="parcelas" name="parcelas" placeholder="Insira o Valor de Parcelas" required>
                     </div>
-                    <div class="form-field">
-                        <label for="print">Informar Print da Devolução:</label>
-                        <input type="url" id="print" name="print" placeholder="Insira a Print da Devolução" required>
-                    </div>
-                    <button type="submit" class="button is-primary" id="submitBtn6">Criar Publicação</button>
+                    <button type="submit" class="button is-primary" id="submitBtn6">Criar Emprestimo</button>
                 </form>
             `;
             const form6 = document.querySelector('.form-create-emprestimo');
@@ -686,7 +759,7 @@ function changeContent(contentType) {
         
                                 
                 const formData = new FormData(form6);
-                fetch('https://dash.legendarycommunity.com.br/api/api_registrar_devolution.php', {
+                fetch('https://dash.legendarycommunity.com.br/api/api_registrar_emprestimo.php', {
                     method: 'POST',
                     body: formData
                 })
@@ -718,6 +791,13 @@ function changeContent(contentType) {
                     submitBtn6.disabled = false;  // Re-enable the submit button
                 });
             });
+            break;
+        case 'list-emprestimo':
+            contentArea.innerHTML = `
+                <form class="form-list-emprestimo">
+                    <p>Carregando histórico de devoluções...</p>
+                </form>`;
+            getHistoricoEmprestimosSTAFF();
             break;
         default:
             contentArea.innerHTML = "<p>Escolha uma opção.</p>";
