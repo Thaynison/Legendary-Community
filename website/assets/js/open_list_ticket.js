@@ -100,7 +100,7 @@ function getHistoricoEmprestimos(userid) {
             }
 
             if (!Array.isArray(data) || data.length === 0) {
-                container.innerHTML = `<p class="info">Nenhuma devolução encontrado.</p>`;
+                container.innerHTML = `<p class="info">Nenhuma devolução encontrada.</p>`;
                 return;
             }
 
@@ -108,14 +108,22 @@ function getHistoricoEmprestimos(userid) {
             const getStatusInfoEmprestimo = (status) => {
                 switch (status) {
                     case 'Concluido':
-                        return { emoji: '✅', title: 'Emprestimo Pago' };
+                        return { emoji: '✅', title: 'Empréstimo Pago' };
                     case 'Reprovado':
-                        return { emoji: '❌', title: 'Emprestimo Cancelado' };
+                        return { emoji: '❌', title: 'Empréstimo Cancelado' };
                     case 'Em Analise':
-                        return { emoji: '🧭', title: 'Emprestimo Em Pagamento' };
+                        return { emoji: '🧭', title: 'Empréstimo Em Pagamento' };
                     default:
-                        return { emoji: '❓', title: 'Emprestimo Desconhecido' };
+                        return { emoji: '❓', title: 'Empréstimo Desconhecido' };
                 }
+            };
+
+            // Função para formatar valores em BRL
+            const formatarBRL = (valor) => {
+                return new Intl.NumberFormat('pt-BR', {
+                    style: 'currency',
+                    currency: 'BRL'
+                }).format(valor);
             };
 
             let htmlContent = `
@@ -139,7 +147,7 @@ function getHistoricoEmprestimos(userid) {
                     <tr>
                         <td>${emprestimo.username}</td>
                         <td>${emprestimo.agiota}</td>
-                        <td>${emprestimo.price}</td>
+                        <td>${formatarBRL(emprestimo.price)}</td>
                         <td>${emprestimo.parcelas}</td>
                         <td>${emprestimo.data}</td>
                         <td>
@@ -156,6 +164,7 @@ function getHistoricoEmprestimos(userid) {
             container.innerHTML = `<p class="error">Erro ao carregar os dados: ${error.message}</p>`;
         });
 }
+
 
 function getHistoricoDevolucoes(userid) {
     const apiUrl = `https://dash.legendarycommunity.com.br/api/api_buscar_devolution_user.php?userid=${userid}`;
