@@ -1,0 +1,81 @@
+{
+	"credit": "Made with Blockbench",
+	"texture_size": [32, 32],
+	"textures": {
+		"0": "block/3dmodel/bottlestextures",
+		"particle": "block/3dmodel/bottlestextures"
+	},
+	"elements": [
+		{
+			"name": "neck",
+			"from": [10.1, 10.41845, 10.3],
+			"to": [11.5, 14.81845, 11.7],
+			"rotation": {"angle": -22.5, "axis": "y", "origin": [11.61109, 8.86845, 10.75]},
+			"faces": {
+				"north": {"uv": [2, 2.5, 1, 0], "rotation": 180, "texture": "#0"},
+				"east": {"uv": [1, 0, 2, 2.5], "texture": "#0"},
+				"south": {"uv": [2, 0, 1, 2.5], "texture": "#0"},
+				"west": {"uv": [1, 0, 2, 2.5], "texture": "#0"},
+				"up": {"uv": [1, 7, 2, 8], "texture": "#0"},
+				"down": {"uv": [5.5, 0, 6.5, 1], "rotation": 180, "texture": "#0"}
+			}
+		},
+		{
+			"name": "body",
+			"from": [8.80754, -0.38155, 8.89645],
+			"to": [12.80754, 10.61845, 12.89645],
+			"rotation": {"angle": -22.5, "axis": "y", "origin": [11.61109, 8.86845, 10.75]},
+			"faces": {
+				"north": {"uv": [5.5, 8, 2.5, 2.5], "rotation": 180, "texture": "#0"},
+				"east": {"uv": [0, 2.5, 2.5, 8], "texture": "#0"},
+				"south": {"uv": [8, 2.5, 5.5, 8], "texture": "#0"},
+				"west": {"uv": [0, 2.5, 2, 8], "texture": "#0"},
+				"up": {"uv": [3, 0, 5.5, 2.5], "texture": "#0"},
+				"down": {"uv": [5.5, 0, 8, 2.5], "rotation": 180, "texture": "#0"}
+			}
+		},
+		{
+			"name": "body",
+			"from": [4.31952, -0.38155, 5.77034],
+			"to": [8.31952, 10.61845, 9.77034],
+			"rotation": {"angle": 22.5, "axis": "y", "origin": [5.3622, 8.86845, 10.71857]},
+			"faces": {
+				"north": {"uv": [3, 10.5, 0, 16], "texture": "#0"},
+				"east": {"uv": [6, 10.5, 8, 16], "texture": "#0"},
+				"south": {"uv": [6, 16, 3, 10.5], "rotation": 180, "texture": "#0"},
+				"west": {"uv": [6, 10.5, 8, 16], "texture": "#0"},
+				"up": {"uv": [3, 8, 5.5, 10.5], "rotation": 180, "texture": "#0"},
+				"down": {"uv": [5.5, 8, 8, 10.5], "texture": "#0"}
+			}
+		},
+		{
+			"name": "neck",
+			"from": [5.70487, 10.41845, 6.96679],
+			"to": [7.10487, 14.81845, 8.36679],
+			"rotation": {"angle": 22.5, "axis": "y", "origin": [5.3622, 8.86845, 10.71857]},
+			"faces": {
+				"north": {"uv": [2, 8, 1, 10.5], "texture": "#0"},
+				"east": {"uv": [1, 8, 2, 10.5], "texture": "#0"},
+				"south": {"uv": [2, 10.5, 1, 8], "rotation": 180, "texture": "#0"},
+				"west": {"uv": [1, 8, 2, 10.5], "texture": "#0"},
+				"up": {"uv": [1, 8, 2, 9], "rotation": 180, "texture": "#0"},
+				"down": {"uv": [3, 9.5, 4, 10.5], "texture": "#0"}
+			}
+		}
+	],
+	"display": {
+		"fixed": {
+			"rotation": [-90, 0, 0],
+			"translation": [0, 0, -12.5],
+			"scale": [1.5, 1.5, 1.5]
+		}
+	},
+	"groups": [
+		{
+			"name": "bottle",
+			"origin": [10, 10, 20],
+			"color": 0,
+			"children": [0, 1, 2, 3]
+		}
+	]
+}

@@ -1,0 +1,124 @@
+{
+	"credit": "Made with Blockbench",
+	"texture_size": [64, 32],
+	"textures": {
+		"0": "block/3dmodel/skeleton_arrows",
+		"particle": "block/3dmodel/skeleton_arrows"
+	},
+	"elements": [
+		{
+			"name": "Arrow1",
+			"from": [8.45, -8.45, 8],
+			"to": [8.55, 0.55, 11],
+			"rotation": {"angle": -45, "axis": "x", "origin": [4.5, 0.05, 1.5]},
+			"faces": {
+				"north": {"uv": [0, 0, 1.75, 0.05], "rotation": 270, "texture": "#0"},
+				"east": {"uv": [8, 0, 12, 2.5], "rotation": 90, "texture": "#0"},
+				"south": {"uv": [0, 0, 1.75, 0.05], "rotation": 90, "texture": "#0"},
+				"west": {"uv": [8, 0, 12, 2.5], "rotation": 90, "texture": "#0"},
+				"up": {"uv": [0, 0, 0.75, 0.05], "rotation": 90, "texture": "#0"},
+				"down": {"uv": [0, 0, 0.75, 0.05], "rotation": 90, "texture": "#0"}
+			}
+		},
+		{
+			"name": "Arrow2",
+			"from": [7, -8.45, 9.45],
+			"to": [10, 0.55, 9.55],
+			"rotation": {"angle": -45, "axis": "x", "origin": [4.5, 0.05, 1.5]},
+			"faces": {
+				"north": {"uv": [8, 0, 12, 2.5], "rotation": 90, "texture": "#0"},
+				"east": {"uv": [0, 0, 1.75, 0.05], "rotation": 270, "texture": "#0"},
+				"south": {"uv": [8, 0, 12, 2.5], "rotation": 90, "texture": "#0"},
+				"west": {"uv": [0, 0, 1.75, 0.05], "rotation": 90, "texture": "#0"},
+				"up": {"uv": [0, 0, 0.75, 0.05], "rotation": 180, "texture": "#0"},
+				"down": {"uv": [0, 0, 0.75, 0.05], "texture": "#0"}
+			}
+		},
+		{
+			"name": "Arrow2",
+			"from": [12.45, -3.45, 2],
+			"to": [12.55, 5.55, 5],
+			"rotation": {"angle": -45, "axis": "x", "origin": [4.5, 0.05, 1.5]},
+			"faces": {
+				"north": {"uv": [0, 0, 1.75, 0.05], "rotation": 270, "texture": "#0"},
+				"east": {"uv": [8, 0, 12, 2.5], "rotation": 90, "texture": "#0"},
+				"south": {"uv": [0, 0, 1.75, 0.05], "rotation": 90, "texture": "#0"},
+				"west": {"uv": [8, 0, 12, 2.5], "rotation": 90, "texture": "#0"},
+				"up": {"uv": [0, 0, 0.75, 0.05], "rotation": 90, "texture": "#0"},
+				"down": {"uv": [0, 0, 0.75, 0.05], "rotation": 90, "texture": "#0"}
+			}
+		},
+		{
+			"name": "Arrow3",
+			"from": [11, -3.45, 3.45],
+			"to": [14, 5.55, 3.55],
+			"rotation": {"angle": -45, "axis": "x", "origin": [4.5, 0.05, 1.5]},
+			"faces": {
+				"north": {"uv": [8, 0, 12, 2.5], "rotation": 90, "texture": "#0"},
+				"east": {"uv": [0, 0, 1.75, 0.05], "rotation": 270, "texture": "#0"},
+				"south": {"uv": [8, 0, 12, 2.5], "rotation": 90, "texture": "#0"},
+				"west": {"uv": [0, 0, 1.75, 0.05], "rotation": 90, "texture": "#0"},
+				"up": {"uv": [0, 0, 0.75, 0.05], "rotation": 180, "texture": "#0"},
+				"down": {"uv": [0, 0, 0.75, 0.05], "texture": "#0"}
+			}
+		},
+		{
+			"name": "Arrow4",
+			"from": [3.45, 1.28124, 12.19597],
+			"to": [3.55, 10.28124, 15.19597],
+			"rotation": {"angle": 22.5, "axis": "z", "origin": [10.5, 1.78124, 2.69597]},
+			"faces": {
+				"north": {"uv": [0, 0, 1.75, 0.05], "rotation": 270, "texture": "#0"},
+				"east": {"uv": [8, 0, 12, 2.5], "rotation": 90, "texture": "#0"},
+				"south": {"uv": [0, 0, 1.75, 0.05], "rotation": 90, "texture": "#0"},
+				"west": {"uv": [8, 0, 12, 2.5], "rotation": 90, "texture": "#0"},
+				"up": {"uv": [0, 0, 0.75, 0.05], "rotation": 90, "texture": "#0"},
+				"down": {"uv": [0, 0, 0.75, 0.05], "rotation": 90, "texture": "#0"}
+			}
+		},
+		{
+			"name": "Arrow5",
+			"from": [2, 1.28124, 13.64597],
+			"to": [5, 10.28124, 13.74597],
+			"rotation": {"angle": 22.5, "axis": "z", "origin": [10.5, 1.78124, 2.69597]},
+			"faces": {
+				"north": {"uv": [8, 0, 12, 2.5], "rotation": 90, "texture": "#0"},
+				"east": {"uv": [0, 0, 1.75, 0.05], "rotation": 270, "texture": "#0"},
+				"south": {"uv": [8, 0, 12, 2.5], "rotation": 90, "texture": "#0"},
+				"west": {"uv": [0, 0, 1.75, 0.05], "rotation": 90, "texture": "#0"},
+				"up": {"uv": [0, 0, 0.75, 0.05], "rotation": 180, "texture": "#0"},
+				"down": {"uv": [0, 0, 0.75, 0.05], "texture": "#0"}
+			}
+		}
+	],
+	"display": {
+		"fixed": {
+			"rotation": [-90, 0, 0],
+			"translation": [0, 0, -15.25],
+			"scale": [2, 2, 2]
+		}
+	},
+	"groups": [
+		{
+			"name": "Arrows",
+			"origin": [4.5, 0.05, 1.5],
+			"color": 0,
+			"nbt": "{}",
+			"children": [0, 1]
+		},
+		{
+			"name": "Arrows",
+			"origin": [4.5, 0.05, 1.5],
+			"color": 0,
+			"nbt": "{}",
+			"children": [2, 3]
+		},
+		{
+			"name": "Arrows",
+			"origin": [4.5, 0.05, 1.5],
+			"color": 0,
+			"nbt": "{}",
+			"children": [4, 5]
+		}
+	]
+}

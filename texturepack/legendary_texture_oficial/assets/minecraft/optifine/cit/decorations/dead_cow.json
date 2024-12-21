@@ -1,0 +1,114 @@
+{
+	"credit": "Made with Blockbench",
+	"texture_size": [64, 32],
+	"textures": {
+		"0": "block/3dmodel/skeleton_cow",
+		"particle": "block/3dmodel/skeleton_cow"
+	},
+	"elements": [
+		{
+			"name": "skull",
+			"from": [7, 1, -6],
+			"to": [15, 9, 0],
+			"rotation": {"angle": -22.5, "axis": "z", "origin": [8, 7, -3.33333]},
+			"faces": {
+				"north": {"uv": [1.5, 3, 3.5, 7], "texture": "#0"},
+				"east": {"uv": [0, 3, 1.5, 7], "texture": "#0"},
+				"south": {"uv": [5, 3, 7, 7], "texture": "#0"},
+				"west": {"uv": [3.5, 3, 5, 7], "texture": "#0"},
+				"up": {"uv": [1.5, 0, 3.5, 3], "texture": "#0"},
+				"down": {"uv": [3.5, 0, 5.5, 3], "texture": "#0"}
+			}
+		},
+		{
+			"name": "horn",
+			"from": [15, 8, -4],
+			"to": [16, 11, -3],
+			"rotation": {"angle": -22.5, "axis": "z", "origin": [8, 7, -3.33333]},
+			"faces": {
+				"north": {"uv": [5.5, 0.5, 5.75, 2], "texture": "#0"},
+				"east": {"uv": [5.75, 0.5, 6, 2], "texture": "#0"},
+				"south": {"uv": [6, 0.5, 6.25, 2], "texture": "#0"},
+				"west": {"uv": [6.25, 0.5, 6.5, 2], "texture": "#0"},
+				"up": {"uv": [5.75, 0, 6, 0.5], "texture": "#0"},
+				"down": {"uv": [5.75, 0, 6, 0.5], "texture": "#0"}
+			}
+		},
+		{
+			"name": "horn2",
+			"from": [6, 8, -4],
+			"to": [7, 11, -3],
+			"rotation": {"angle": -22.5, "axis": "z", "origin": [8, 7, -3.33333]},
+			"faces": {
+				"north": {"uv": [5.5, 0.5, 5.75, 2], "texture": "#0"},
+				"east": {"uv": [5.75, 0.5, 6, 2], "texture": "#0"},
+				"south": {"uv": [6, 0.5, 6.25, 2], "texture": "#0"},
+				"west": {"uv": [6.25, 0.5, 6.5, 2], "texture": "#0"},
+				"up": {"uv": [5.75, 0, 6, 0.5], "texture": "#0"},
+				"down": {"uv": [5.75, 0, 6, 0.5], "texture": "#0"}
+			}
+		},
+		{
+			"name": "Torso",
+			"from": [5, 1, 0],
+			"to": [13, 7, 11],
+			"rotation": {"angle": -22.5, "axis": "z", "origin": [9, 3, 5.5]},
+			"faces": {
+				"north": {"uv": [7, 5.5, 10, 8], "texture": "#0"},
+				"east": {"uv": [4.5, 7, 6.25, 14], "rotation": 90, "texture": "#0"},
+				"south": {"uv": [2, 13.5, 5, 15.5], "texture": "#0"},
+				"west": {"uv": [10.75, 7, 12.5, 14], "rotation": 270, "texture": "#0"},
+				"up": {"uv": [12.5, 7, 15.5, 14], "texture": "#0"},
+				"down": {"uv": [7.25, 7, 9.75, 14], "rotation": 180, "texture": "#0"}
+			}
+		},
+		{
+			"name": "Hip",
+			"from": [5, 0, 11],
+			"to": [13, 5, 16],
+			"faces": {
+				"north": {"uv": [13.25, 2.5, 15.25, 5], "texture": "#0"},
+				"east": {"uv": [13.25, 1.5, 15.25, 4], "texture": "#0"},
+				"south": {"uv": [10.25, 3.5, 12.75, 6], "texture": "#0"},
+				"west": {"uv": [13, 1.5, 15, 3.5], "texture": "#0"},
+				"up": {"uv": [10.25, 0, 12.75, 3.5], "texture": "#0"},
+				"down": {"uv": [10.5, 1, 12.5, 3.5], "rotation": 180, "texture": "#0"}
+			}
+		}
+	],
+	"display": {
+		"firstperson_righthand": {
+			"rotation": [0, 90, 0],
+			"translation": [6, 4, 0],
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"firstperson_lefthand": {
+			"rotation": [0, 90, 0],
+			"translation": [6, 4, 0],
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"ground": {
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"gui": {
+			"rotation": [45, -180, 0],
+			"translation": [1.5, 4, 0],
+			"scale": [0.7, 0.7, 0.7]
+		},
+		"fixed": {
+			"rotation": [-90, 90, 0],
+			"translation": [3, 0, -16.5],
+			"scale": [2, 2, 2]
+		}
+	},
+	"groups": [
+		{
+			"name": "Head",
+			"origin": [0, 0, 0],
+			"color": 0,
+			"children": [0, 1, 2]
+		},
+		3,
+		4
+	]
+}
