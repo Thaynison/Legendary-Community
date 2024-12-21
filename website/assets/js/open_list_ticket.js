@@ -285,7 +285,7 @@ function changeContent(contentType) {
             `;
             // Garantir que os tickets sejam carregados quando o conteúdo for trocado
             const userid2 = document.getElementById('userid2').textContent;
-            if (userid) {
+            if (userid2) {
                 getHistoricoEmprestimos(userid2);
             }
             break;
