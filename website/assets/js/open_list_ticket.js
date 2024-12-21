@@ -15,6 +15,7 @@ window.addEventListener('DOMContentLoaded', () => {
     if (userid) {
         getHistoricoTickets(userid);
         getHistoricoEmprestimos(userid);
+        getHistoricoDevolucoes(userid);
     } else {
         console.log("erro no userid")
     }
@@ -156,6 +157,115 @@ function getHistoricoEmprestimos(userid) {
         });
 }
 
+function getHistoricoDevolucoes(userid) {
+    const apiUrl = `https://dash.legendarycommunity.com.br/api/api_buscar_devolution_user.php?userid=${userid}`;
+
+    fetch(apiUrl)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`Erro na API: ${response.statusText}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            const container = document.querySelector('.lista-de-devolucoes');
+
+            if (data.error) {
+                container.innerHTML = `<p class="error">${data.error}</p>`;
+                return;
+            }
+
+            if (!Array.isArray(data) || data.length === 0) {
+                container.innerHTML = `<p class="info">Nenhuma devolução encontrado.</p>`;
+                return;
+            }
+
+            // Função para mapear o status para emojis e títulos
+            const getStatusInfoDevolucao = (status) => {
+                switch (status) {
+                    case 'Concluido':
+                        return { emoji: '✅', title: 'Devolução Concluída' };
+                    case 'Reprovado':
+                        return { emoji: '❌', title: 'Devolução Reprovada' };
+                    case 'Em Analise':
+                        return { emoji: '🔎', title: 'Devolução Em Análise' };
+                    default:
+                        return { emoji: '❓', title: 'Devolução Desconhecida' };
+                }
+            };
+
+            let htmlContent = `
+                <table class="table is-fullwidth">
+                    <thead>
+                        <tr>
+                            <th>ID Ticket</th>
+                            <th>Username</th>
+                            <th>Descrição</th>
+                            <th>Print</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+            `;
+
+            data.forEach(devolucao => {
+                const statusInfodevolucao = getStatusInfoDevolucao(devolucao.status);
+                htmlContent += `
+                    <tr>
+                        <td>${devolucao.id_ticket}</td>
+                        <td>${devolucao.username}</td>
+                        <td>${devolucao.descricao}</td>
+                        <td>
+                            <button class="eye-button" onclick="showImageDevolution('${devolucao.print}', event)">👁️</button>
+                        </td>
+                        <td>
+                            <span title="${statusInfodevolucao.title}">${statusInfodevolucao.emoji}</span>
+                        </td>
+                    </tr>`;
+            });
+
+            htmlContent += '</tbody></table>';
+            container.innerHTML = htmlContent;
+        })
+        .catch(error => {
+            const container = document.querySelector('.lista-de-devolucoes');
+            container.innerHTML = `<p class="error">Erro ao carregar os dados: ${error.message}</p>`;
+        });
+}
+
+function showImageDevolution(imageUrl) {
+    event.preventDefault();
+    const modal = document.createElement('div');
+    modal.style.position = 'fixed';
+    modal.style.top = '0';
+    modal.style.left = '0';
+    modal.style.width = '100%';
+    modal.style.height = '100%';
+    modal.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+    modal.style.display = 'flex';
+    modal.style.alignItems = 'center';
+    modal.style.justifyContent = 'center';
+    modal.style.zIndex = '9999';
+    const img = document.createElement('img');
+    img.src = imageUrl;
+    img.style.maxWidth = '90%';
+    img.style.maxHeight = '90%';
+    const closeButton = document.createElement('button');
+    closeButton.innerText = 'Fechar';
+    closeButton.style.position = 'absolute';
+    closeButton.style.top = '10px';
+    closeButton.style.right = '10px';
+    closeButton.style.padding = '10px';
+    closeButton.style.backgroundColor = 'white';
+    closeButton.style.border = 'none';
+    closeButton.style.cursor = 'pointer';
+    closeButton.addEventListener('click', () => {
+        document.body.removeChild(modal);
+    });
+    modal.appendChild(img);
+    modal.appendChild(closeButton);
+    document.body.appendChild(modal);
+}
 
 function showImage(imageUrl) {
     event.preventDefault();
@@ -280,13 +390,25 @@ function changeContent(contentType) {
         case 'lista-de-emprestimos':
             contentArea.innerHTML = `
                 <form class="form-lista-de-emprestimos">
-                    <p>Carregando histórico de tickets...</p>
+                    <p>Carregando histórico de emprestimos...</p>
                 </form>
             `;
             // Garantir que os tickets sejam carregados quando o conteúdo for trocado
             const userid2 = document.getElementById('userid2').textContent;
             if (userid2) {
                 getHistoricoEmprestimos(userid2);
+            }
+            break;
+        case 'lista-de-devolucoes':
+            contentArea.innerHTML = `
+                <form class="form-lista-de-devolucoes">
+                    <p>Carregando histórico de devoluções...</p>
+                </form>
+            `;
+            // Garantir que os tickets sejam carregados quando o conteúdo for trocado
+            const userid3 = document.getElementById('userid2').textContent;
+            if (userid3) {
+                getHistoricoDevolucoes(userid3);
             }
             break;
         default:
