@@ -168,7 +168,7 @@ function getHistoricoDevolucoes(userid) {
             return response.json();
         })
         .then(data => {
-            const container = document.querySelector('.lista-de-devolucoes');
+            const container = document.querySelector('.form-lista-de-devolucoes');
 
             if (data.error) {
                 container.innerHTML = `<p class="error">${data.error}</p>`;
@@ -228,7 +228,7 @@ function getHistoricoDevolucoes(userid) {
             container.innerHTML = htmlContent;
         })
         .catch(error => {
-            const container = document.querySelector('.lista-de-devolucoes');
+            const container = document.querySelector('.form-lista-de-devolucoes');
             container.innerHTML = `<p class="error">Erro ao carregar os dados: ${error.message}</p>`;
         });
 }
