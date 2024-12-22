@@ -310,6 +310,11 @@ function redirecionarParaEquipeStaff() {
 window.location.href = `equipestaff.html?username=${encodeURIComponent(username)}&userid=${encodeURIComponent(userid)}&avatar=${encodeURIComponent(avatar)}`;
 }
 
+function redirecionarParaEquipeStaff2() {
+
+  window.location.href = `equipestaff2.html`;
+}
+
 function redirecionarEcho() {
 
   window.location.href = `https://echo.ac/`;

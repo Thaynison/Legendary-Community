@@ -32,14 +32,46 @@
     
       <div class="navbar-menu">
         <div class="navbar-start">
-          <a onclick="redirecionarParaIndex()" class="navbar-item"><i class="fas fa-home"></i> Início</a>
-          <a onclick="redirecionarParaPublicacoes()" class="navbar-item"><i class="fas fa-comments"></i> Publicações</a>
-          <a onclick="redirecionarParaRegras2()" class="navbar-item"><i class="fas fa-book"></i> Regras</a>
+          <a href="#" onclick="redirecionarParaDashboard()" class="navbar-item"><i class="fas fa-home"></i> Início</a>
+          <a href="#" onclick="redirecionarParaRegras()" class="navbar-item"><i class="fas fa-book"></i> Regras</a>
+          <a href="#" onclick="redirecionarParaVotar()" class="navbar-item"><i class="fas fa-vote-yea"></i> Votar</a>
+           <!--  -->
+           <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-item"><i class="fas fa-gamepad"></i> Modpack</a>
+            <div class="navbar-dropdown">
+              <a href="#" onclick="redirecionarParaModpack()" class="navbar-item"><i class="fas fa-gamepad"></i> Modpacks</a>
+              <a href="#" onclick="redirecionarParaLaunchers()" class="navbar-item"><i class="fas fa-gamepad"></i> Launchers</a>
+              <hr class="navbar-divider">
+              <a href="#" onclick="redirecionarParaInstalacoes()" class="navbar-item">Detalhes de Instalações</a>
+            </div>
+          </div>
+          <!--  -->
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link"><i class="fas fa-shopping-cart"></i> Loja</a>
+            <div class="navbar-dropdown">
+              <a href="#" onclick="redirecionarParaloja()" class="navbar-item"><i class="fas fa-gem"></i> VIPs</a>
+              <a href="#" onclick="redirecionarParaRarity()" class="navbar-item"><i class="fas fa-gem"></i> Rarity's</a>
+              <hr class="navbar-divider">
+              <a href="#" onclick="redirecionarParaTermos()" class="navbar-item">Informações importantes</a>
+            </div>
+          </div>
           <a href="https://discord.gg/DVA2hq4SaN" class="navbar-item"><i class="fab fa-discord"></i> Discord</a>
+
+
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-item"><img id="avatar" class="img-fluid rounded-circle" alt="Avatar do usuário" style="max-width: 150px;"></a>
+            <div class="navbar-dropdown">
+              <a href="#" onclick="redirecionarParaPerfil()" class="navbar-item"><i class="fas fa-user"></i> Perfil</a>
+              <a href="#" onclick="redirecionarParaSuporte()" class="navbar-item"><i class="fas fa-book"></i> Suporte</a>
+              <hr class="navbar-divider">
+              <a id="logout-button" class="navbar-item"><i class="fas fa-sign-out-alt"></i> Sair</a>
+              <a href="" id="username" hidden></a>
+              <a href="" id="userid" hidden></a>
+            </div>
+          </div>
         </div>
-    
+          
         <div class="navbar-end">
-          <a onclick="loginWithDiscord()" class="navbar-item"><i class="fas fa-user"></i> Login</a>
           <a id="ip" class="navbar-item">
             <i class="fas fa-copy"></i> <span>legendarycommunity.com.br:25567</span>
             <textarea></textarea>
@@ -49,34 +81,6 @@
     </nav>
   </div>
 </header>
-
-<main class="section">
-  <div class="container">
-    <div class="columns">
-      <div class="column">
-
-        <article class="article">
-          <h1 class="article-title"><i class="fas fa-users"></i> Conheça nossa equipe</h1>
-          <div class="article-content">
-            <ul class="fundador staffs">
-
-            </ul>
-            <ul class="administrador staffs">
-
-            </ul>
-            <ul class="moderador staffs">
-
-            </ul>
-            <ul class="ajudante staffs">
-
-            </ul>
-          </div>
-        </article>    
-
-      </div>
-    </div>
-  </div>
-</main>
 
 <footer class="section">
   <div class="container">
