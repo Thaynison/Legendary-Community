@@ -415,3 +415,26 @@ a.is-muted:hover {
     outline: none;
     box-shadow: 0 0 0 2px rgba(255, 165, 0, 0.6); /* Destaque no foco */
   }
+
+
+.article-content .painelstaff {
+  max-height: 490px; /* Defina a altura máxima conforme necessário */
+  overflow-y: auto; /* Permite a rolagem vertical */
+  scrollbar-width: thin; /* Define a largura da barra de rolagem (para Firefox) */
+  scrollbar-color: rgba(0, 0, 0, 0.5) transparent; /* Define a cor da barra de rolagem e da área de fundo (para Firefox) */
+}
+
+/* Para navegadores Webkit, como o Chrome */
+article-content .painelstaff::-webkit-scrollbar {
+  width: 8px; /* Largura da barra de rolagem */
+}
+
+.article-content .painelstaff::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.5); /* Cor da barra de rolagem */
+  border-radius: 10px; /* Arredonda os cantos da barra de rolagem */
+}
+
+.article-content .painelstaff::-webkit-scrollbar-track {
+  background: transparent; /* Fundo transparente para a área da barra de rolagem */
+}
+
