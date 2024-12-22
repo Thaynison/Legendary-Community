@@ -63,20 +63,6 @@ function redirecionarParaVotar() {
   window.location.href = `votar.html?username=${encodeURIComponent(username)}&userid=${encodeURIComponent(userid)}&avatar=${encodeURIComponent(avatar)}`;
 }
 
-function redirecionarParaRegras() {
-    const username = document.getElementById('username').textContent;
-    const userid = document.getElementById('userid').textContent;
-    const avatar = document.getElementById('avatar').src;
-
-  window.location.href = `regras.html?username=${encodeURIComponent(username)}&userid=${encodeURIComponent(userid)}&avatar=${encodeURIComponent(avatar)}`;
-}
-
-function redirecionarParaRegras2() {
-
-window.location.href = `regras2.html`;
-}
-
-
 function redirecionarParaDashboard() {
     const username = document.getElementById('username').textContent;
     const userid = document.getElementById('userid').textContent;
@@ -306,6 +292,9 @@ function redirecionarPara_PainelStaff() {
 }
 
 function redirecionarParaEquipeStaff() {
+  const username = document.getElementById('username').textContent;
+  const userid = document.getElementById('userid').textContent;
+  const avatar = document.getElementById('avatar').src; 
 
 window.location.href = `equipestaff.html?username=${encodeURIComponent(username)}&userid=${encodeURIComponent(userid)}&avatar=${encodeURIComponent(avatar)}`;
 }
@@ -326,6 +315,22 @@ function redirecionarOcean() {
 }
 
 function redirecionarTempOff() {
+  const username = document.getElementById('username').textContent;
+  const userid = document.getElementById('userid').textContent;
+  const avatar = document.getElementById('avatar').src;
 
   window.location.href = `tempoff.html?username=${encodeURIComponent(username)}&userid=${encodeURIComponent(userid)}&avatar=${encodeURIComponent(avatar)}`;
+}
+
+function redirecionarParaRegras() {
+  const username = document.getElementById('username').textContent;
+  const userid = document.getElementById('userid').textContent;
+  const avatar = document.getElementById('avatar').src;
+
+window.location.href = `regras.html?username=${encodeURIComponent(username)}&userid=${encodeURIComponent(userid)}&avatar=${encodeURIComponent(avatar)}`;
+}
+
+function redirecionarParaRegras2() {
+
+window.location.href = `regras2.html`;
 }
