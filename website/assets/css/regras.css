@@ -32,7 +32,7 @@
 .article .regras strong {
     font-size: 1rem; /* Tamanho do texto */
     font-weight: bold; /* Negrito */
-    color: #ffffff; /* Cor do texto */
+    color: #000000; /* Cor do texto */
     line-height: 1.6; /* Espaçamento entre linhas */
     margin-bottom: 15px; /* Espaço abaixo do parágrafo */
     font-family: 'Arial', sans-serif; /* Família da fonte */
