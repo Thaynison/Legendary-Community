@@ -49,7 +49,7 @@
     font-family: 'Arial', sans-serif; /* Família da fonte */
 }
 
-.article .regras h4 {
+.article .regras strong .red {
     font-size: 1rem; /* Tamanho do texto */
     font-weight: bold; /* Negrito */
     color: #ff0000; /* Cor do texto */
