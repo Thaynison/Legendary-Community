@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  <title>.+* Legendary Community *+.</title>
+  <link rel="stylesheet" href="/assets/css/bulma.min.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/regras.css">
+  <link rel="icon" href="/assets/img/icon_server.png" type="image/png">
+</head>
+
+<body>
+
+  <header class="section">
+    <div class="logo container">
+      <a href="#" onclick="redirecionarParaDashboard()">
+        <img src="/assets/img/logo.png">
+      </a>
+    </div>
+  
+    <div class="container">
+      <nav class="navbar">
+        <div class="navbar-brand">
+          <a class="navbar-burger burger">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+      
+        <div class="navbar-menu">
+          <div class="navbar-start">
+            <a href="#" onclick="redirecionarParaDashboard()" class="navbar-item"><i class="fas fa-home"></i> Início</a>
+            <a href="#" onclick="redirecionarParaRegras()" class="navbar-item"><i class="fas fa-book"></i> Regras</a>
+            <a href="#" onclick="redirecionarParaVotar()" class="navbar-item"><i class="fas fa-vote-yea"></i> Votar</a>
+             <!--  -->
+             <div class="navbar-item has-dropdown is-hoverable">
+              <a class="navbar-item"><i class="fas fa-gamepad"></i> Modpack</a>
+              <div class="navbar-dropdown">
+                <a href="#" onclick="redirecionarParaModpack()" class="navbar-item"><i class="fas fa-gamepad"></i> Modpacks</a>
+                <a href="#" onclick="redirecionarParaLaunchers()" class="navbar-item"><i class="fas fa-gamepad"></i> Launchers</a>
+                <hr class="navbar-divider">
+                <a href="#" onclick="redirecionarParaInstalacoes()" class="navbar-item">Detalhes de Instalações</a>
+              </div>
+            </div>
+            <!--  -->
+            <div class="navbar-item has-dropdown is-hoverable">
+              <a class="navbar-link"><i class="fas fa-shopping-cart"></i> Loja</a>
+              <div class="navbar-dropdown">
+                <a href="#" onclick="redirecionarParaloja()" class="navbar-item"><i class="fas fa-gem"></i> VIPs</a>
+                <a href="#" onclick="redirecionarParaRarity()" class="navbar-item"><i class="fas fa-gem"></i> Rarity's</a>
+                <hr class="navbar-divider">
+                <a href="#" onclick="redirecionarParaTermos()" class="navbar-item">Informações importantes</a>
+              </div>
+            </div>
+            <a href="https://discord.gg/DVA2hq4SaN" class="navbar-item"><i class="fab fa-discord"></i> Discord</a>
+  
+  
+            <div class="navbar-item has-dropdown is-hoverable">
+              <a class="navbar-item"><img id="avatar" class="img-fluid rounded-circle" alt="Avatar do usuário" style="max-width: 150px;"></a>
+              <div class="navbar-dropdown">
+                <a href="#" onclick="redirecionarParaPerfil()" class="navbar-item"><i class="fas fa-user"></i> Perfil</a>
+                <a href="#" onclick="redirecionarParaSuporte()" class="navbar-item"><i class="fas fa-book"></i> Suporte</a>
+                <hr class="navbar-divider">
+                <a id="logout-button" class="navbar-item"><i class="fas fa-sign-out-alt"></i> Sair</a>
+                <a href="" id="username" hidden></a>
+                <a href="" id="userid" hidden></a>
+              </div>
+            </div>
+          </div>
+            
+          <div class="navbar-end">
+            <a id="ip" class="navbar-item">
+              <i class="fas fa-copy"></i> <span>legendarycommunity.com.br:25567</span>
+              <textarea></textarea>
+            </a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+<main class="section">
+  <div class="container">
+    <article class="article">
+      <h1 class="article-title"><i class="fas fa-list-ul"></i> Lista de regras</h1>
+      <div class="article-content regras">
+          <h2>Regra 01 - Enviar Xingamentos!</h2>
+          <p><strong>Cyberbullying</strong> é uma <strong>violência</strong> praticada contra alguém <strong>através da internet</strong> ou de outras tecnologias relacionadas. Praticar cyberbullying significa usar o espaço virtual para intimidar e hostilizar uma pessoa difamando, insultando ou atacando covardemente.</p>
+          <p>Não envie em qualquer chat palavras impróprias, ofensivas, obscenas, agressivas, imorais mesmo sendo abreviadas ou com "*".</p>
+          <p>É <strong style="color: red;">PROIBIDO</strong> hostilizar ou difamar outros jogadores por qualquer método possível dentro do jogo. Exemplo: Hostilizar, difamar em chat de texto, chat de voz público ou privado, renomeando itens, escrevendo em placas, etc.</p>
+          <p>Não envie xingamentos e/ou brincadeiras de mau gosto para outros jogadores que seja seu "amigo". Motivo: Jogadores e <a onclick="redirecionarParaEquipeStaff()">equipe de moderação</a> não sabem que o Jogador A é amigo do Jogador B. Isso pode incentivar outros jogadores a fazer o mesmo.</p>
+
+          <h2>Regra 02 - Usar Métodos para Obter Vantagens!</h2>
+          <p>Qualquer cliente, programa, modificação (mod) ou textura que dê vantagens desleais é <strong style="color: red;">PROIBIDO</strong>!</p>
+          <p>O uso de clientes, programas, modificações (mods) ou texturas para voar, encontrar minérios e outros blocos, bater mais rápido, aumentar o dano de ataque, não receber dano, correr mais rápido do que o normal, visualizar informações de jogadores invisíveis e etc não são permitidos!</p>
+          <p>Utilização de programas ou qualquer forma para realizar tarefas automáticas é <strong style="color: red;">PROIBIDO</strong> incluindo colocar ou remover blocos, usar minecart para carregar chunks, burlar sistema ant-AFK, macro/auto-clicker em mouses sendo eles por software, hardware, elásticos, fita, pesos, alteração de tecla para atacar e etc.</p>
+          <p>Não é necessário compartilhamento de tela para aplicação de banimento mas caso a staff solicite através do programa Anydesk para executar ferramentas como <a onclick="redirecionarEcho()">Echo</a> ou <a onclick="redirecionarOcean()">Ocean</a> e o jogador recuse, a staff poderá aplicar o banimento permanente.</p>
+        
+          <h2>Regra 03 - Destruir o Mapa ou Construções!</h2>
+          <p>Não é permitido quebrar construções de outros jogadores, colocar ou remover blocos aleatórios pelo mapa, colocar lava ou água pelo mapa de forma aleatória com o objetivo de destruir o mapa.</p>
+          <p>Ao encontrar terrenos sem proteção é permitido pegar itens de baús, fornalhas, shulkerbox's e etc, é permitido quebrar blocos de alto valor como sinalizador, caixa de shulker, blocos de minérios, spawners, etc. <a onclick="redirecionarTempOff()">Saiba o tempo offline para perda da proteção clicando aqui!</a></p>
+        
+          <h2>Regra 04 - Fazer Spam ou Flood!</h2>
+          <p>Floodar vem da palavra em inglês: flood que significa enchente, mas na internet significa encher um chat online com a mesma mensagem repetidamente várias vezes seguidas.</p>
+          <p>Enviar a mesma mensagem várias vezes no chat dentro de um curto espaço de tempo não é permitido!</p>
+          <p>Enviar na mesma mensagem vários símbolos unicode, emoji e etc.</p>
+          <p>Enviar comandos com objetivo de floodar o chat de outro jogador é contra as regras.</p>
+          <p>Qualquer método para incitar flood em massa é passivo de punição.</p>
+        
+          <h2>Regra 05 - Fazer Armadilha ou Chat Falso!</h2>
+          <p><strong>Armadilha:</strong> Qualquer mecanismo ou estratégia projetada para matar um jogador sem que este tenha qualquer chance de defesa ou reação.</p>
+          <p><strong>Chat Falso:</strong> Qualquer tentativa de enganar ou persuadir outro jogador para que envie ou aceite um pedido de teleporte, com o objetivo de matá-lo em seguida.</p>
+
+          <h2>Regra 06 - Praticar Ações Antijogo!</h2>
+          <p>Possuir mais de 3 contas online;</p>
+          <p>Entrar em eventos com duas contas diferentes simultaneamente;</p>
+          <p>Entrar com conta secundária para causar confusão no chat;</p>
+          <p>Puxar mob agressivo para dentro de proteções para matar jogadores offline;</p>
+          <p>Puxar jogadores offline para fora de proteção e etc.</p>
+        
+          <h2>Regra 07 - Utilizar Nickname Inapropriado!</h2>
+          <p>Utilizar nickname inapropriado não é permitido, com isso em mente, os nicknames não podem conter:</p>
+          <h3>● Nickname semelhante com objetivo de provocação</h3>
+          <h3>● Discriminação/calúnias</h3>
+          <h3>● Promoção de atividade criminosa/uso de drogas</h3>
+          <h3>● Promoção de autoagressão/suicídio</h3>
+          <h3>● Promoção de violência extrema;</h3>
+          <h3>● Promoção de qualquer outra forma de discurso de ódio.</h3>
+          <h3>● Conteúdo sexual</h3>
+          <h3>● Símbolos de ódio</h3>
+
+          <h2>Regra 08 - Utilizar Skin Inapropriada!</h2>
+          <p>Utilizar skins com conteúdo pornográfico ou pertubador não é permitido.</p>
+
+          <h2>Regra 09 - Divulgar outros Servidores!</h2>
+          <p>Enviar mensagem com objetivo de divulgar outro servidor de minecraft contendo ou não o IP.</p>
+        
+          <h2>Regra 10 - MapArts ou Construções Obscenas!</h2>
+          <p>É estritamente <strong style="color: red;">PROIBIDO</strong> criar construções com conteúdo sexual obsceno ou símbolos de ódio. Da mesma forma, não é permitido criar ou possuir MapArts com qualquer forma de conteúdo sexual ou símbolos de ódio.</p>
+        
+          <h2>Regra 11 - Comércio Externo de Itens ou Conta!</h2>
+          <p>Venda ou compra de cash, coins e itens por dinheiro real ou outros meios externos é contra as regras.</p>
+          <p>Venda ou compra de conta, independente da forma de pagamento é contra as regras.</p>
+
+          <h2>Regra 12 - Burlar Punição!</h2>
+          <p>Utilizar conta secundária para burlar uma punição ou quebrar a regra de forma intencional não é permitido. Exemplos: Utilizar conta secundária durante banimento ou mute na conta principal, escrever em placa, livros, renomear itens para se comunicar com outros jogadores estando silenciado e etc.</p>
+
+          <h2>Regra 13 - Discurso de Ódio!</h2>
+          <p>Será considerado discurso de ódio mensagens racistas, homofóbicas, apologia a crime e etc.</p>
+
+          <h2>Regra 14 - Praticar Doxxing!</h2>
+          <p>Doxxing (ou doxing) é a divulgação de informações pessoais de uma pessoa sem o seu consentimento ou ameaça.</p>
+          <p>Exemplo de informações pessoais: foto, endereço, nome, número de telefone, número de identidade e CPF, entre outros.</p>
+
+          <h2>Regra 15 - Abusar de Erros!</h2>
+          <p>Abusar de erros do jogo ou de sistemas do servidor para obter vantagens.</p>
+          <p>Exemplo: Duplicar itens através de erros do jogo ou servidor.</p>
+          
+          <h2>Regra 16 - Abrir Tickets Sem Informações completas!</h2>
+          <p>Abrir tickets de suporte sem fornecer as informações completas necessárias para a resolução do problema.</p>
+          <p>Exemplo: Enviar um ticket apenas dizendo "não consigo jogar" sem detalhar o erro ou situação específica.</p>
+          
+          <h2>Regra 17 - Abusar da Solicitação de Devolução!</h2>
+          <p>Solicitar devoluções de itens, dinheiro ou vantagens repetidamente sem justificativa válida ou com intenções de enganar a equipe de suporte.</p>
+          <p>Exemplo: Pedir devolução de itens após já ter recebido a devolução anteriormente ou mentir sobre a perda de itens.</p>         
+
+        </div>
+    </article>
+    <br>
+    <article class="article">
+      <h1 class="article-title"><i class="fas fa-ban"></i> Tabela de punições</h1>
+      <div class="article-content">
+      <table class="table is-fullwidth is-striped is-bordered is-narrow">
+        <thead>
+            <tr>
+              <th>Infração</th>
+              <th>1° Ocorrência</th>
+              <th>2° Ocorrência</th>
+              <th>3° Ocorrência</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Regra 01 - Enviar Xingamentos!</td>
+              <td>Silenciamento temporário de 2 horas.</td>
+              <td>Silenciamento temporário de 2 dias.</td>
+              <td>Silenciamento temporário de 7 dias.</td>
+            </tr>
+            <tr>
+              <td>Regra 02 - Usar Métodos para Obter Vantagens!</td>
+              <td>Banimento temporário de 7 dias.</td>
+              <td>Banimento temporário de 30 dias.</td>
+              <td>Banimento temporário de 180 dias.</td>
+            </tr>
+            <tr>
+              <td>Regra 03 - Destruir o Mapa ou Construções!</td>
+              <td>Banimento temporário de 7 dias.</td>
+              <td>Banimento temporário de 30 dias.</td>
+              <td>Banimento temporário de 180 dias.</td>
+            </tr>
+            <tr>
+              <td>Regra 04 - Fazer Spam ou Flood!</td>
+              <td>Silenciamento temporário de 30 minutos.</td>
+              <td>Silenciamento temporário de 2 horas.</td>
+              <td>Banimento temporário de 7 dias.</td>
+            </tr>
+            <tr>
+              <td>Regra 05 - Fazer Armadilha ou Chat Falso!</td>
+              <td>Banimento temporário de 7 dias.</td>
+              <td>Banimento temporário de 30 dias.</td>
+              <td>Banimento temporário de 180 dias.</td>
+            </tr>
+            <tr>
+              <td>Regra 06 - Praticar Ações Antijogo!</td>
+              <td>Banimento temporário de 7 dias.</td>
+              <td>Banimento temporário de 30 dias.</td>
+              <td>Banimento temporário de 180 dias.</td>
+            </tr>
+            <tr>
+              <td>Regra 07 - Utilizar Nickname Inapropriado!</td>
+              <td>Advertencia 1x.</td>
+              <td>Advertencia 2x.</td>
+              <td>Banimento permanente.</td>
+            </tr>
+            <tr>
+              <td>Regra 08 - Utilizar Skin Inapropriada!</td>
+              <td>Advertencia 1x.</td>
+              <td>Advertencia 2x.</td>
+              <td>Banimento permanente.</td>
+            </tr>
+            <tr>
+              <td>Regra 09 - Divulgar outros Servidores!</td>
+              <td>Advertencia 1x.</td>
+              <td>Advertencia 2x.</td>
+              <td>Banimento permanente.</td>
+            </tr>
+            <tr>
+              <td>Regra 10 - MapArts ou Construções Obscenas!</td>
+              <td>Advertencia 1x.</td>
+              <td>Advertencia 2x.</td>
+              <td>Banimento permanente.</td>
+            </tr>
+            <tr>
+              <td>Regra 11 - Comércio Externo de Itens ou Conta!</td>
+              <td>Advertencia 1x.</td>
+              <td>Advertencia 2x.</td>
+              <td>Banimento permanente.</td>
+            </tr>
+            <tr>
+              <td>Regra 12 - Burlar Punição!</td>
+              <td>Advertencia 1x.</td>
+              <td>Advertencia 2x.</td>
+              <td>Banimento permanente.</td>
+            </tr>
+            <tr>
+              <td>Regra 13 - Discurso de Ódio!</td>
+              <td>Advertencia 1x.</td>
+              <td>Advertencia 2x.</td>
+              <td>Banimento permanente.</td>
+            </tr>
+            <tr>
+              <td>Regra 14 - Praticar Doxxing!</td>
+              <td>Advertencia 1x.</td>
+              <td>Advertencia 2x.</td>
+              <td>Banimento permanente.</td>
+            </tr>
+            <tr>
+              <td>Regra 15 - Abusar de Erros!</td>
+              <td>Advertencia 1x.</td>
+              <td>Advertencia 2x.</td>
+              <td>Banimento permanente.</td>
+            </tr>
+            <tr>
+              <td>Regra 16 - Abrir Tickets Sem Informações completas!</td>
+              <td>Cancelamento do Ticket</td>
+              <td>Advertencia 3x.</td>
+              <td>Banimento permanente.</td>
+            </tr>
+            <tr>
+              <td>Regra 17 - Abusar da Solicitação de Devolução!</td>
+              <td>Cancelamento da Devolução</td>
+              <td>Advertencia 3x.</td>
+              <td>Banimento permanente.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </article>
+  </div>
+</main>
+
+<footer class="section">
+  <div class="container">
+    <article class="footer">
+      <span>Legendary Community <script>document.write(new Date().getFullYear())</script> &copy; Todos os direitos reservados.</span>
+      <a href="https://thaynison.vercel.app" target="_blank" class="is-muted"><i class="fas fa-tools"></i> Desenvolvido por Thaynison</a>
+    </article>
+  </div>
+</footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="/assets/js/scripts.js"></script>
+<script defer src="https://use.fontawesome.com/releases/v5.12.1/js/all.js"></script>
+<script src="/assets/js/redirect.js"></script>
+<script src="/assets/js/sair.js"></script>
+<script src="/assets/js/copy.js"></script>
+</body>
+
+</html>

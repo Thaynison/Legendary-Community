@@ -73,7 +73,7 @@ function redirecionarParaRegras() {
 
 function redirecionarParaRegras2() {
 
-window.location.href = `regras.html`;
+window.location.href = `regras2.html`;
 }
 
 
