@@ -1,5 +1,5 @@
 .article .regras h1 {
-    font-size: 1.5rem; /* Tamanho do texto */
+    font-size: 1rem; /* Tamanho do texto */
     font-weight: bold; /* Negrito */
     color: #020202; /* Cor do texto */
     margin-top: 20px; /* Espaço acima do título */
@@ -10,7 +10,7 @@
 }
 
 .article .regras h2 {
-    font-size: 1rem; /* Tamanho do texto */
+    font-size: 0.9rem; /* Tamanho do texto */
     font-weight: bold; /* Negrito */
     color: #333; /* Cor do texto */
     margin-top: 20px; /* Espaço acima do título */
@@ -22,7 +22,7 @@
 
 /* Estilos para o parágrafo p */
 .article .regras p {
-    font-size: 1rem; /* Tamanho do texto */
+    font-size: 0.8rem; /* Tamanho do texto */
     color: #666; /* Cor do texto */
     line-height: 1.6; /* Espaçamento entre linhas */
     margin-bottom: 15px; /* Espaço abaixo do parágrafo */
