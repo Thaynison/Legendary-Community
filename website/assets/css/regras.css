@@ -49,6 +49,15 @@
     font-family: 'Arial', sans-serif; /* Família da fonte */
 }
 
+.article .regras h4 {
+    font-size: 1rem; /* Tamanho do texto */
+    font-weight: bold; /* Negrito */
+    color: #ff0000; /* Cor do texto */
+    line-height: 1.6; /* Espaçamento entre linhas */
+    margin-bottom: 15px; /* Espaço abaixo do parágrafo */
+    font-family: 'Arial', sans-serif; /* Família da fonte */
+}
+
 .article .regras a {
     font-size: 1rem; /* Tamanho do texto */
     font-weight: bold; /* Negrito */
