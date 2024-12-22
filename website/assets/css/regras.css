@@ -10,7 +10,7 @@
 }
 
 .article .regras h2 {
-    font-size: 1rem; /* Tamanho do texto */
+    font-size: 1.2rem; /* Tamanho do texto */
     font-weight: bold; /* Negrito */
     color: #000000; /* Cor do texto */
     margin-top: 20px; /* Espaço acima do título */
@@ -24,6 +24,15 @@
 .article .regras p {
     font-size: 1rem; /* Tamanho do texto */
     color: #333; /* Cor do texto */
+    line-height: 1.6; /* Espaçamento entre linhas */
+    margin-bottom: 15px; /* Espaço abaixo do parágrafo */
+    font-family: 'Arial', sans-serif; /* Família da fonte */
+}
+
+.article .regras strong {
+    font-size: 1rem; /* Tamanho do texto */
+    font-weight: bold; /* Negrito */
+    color: #ffffff; /* Cor do texto */
     line-height: 1.6; /* Espaçamento entre linhas */
     margin-bottom: 15px; /* Espaço abaixo do parágrafo */
     font-family: 'Arial', sans-serif; /* Família da fonte */
