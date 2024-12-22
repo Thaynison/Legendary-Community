@@ -125,7 +125,7 @@ footer.section {
   padding: 1rem;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
-  max-height: 500px; /* Defina a altura máxima conforme necessário */
+  max-height: 490px; /* Defina a altura máxima conforme necessário */
   overflow-y: auto; /* Permite a rolagem vertical */
   scrollbar-width: thin; /* Define a largura da barra de rolagem (para Firefox) */
   scrollbar-color: rgba(0, 0, 0, 0.5) transparent; /* Define a cor da barra de rolagem e da área de fundo (para Firefox) */
