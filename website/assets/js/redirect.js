@@ -298,3 +298,23 @@ function redirecionarPara_PainelStaff() {
           }
       });
 }
+
+function redirecionarParaEquipeStaff() {
+
+window.location.href = `equipestaff.html?username=${encodeURIComponent(username)}&userid=${encodeURIComponent(userid)}&avatar=${encodeURIComponent(avatar)}`;
+}
+
+function redirecionarEcho() {
+
+  window.location.href = `https://echo.ac/`;
+}
+
+function redirecionarOcean() {
+
+  window.location.href = `https://anticheat.ac/`;
+}
+
+function redirecionarTempOff() {
+
+  window.location.href = `tempoff.html?username=${encodeURIComponent(username)}&userid=${encodeURIComponent(userid)}&avatar=${encodeURIComponent(avatar)}`;
+}
