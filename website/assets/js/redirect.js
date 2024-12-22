@@ -71,6 +71,12 @@ function redirecionarParaRegras() {
   window.location.href = `regras.html?username=${encodeURIComponent(username)}&userid=${encodeURIComponent(userid)}&avatar=${encodeURIComponent(avatar)}`;
 }
 
+function redirecionarParaRegras2() {
+
+window.location.href = `regras.html`;
+}
+
+
 function redirecionarParaDashboard() {
     const username = document.getElementById('username').textContent;
     const userid = document.getElementById('userid').textContent;
