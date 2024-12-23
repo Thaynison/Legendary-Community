@@ -1192,11 +1192,24 @@ function changeContent(contentType) {
                         </select>
                     </div>
 
+                    <div class="form-field">
+                        <label for="parcelas_pagas">Informar Parcela Paga:</label>
+                        <input type="number" id="parcelas_pagas" name="parcelas_pagas" placeholder="Digite a parcela paga" required>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="status">Selecionar Status:</label>
+                        <select id="status" name="status" required>
+                            <option value="Empréstimo Pago">Empréstimo Pago</option>
+                            <option value="Empréstimo Cancelado">Empréstimo Cancelado</option>
+                            <option value="Empréstimo Em Pagamento">Empréstimo Em Pagamento</option>
+                        </select>
+                    </div>
+
                     <button type="submit" class="button is-primary" id="submitBtn9">Atualizar Emprestimo</button>
                 </form>
             `;
-            
-            
+                        
             const loadEmprestimo = async () => {
                 const emprestimoSelect = document.getElementById('id_emprestimo');
                 try {
@@ -1216,6 +1229,51 @@ function changeContent(contentType) {
             };
             loadEmprestimo();
 
+            const form9 = document.querySelector('.form-register-advertencia');
+            const submitBtn9 = document.getElementById('submitBtn9');
+            let isSubmitting9 = false;  // Flag to prevent multiple submissions
+        
+            form9.addEventListener('submit', function(event) {
+                event.preventDefault();
+        
+                if (isSubmitting9) return;
+        
+                isSubmitting9 = true;  
+                submitBtn9.disabled = true; 
+        
+                const formData = new FormData(form9);
+                fetch('https://dash.legendarycommunity.com.br/api/api_update_emprestimo.php', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        document.querySelector('.avisos5').style.display = 'flex';
+                        setTimeout(() => {
+                            document.querySelector('.avisos5').style.display = 'none';
+                        }, 5000);
+                        form9.reset();
+                    } else if (data.error) {
+                        document.querySelector('.avisos4').style.display = 'flex';
+                        setTimeout(() => {
+                            document.querySelector('.avisos4').style.display = 'none';
+                        }, 5000);
+                        form9.reset();
+                    }
+                })
+                .catch(error => {
+                    document.querySelector('.avisos4').style.display = 'flex';
+                    setTimeout(() => {
+                        document.querySelector('.avisos4').style.display = 'none';
+                    }, 5000);
+                    form9.reset();
+                })
+                .finally(() => {
+                    isSubmitting9 = false;
+                    submitBtn9.disabled = false;
+                });
+            });
             break;
         default:
             contentArea.innerHTML = "<p>Escolha uma opção.</p>";
