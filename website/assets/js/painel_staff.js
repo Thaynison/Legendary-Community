@@ -871,8 +871,10 @@ function changeContent(contentType) {
                         <textarea id="descricao" name="descricao" placeholder="Descreva a advertência" rows="4" required></textarea>
                     </div>
                     <div class="form-field">
-                        <label for="regra">Informar Regra Descumprida:</label>
-                        <input type="text" id="regra" name="regra" placeholder="Digite a Regra Rescumprida" required>
+                        <label for="regra">Selecionar a Regra Descumprida:</label>
+                        <select id="regra" name="regra" required>
+                            <option value="">Carregando...</option>
+                        </select>
                     </div>
                     <div class="form-field">
                         <label for="status">Selecionar Advertência:</label>
@@ -917,6 +919,32 @@ function changeContent(contentType) {
         
             // Chamar a função para carregar os tickets
             loadTickets();
+
+                        // Função para preencher o select com os tickets
+            const loadRegras = async () => {
+                const regraSelect = document.getElementById('regras');
+                try {
+                    const response = await fetch('https://dash.legendarycommunity.com.br/api/api_buscar_regras.php');
+                    const regras = await response.json();
+        
+                    // Limpar opções existentes
+                    regraSelect.innerHTML = '<option value="">Selecione uma Regra</option>';
+        
+                    // Preencher opções
+                    regras.forEach(regra => {
+                        const option = document.createElement('option');
+                        option.value = regra.titulo;
+                        option.textContent = `${regra.titulo}`;
+                        regraSelect.appendChild(option);
+                    });
+                } catch (error) {
+                    console.error('Erro ao carregar regras:', error);
+                    regraSelect.innerHTML = '<option value="">Erro ao carregar regras</option>';
+                }
+            };
+        
+            // Chamar a função para carregar os tickets
+            loadRegras();
         
             const form8 = document.querySelector('.form-register-advertencia');
             const submitBtn8 = document.getElementById('submitBtn8');
