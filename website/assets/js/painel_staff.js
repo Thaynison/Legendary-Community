@@ -1209,7 +1209,7 @@ function changeContent(contentType) {
                     <button type="submit" class="button is-primary" id="submitBtn9">Atualizar Emprestimo</button>
                 </form>
             `;
-                        
+                   
             const loadEmprestimo = async () => {
                 const emprestimoSelect = document.getElementById('id_emprestimo');
                 try {
@@ -1219,7 +1219,7 @@ function changeContent(contentType) {
                     emprestimos.forEach(emprestimo => {
                         const option = document.createElement('option');
                         option.value = emprestimo.id_emprestimo;
-                        option.textContent = `${emprestimo.id_emprestimo} | ${emprestimo.price} | ${emprestimo.status}`;
+                        option.textContent = `${emprestimo.id_emprestimo} | ${formatarBRL(emprestimo.price)} | ${emprestimo.status}`;
                         emprestimoSelect.appendChild(option);
                     });
                 } catch (error) {
