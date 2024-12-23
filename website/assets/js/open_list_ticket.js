@@ -48,7 +48,7 @@ function getHistoricoTickets(userid) {
                 let htmlContent = '<table class="table is-fullwidth">';
                 htmlContent += `<thead>
                                     <tr>
-                                        <th>ID</th>
+                                        <th>ID Ticket</th>
                                         <th>Username</th>
                                         <th>Titulo</th>
                                         <th>Print</th>
@@ -62,7 +62,7 @@ function getHistoricoTickets(userid) {
                         htmlContent += `<tr>
                                             <td>${ticket.id_ticket}</td>
                                             <td>${ticket.username}</td>
-                                            <td>${ticket.Titulo}</td>
+                                            <td>${ticket.titulo}</td>
                                             <td><button class="eye-button" onclick="showImage('${ticket.print}', event)">👁️</button></td>
                                             <td>
                                                 <span title="${statusInfo.title}">${statusInfo.emoji}</span>
