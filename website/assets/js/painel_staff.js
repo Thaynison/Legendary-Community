@@ -12,6 +12,8 @@ window.addEventListener('DOMContentLoaded', () => {
         getHistoricoTicketsSTAFF();
         getHistoricoDevolutionsSTAFF();
         getHistoricoEmprestimosSTAFF();
+        getHistoricoAdvertenciaSTAFF();
+        getHistoricoBansSTAFF();
     } else {
         console.log("erro no userid")
     }
@@ -254,6 +256,136 @@ function getHistoricoEmprestimosSTAFF() {
         });
 }
 
+function getHistoricoAdvertenciaSTAFF() {
+    const apiUrl = `https://dash.legendarycommunity.com.br/api/api_buscar_advertencia.php`;
+
+    fetch(apiUrl)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`Erro na API: ${response.statusText}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            const container = document.querySelector('.form-list-advertencia');
+
+            if (data.error) {
+                container.innerHTML = `<p class="error">${data.error}</p>`;
+                return;
+            }
+
+            if (!Array.isArray(data) || data.length === 0) {
+                container.innerHTML = `<p class="info">Nenhuma advertência encontrada.</p>`;
+                return;
+            }
+
+            // Função para mapear o status para emojis e títulos
+            const getStatusInfoAdvertencia = (status) => {
+                switch (status) {
+                    case 'Advertência 1x':
+                        return { emoji: '1️⃣❌', title: 'Advertência 1x' };
+                    case 'Advertência 2x':
+                        return { emoji: '2️⃣❌', title: 'Advertência 2x' };
+                    case 'Advertência 3x':
+                        return { emoji: '3️⃣❌', title: 'Advertência 3x' };
+                    default:
+                        return { emoji: '❓', title: 'Advertência Desconhecido' };
+                }
+            };
+
+            let htmlContent = `
+                <table class="table is-fullwidth">
+                    <thead>
+                        <tr>
+                            <th>ID Ticket</th>
+                            <th>Nick</th>
+                            <th>Descrição</th>
+                            <th>Regra</th>
+                            <th>Data</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+            `;
+
+            data.forEach(advertencia => {
+                const statusInfoAdvertencia = getStatusInfoAdvertencia(advertencia.status);
+                htmlContent += `
+                    <tr>
+                        <td>${advertencia.id_ticket}</td>
+                        <td>${advertencia.username}</td>
+                        <td>${advertencia.descricao}</td>
+                        <td>${advertencia.regra}</td>
+                        <td>${advertencia.data}</td>
+                        <td>
+                            <span title="${statusInfoAdvertencia.title}">${statusInfoAdvertencia.emoji}</span>
+                        </td>
+                    </tr>`;
+            });
+
+            htmlContent += '</tbody></table>';
+            container.innerHTML = htmlContent;
+        })
+        .catch(error => {
+            const container = document.querySelector('.form-list-advertencia');
+            container.innerHTML = `<p class="error">Erro ao carregar os dados: ${error.message}</p>`;
+        });
+}
+
+function getHistoricoBansSTAFF() {
+    const apiUrl = `https://dash.legendarycommunity.com.br/api/api_buscar_ban.php`;
+
+    fetch(apiUrl)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`Erro na API: ${response.statusText}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            const container = document.querySelector('.form-list-ban');
+
+            if (data.error) {
+                container.innerHTML = `<p class="error">${data.error}</p>`;
+                return;
+            }
+
+            if (!Array.isArray(data) || data.length === 0) {
+                container.innerHTML = `<p class="info">Nenhum ban encontrado.</p>`;
+                return;
+            }
+
+            let htmlContent = `
+                <table class="table is-fullwidth">
+                    <thead>
+                        <tr>
+                            <th>IP Ban</th>
+                            <th>Nick</th>
+                            <th>Descrição</th>
+                            <th>Print</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+            `;
+
+            data.forEach(ban => {
+                htmlContent += `
+                    <tr>
+                        <td>${ban.ip_ban}</td>
+                        <td>${ban.username}</td>
+                        <td>${ban.motivo}</td>
+                        <td><button class="eye-button" onclick="showImageBan('${ban.print}', event)">👁️</button></td>
+                    </tr>`;
+            });
+
+            htmlContent += '</tbody></table>';
+            container.innerHTML = htmlContent;
+        })
+        .catch(error => {
+            const container = document.querySelector('.form-list-ban');
+            container.innerHTML = `<p class="error">Erro ao carregar os dados: ${error.message}</p>`;
+        });
+}
 
 function showImage(imageUrl) {
     event.preventDefault();
@@ -314,6 +446,63 @@ function showImage(imageUrl) {
 
 
 function showImageDevolution(imageUrl) {
+    event.preventDefault();
+    const modal = document.createElement('div');
+    modal.style.position = 'fixed';
+    modal.style.top = '0';
+    modal.style.left = '0';
+    modal.style.width = '100%';
+    modal.style.height = '100%';
+    modal.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+    modal.style.display = 'flex';
+    modal.style.alignItems = 'center';
+    modal.style.justifyContent = 'center';
+    modal.style.zIndex = '9999';
+
+    const img = document.createElement('img');
+    img.src = imageUrl;
+    img.style.maxWidth = '90%';
+    img.style.maxHeight = '90%';
+
+    const closeButton = document.createElement('button');
+    closeButton.innerText = 'Fechar';
+    closeButton.style.position = 'absolute';
+    closeButton.style.top = '20px';
+    closeButton.style.right = '20px';
+    closeButton.style.padding = '10px 20px';
+    closeButton.style.backgroundColor = '#ff69b4'; // Fundo rosa
+    closeButton.style.color = 'white'; // Cor da fonte branca
+    closeButton.style.border = 'none';
+    closeButton.style.borderRadius = '8px';
+    closeButton.style.fontSize = '16px';
+    closeButton.style.fontWeight = 'bold';
+    closeButton.style.cursor = 'pointer';
+    closeButton.style.boxShadow = '0px 4px 6px rgba(0, 0, 0, 0.1)';
+    closeButton.style.transition = 'background-color 0.3s ease, transform 0.2s ease';
+
+    closeButton.addEventListener('mouseover', () => {
+        closeButton.style.backgroundColor = '#ff85c1'; // Tom mais claro ao passar o mouse
+    });
+    closeButton.addEventListener('mouseout', () => {
+        closeButton.style.backgroundColor = '#ff69b4'; // Retorna ao fundo original
+    });
+    closeButton.addEventListener('mousedown', () => {
+        closeButton.style.transform = 'scale(0.95)'; // Efeito de clique
+    });
+    closeButton.addEventListener('mouseup', () => {
+        closeButton.style.transform = 'scale(1)'; // Volta ao tamanho original
+    });
+
+    closeButton.addEventListener('click', () => {
+        document.body.removeChild(modal);
+    });
+
+    modal.appendChild(img);
+    modal.appendChild(closeButton);
+    document.body.appendChild(modal);
+}
+
+function showImageBan(imageUrl) {
     event.preventDefault();
     const modal = document.createElement('div');
     modal.style.position = 'fixed';
@@ -977,6 +1166,20 @@ function changeContent(contentType) {
                     submitBtn8.disabled = false;
                 });
             });
+            break;
+        case 'list-advertencia':
+            contentArea.innerHTML = `
+                <form class="form-list-advertencia">
+                    <p>Carregando histórico de advertências...</p>
+                </form>`;
+            getHistoricoAdvertenciaSTAFF();
+            break;
+        case 'list-ban':
+            contentArea.innerHTML = `
+                <form class="form-list-ban">
+                    <p>Carregando histórico de bans...</p>
+                </form>`;
+            getHistoricoBansSTAFF();
             break;
         default:
             contentArea.innerHTML = "<p>Escolha uma opção.</p>";
