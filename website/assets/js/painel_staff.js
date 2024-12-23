@@ -198,11 +198,11 @@ function getHistoricoEmprestimosSTAFF() {
             // Função para mapear o status para emojis e títulos
             const getStatusInfoEmprestimo = (status) => {
                 switch (status) {
-                    case 'Concluido':
+                    case 'Empréstimo Pago':
                         return { emoji: '✅', title: 'Empréstimo Pago' };
-                    case 'Reprovado':
+                    case 'Empréstimo Cancelado':
                         return { emoji: '❌', title: 'Empréstimo Cancelado' };
-                    case 'Em Analise':
+                    case 'Empréstimo Em Pagamento':
                         return { emoji: '🧭', title: 'Empréstimo Em Pagamento' };
                     default:
                         return { emoji: '❓', title: 'Empréstimo Desconhecido' };
