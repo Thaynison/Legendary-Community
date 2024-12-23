@@ -16,6 +16,7 @@ window.addEventListener('DOMContentLoaded', () => {
         getHistoricoTickets(userid);
         getHistoricoEmprestimos(userid);
         getHistoricoDevolucoes(userid);
+        getHistoricoAdvertencia(userid);
     } else {
         console.log("erro no userid")
     }
@@ -238,6 +239,83 @@ function getHistoricoDevolucoes(userid) {
         })
         .catch(error => {
             const container = document.querySelector('.form-lista-de-devolucoes');
+            container.innerHTML = `<p class="error">Erro ao carregar os dados: ${error.message}</p>`;
+        });
+}
+
+
+function getHistoricoAdvertencia(userid) {
+    const apiUrl = `https://dash.legendarycommunity.com.br/api/api_buscar_advertencia_user.php?userid=${userid}`;
+
+    fetch(apiUrl)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`Erro na API: ${response.statusText}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            const container = document.querySelector('.form-lista-de-advertencias');
+
+            if (data.error) {
+                container.innerHTML = `<p class="error">${data.error}</p>`;
+                return;
+            }
+
+            if (!Array.isArray(data) || data.length === 0) {
+                container.innerHTML = `<p class="info">Nenhuma devolução encontrado.</p>`;
+                return;
+            }
+
+            // Função para mapear o status para emojis e títulos
+            const getStatusInfoAdvertencia = (status) => {
+                switch (status) {
+                    case 'Advertência 1x':
+                        return { emoji: '1️⃣', title: 'Advertência 1x' };
+                    case 'Advertência 2x':
+                        return { emoji: '2️⃣', title: 'Advertência 2x' };
+                    case 'Advertência 3x':
+                        return { emoji: '3️⃣', title: 'Advertência 3x' };
+                    default:
+                        return { emoji: '❓', title: 'Advertência Desconhecido' };
+                }
+            };
+
+            let htmlContent = `
+                <table class="table is-fullwidth">
+                    <thead>
+                        <tr>
+                            <th>ID Ticket</th>
+                            <th>Nick</th>
+                            <th>Descrição</th>
+                            <th>Regra</th>
+                            <th>Data</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+            `;
+
+            data.forEach(advertencia => {
+                const statusInfoAdvertencia = getStatusInfoAdvertencia(advertencia.status);
+                htmlContent += `
+                    <tr>
+                        <td>${advertencia.id_ticket}</td>
+                        <td>${advertencia.username}</td>
+                        <td>${advertencia.descricao}</td>
+                        <td>${advertencia.regra}</td>
+                        <td>${advertencia.data}</td>
+                        <td>
+                            <span title="${statusInfoAdvertencia.title}">${statusInfoAdvertencia.emoji}</span>
+                        </td>
+                    </tr>`;
+            });
+
+            htmlContent += '</tbody></table>';
+            container.innerHTML = htmlContent;
+        })
+        .catch(error => {
+            const container = document.querySelector('.form-lista-de-advertencias');
             container.innerHTML = `<p class="error">Erro ao carregar os dados: ${error.message}</p>`;
         });
 }
@@ -468,6 +546,18 @@ function changeContent(contentType) {
             const userid3 = document.getElementById('userid2').textContent;
             if (userid3) {
                 getHistoricoDevolucoes(userid3);
+            }
+            break;
+        case 'lista-de-advertencias':
+            contentArea.innerHTML = `
+                <form class="form-lista-de-advertencias">
+                    <p>Carregando histórico de advertências...</p>
+                </form>
+            `;
+            // Garantir que os tickets sejam carregados quando o conteúdo for trocado
+            const userid4 = document.getElementById('userid2').textContent;
+            if (userid4) {
+                getHistoricoAdvertencia(userid4);
             }
             break;
         default:
