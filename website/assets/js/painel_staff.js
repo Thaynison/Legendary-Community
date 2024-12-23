@@ -1181,6 +1181,42 @@ function changeContent(contentType) {
                 </form>`;
             getHistoricoBansSTAFF();
             break;
+        case 'atualizar-emprestimo':
+            contentArea.innerHTML = `
+                <form class="form-atualizar-emprestimo">
+                    
+                    <div class="form-field">
+                        <label for="id_emprestimo">Selecionar Emprestimo Referente:</label>
+                        <select id="id_emprestimo" name="id_emprestimo" required>
+                            <option value="">Carregando...</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="button is-primary" id="submitBtn9">Atualizar Emprestimo</button>
+                </form>
+            `;
+            
+            
+            const loadEmprestimo = async () => {
+                const emprestimoSelect = document.getElementById('id_emprestimo');
+                try {
+                    const response = await fetch('https://dash.legendarycommunity.com.br/api/api_buscar_emprestimo.php');
+                    const emprestimos = await response.json();
+                    emprestimoSelect.innerHTML = '<option value="">Selecione o Emprestimo</option>';
+                    emprestimos.forEach(emprestimo => {
+                        const option = document.createElement('option');
+                        option.value = emprestimo.id_emprestimo;
+                        option.textContent = `${emprestimo.id_emprestimo} | ${emprestimo.price}`;
+                        emprestimoSelect.appendChild(option);
+                    });
+                } catch (error) {
+                    console.error('Erro ao carregar emprestimo:', error);
+                    emprestimoSelect.innerHTML = '<option value="">Erro ao carregar emprestimos</option>';
+                }
+            };
+            loadEmprestimo();
+
+            break;
         default:
             contentArea.innerHTML = "<p>Escolha uma opção.</p>";
     }
