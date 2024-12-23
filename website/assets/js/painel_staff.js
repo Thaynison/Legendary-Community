@@ -1210,6 +1210,13 @@ function changeContent(contentType) {
                 </form>
             `;
                    
+            const formatarBRL = (valor) => {
+                return new Intl.NumberFormat('pt-BR', {
+                    style: 'currency',
+                    currency: 'BRL'
+                }).format(valor);
+            };
+
             const loadEmprestimo = async () => {
                 const emprestimoSelect = document.getElementById('id_emprestimo');
                 try {
