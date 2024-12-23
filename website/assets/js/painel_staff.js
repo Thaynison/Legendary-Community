@@ -894,17 +894,12 @@ function changeContent(contentType) {
                 </form>
             `;
         
-            // Função para preencher o select com os tickets
             const loadTickets = async () => {
                 const ticketSelect = document.getElementById('id_ticket');
                 try {
                     const response = await fetch('https://dash.legendarycommunity.com.br/api/api_tickets.php');
                     const tickets = await response.json();
-        
-                    // Limpar opções existentes
                     ticketSelect.innerHTML = '<option value="">Selecione um Ticket</option>';
-        
-                    // Preencher opções
                     tickets.forEach(ticket => {
                         const option = document.createElement('option');
                         option.value = ticket.id_ticket;
@@ -916,21 +911,14 @@ function changeContent(contentType) {
                     ticketSelect.innerHTML = '<option value="">Erro ao carregar tickets</option>';
                 }
             };
-        
-            // Chamar a função para carregar os tickets
             loadTickets();
 
-                        // Função para preencher o select com os tickets
             const loadRegras = async () => {
-                const regraSelect = document.getElementById('regras');
+                const regraSelect = document.getElementById('regra');
                 try {
                     const response = await fetch('https://dash.legendarycommunity.com.br/api/api_buscar_regras.php');
                     const regras = await response.json();
-        
-                    // Limpar opções existentes
                     regraSelect.innerHTML = '<option value="">Selecione uma Regra</option>';
-        
-                    // Preencher opções
                     regras.forEach(regra => {
                         const option = document.createElement('option');
                         option.value = regra.titulo;
@@ -942,8 +930,6 @@ function changeContent(contentType) {
                     regraSelect.innerHTML = '<option value="">Erro ao carregar regras</option>';
                 }
             };
-        
-            // Chamar a função para carregar os tickets
             loadRegras();
         
             const form8 = document.querySelector('.form-register-advertencia');
