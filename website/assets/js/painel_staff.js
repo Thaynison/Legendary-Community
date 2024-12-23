@@ -225,7 +225,7 @@ function getHistoricoEmprestimosSTAFF() {
                             <th>Cidadão</th>
                             <th>Valor</th>
                             <th>Parcelas</th>
-                            <th>Data</th>
+                            <th>Parcelas Pg</th>
                             <th>Status</th>
                         </tr>
                     </thead>
@@ -240,7 +240,7 @@ function getHistoricoEmprestimosSTAFF() {
                         <td>${emprestimo.username}</td>
                         <td>${formatarBRL(emprestimo.price)}</td>
                         <td>${emprestimo.parcelas}</td>
-                        <td>${emprestimo.data}</td>
+                        <td>${emprestimo.parcelas_pagas}</td>
                         <td>
                             <span title="${statusInfoEmprestimo.title}">${statusInfoEmprestimo.emoji}</span>
                         </td>
