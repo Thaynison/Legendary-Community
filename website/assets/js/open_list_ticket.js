@@ -49,7 +49,7 @@ function getHistoricoTickets(userid) {
                                     <tr>
                                         <th>ID</th>
                                         <th>Username</th>
-                                        <th>Descrição</th>
+                                        <th>Titulo</th>
                                         <th>Print</th>
                                         <th>Status</th>
                                     </tr>
@@ -61,7 +61,7 @@ function getHistoricoTickets(userid) {
                         htmlContent += `<tr>
                                             <td>${ticket.id_ticket}</td>
                                             <td>${ticket.username}</td>
-                                            <td>${ticket.descricao}</td>
+                                            <td>${ticket.Titulo}</td>
                                             <td><button class="eye-button" onclick="showImage('${ticket.print}', event)">👁️</button></td>
                                             <td>
                                                 <span title="${statusInfo.title}">${statusInfo.emoji}</span>
@@ -370,6 +370,10 @@ function changeContent(contentType) {
                     <div class="form-field">
                         <label for="username">Informar Nome do Minecraft:</label>
                         <input type="text" id="username" name="username" placeholder="Digite o nome do Minecraft" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="titulo">Informar Titulo do Ticket:</label>
+                        <input type="text" id="titulo" name="titulo" placeholder="Digite o Titulo do Ticket" maxlength="45" required>
                     </div>
                     <div class="form-field">
                         <label for="descricao">Informar Descrição do Ticket:</label>
