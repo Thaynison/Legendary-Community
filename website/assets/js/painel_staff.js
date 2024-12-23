@@ -1229,7 +1229,7 @@ function changeContent(contentType) {
             };
             loadEmprestimo();
 
-            const form9 = document.querySelector('.form-register-advertencia');
+            const form9 = document.querySelector('.form-atualizar-emprestimo');
             const submitBtn9 = document.getElementById('submitBtn9');
             let isSubmitting9 = false;  // Flag to prevent multiple submissions
         
