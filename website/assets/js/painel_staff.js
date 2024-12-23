@@ -1219,7 +1219,7 @@ function changeContent(contentType) {
                     emprestimos.forEach(emprestimo => {
                         const option = document.createElement('option');
                         option.value = emprestimo.id_emprestimo;
-                        option.textContent = `${emprestimo.id_emprestimo} | ${emprestimo.price}`;
+                        option.textContent = `${emprestimo.id_emprestimo} | ${emprestimo.price} | ${emprestimo.status}`;
                         emprestimoSelect.appendChild(option);
                     });
                 } catch (error) {
