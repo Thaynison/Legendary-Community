@@ -401,7 +401,7 @@ function changeContent(contentType) {
                             <label for="motivo">Informar Motivo do Banimento:</label>
                             <textarea id="motivo" name="motivo" placeholder="Descreva o motivo do banimento" rows="4" required></textarea>
                         </div>
-                        <button type="submit" class="button is-primary" id="submitBtn2">Registrar Banumento</button>
+                        <button type="submit" class="button is-primary" id="submitBtn2">Registrar Banimento</button>
                     </form>
             `;
             const form = document.querySelector('.form-register-ban');
@@ -556,6 +556,7 @@ function changeContent(contentType) {
                             <option value="Lendário">Lendário</option>
                             <option value="Divino">Divino</option>
                         </select>
+                    </div>
                     <button type="submit" class="button is-primary" id="submitBtn">Criar Rarity</button>
                 </form>
             `;
@@ -853,6 +854,115 @@ function changeContent(contentType) {
                     <p>Carregando histórico de devoluções...</p>
                 </form>`;
             getHistoricoEmprestimosSTAFF();
+            break;
+        case 'register-advertencia':
+            contentArea.innerHTML = `
+                <form class="form-register-advertencia">
+                    <div class="form-field">
+                        <label for="userid">Informar ID do Discord:</label>
+                        <input type="text" id="userid" name="userid" placeholder="Digite o User ID do Advertido" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="username">Informar Nome do Minecraft:</label>
+                        <input type="text" id="username" name="username" placeholder="Digite o nome do Minecraft" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="descricao">Informar descricao da Advertência:</label>
+                        <textarea id="descricao" name="descricao" placeholder="Descreva a advertência" rows="4" required></textarea>
+                    </div>
+                    <div class="form-field">
+                        <label for="regra">Informar Regra Descumprida:</label>
+                        <input type="text" id="regra" name="regra" placeholder="Digite a Regra Rescumprida" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="status">Selecionar Advertência:</label>
+                        <select id="status" name="status" required>
+                            <option value="Advertência 1x">Advertência 1x</option>
+                            <option value="Advertência 2x">Advertência 2x</option>
+                            <option value="Advertência 3x">Advertência 3x</option>
+                        </select>
+                    </div>
+                    <div class="form-field">
+                        <label for="id_ticket">Selecionar Ticket Referente:</label>
+                        <select id="id_ticket" name="id_ticket" required>
+                            <option value="">Carregando...</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="button is-primary" id="submitBtn8">Registrar Advertência</button>
+                </form>
+            `;
+        
+            // Função para preencher o select com os tickets
+            const loadTickets = async () => {
+                const ticketSelect = document.getElementById('id_ticket');
+                try {
+                    const response = await fetch('https://dash.legendarycommunity.com.br/api/api_tickets.php');
+                    const tickets = await response.json();
+        
+                    // Limpar opções existentes
+                    ticketSelect.innerHTML = '<option value="">Selecione um Ticket</option>';
+        
+                    // Preencher opções
+                    tickets.forEach(ticket => {
+                        const option = document.createElement('option');
+                        option.value = ticket.id_ticket;
+                        option.textContent = `${ticket.id_ticket} | ${ticket.descricao}`;
+                        ticketSelect.appendChild(option);
+                    });
+                } catch (error) {
+                    console.error('Erro ao carregar tickets:', error);
+                    ticketSelect.innerHTML = '<option value="">Erro ao carregar tickets</option>';
+                }
+            };
+        
+            // Chamar a função para carregar os tickets
+            loadTickets();
+        
+            const form8 = document.querySelector('.form-register-advertencia');
+            const submitBtn8 = document.getElementById('submitBtn8');
+            let isSubmitting8 = false;  // Flag to prevent multiple submissions
+        
+            form8.addEventListener('submit', function(event) {
+                event.preventDefault();
+        
+                if (isSubmitting8) return;
+        
+                isSubmitting8 = true;  
+                submitBtn8.disabled = true; 
+        
+                const formData = new FormData(form8);
+                fetch('https://dash.legendarycommunity.com.br/api/api_registrar_advertencia.php', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        document.querySelector('.avisos5').style.display = 'flex';
+                        setTimeout(() => {
+                            document.querySelector('.avisos5').style.display = 'none';
+                        }, 5000);
+                        form8.reset();
+                    } else if (data.error) {
+                        document.querySelector('.avisos4').style.display = 'flex';
+                        setTimeout(() => {
+                            document.querySelector('.avisos4').style.display = 'none';
+                        }, 5000);
+                        form8.reset();
+                    }
+                })
+                .catch(error => {
+                    document.querySelector('.avisos4').style.display = 'flex';
+                    setTimeout(() => {
+                        document.querySelector('.avisos4').style.display = 'none';
+                    }, 5000);
+                    form8.reset();
+                })
+                .finally(() => {
+                    isSubmitting8 = false;
+                    submitBtn8.disabled = false;
+                });
+            });
             break;
         default:
             contentArea.innerHTML = "<p>Escolha uma opção.</p>";
