@@ -283,11 +283,11 @@ function getHistoricoAdvertenciaSTAFF() {
             const getStatusInfoAdvertencia = (status) => {
                 switch (status) {
                     case 'Advertência 1x':
-                        return { emoji: '1️⃣❌', title: 'Advertência 1x' };
+                        return { emoji: '1️⃣', title: 'Advertência 1x' };
                     case 'Advertência 2x':
-                        return { emoji: '2️⃣❌', title: 'Advertência 2x' };
+                        return { emoji: '2️⃣', title: 'Advertência 2x' };
                     case 'Advertência 3x':
-                        return { emoji: '3️⃣❌', title: 'Advertência 3x' };
+                        return { emoji: '3️⃣', title: 'Advertência 3x' };
                     default:
                         return { emoji: '❓', title: 'Advertência Desconhecido' };
                 }
