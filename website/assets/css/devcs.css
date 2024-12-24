@@ -524,7 +524,7 @@
 /* EMPRESTIMO */
 
 
-.form-create-emprestimo {
+.form-register-emprestimo {
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -536,19 +536,19 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.form-create-emprestimo .form-field {
+.form-register-emprestimo .form-field {
     display: flex;
     flex-direction: column;
     gap: 5px;
 }
 
-.form-create-emprestimo label {
+.form-register-emprestimo label {
     font-weight: bold;
     color: #333;
     font-size: 14px;
 }
 
-.form-create-emprestimo input[type="text"], input[type="url"], input[type="number"], input[type="date"], textarea {
+.form-register-emprestimo input[type="text"], input[type="url"], input[type="number"], input[type="date"], textarea {
     padding: 10px;
     font-size: 14px;
     border: 1px solid #ccc;
@@ -557,16 +557,16 @@
     transition: border-color 0.3s;
 }
 
-.form-create-emprestimo input[type="text"]:focus, input[type="url"]:focus, input[type="number"]:focus, input[type="date"]:focus, textarea:focus {
+.form-register-emprestimo input[type="text"]:focus, input[type="url"]:focus, input[type="number"]:focus, input[type="date"]:focus, textarea:focus {
     border-color: #db34cd;
     outline: none;
 }
 
-.form-create-emprestimo textarea {
+.form-register-emprestimo textarea {
     resize: vertical;
 }
 
-.form-create-emprestimo select {
+.form-register-emprestimo select {
     padding: 10px;
     font-size: 14px;
     border: 1px solid #ccc;
@@ -575,12 +575,12 @@
     transition: border-color 0.3s;
 }
 
-.form-create-emprestimo select:focus {
+.form-register-emprestimo select:focus {
     border-color: #db34cd;
     outline: none;
 }
 
-.form-create-emprestimo button {
+.form-register-emprestimo button {
     padding: 10px 20px;
     font-size: 16px;
     background-color: #db34cd;
@@ -591,7 +591,7 @@
     transition: background-color 0.3s;
 }
 
-.form-create-emprestimo button:hover {
+.form-register-emprestimo button:hover {
     background-color: #2980b9;
 }
 

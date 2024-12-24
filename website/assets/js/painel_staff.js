@@ -980,12 +980,12 @@ function changeContent(contentType) {
                 </form>`;
             getHistoricoDevolutionsSTAFF();
             break;
-        case 'create-emprestimo':
+        case 'register-emprestimo':
             contentArea.innerHTML = `
-                <form class="form-create-emprestimo">
+                <form class="form-register-emprestimo">
                     <div class="form-field">
                         <label for="userid">Informar ID do Discord:</label>
-                        <input type="text" id="userid" name="userid" placeholder="Digite o User ID do Advertido" required>
+                        <input type="text" id="userid" name="userid" placeholder="Informar ID do Discord" required>
                     </div>
                     <div class="form-field">
                         <label for="username">Informar Nick do Minecraft</label>
@@ -993,7 +993,7 @@ function changeContent(contentType) {
                     </div>
                     <div class="form-field">
                         <label for="userid2">Informar ID do Discord do Agiota:</label>
-                        <input type="text" id="userid2" name="userid2" placeholder="Digite o User ID do Advertido" required>
+                        <input type="text" id="userid2" name="userid2" placeholder="Digite o ID do Discord do Agiota" required>
                     </div>
                     <div class="form-field">
                         <label for="agiota">Informar Nick do Minecraft do Agiota</label>
@@ -1011,7 +1011,7 @@ function changeContent(contentType) {
                 </form>
             `;
             
-            const form6 = document.querySelector('.form-create-emprestimo');
+            const form6 = document.querySelector('.form-register-emprestimo');
             const submitBtn6 = document.getElementById('submitBtn6');
             let isSubmitting6 = false;  // Flag to prevent multiple submissions
         
