@@ -1332,10 +1332,12 @@ function changeContent(contentType) {
                         </select>
                     </div>
         
-                    <button type="submit" class="button is-primary" id="submitBtn10">Enviar Mensagem</button>
+
                 </form>
             `;
         
+            // <button type="submit" class="button is-primary" id="submitBtn10">Enviar Mensagem</button>
+
             const loadTicketsResposta = async () => {
                 const ticketSelect = document.getElementById('id_ticket');
                 try {
