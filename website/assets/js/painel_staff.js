@@ -1400,6 +1400,7 @@ function changeContent(contentType) {
                 submitBtn10.disabled = true; 
         
                 const formData = new FormData(form10);
+                console.log(formData)
                 fetch('https://dash.legendarycommunity.com.br/api/api_update_suporte.php', {
                     method: 'POST',
                     body: formData
