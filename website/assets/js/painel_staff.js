@@ -1363,12 +1363,17 @@ function changeContent(contentType) {
                         throw new Error(`Erro HTTP: ${response.status}`);
                     }
                     const ticketData = await response.json();
-                    descricaoTextarea.value = ticketData.descricao;
+                    if (Array.isArray(ticketData) && ticketData.length > 0) {
+                        descricaoTextarea.value = ticketData[0].descricao || 'Nenhuma descrição disponível.';
+                    } else {
+                        descricaoTextarea.value = 'Nenhuma descrição encontrada.';
+                    }
                 } catch (error) {
                     console.error('Erro ao carregar descrição do ticket:', error);
                     descricaoTextarea.value = 'Erro ao carregar descrição.';
                 }
             };
+            
             
         
             document.getElementById('id_ticket').addEventListener('change', function () {
