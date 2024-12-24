@@ -1336,8 +1336,6 @@ function changeContent(contentType) {
                 </form>
             `;
         
-            // <button type="submit" class="button is-primary" id="submitBtn10">Enviar Mensagem</button>
-
             const loadTicketsResposta = async () => {
                 const ticketSelect = document.getElementById('id_ticket');
                 try {
@@ -1388,7 +1386,7 @@ function changeContent(contentType) {
         
             loadTicketsResposta();
                
-            const form10 = document.querySelector('.form-atualizar-emprestimo');
+            const form10 = document.querySelector('.form-atualizar-suporte');
             const submitBtn10 = document.getElementById('submitBtn10');
             let isSubmitting10 = false;  // Flag to prevent multiple submissions
         
