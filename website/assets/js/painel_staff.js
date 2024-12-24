@@ -1373,8 +1373,7 @@ function changeContent(contentType) {
                     descricaoTextarea.value = 'Erro ao carregar descrição.';
                 }
             };
-            
-            
+                   
         
             document.getElementById('id_ticket').addEventListener('change', function () {
                 const selectedTicketId = this.value;
@@ -1386,59 +1385,8 @@ function changeContent(contentType) {
             });
         
             loadTicketsResposta();
-        
-            const form10 = document.querySelector('.form-atualizar-suporte');
-            const submitBtn10 = document.getElementById('submitBtn10');
-            let isSubmitting10 = false;  // Flag to prevent multiple submissions
-        
-            form10.addEventListener('submit', function(event) {
-                event.preventDefault();
+               
             
-                if (isSubmitting10) return;
-            
-                isSubmitting10 = true;  
-                submitBtn10.disabled = true; 
-            
-                const formData = new FormData(form10);
-            
-                // Remover a descrição do envio
-                formData.delete('descricao'); 
-            
-                fetch('https://dash.legendarycommunity.com.br/api/api_update_suporte.php', {
-                    method: 'POST',
-                    body: formData
-                })
-                .then(response => response.json())
-                .then(data => {
-                    if (data.success) {
-                        document.querySelector('.avisos5').style.display = 'flex';
-                        setTimeout(() => {
-                            document.querySelector('.avisos5').style.display = 'none';
-                        }, 5000);
-                        form10.reset();
-                    } else if (data.error) {
-                        document.querySelector('.avisos4').style.display = 'flex';
-                        setTimeout(() => {
-                            document.querySelector('.avisos4').style.display = 'none';
-                        }, 5000);
-                        form10.reset();
-                    }
-                })
-                .catch(error => {
-                    document.querySelector('.avisos4').style.display = 'flex';
-                    setTimeout(() => {
-                        document.querySelector('.avisos4').style.display = 'none';
-                    }, 5000);
-                    form10.reset();
-                })
-                .finally(() => {
-                    isSubmitting10 = false;
-                    submitBtn10.disabled = false;
-                });
-            });
-            
-            
-        
             break;
         default:
             contentArea.innerHTML = "<p>Escolha uma opção.</p>";
