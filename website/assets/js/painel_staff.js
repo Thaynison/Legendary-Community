@@ -888,8 +888,10 @@ function changeContent(contentType) {
                         <input type="text" id="username" name="username" placeholder="Digite o nick do membro no Minecraft" required>
                     </div>
                     <div class="form-field">
-                        <label for="id_ticket">Informar ID do Ticket:</label>
-                        <input type="text" id="id_ticket" name="id_ticket" placeholder="Insira o ID do Ticket" required>
+                        <label for="id_ticket">Selecionar Ticket Referente:</label>
+                        <select id="id_ticket" name="id_ticket" required>
+                            <option value="">Carregando...</option>
+                        </select>
                     </div>
                     <div class="form-field">
                         <label for="descricao">Informar Descrição da Devolução:</label>
@@ -902,6 +904,26 @@ function changeContent(contentType) {
                     <button type="submit" class="button is-primary" id="submitBtn5">Criar Devolução</button>
                 </form>
             `;
+
+            const loadTicketsDev = async () => {
+                const ticketSelect = document.getElementById('id_ticket');
+                try {
+                    const response = await fetch('https://dash.legendarycommunity.com.br/api/api_tickets.php');
+                    const tickets = await response.json();
+                    ticketSelect.innerHTML = '<option value="">Selecione um Ticket</option>';
+                    tickets.forEach(ticket => {
+                        const option = document.createElement('option');
+                        option.value = ticket.id_ticket;
+                        option.textContent = `${ticket.id_ticket} | ${ticket.descricao}`;
+                        ticketSelect.appendChild(option);
+                    });
+                } catch (error) {
+                    console.error('Erro ao carregar tickets:', error);
+                    ticketSelect.innerHTML = '<option value="">Erro ao carregar tickets</option>';
+                }
+            };
+            loadTicketsDev();
+            
             const form5 = document.querySelector('.form-create-devolutions');
             const submitBtn5 = document.getElementById('submitBtn5');
             let isSubmitting5 = false;  // Flag to prevent multiple submissions
