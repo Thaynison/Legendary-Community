@@ -1359,6 +1359,7 @@ function changeContent(contentType) {
                 descricaoTextarea.value = 'Carregando descrição...';
                 try {
                     const response = await fetch(`https://dash.legendarycommunity.com.br/api/api_tickets_id.php?id_ticket=${ticketId}`);
+                    console.log(response)
                     const ticketData = await response.json();
                     descricaoTextarea.value = ticketData.descricao || 'Nenhuma descrição disponível.';
                 } catch (error) {
@@ -1370,6 +1371,7 @@ function changeContent(contentType) {
             document.getElementById('id_ticket').addEventListener('change', function () {
                 const selectedTicketId = this.value;
                 if (selectedTicketId) {
+                    console.log(selectedTicketId)
                     fetchTicketDescription(selectedTicketId);
                 } else {
                     document.getElementById('descricao').value = '';
