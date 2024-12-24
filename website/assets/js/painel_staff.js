@@ -1007,7 +1007,7 @@ function changeContent(contentType) {
                         <label for="parcelas">Informar Valor de Parcelas</label>
                         <input type="number" id="parcelas" name="parcelas" placeholder="Digite o Valor de Parcelas" required>
                     </div>
-                    <button type="submit" class="button is-primary" id="submitBtn6">Registrar Devolução</button>
+                    <button type="submit" class="button is-primary" id="submitBtn6">Registrar Emprestimo</button>
                 </form>
             `;
             
