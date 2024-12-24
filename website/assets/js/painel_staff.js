@@ -1322,6 +1322,11 @@ function changeContent(contentType) {
                         <label for="resposta">Resposta do Ticket:</label>
                         <textarea id="resposta" name="resposta" placeholder="Resposta do Ticket" rows="4" required></textarea>
                     </div>
+
+                    <div class="form-field">
+                        <label for="userid">Informar ID do Discord:</label>
+                        <input type="text" id="userid" name="userid" placeholder="Digite o ID do Discord" required>
+                    </div>
         
                     <div class="form-field">
                         <label for="status">Selecionar Status:</label>
