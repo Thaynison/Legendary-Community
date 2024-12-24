@@ -1011,7 +1011,7 @@ function changeContent(contentType) {
                 </form>
             `;
             
-            const form6 = document.querySelector('.form-register-advertencia');
+            const form6 = document.querySelector('.form-create-emprestimo');
             const submitBtn6 = document.getElementById('submitBtn6');
             let isSubmitting6 = false;  // Flag to prevent multiple submissions
         
