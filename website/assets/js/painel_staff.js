@@ -1358,7 +1358,7 @@ function changeContent(contentType) {
                 const descricaoTextarea = document.getElementById('descricao');
                 descricaoTextarea.value = 'Carregando descrição...';
                 try {
-                    const response = await fetch(`https://dash.legendarycommunity.com.br/api/api_tickets.php?id=${ticketId}`);
+                    const response = await fetch(`https://dash.legendarycommunity.com.br/api/api_tickets_id.php?id_ticket=${ticketId}`);
                     const ticketData = await response.json();
                     descricaoTextarea.value = ticketData.descricao || 'Nenhuma descrição disponível.';
                 } catch (error) {
