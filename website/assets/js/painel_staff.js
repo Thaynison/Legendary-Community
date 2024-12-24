@@ -1363,7 +1363,7 @@ function changeContent(contentType) {
                         throw new Error(`Erro HTTP: ${response.status}`);
                     }
                     const ticketData = await response.json();
-                    descricaoTextarea.value = ticketData.descricao || 'Nenhuma descrição disponível.';
+                    descricaoTextarea.value = ticketData.descricao;
                 } catch (error) {
                     console.error('Erro ao carregar descrição do ticket:', error);
                     descricaoTextarea.value = 'Erro ao carregar descrição.';
