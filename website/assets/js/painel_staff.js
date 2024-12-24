@@ -1332,7 +1332,7 @@ function changeContent(contentType) {
                         </select>
                     </div>
         
-                    <button type="submit" class="button is-primary" id="submitBtn10">Atualizar Emprestimo</button>
+                    <button type="submit" class="button is-primary" id="submitBtn10">Enviar Mensagem</button>
                 </form>
             `;
         
