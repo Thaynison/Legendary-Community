@@ -1302,6 +1302,129 @@ function changeContent(contentType) {
                 });
             });
             break;
+        case 'atualizar-suporte':
+            contentArea.innerHTML = `
+                <form class="form-atualizar-suporte">
+                
+                    <div class="form-field">
+                        <label for="id_ticket">Selecionar Ticket Referente:</label>
+                        <select id="id_ticket" name="id_ticket" required>
+                            <option value="">Carregando...</option>
+                        </select>
+                    </div>
+        
+                    <div class="form-field">
+                        <label for="descricao">Descrição do Ticket:</label>
+                        <textarea id="descricao" name="descricao" placeholder="Descrição do Ticket" rows="8" readonly></textarea>
+                    </div>
+        
+                    <div class="form-field">
+                        <label for="resposta">Resposta do Ticket:</label>
+                        <textarea id="resposta" name="resposta" placeholder="Resposta do Ticket" rows="4" required></textarea>
+                    </div>
+        
+                    <div class="form-field">
+                        <label for="status">Selecionar Status:</label>
+                        <select id="status" name="status" required>
+                            <option value="Em Analise">Em Analise</option>
+                            <option value="Reprovado">Reprovado</option>
+                            <option value="Concluido">Concluido</option>
+                        </select>
+                    </div>
+        
+                    <button type="submit" class="button is-primary" id="submitBtn10">Atualizar Emprestimo</button>
+                </form>
+            `;
+        
+            const loadTicketsResposta = async () => {
+                const ticketSelect = document.getElementById('id_ticket');
+                try {
+                    const response = await fetch('https://dash.legendarycommunity.com.br/api/api_tickets.php');
+                    const tickets = await response.json();
+                    ticketSelect.innerHTML = '<option value="">Selecione um Ticket</option>';
+                    tickets.forEach(ticket => {
+                        const option = document.createElement('option');
+                        option.value = ticket.id_ticket;
+                        option.textContent = `${ticket.id_ticket} | ${ticket.titulo}`;
+                        ticketSelect.appendChild(option);
+                    });
+                } catch (error) {
+                    console.error('Erro ao carregar tickets:', error);
+                    ticketSelect.innerHTML = '<option value="">Erro ao carregar tickets</option>';
+                }
+            };
+        
+            const fetchTicketDescription = async (ticketId) => {
+                const descricaoTextarea = document.getElementById('descricao');
+                descricaoTextarea.value = 'Carregando descrição...';
+                try {
+                    const response = await fetch(`https://dash.legendarycommunity.com.br/api/api_tickets.php?id=${ticketId}`);
+                    const ticketData = await response.json();
+                    descricaoTextarea.value = ticketData.descricao || 'Nenhuma descrição disponível.';
+                } catch (error) {
+                    console.error('Erro ao carregar descrição do ticket:', error);
+                    descricaoTextarea.value = 'Erro ao carregar descrição.';
+                }
+            };
+        
+            document.getElementById('id_ticket').addEventListener('change', function () {
+                const selectedTicketId = this.value;
+                if (selectedTicketId) {
+                    fetchTicketDescription(selectedTicketId);
+                } else {
+                    document.getElementById('descricao').value = '';
+                }
+            });
+        
+            loadTicketsResposta();
+        
+            const form10 = document.querySelector('.form-atualizar-suporte');
+            const submitBtn10 = document.getElementById('submitBtn10');
+            let isSubmitting10 = false;  // Flag to prevent multiple submissions
+        
+            form10.addEventListener('submit', function(event) {
+                event.preventDefault();
+        
+                if (isSubmitting10) return;
+        
+                isSubmitting10 = true;  
+                submitBtn10.disabled = true; 
+        
+                const formData = new FormData(form10);
+                fetch('https://dash.legendarycommunity.com.br/api/api_update_suporte.php', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        document.querySelector('.avisos5').style.display = 'flex';
+                        setTimeout(() => {
+                            document.querySelector('.avisos5').style.display = 'none';
+                        }, 5000);
+                        form10.reset();
+                    } else if (data.error) {
+                        document.querySelector('.avisos4').style.display = 'flex';
+                        setTimeout(() => {
+                            document.querySelector('.avisos4').style.display = 'none';
+                        }, 5000);
+                        form10.reset();
+                    }
+                })
+                .catch(error => {
+                    document.querySelector('.avisos4').style.display = 'flex';
+                    setTimeout(() => {
+                        document.querySelector('.avisos4').style.display = 'none';
+                    }, 5000);
+                    form10.reset();
+                })
+                .finally(() => {
+                    isSubmitting10 = false;
+                    submitBtn10.disabled = false;
+                });
+            });
+        
+            break;
         default:
             contentArea.innerHTML = "<p>Escolha uma opção.</p>";
     }
