@@ -1359,7 +1359,9 @@ function changeContent(contentType) {
                 descricaoTextarea.value = 'Carregando descrição...';
                 try {
                     const response = await fetch(`https://dash.legendarycommunity.com.br/api/api_tickets_id.php?id_ticket=${ticketId}`);
-                    console.log(response)
+                    if (!response.ok) {
+                        throw new Error(`Erro HTTP: ${response.status}`);
+                    }
                     const ticketData = await response.json();
                     descricaoTextarea.value = ticketData.descricao || 'Nenhuma descrição disponível.';
                 } catch (error) {
@@ -1367,11 +1369,11 @@ function changeContent(contentType) {
                     descricaoTextarea.value = 'Erro ao carregar descrição.';
                 }
             };
+            
         
             document.getElementById('id_ticket').addEventListener('change', function () {
                 const selectedTicketId = this.value;
                 if (selectedTicketId) {
-                    console.log(selectedTicketId)
                     fetchTicketDescription(selectedTicketId);
                 } else {
                     document.getElementById('descricao').value = '';
