@@ -63,7 +63,7 @@ function getHistoricoTicketsSTAFF() {
                         <tr>
                             <th>ID</th>
                             <th>Username</th>
-                            <th>Descrição</th>
+                            <th>Titulo</th>
                             <th>Print</th>
                             <th>Status</th>
                         </tr>
@@ -77,7 +77,7 @@ function getHistoricoTicketsSTAFF() {
                     <tr>
                         <td>${ticket.id_ticket}</td>
                         <td>${ticket.username}</td>
-                        <td>${ticket.descricao}</td>
+                        <td>${ticket.titulo}</td>
                         <td>
                             <button class="eye-button" onclick="showImage('${ticket.print}', event)">👁️</button>
                         </td>
@@ -1315,7 +1315,7 @@ function changeContent(contentType) {
         
                     <div class="form-field">
                         <label for="descricao">Descrição do Ticket:</label>
-                        <textarea id="descricao" name="descricao" placeholder="Descrição do Ticket" rows="8" readonly></textarea>
+                        <textarea id="descricao" name="descricao" placeholder="Descrição do Ticket" rows="4" readonly></textarea>
                     </div>
         
                     <div class="form-field">
@@ -1345,7 +1345,7 @@ function changeContent(contentType) {
                     tickets.forEach(ticket => {
                         const option = document.createElement('option');
                         option.value = ticket.id_ticket;
-                        option.textContent = `${ticket.id_ticket} | ${ticket.titulo}`;
+                        option.textContent = `${ticket.id_ticket} | ${ticket.titulo} | ${ticket.status}`;
                         ticketSelect.appendChild(option);
                     });
                 } catch (error) {
