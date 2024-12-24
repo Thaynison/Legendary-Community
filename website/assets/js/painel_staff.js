@@ -984,47 +984,45 @@ function changeContent(contentType) {
             contentArea.innerHTML = `
                 <form class="form-create-emprestimo">
                     <div class="form-field">
-                        <label for="userid">Informar ID discord do Membro:</label>
-                        <input type="text" id="userid" name="userid" placeholder="Digite o ID discord do Membro" required>
+                        <label for="userid">Informar ID do Discord:</label>
+                        <input type="text" id="userid" name="userid" placeholder="Digite o User ID do Advertido" required>
                     </div>
                     <div class="form-field">
-                        <label for="username">Informar nick do membro no Minecraft:</label>
-                        <input type="text" id="username" name="username" placeholder="Digite o nick do membro no Minecraft" required>
+                        <label for="username">Informar Nick do Minecraft</label>
+                        <input type="text" id="username" name="username" placeholder="Digite o Nick do Minecraft" required>
                     </div>
                     <div class="form-field">
-                        <label for="userid2">Informar ID discord do Agiota:</label>
-                        <input type="text" id="userid2" name="userid2" placeholder="Digite o ID discord do Agiota" required>
+                        <label for="userid2">Informar ID do Discord do Agiota:</label>
+                        <input type="text" id="userid2" name="userid2" placeholder="Digite o User ID do Advertido" required>
                     </div>
                     <div class="form-field">
-                        <label for="agiota">Informar nick do Agiota:</label>
-                        <input type="text" id="agiota" name="agiota" placeholder="Digite o nick do membro no Minecraft" required>
+                        <label for="agiota">Informar Nick do Minecraft do Agiota</label>
+                        <input type="text" id="agiota" name="agiota" placeholder="Digite o Nick do Minecraft do Agiota" required>
                     </div>
                     <div class="form-field">
-                        <label for="price">Informar Valor do Emprestimo:</label>
-                        <input type="number" id="price" name="price" placeholder="Insira o Valor do Emprestimo" required>
+                        <label for="price">Informar Valor do Emprestimo</label>
+                        <input type="number" id="price" name="price" placeholder="Digite o Valor do Emprestimo" required>
                     </div>
                     <div class="form-field">
-                        <label for="parcelas">Informar Valor de Parcelas:</label>
-                        <input type="number" id="parcelas" name="parcelas" placeholder="Insira o Valor de Parcelas" required>
+                        <label for="parcelas">Informar Valor de Parcelas</label>
+                        <input type="number" id="parcelas" name="parcelas" placeholder="Digite o Valor de Parcelas" required>
                     </div>
-                    <button type="submit" class="button is-primary" id="submitBtn6">Criar Emprestimo</button>
+                    <button type="submit" class="button is-primary" id="submitBtn6">Registrar Devolução</button>
                 </form>
             `;
-            const form6 = document.querySelector('.form-create-emprestimo');
+            
+            const form6 = document.querySelector('.form-register-advertencia');
             const submitBtn6 = document.getElementById('submitBtn6');
             let isSubmitting6 = false;  // Flag to prevent multiple submissions
-
+        
             form6.addEventListener('submit', function(event) {
                 event.preventDefault();
-
-
-                // Prevent multiple submissions
-                if (isSubmitting6) return;
-
-                isSubmitting6 = true;  // Set flag to true
-                submitBtn6.disabled = true;  // Disable the submit button to prevent multiple clicks
         
-                                
+                if (isSubmitting6) return;
+        
+                isSubmitting6 = true;  
+                submitBtn6.disabled = true; 
+        
                 const formData = new FormData(form6);
                 fetch('https://dash.legendarycommunity.com.br/api/api_registrar_emprestimo.php', {
                     method: 'POST',
@@ -1034,13 +1032,13 @@ function changeContent(contentType) {
                 .then(data => {
                     if (data.success) {
                         document.querySelector('.avisos5').style.display = 'flex';
-                        setTimeout(function() {
+                        setTimeout(() => {
                             document.querySelector('.avisos5').style.display = 'none';
                         }, 5000);
                         form6.reset();
                     } else if (data.error) {
                         document.querySelector('.avisos4').style.display = 'flex';
-                        setTimeout(function() {
+                        setTimeout(() => {
                             document.querySelector('.avisos4').style.display = 'none';
                         }, 5000);
                         form6.reset();
@@ -1048,14 +1046,14 @@ function changeContent(contentType) {
                 })
                 .catch(error => {
                     document.querySelector('.avisos4').style.display = 'flex';
-                    setTimeout(function() {
+                    setTimeout(() => {
                         document.querySelector('.avisos4').style.display = 'none';
                     }, 5000);
                     form6.reset();
                 })
                 .finally(() => {
-                    isSubmitting6 = false;  // Reset flag
-                    submitBtn6.disabled = false;  // Re-enable the submit button
+                    isSubmitting6 = false;
+                    submitBtn6.disabled = false;
                 });
             });
             break;
