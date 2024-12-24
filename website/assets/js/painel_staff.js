@@ -1393,14 +1393,17 @@ function changeContent(contentType) {
         
             form10.addEventListener('submit', function(event) {
                 event.preventDefault();
-        
+            
                 if (isSubmitting10) return;
-        
-                isSubmitting10 = true;  
-                submitBtn10.disabled = true; 
-        
+            
+                isSubmitting10 = true;
+                submitBtn10.disabled = true;
+            
                 const formData = new FormData(form10);
-                console.log(formData)
+            
+                // Debug: Verificar os dados enviados
+                console.log("Dados enviados:", Object.fromEntries(formData.entries()));
+            
                 fetch('https://dash.legendarycommunity.com.br/api/api_update_suporte.php', {
                     method: 'POST',
                     body: formData
@@ -1408,12 +1411,14 @@ function changeContent(contentType) {
                 .then(response => response.json())
                 .then(data => {
                     if (data.success) {
+                        console.log("Resposta da API:", data.success);
                         document.querySelector('.avisos5').style.display = 'flex';
                         setTimeout(() => {
                             document.querySelector('.avisos5').style.display = 'none';
                         }, 5000);
                         form10.reset();
                     } else if (data.error) {
+                        console.error("Erro da API:", data.error);
                         document.querySelector('.avisos4').style.display = 'flex';
                         setTimeout(() => {
                             document.querySelector('.avisos4').style.display = 'none';
@@ -1422,6 +1427,7 @@ function changeContent(contentType) {
                     }
                 })
                 .catch(error => {
+                    console.error("Erro na requisição:", error);
                     document.querySelector('.avisos4').style.display = 'flex';
                     setTimeout(() => {
                         document.querySelector('.avisos4').style.display = 'none';
@@ -1433,6 +1439,7 @@ function changeContent(contentType) {
                     submitBtn10.disabled = false;
                 });
             });
+            
         
             break;
         default:
