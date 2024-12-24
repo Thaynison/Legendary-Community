@@ -1315,7 +1315,7 @@ function changeContent(contentType) {
         
                     <div class="form-field">
                         <label for="descricao">Descrição do Ticket:</label>
-                        <textarea id="descricao" name="descricao" placeholder="Descrição do Ticket" rows="4" readonly></textarea>
+                        <textarea id="descricao" placeholder="Descrição do Ticket" rows="4" readonly></textarea>
                     </div>
         
                     <div class="form-field">
@@ -1396,13 +1396,13 @@ function changeContent(contentType) {
             
                 if (isSubmitting10) return;
             
-                isSubmitting10 = true;
-                submitBtn10.disabled = true;
+                isSubmitting10 = true;  
+                submitBtn10.disabled = true; 
             
                 const formData = new FormData(form10);
             
-                // Debug: Verificar os dados enviados
-                console.log("Dados enviados:", Object.fromEntries(formData.entries()));
+                // Remover a descrição do envio
+                formData.delete('descricao'); 
             
                 fetch('https://dash.legendarycommunity.com.br/api/api_update_suporte.php', {
                     method: 'POST',
@@ -1411,14 +1411,12 @@ function changeContent(contentType) {
                 .then(response => response.json())
                 .then(data => {
                     if (data.success) {
-                        console.log("Resposta da API:", data.success);
                         document.querySelector('.avisos5').style.display = 'flex';
                         setTimeout(() => {
                             document.querySelector('.avisos5').style.display = 'none';
                         }, 5000);
                         form10.reset();
                     } else if (data.error) {
-                        console.error("Erro da API:", data.error);
                         document.querySelector('.avisos4').style.display = 'flex';
                         setTimeout(() => {
                             document.querySelector('.avisos4').style.display = 'none';
@@ -1427,7 +1425,6 @@ function changeContent(contentType) {
                     }
                 })
                 .catch(error => {
-                    console.error("Erro na requisição:", error);
                     document.querySelector('.avisos4').style.display = 'flex';
                     setTimeout(() => {
                         document.querySelector('.avisos4').style.display = 'none';
@@ -1439,6 +1436,7 @@ function changeContent(contentType) {
                     submitBtn10.disabled = false;
                 });
             });
+            
             
         
             break;
