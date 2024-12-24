@@ -1246,7 +1246,7 @@ function changeContent(contentType) {
                     emprestimos.forEach(emprestimo => {
                         const option = document.createElement('option');
                         option.value = emprestimo.id_emprestimo;
-                        option.textContent = `${emprestimo.id_emprestimo} | ${formatarBRL(emprestimo.price)} | ${emprestimo.status}`;
+                        option.textContent = `${emprestimo.id_emprestimo} | ${formatarBRL(emprestimo.price)} | ${emprestimo.status} | Parcelas: | ${emprestimo.parcelas_pagas}/${emprestimo.parcelas}`;
                         emprestimoSelect.appendChild(option);
                     });
                 } catch (error) {
