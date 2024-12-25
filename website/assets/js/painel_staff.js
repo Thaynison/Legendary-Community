@@ -1389,7 +1389,7 @@ function changeContent(contentType) {
                     }
                     const ticketData = await response.json();
                     if (Array.isArray(ticketData) && ticketData.length > 0) {
-                        dataInput.value = ticketData[0].descricao || 'Nenhuma data disponível.';
+                        dataInput.value = ticketData[0].data || 'Nenhuma data disponível.';
                     } else {
                         dataInput.value = 'Nenhuma data encontrada.';
                     }
