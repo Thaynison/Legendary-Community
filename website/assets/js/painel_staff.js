@@ -1381,7 +1381,7 @@ function changeContent(contentType) {
 
             const fetchTicketDate = async (ticketId) => {
                 const dataInput = document.getElementById('data');
-                dataInput.value = 'Carregando data...';
+                dataInput.value = '';  // Clear value before loading the date
                 try {
                     const response = await fetch(`https://dash.legendarycommunity.com.br/api/api_tickets_id.php?id_ticket=${ticketId}`);
                     if (!response.ok) {
@@ -1395,21 +1395,20 @@ function changeContent(contentType) {
                         if (ticketDate) {
                             // Converte a data para o formato necessário para "datetime-local"
                             const formattedDate = new Date(ticketDate).toISOString().slice(0, 16);
-                            dataInput.value = formattedDate;
+                            dataInput.value = formattedDate;  // Assign the correctly formatted date
                         } else {
-                            dataInput.value = 'Nenhuma data disponível.';
+                            dataInput.value = '';  // If no date, clear the value
                         }
                     } else {
-                        dataInput.value = 'Nenhuma data encontrada.';
+                        dataInput.value = '';  // If no data, clear the value
                     }
                 } catch (error) {
                     console.error('Erro ao carregar data do ticket:', error);
-                    dataInput.value = 'Erro ao carregar data.';
+                    dataInput.value = '';  // Clear the value on error
                 }
             };
-            
-                   
         
+             
             document.getElementById('id_ticket').addEventListener('change', function () {
                 const selectedTicketId = this.value;
                 if (selectedTicketId) {
