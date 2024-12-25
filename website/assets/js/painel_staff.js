@@ -1389,12 +1389,14 @@ function changeContent(contentType) {
                     }
                     const ticketData = await response.json();
                     if (Array.isArray(ticketData) && ticketData.length > 0) {
-                        // Supondo que a API retorne uma data no formato ISO 8601, como "2024-12-24T15:30:00"
+                        // Supondo que a API retorne uma data no formato "yyyy-MM-dd HH:mm:ss"
                         const ticketDate = ticketData[0].data; // Substitua por sua chave de data
             
                         if (ticketDate) {
-                            // Converte a data para o formato necessário para "datetime-local"
-                            const formattedDate = new Date(ticketDate).toISOString().slice(0, 16);
+                            // Converte a data para o formato "yyyy-MM-dd HH:mm:ss" do MySQL
+                            const dateObject = new Date(ticketDate.replace(' ', 'T')); // Converte para ISO 8601
+                            // Formata a data para o formato "yyyy-MM-ddThh:mm"
+                            const formattedDate = dateObject.toISOString().slice(0, 16);
                             dataInput.value = formattedDate;  // Assign the correctly formatted date
                         } else {
                             dataInput.value = '';  // If no date, clear the value
@@ -1407,8 +1409,7 @@ function changeContent(contentType) {
                     dataInput.value = '';  // Clear the value on error
                 }
             };
-        
-             
+                   
             document.getElementById('id_ticket').addEventListener('change', function () {
                 const selectedTicketId = this.value;
                 if (selectedTicketId) {
