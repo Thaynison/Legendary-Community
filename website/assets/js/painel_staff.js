@@ -1381,7 +1381,7 @@ function changeContent(contentType) {
 
             const fetchTicketDate = async (ticketId) => {
                 const dataInput = document.getElementById('data');
-                dataInput.value = 'Carregando data...';
+                dataInput.value = '0000-00-00000:00';
                 try {
                     const response = await fetch(`https://dash.legendarycommunity.com.br/api/api_tickets_id.php?id_ticket=${ticketId}`);
                     if (!response.ok) {
@@ -1397,14 +1397,14 @@ function changeContent(contentType) {
                             const formattedDate = new Date(ticketDate).toISOString().slice(0, 16);
                             dataInput.value = formattedDate;
                         } else {
-                            dataInput.value = 'Nenhuma data disponível.';
+                            dataInput.value = '0000-00-00000:00';
                         }
                     } else {
-                        dataInput.value = 'Nenhuma data encontrada.';
+                        dataInput.value = '0000-00-00000:00';
                     }
                 } catch (error) {
                     console.error('Erro ao carregar data do ticket:', error);
-                    dataInput.value = 'Erro ao carregar data.';
+                    dataInput.value = '0000-00-00000:00';
                 }
             };
             
