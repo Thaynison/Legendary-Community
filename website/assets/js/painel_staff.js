@@ -1317,6 +1317,11 @@ function changeContent(contentType) {
                         <label for="descricao">Descrição do Ticket:</label>
                         <textarea id="descricao" placeholder="Descrição do Ticket" rows="4" readonly></textarea>
                     </div>
+
+                    <div class="form-field">
+                        <label for="data">Data de Abertura do Ticket:</label>
+                        <input type="date" id="data" name="data" placeholder="Digite o nome do Minecraft" readonly>
+                    </div>
         
                     <div class="form-field">
                         <label for="resposta">Resposta do Ticket:</label>
@@ -1373,14 +1378,36 @@ function changeContent(contentType) {
                     descricaoTextarea.value = 'Erro ao carregar descrição.';
                 }
             };
+
+            const fetchTicketDate = async (ticketId) => {
+                const dataInput = document.getElementById('data');
+                dataInput.value = 'Carregando data..';
+                try {
+                    const response = await fetch(`https://dash.legendarycommunity.com.br/api/api_tickets_id.php?id_ticket=${ticketId}`);
+                    if (!response.ok) {
+                        throw new Error(`Erro HTTP: ${response.status}`);
+                    }
+                    const ticketData = await response.json();
+                    if (Array.isArray(ticketData) && ticketData.length > 0) {
+                        dataInput.value = ticketData[0].descricao || 'Nenhuma data disponível.';
+                    } else {
+                        dataInput.value = 'Nenhuma data encontrada.';
+                    }
+                } catch (error) {
+                    console.error('Erro ao carregar data do ticket:', error);
+                    dataInput.value = 'Erro ao carregar data.';
+                }
+            };
                    
         
             document.getElementById('id_ticket').addEventListener('change', function () {
                 const selectedTicketId = this.value;
                 if (selectedTicketId) {
                     fetchTicketDescription(selectedTicketId);
+                    fetchTicketDate(selectedTicketId)
                 } else {
                     document.getElementById('descricao').value = '';
+                    document.getElementById('data').value = '';
                 }
             });
         
