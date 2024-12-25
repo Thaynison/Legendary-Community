@@ -1320,7 +1320,7 @@ function changeContent(contentType) {
 
                     <div class="form-field">
                         <label for="data">Data de Abertura do Ticket:</label>
-                        <input type="date" id="data" name="data" placeholder="Digite o nome do Minecraft" readonly>
+                        <input type="datetime-local" id="data" name="data" placeholder="Digite a data e hora" readonly>
                     </div>
         
                     <div class="form-field">
@@ -1381,7 +1381,7 @@ function changeContent(contentType) {
 
             const fetchTicketDate = async (ticketId) => {
                 const dataInput = document.getElementById('data');
-                dataInput.value = 'Carregando data..';
+                dataInput.value = 'Carregando data...';
                 try {
                     const response = await fetch(`https://dash.legendarycommunity.com.br/api/api_tickets_id.php?id_ticket=${ticketId}`);
                     if (!response.ok) {
@@ -1389,7 +1389,16 @@ function changeContent(contentType) {
                     }
                     const ticketData = await response.json();
                     if (Array.isArray(ticketData) && ticketData.length > 0) {
-                        dataInput.value = ticketData[0].data || 'Nenhuma data disponível.';
+                        // Supondo que a API retorne uma data no formato ISO 8601, como "2024-12-24T15:30:00"
+                        const ticketDate = ticketData[0].data; // Substitua por sua chave de data
+            
+                        if (ticketDate) {
+                            // Converte a data para o formato necessário para "datetime-local"
+                            const formattedDate = new Date(ticketDate).toISOString().slice(0, 16);
+                            dataInput.value = formattedDate;
+                        } else {
+                            dataInput.value = 'Nenhuma data disponível.';
+                        }
                     } else {
                         dataInput.value = 'Nenhuma data encontrada.';
                     }
@@ -1398,6 +1407,7 @@ function changeContent(contentType) {
                     dataInput.value = 'Erro ao carregar data.';
                 }
             };
+            
                    
         
             document.getElementById('id_ticket').addEventListener('change', function () {
