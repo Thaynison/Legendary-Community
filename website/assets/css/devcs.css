@@ -930,7 +930,7 @@
     font-size: 14px;
 }
 
-.form-atualizar-suporte input[type="text"], input[type="url"], input[type="number"], input[type="date"], textarea {
+.form-atualizar-suporte input[type="text"], input[type="url"], input[type="number"], input[type="datetime-local"], textarea {
     padding: 10px;
     font-size: 14px;
     border: 1px solid #ccc;
@@ -939,7 +939,7 @@
     transition: border-color 0.3s;
 }
 
-.form-atualizar-suporte input[type="text"]:focus, input[type="url"]:focus, input[type="number"]:focus, input[type="date"]:focus, textarea:focus {
+.form-atualizar-suporte input[type="text"]:focus, input[type="url"]:focus, input[type="number"]:focus, input[type="datetime-local"]:focus, textarea:focus {
     border-color: #db34cd;
     outline: none;
 }
