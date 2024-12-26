@@ -17,6 +17,7 @@ window.addEventListener('DOMContentLoaded', () => {
         getHistoricoEmprestimos(userid);
         getHistoricoDevolucoes(userid);
         getHistoricoAdvertencia(userid);
+        getHistoricoMensagens(userid)
     } else {
         console.log("erro no userid")
     }
@@ -79,6 +80,64 @@ function getHistoricoTickets(userid) {
         })
         .catch(error => {
             document.querySelector('.form-lista-de-ticket').innerHTML = `<p>Erro ao carregar os dados. Tente novamente mais tarde.</p>`;
+        });
+}
+
+function getHistoricoMensagens(userid) {
+    const apiUrl = `https://dash.legendarycommunity.com.br/api/api_buscar_mensagem_user.php?userid=${userid}`;
+
+    fetch(apiUrl)
+        .then(response => response.json())
+        .then(data => {
+            if (data.error) {
+                document.querySelector('.form-lista-de-mensagens').innerHTML = `<p>${data.error}</p>`;
+            } else {
+
+                const getStatusInfo = (status) => {
+                    switch (status) {
+                        case 'Player':
+                            return { emoji: '👨‍💼', title: 'Mensagem de Player' };
+                        case 'Staff':
+                            return { emoji: '👨‍🎓', title: 'Mensagem da Staff' };
+                        case 'Concluido':
+                            return { emoji: '✅', title: 'Ticket Concluído' };
+                        case 'Reprovado':
+                            return { emoji: '❌', title: 'Ticket Reprovado' };
+                        case 'Em Analise':
+                            return { emoji: '🔎', title: 'Ticket Em Análise' };
+                        default:
+                            return { emoji: '❓', title: 'Ticket Desconhecido' };
+                    }
+                };
+
+                let htmlContent = '<table class="table is-fullwidth">';
+                htmlContent += `<thead>
+                                    <tr>
+                                        <th>Mensagem</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead><tbody>`;
+
+                if (Array.isArray(data)) {
+                    data.forEach(mensagem => {
+                        const statusInfo = getStatusInfo(mensagem.status);
+                        htmlContent += `<tr>
+                                            <td>${mensagem.resposta}</td>
+                                            <td>
+                                                <span title="${statusInfo.title}">${statusInfo.emoji}</span>
+                                            </td>
+                                        </tr>`;
+                    });
+                } else {
+                    htmlContent += '<tr><td colspan="5">Nenhum ticket encontrado.</td></tr>';
+                }
+
+                htmlContent += '</tbody></table>';
+                document.querySelector('.form-lista-de-mensagens').innerHTML = htmlContent;
+            }
+        })
+        .catch(error => {
+            document.querySelector('.form-lista-de-mensagens').innerHTML = `<p>Erro ao carregar os dados. Tente novamente mais tarde.</p>`;
         });
 }
 
@@ -560,6 +619,18 @@ function changeContent(contentType) {
                 getHistoricoAdvertencia(userid4);
             }
             break;
+            case 'lista-de-mensagens':
+                contentArea.innerHTML = `
+                    <form class="form-lista-de-mensagens">
+                        <p>Carregando histórico de mensagens...</p>
+                    </form>
+                `;
+                // Garantir que os tickets sejam carregados quando o conteúdo for trocado
+                const userid5 = document.getElementById('userid2').textContent;
+                if (userid5) {
+                    getHistoricoMensagens(userid5);
+                }
+                break;
         default:
             contentArea.innerHTML = "<p>Escolha uma opção.</p>";
     }

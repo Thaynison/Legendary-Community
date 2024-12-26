@@ -8,5 +8,6 @@
   "event.minecraft.raid": "\uE903",
   "event.minecraft.raid.raiders_remaining": "",
   "event.minecraft.raid.victory": "",
-  "event.minecraft.raid.defeat": ""
+  "event.minecraft.raid.defeat": "",
+  "container.brewing": "           \u00a7f\ueff1                                             \u00a7f\ueff2"
 }

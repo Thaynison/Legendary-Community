@@ -65,6 +65,16 @@
             "file": "minecraft:font/nethergauntlet.png",
             "ascent": 18, "height": 35,
             "chars": ["\uE916"]
+        },
+    {  "type": "bitmap",
+            "file": "minecraft:gui/container/brewing_guide_left.png",
+            "ascent": 13, "height": 166,
+            "chars": ["\uEff1"]
+        },
+    {  "type": "bitmap",
+            "file": "minecraft:gui/container/brewing_guide_right.png",
+            "ascent": 27, "height": 193,
+            "chars": ["\uEff2"]
         }
     ]
 }
