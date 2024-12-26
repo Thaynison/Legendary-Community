@@ -21,15 +21,6 @@ window.addEventListener('DOMContentLoaded', () => {
     } else {
         console.log("erro no userid")
     }
-    
-    // Preencher o campo de entrada UserID no formulário de registro de ticket
-    const registerTicketForm = document.querySelector('.form-register-ticket');
-    if (registerTicketForm) {
-        const userIdInput = registerTicketForm.querySelector('input[name="userid"]');
-        if (userIdInput) {
-            userIdInput.value = userid;
-        }
-    }
 });
 
 function getHistoricoTickets(userid) {
@@ -553,8 +544,6 @@ function changeContent(contentType) {
                     <button type="submit" class="button is-primary" id="submitBtn">Abrir Ticket</button>
                 </form>
             `;
-
-
             const form2 = document.querySelector('.form-register-ticket');
             const submitBtn = document.getElementById('submitBtn');
             let isSubmitting = false;  // Flag to prevent multiple submissions
