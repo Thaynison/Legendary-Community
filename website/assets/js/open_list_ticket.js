@@ -522,8 +522,8 @@ function changeContent(contentType) {
             contentArea.innerHTML = `
                 <form class="form-register-ticket">
                     <div class="form-field">
-                        <label for="userid">Informar ID Account Discord:</label>
-                        <input type="text" id="userid" name="userid value="userid3" placeholder="Digite o User ID do Discord" required>
+                        <label for="userid3">Informar ID Account Discord:</label>
+                        <input type="text" id="userid3" name="userid3" placeholder="Digite o User ID do Discord" required>
                     </div>
                     <div class="form-field">
                         <label for="username">Informar Nome do Minecraft:</label>
