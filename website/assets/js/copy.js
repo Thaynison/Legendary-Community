@@ -28,3 +28,12 @@ function copyToClipboard() {
 
     document.execCommand("copy");
 }
+
+function copyToClipboardUserid() {
+    var input = document.getElementById("userid2");
+
+    input.select();
+    input.setSelectionRange(0, 99999);
+
+    document.execCommand("copy");
+}
