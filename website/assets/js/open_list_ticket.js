@@ -7,12 +7,10 @@ window.addEventListener('DOMContentLoaded', () => {
     document.getElementById('username2').textContent = username;
     document.getElementById('userid').textContent = userid;
     document.getElementById('userid2').textContent = userid;
-    document.getElementById('userid3').textContent = userid;
     document.getElementById('avatar').src = avatar;
     document.getElementById('avatar2').src = avatar;
 
     document.getElementById('userid2').value = userid;
-    document.getElementById('userid3').value = userid;
 
     if (userid) {
         getHistoricoTickets(userid);
@@ -523,8 +521,8 @@ function changeContent(contentType) {
             contentArea.innerHTML = `
                 <form class="form-register-ticket">
                     <div class="form-field">
-                        <label for="userid3">Informar ID Account Discord:</label>
-                        <input type="text" id="userid3" name="userid3" placeholder="Digite o User ID do Discord" readonly>
+                        <label for="userid">Informar ID Account Discord:</label>
+                        <input type="text" id="userid" name="userid" placeholder="Digite o User ID do Discord" required>
                     </div>
                     <div class="form-field">
                         <label for="username">Informar Nome do Minecraft:</label>
