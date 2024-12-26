@@ -18,9 +18,17 @@ window.addEventListener('DOMContentLoaded', () => {
         getHistoricoDevolucoes(userid);
         getHistoricoAdvertencia(userid);
         getHistoricoMensagens(userid)
-        getUserID(userid);
     } else {
         console.log("erro no userid")
+    }
+    
+    // Preencher o campo de entrada UserID no formulário de registro de ticket
+    const registerTicketForm = document.querySelector('.form-register-ticket');
+    if (registerTicketForm) {
+        const userIdInput = registerTicketForm.querySelector('input[name="userid"]');
+        if (userIdInput) {
+            userIdInput.value = userid;
+        }
     }
 });
 
@@ -546,11 +554,6 @@ function changeContent(contentType) {
                 </form>
             `;
 
-            // Garantir que os tickets sejam carregados quando o conteúdo for trocado
-            const userid10 = document.getElementById('userid').textContent;
-            if (userid10) {
-                getUserID(userid10);
-            }
 
             const form2 = document.querySelector('.form-register-ticket');
             const submitBtn = document.getElementById('submitBtn');
