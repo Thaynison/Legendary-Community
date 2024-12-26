@@ -7,6 +7,7 @@ window.addEventListener('DOMContentLoaded', () => {
     document.getElementById('username2').textContent = username;
     document.getElementById('userid').textContent = userid;
     document.getElementById('userid2').textContent = userid;
+    document.getElementById('userid3').textContent = userid;
     document.getElementById('avatar').src = avatar;
     document.getElementById('avatar2').src = avatar;
 
