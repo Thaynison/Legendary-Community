@@ -523,7 +523,7 @@ function changeContent(contentType) {
                 <form class="form-register-ticket">
                     <div class="form-field">
                         <label for="userid3">Informar ID Account Discord:</label>
-                        <input type="text" id="userid3" name="userid3" placeholder="Digite o User ID do Discord" required>
+                        <input type="text" id="userid3" name="userid3" placeholder="Digite o User ID do Discord" readonly>
                     </div>
                     <div class="form-field">
                         <label for="username">Informar Nome do Minecraft:</label>
