@@ -11,15 +11,16 @@ window.addEventListener('DOMContentLoaded', () => {
     document.getElementById('avatar2').src = avatar;
 
     document.getElementById('userid2').value = userid;
+    document.getElementById('userid3').value = userid;
 
     if (userid) {
         getHistoricoTickets(userid);
         getHistoricoEmprestimos(userid);
         getHistoricoDevolucoes(userid);
         getHistoricoAdvertencia(userid);
-        getHistoricoMensagens(userid);
+        getHistoricoMensagens(userid)
     } else {
-        console.log("erro no userid");
+        console.log("erro no userid")
     }
 });
 
@@ -517,13 +518,12 @@ function changeContent(contentType) {
     var contentArea = document.getElementById("content-area");
 
     switch(contentType) {
-        
         case 'register-ticket':
             contentArea.innerHTML = `
                 <form class="form-register-ticket">
                     <div class="form-field">
                         <label for="userid">Informar ID Account Discord:</label>
-                        <input type="text" id="userid" name="userid" value="${userid}" placeholder="Digite o User ID do Discord" required>
+                        <input type="text" id="userid" name="userid value="userid3" placeholder="Digite o User ID do Discord" required>
                     </div>
                     <div class="form-field">
                         <label for="username">Informar Nome do Minecraft:</label>
@@ -591,7 +591,6 @@ function changeContent(contentType) {
                     submitBtn.disabled = false;  // Re-enable the submit button
                 });
             });
-        
             break;        
         case 'lista-de-ticket':
             contentArea.innerHTML = `
