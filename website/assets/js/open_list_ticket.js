@@ -83,12 +83,24 @@ function getHistoricoTickets(userid) {
         });
 }
 
+function getDiscordUsername(userId) {
+    const apiUrl = `https://dash.legendarycommunity.com.br/api/api_buscar_discord.php?userid=${userId}`;
+
+    return fetch(apiUrl)
+        .then(response => response.json())
+        .then(data => data.username)
+        .catch(error => {
+            console.error('Erro ao buscar nome do usuário no Discord:', error);
+            return 'Desconhecido';
+        });
+}
+
 function getHistoricoMensagens(userid) {
     const apiUrl = `https://dash.legendarycommunity.com.br/api/api_buscar_mensagem_user.php?userid=${userid}`;
 
     fetch(apiUrl)
         .then(response => response.json())
-        .then(data => {
+        .then(async data => {
             if (data.error) {
                 document.querySelector('.form-lista-de-mensagens').innerHTML = `<p>${data.error}</p>`;
             } else {
@@ -119,15 +131,22 @@ function getHistoricoMensagens(userid) {
                                 </thead><tbody>`;
 
                 if (Array.isArray(data)) {
-                    data.forEach(mensagem => {
+                    for (const mensagem of data) {
                         const statusInfo = getStatusInfo(mensagem.status);
+                        let title = statusInfo.title;
+
+                        if (mensagem.status === 'Player' || mensagem.status === 'Staff') {
+                            const username = await getDiscordUsername(mensagem.enviador);
+                            title += ` - Enviado por: ${username}`;
+                        }
+
                         htmlContent += `<tr>
                                             <td>${mensagem.resposta}</td>
                                             <td>
-                                                <span title="${statusInfo.title}">${statusInfo.emoji}</span>
+                                                <span title="${title}">${statusInfo.emoji}</span>
                                             </td>
                                         </tr>`;
-                    });
+                    }
                 } else {
                     htmlContent += '<tr><td colspan="5">Nenhum ticket encontrado.</td></tr>';
                 }
@@ -140,6 +159,7 @@ function getHistoricoMensagens(userid) {
             document.querySelector('.form-lista-de-mensagens').innerHTML = `<p>Erro ao carregar os dados. Tente novamente mais tarde.</p>`;
         });
 }
+
 
 function getHistoricoEmprestimos(userid) {
     const apiUrl = `https://dash.legendarycommunity.com.br/api/api_buscar_emprestimo_user.php?userid=${userid}`;
