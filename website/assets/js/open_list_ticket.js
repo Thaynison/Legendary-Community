@@ -18,6 +18,7 @@ window.addEventListener('DOMContentLoaded', () => {
         getHistoricoDevolucoes(userid);
         getHistoricoAdvertencia(userid);
         getHistoricoMensagens(userid)
+        getUserID(userid);
     } else {
         console.log("erro no userid")
     }
@@ -544,6 +545,13 @@ function changeContent(contentType) {
                     <button type="submit" class="button is-primary" id="submitBtn">Abrir Ticket</button>
                 </form>
             `;
+
+            // Garantir que os tickets sejam carregados quando o conteúdo for trocado
+            const userid10 = document.getElementById('userid').textContent;
+            if (userid10) {
+                getUserID(userid10);
+            }
+
             const form2 = document.querySelector('.form-register-ticket');
             const submitBtn = document.getElementById('submitBtn');
             let isSubmitting = false;  // Flag to prevent multiple submissions
