@@ -36,12 +36,15 @@ document.addEventListener("DOMContentLoaded", () => {
             .tooltip {
                 position: absolute;
                 padding: 8px;
-                background-color: rgba(0, 0, 0, 0.7);
+                background-color: rgba(0, 0, 0, 0.8);
                 color: #fff;
                 border-radius: 5px;
                 font-size: 12px;
+                text-align: center;
                 display: none;
                 pointer-events: none;
+                z-index: 1000;
+                transform: translateX(-50%);
             }
         `;
         const styleSheet = document.createElement("style");
@@ -64,13 +67,9 @@ document.addEventListener("DOMContentLoaded", () => {
             imgElement.addEventListener("mouseover", (event) => {
                 tooltip.textContent = descricao; // Exibe a descrição
                 tooltip.style.display = "block";
-                tooltip.style.left = `${event.pageX + 10}px`;
-                tooltip.style.top = `${event.pageY + 10}px`;
-            });
-
-            imgElement.addEventListener("mousemove", (event) => {
-                tooltip.style.left = `${event.pageX + 10}px`;
-                tooltip.style.top = `${event.pageY + 10}px`;
+                const rect = imgElement.getBoundingClientRect();
+                tooltip.style.left = `${rect.left + rect.width / 2}px`;
+                tooltip.style.top = `${rect.top - tooltip.offsetHeight - 10}px`; // 10px acima da imagem
             });
 
             imgElement.addEventListener("mouseout", () => {
