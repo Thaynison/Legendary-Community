@@ -1,4 +1,5 @@
 :root {
+  --corBranca: #ffffff;
   --destaque: #11203b;
   --destaque-escuro: #11203b;
   --corAprovado: #31888a;
@@ -33,7 +34,7 @@ header .navbar {
 
 .navbar-item,
 .navbar-link {
-  color: #ffffff;
+  color:  var(--corBranca);
 }
 
 .navbar-item svg,
@@ -50,15 +51,15 @@ a.navbar-item.is-active, a.navbar-link.is-active,
 .navbar-item.has-dropdown:hover .navbar-link,
 .navbar-item.has-dropdown.is-active .navbar-link {
   background-color: rgba(0, 0, 0, .25);
-  color: #fff;
+  color:  var(--corBranca);
 }
 
 .navbar-link:not(.is-arrowless)::after {
-  border-color: #fff;
+  color:  var(--corBranca);
 }
 
 .navbar-burger {
-  color: #fff !important;
+  color:  var(--corBranca) !important;
 }
 
 .logo.container {
@@ -85,7 +86,7 @@ a.navbar-item.is-active, a.navbar-link.is-active,
   position: absolute;
   top: calc(50% - 12px);
   left: -90px;
-  color: #fff;
+  color:  var(--corBranca);
   background-color: #48c774;
   padding: 0 .5rem;
   border-radius: 5px;
@@ -114,7 +115,7 @@ footer.section {
 .article-title {
   background-color: var(--destaque);
   font-size: 1.25rem;
-  color: #fff;
+  color:  var(--corBranca);
   padding: .5rem 1rem;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
@@ -170,7 +171,7 @@ article.footer {
   flex-direction: column;
   background-color: var(--destaque);
   padding: 1rem;
-  color: #fff;
+  color:  var(--corBranca);
   text-align: center;
   border-radius: 5px;
 }
@@ -364,7 +365,7 @@ a.is-muted:hover {
   }
 
   .navbar-dropdown .navbar-item {
-    color: #fff;
+    color:  var(--corBranca);
   }
 
   #ip::before {
@@ -425,7 +426,7 @@ a.is-muted:hover {
   
 .painelstaff .button.is-primary {
     background-color: #9b4caf; /* Cor de fundo verde */
-    color: #fff; /* Texto branco */
+    color:  var(--corBranca);
     border: none;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
   }
