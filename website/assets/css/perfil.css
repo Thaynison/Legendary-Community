@@ -87,15 +87,15 @@
     flex: 1;
     padding: 8px;
     font-size: 14px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--corAprovado);
     border-radius: 5px;
-    background-color: #f9f9f9;
+    background-color: var(--corAprovado);
     margin-right: 10px;
 }
 
 .copy-btn {
-    background-color: #b300aab7;
-    color: white;
+    background-color: var( --destaque);
+    color: var(--corBranca);
     border: none;
     padding: 8px 15px;
     border-radius: 5px;
@@ -103,7 +103,7 @@
 }
 
 .copy-btn:hover {
-    background-color: #b300aa;
+    background-color: var( --corAprovado);
 }
 
 .copy-btn i {
