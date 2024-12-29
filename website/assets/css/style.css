@@ -258,19 +258,19 @@ a.is-muted:hover {
 
 .list svg {
   background: linear-gradient(90deg, var(--corlist));
-  -webkit-background-clip: text;
+  /* -webkit-background-clip: text; */
   -webkit-text-fill-color: transparent;
 }
 
 #online {
   background: linear-gradient(90deg, var(--corlist));
-  -webkit-background-clip: text;
+  /* -webkit-background-clip: text; */
   -webkit-text-fill-color: transparent;
 }
 
 #motd {
   background: linear-gradient(90deg, var(--corlist));
-  -webkit-background-clip: text;
+  /* -webkit-background-clip: text; */
   -webkit-text-fill-color: transparent;
 }
 
