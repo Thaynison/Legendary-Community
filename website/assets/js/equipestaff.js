@@ -1,8 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // URL da API
     const apiURL = "https://dash.legendarycommunity.com.br/api/api_buscar_staffs.php";
 
-    // Função para buscar os dados da API
     const fetchStaffData = async () => {
         try {
             const response = await fetch(apiURL, { method: "GET" });
@@ -17,25 +15,43 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     };
 
-    // Função para popular os dados no HTML
     const populateStaff = (staffData) => {
-        // Seleciona as listas de cargos no HTML
         const founderList = document.querySelector(".fundador");
         const adminList = document.querySelector(".administrador");
         const modList = document.querySelector(".moderador");
         const helperList = document.querySelector(".ajudante");
 
-        // Limpa as listas antes de adicionar os dados
         founderList.innerHTML = "";
         adminList.innerHTML = "";
         modList.innerHTML = "";
         helperList.innerHTML = "";
 
-        // Itera sobre os dados da equipe
-        staffData.forEach((staff) => {
-            const { username, cargo, color } = staff;
+        // Cria tooltip (caixa flutuante) para exibir as descrições
+        const tooltip = document.createElement("div");
+        tooltip.className = "tooltip";
+        document.body.appendChild(tooltip);
 
-            // Cria o item da lista para cada membro da equipe
+        // Estilo básico para a tooltip
+        const tooltipStyle = `
+            .tooltip {
+                position: absolute;
+                padding: 8px;
+                background-color: rgba(0, 0, 0, 0.7);
+                color: #fff;
+                border-radius: 5px;
+                font-size: 12px;
+                display: none;
+                pointer-events: none;
+            }
+        `;
+        const styleSheet = document.createElement("style");
+        styleSheet.type = "text/css";
+        styleSheet.innerText = tooltipStyle;
+        document.head.appendChild(styleSheet);
+
+        staffData.forEach((staff) => {
+            const { username, cargo, color, descricao } = staff;
+
             const listItem = document.createElement("li");
             listItem.innerHTML = `
                 <img src="http://cravatar.eu/head/${username}/128.png" alt="${username}">
@@ -43,7 +59,24 @@ document.addEventListener("DOMContentLoaded", () => {
                 <h2 class="${color}">${cargo}</h2>
             `;
 
-            // Adiciona o item à lista correspondente com base no cargo
+            // Adiciona eventos de mouse para exibir a descrição
+            const imgElement = listItem.querySelector("img");
+            imgElement.addEventListener("mouseover", (event) => {
+                tooltip.textContent = descricao; // Exibe a descrição
+                tooltip.style.display = "block";
+                tooltip.style.left = `${event.pageX + 10}px`;
+                tooltip.style.top = `${event.pageY + 10}px`;
+            });
+
+            imgElement.addEventListener("mousemove", (event) => {
+                tooltip.style.left = `${event.pageX + 10}px`;
+                tooltip.style.top = `${event.pageY + 10}px`;
+            });
+
+            imgElement.addEventListener("mouseout", () => {
+                tooltip.style.display = "none";
+            });
+
             switch (cargo.toLowerCase()) {
                 case "fundador":
                     founderList.appendChild(listItem);
@@ -63,6 +96,5 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     };
 
-    // Chama a função para buscar os dados ao carregar a página
     fetchStaffData();
 });
