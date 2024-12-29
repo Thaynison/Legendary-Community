@@ -9,6 +9,16 @@
     --corAzulClaro: #00aafb;
 }
 
+.table thead td, .table thead th {
+    background-color: var(--destaque);
+    color:  var(--corBranca);
+}
+
+.table td, .table th {
+    background-color: var(--destaque);
+    color:  var(--corBranca);
+}
+
 .form-register-ban {
     display: flex;
     flex-direction: column;
