@@ -419,7 +419,7 @@ function showImage(imageUrl, event) {
         closeButton.style.top = '20px';
         closeButton.style.right = '20px';
         closeButton.style.padding = '10px 20px';
-        closeButton.style.backgroundColor = '#ff69b4'; // Fundo rosa
+        closeButton.style.backgroundColor = 'var(--destaque);'; // Fundo rosa
         closeButton.style.color = 'white'; // Cor da fonte branca
         closeButton.style.border = 'none';
         closeButton.style.borderRadius = '8px';
@@ -433,7 +433,7 @@ function showImage(imageUrl, event) {
             closeButton.style.backgroundColor = '#ff85c1'; // Tom mais claro ao passar o mouse
         });
         closeButton.addEventListener('mouseout', () => {
-            closeButton.style.backgroundColor = '#ff69b4'; // Retorna ao fundo original
+            closeButton.style.backgroundColor = 'var(--destaque);'; // Retorna ao fundo original
         });
         closeButton.addEventListener('mousedown', () => {
             closeButton.style.transform = 'scale(0.95)'; // Efeito de clique
@@ -480,7 +480,7 @@ function showImageDevolution(imageUrl) {
     closeButton.style.top = '20px';
     closeButton.style.right = '20px';
     closeButton.style.padding = '10px 20px';
-    closeButton.style.backgroundColor = '#ff69b4'; // Fundo rosa
+    closeButton.style.backgroundColor = 'var(--destaque);'; // Fundo rosa
     closeButton.style.color = 'white'; // Cor da fonte branca
     closeButton.style.border = 'none';
     closeButton.style.borderRadius = '8px';
@@ -494,7 +494,7 @@ function showImageDevolution(imageUrl) {
         closeButton.style.backgroundColor = '#ff85c1'; // Tom mais claro ao passar o mouse
     });
     closeButton.addEventListener('mouseout', () => {
-        closeButton.style.backgroundColor = '#ff69b4'; // Retorna ao fundo original
+        closeButton.style.backgroundColor = 'var(--destaque);'; // Retorna ao fundo original
     });
     closeButton.addEventListener('mousedown', () => {
         closeButton.style.transform = 'scale(0.95)'; // Efeito de clique
@@ -537,7 +537,7 @@ function showImageBan(imageUrl) {
     closeButton.style.top = '20px';
     closeButton.style.right = '20px';
     closeButton.style.padding = '10px 20px';
-    closeButton.style.backgroundColor = '#ff69b4'; // Fundo rosa
+    closeButton.style.backgroundColor = 'var(--destaque);'; // Fundo rosa
     closeButton.style.color = 'white'; // Cor da fonte branca
     closeButton.style.border = 'none';
     closeButton.style.borderRadius = '8px';
@@ -551,7 +551,7 @@ function showImageBan(imageUrl) {
         closeButton.style.backgroundColor = '#ff85c1'; // Tom mais claro ao passar o mouse
     });
     closeButton.addEventListener('mouseout', () => {
-        closeButton.style.backgroundColor = '#ff69b4'; // Retorna ao fundo original
+        closeButton.style.backgroundColor = 'var(--destaque);'; // Retorna ao fundo original
     });
     closeButton.addEventListener('mousedown', () => {
         closeButton.style.transform = 'scale(0.95)'; // Efeito de clique
