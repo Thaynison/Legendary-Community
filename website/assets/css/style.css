@@ -35,12 +35,16 @@ header .navbar {
 
 .navbar-item,
 .navbar-link {
-  color: var(--destaque);
+  color:  var(--corBranca);
 }
 
 .navbar-item svg,
 .navbar-link svg {
   margin-right: .25rem;
+}
+
+.navbar-dropdown {
+  background-color: var(--destaque);
 }
 
 .navbar-dropdown .navbar-item {
