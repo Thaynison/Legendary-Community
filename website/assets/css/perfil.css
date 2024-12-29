@@ -6,7 +6,17 @@
     --corAprovado: #31888a;
     --corlist: #31888a, #00aafb, #4678d8, #4678d8, #00aafb, #31888a;
     --alinhar-logo: flex-start; /* flex-start (esquerda), center (meio) ou flex-end (direita) */
-  }
+}
+
+.table thead td, .table thead th {
+    background-color: var(--destaque);
+    color:  var(--corBranca);
+}
+
+.table td, .table th {
+    background-color: var(--destaque);
+    color:  var(--corBranca);
+}
 
 .article-content.historio {
     max-height: 400px; /* Defina a altura máxima conforme necessário */
