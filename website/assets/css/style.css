@@ -269,6 +269,13 @@ a.is-muted:hover {
   color: var(--corlist);
 }
 
+.status-approved {
+  background: linear-gradient(90deg, var(--corlist));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 #online {
   background: linear-gradient(90deg, var(--corAprovado));
   -webkit-background-clip: text;

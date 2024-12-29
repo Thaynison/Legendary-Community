@@ -32,7 +32,7 @@ function verificarBanimento(userid) {
                 document.querySelector('.status-approved').innerHTML = '<p class="status-approved" style="color: red";>ALLOWLIST BANIDA</p>';
                 document.getElementById('ban-info').style.display = 'block';
             } else {
-                document.querySelector('.status-approved').innerHTML = '<p class="status-approved" style="color: #00aafb";>ALLOWLIST APROVADA</p>';
+                document.querySelector('.status-approved').innerHTML = '<p class="status-approved">ALLOWLIST APROVADA</p>';
             }
         })
         .catch(error => {
