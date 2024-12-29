@@ -1,11 +1,13 @@
 :root {
     --corBranca: #ffffff;
+    --corCinza: #191919fd;
     --destaque: #11203b;
     --destaque-escuro: #11203b;
     --corAprovado: #31888a;
     --corlist: #31888a, #00aafb, #4678d8, #4678d8, #00aafb, #31888a;
     --alinhar-logo: flex-start; /* flex-start (esquerda), center (meio) ou flex-end (direita) */
-  }
+}
+  
 
 .alert-overlay {
     position: fixed;
@@ -21,12 +23,12 @@
 }
 
 .alert-modal {
-    background-color: #ffffff;
+    background-color: var(--corCinza);
     border-radius: 10px;
     width: 500px;
     max-width: 90%;
     padding: 20px 30px;
-    color: #ffffff;
+    color: var(--corBranca);
     font-family: 'Arial', sans-serif;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     position: relative;
@@ -48,7 +50,7 @@
     font-size: 1.5rem;
     margin-bottom: 15px;
     text-align: center;
-    border-bottom: 2px solid #c200d4;
+    border-bottom: 2px solid var(--destaque);
     padding-bottom: 10px;
 }
 
@@ -61,7 +63,7 @@
 }
 
 .alert-modal button {
-    background-color: #c200d4;
+    background-color: var(--destaque);
     color: #ffffff;
     padding: 10px 20px;
     font-size: 1rem;
@@ -75,7 +77,7 @@
 }
 
 .alert-modal button:hover {
-    background-color: #a7009f;
+    background-color:  var(--destaque);
 }
 
 .alert-icon {
@@ -83,7 +85,7 @@
     top: -25px;
     left: 50%;
     transform: translateX(-50%);
-    background-color: #c200d4;
+    background-color: var(--destaque);
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -94,6 +96,6 @@
 }
 
 .alert-icon i {
-    color: #ffffff;
+    color: var(--corBranca);
     font-size: 1.5rem;
 }
