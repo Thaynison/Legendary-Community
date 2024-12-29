@@ -1,6 +1,7 @@
 :root {
   --destaque: #11203b;
   --destaque-escuro: #11203b;
+  --corlist: #31888a;
   --alinhar-logo: flex-start; /* flex-start (esquerda), center (meio) ou flex-end (direita) */
 }
 
@@ -16,6 +17,7 @@ body {
   background-size: cover;
   background-attachment: fixed; */
   background: #11131d;
+  color: #ffffffc6;
 }
 
 header.section {
@@ -30,7 +32,7 @@ header .navbar {
 
 .navbar-item,
 .navbar-link {
-  color: #fff;
+  color: #ffffff;
 }
 
 .navbar-item svg,
@@ -130,7 +132,7 @@ footer.section {
 }
 
 .article-content {
-  background-color: #fff;
+  background-color: #191919fd;
   padding: 1rem;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
@@ -256,7 +258,7 @@ a.is-muted:hover {
 
 .list svg {
   margin-right: 5px;
-  color: var(--destaque);
+  color: var(--corlist);
 }
 
 .button.is-primary {
