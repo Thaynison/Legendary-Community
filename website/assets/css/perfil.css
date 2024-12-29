@@ -83,6 +83,10 @@
     margin-top: 10px;
 }
 
+.id-account {
+    color: var(--corBranca);
+}
+
 .ip-input {
     flex: 1;
     padding: 8px;
