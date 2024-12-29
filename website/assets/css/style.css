@@ -261,6 +261,14 @@ a.is-muted:hover {
   color: var(--corlist);
 }
 
+#online {
+  color: var(--corlist);
+}
+
+#motd {
+  color: var(--corlist);
+}
+
 .button.is-primary {
   background-color: var(--destaque);
   border-color: var(--destaque);
