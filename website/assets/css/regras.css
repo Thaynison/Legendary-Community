@@ -78,4 +78,5 @@
 
 .table td, .table th {
     background-color: var(--destaque);
+    color:  var(--corBranca);
 }
