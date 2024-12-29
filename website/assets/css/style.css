@@ -44,7 +44,8 @@ header .navbar {
 }
 
 .navbar-dropdown .navbar-item {
-  color: #4a4a4a;
+  background-color: var(--destaque);
+  color: var(--corBranca);
 }
 
 a.navbar-item:hover, a.navbar-link:hover,
