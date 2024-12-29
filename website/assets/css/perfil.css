@@ -87,9 +87,10 @@
     flex: 1;
     padding: 8px;
     font-size: 14px;
-    border: 1px solid var(--corAprovado);
+    border: 1px solid var(--destaque);
     border-radius: 5px;
-    background-color: var(--corAprovado);
+    background-color: var(--destaque);
+    color: var(--corBranca);
     margin-right: 10px;
 }
 
