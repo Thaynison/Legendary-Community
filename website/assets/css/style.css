@@ -265,16 +265,12 @@ a.is-muted:hover {
   background: linear-gradient(90deg, var(--corlist));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-size: 2rem; /* Tamanho de exemplo */
-  font-weight: bold; /* Peso de exemplo */
 }
 
 #motd {
   background: linear-gradient(90deg, var(--corlist));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-size: 2rem; /* Tamanho de exemplo */
-  font-weight: bold; /* Peso de exemplo */
 }
 
 .button.is-primary {
