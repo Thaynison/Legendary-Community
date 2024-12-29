@@ -76,6 +76,6 @@
     font-family: 'Arial', sans-serif; /* Família da fonte */
 }
 
-.table {
+.table td, .table th {
     background-color: var(--destaque);
 }
