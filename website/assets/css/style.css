@@ -35,7 +35,7 @@ header .navbar {
 
 .navbar-item,
 .navbar-link {
-  color:  var(--corBranca);
+  color: var(--destaque);
 }
 
 .navbar-item svg,
