@@ -1,7 +1,16 @@
+:root {
+    --corBranca: #ffffff;
+    --destaque: #11203b;
+    --destaque-escuro: #11203b;
+    --corAprovado: #31888a;
+    --corlist: #31888a, #00aafb, #4678d8, #4678d8, #00aafb, #31888a;
+    --alinhar-logo: flex-start; /* flex-start (esquerda), center (meio) ou flex-end (direita) */
+}
+
 .article .regras h1 {
     font-size: 1.5rem; /* Tamanho do texto */
     font-weight: bold; /* Negrito */
-    color: #000000; /* Cor do texto */
+    color:  var(--corBranca);
     margin-top: 20px; /* Espaço acima do título */
     margin-bottom: 10px; /* Espaço abaixo do título */
     text-transform: uppercase; /* Transforma o texto em maiúsculas */
@@ -12,7 +21,7 @@
 .article .regras h2 {
     font-size: 1.2rem; /* Tamanho do texto */
     font-weight: bold; /* Negrito */
-    color: #000000; /* Cor do texto */
+    color:  var(--corBranca);
     margin-top: 20px; /* Espaço acima do título */
     margin-bottom: 10px; /* Espaço abaixo do título */
     text-transform: uppercase; /* Transforma o texto em maiúsculas */
@@ -23,7 +32,7 @@
 .article .regras h3 {
     font-size: 0.8rem; /* Tamanho do texto */
     font-weight: bold; /* Negrito */
-    color: #000000; /* Cor do texto */
+    color:  var(--corBranca);
     margin-top: 20px; /* Espaço acima do título */
     margin-bottom: 10px; /* Espaço abaixo do título */
     text-transform: uppercase; /* Transforma o texto em maiúsculas */
@@ -34,7 +43,7 @@
 /* Estilos para o parágrafo p */
 .article .regras p {
     font-size: 1rem; /* Tamanho do texto */
-    color: #333; /* Cor do texto */
+    color:  var(--corBranca);
     line-height: 1.6; /* Espaçamento entre linhas */
     margin-bottom: 15px; /* Espaço abaixo do parágrafo */
     font-family: 'Arial', sans-serif; /* Família da fonte */
@@ -43,7 +52,7 @@
 .article .regras strong {
     font-size: 1rem; /* Tamanho do texto */
     font-weight: bold; /* Negrito */
-    color: #000000; /* Cor do texto */
+    color:  var(--corBranca);
     line-height: 1.6; /* Espaçamento entre linhas */
     margin-bottom: 15px; /* Espaço abaixo do parágrafo */
     font-family: 'Arial', sans-serif; /* Família da fonte */
@@ -61,7 +70,7 @@
 .article .regras a {
     font-size: 1rem; /* Tamanho do texto */
     font-weight: bold; /* Negrito */
-    color: #fe3ffe; /* Cor do texto */
+    color:  var(--corlist);
     line-height: 1.6; /* Espaçamento entre linhas */
     margin-bottom: 15px; /* Espaço abaixo do parágrafo */
     font-family: 'Arial', sans-serif; /* Família da fonte */
