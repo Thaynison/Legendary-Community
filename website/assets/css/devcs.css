@@ -15,7 +15,7 @@
     gap: 15px;
     max-width: 600px;
     margin: 20px auto;
-    background-color: #f9f9f9;
+    background-color: var(--corBranca);
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -33,13 +33,13 @@
 .form-register-ban input[type="text"], input[type="url"], textarea {
     padding: 10px;
     font-size: 14px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--corBranca);
     border-radius: 4px;
-    background-color: #fff;
+    background-color: var(--corBranca);
     transition: border-color 0.3s;
 }
 .form-register-ban input[type="text"]:focus, input[type="url"]:focus, textarea:focus {
-    border-color: #db34cd;
+    border-color: var(--destaque);
     outline: none;
 }
 .form-register-ban textarea {
@@ -48,8 +48,8 @@
 .form-register-ban button {
     padding: 10px 20px;
     font-size: 16px;
-    background-color: #db34cd;
-    color: #fff;
+    background-color: var(--destaque);
+    color: var(--corBranca);
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -69,7 +69,7 @@
     gap: 15px;
     max-width: 600px;
     margin: 20px auto;
-    background-color: #f9f9f9;
+    background-color: var(--corBranca);
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -87,13 +87,13 @@
 .form-register-sale input[type="text"], input[type="url"], input[type="number"], input[type="date"], textarea {
     padding: 10px;
     font-size: 14px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--corBranca);
     border-radius: 4px;
-    background-color: #fff;
+    background-color: var(--corBranca);
     transition: border-color 0.3s;
 }
 .form-register-sale input[type="text"]:focus, input[type="url"]:focus, input[type="number"]:focus, input[type="date"]:focus,  textarea:focus {
-    border-color: #db34cd;
+    border-color: var(--destaque);
     outline: none;
 }
 .form-register-sale textarea {
@@ -102,8 +102,8 @@
 .form-register-sale button {
     padding: 10px 20px;
     font-size: 16px;
-    background-color: #db34cd;
-    color: #fff;
+    background-color: var(--destaque);
+    color: var(--corBranca);
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -122,7 +122,7 @@
     gap: 15px;
     max-width: 600px;
     margin: 20px auto;
-    background-color: #f9f9f9;
+    background-color: var(--corBranca);
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -140,13 +140,13 @@
 .form-register-ticket input[type="text"], input[type="url"], input[type="number"], input[type="date"], textarea {
     padding: 10px;
     font-size: 14px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--corBranca);
     border-radius: 4px;
-    background-color: #fff;
+    background-color: var(--corBranca);
     transition: border-color 0.3s;
 }
 .form-register-ticket input[type="text"]:focus, input[type="url"]:focus, input[type="number"]:focus, input[type="date"]:focus,  textarea:focus {
-    border-color: #db34cd;
+    border-color: var(--destaque);
     outline: none;
 }
 .form-register-ticket textarea {
@@ -155,8 +155,8 @@
 .form-register-ticket button {
     padding: 10px 20px;
     font-size: 16px;
-    background-color: #db34cd;
-    color: #fff;
+    background-color: var(--destaque);
+    color: var(--corBranca);
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -181,7 +181,7 @@
     left: 50%;
     transform: translateX(-50%);
     background-color: #333;
-    color: #fff;
+    color: var(--corBranca);
     padding: 8px;
     border-radius: 5px;
     font-size: 14px;
@@ -220,7 +220,7 @@
     left: 50%;
     transform: translateX(-50%);
     background-color: #333;
-    color: #fff;
+    color: var(--corBranca);
     padding: 8px;
     border-radius: 5px;
     font-size: 14px;
@@ -256,7 +256,7 @@
     gap: 15px;
     max-width: 600px;
     margin: 20px auto;
-    background-color: #f9f9f9;
+    background-color: var(--corBranca);
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -277,14 +277,14 @@
 .form-register-rarity input[type="text"], input[type="url"], input[type="number"], input[type="date"], textarea {
     padding: 10px;
     font-size: 14px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--corBranca);
     border-radius: 4px;
-    background-color: #fff;
+    background-color: var(--corBranca);
     transition: border-color 0.3s;
 }
 
 .form-register-rarity input[type="text"]:focus, input[type="url"]:focus, input[type="number"]:focus, input[type="date"]:focus, textarea:focus {
-    border-color: #db34cd;
+    border-color: var(--destaque);
     outline: none;
 }
 
@@ -295,22 +295,22 @@
 .form-register-rarity select {
     padding: 10px;
     font-size: 14px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--corBranca);
     border-radius: 4px;
-    background-color: #fff;
+    background-color: var(--corBranca);
     transition: border-color 0.3s;
 }
 
 .form-register-rarity select:focus {
-    border-color: #db34cd;
+    border-color: var(--destaque);
     outline: none;
 }
 
 .form-register-rarity button {
     padding: 10px 20px;
     font-size: 16px;
-    background-color: #db34cd;
-    color: #fff;
+    background-color: var(--destaque);
+    color: var(--corBranca);
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -332,7 +332,7 @@
     gap: 15px;
     max-width: 600px;
     margin: 20px auto;
-    background-color: #f9f9f9;
+    background-color: var(--corBranca);
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -350,13 +350,13 @@
 .form-create-post input[type="text"], input[type="url"], input[type="number"], input[type="date"], textarea {
     padding: 10px;
     font-size: 14px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--corBranca);
     border-radius: 4px;
-    background-color: #fff;
+    background-color: var(--corBranca);
     transition: border-color 0.3s;
 }
 .form-create-post input[type="text"]:focus, input[type="url"]:focus, input[type="number"]:focus, input[type="date"]:focus,  textarea:focus {
-    border-color: #db34cd;
+    border-color: var(--destaque);
     outline: none;
 }
 .form-create-post textarea {
@@ -365,8 +365,8 @@
 .form-create-post button {
     padding: 10px 20px;
     font-size: 16px;
-    background-color: #db34cd;
-    color: #fff;
+    background-color: var(--destaque);
+    color: var(--corBranca);
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -386,7 +386,7 @@
     gap: 15px;
     max-width: 600px;
     margin: 20px auto;
-    background-color: #f9f9f9;
+    background-color: var(--corBranca);
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -407,14 +407,14 @@
 .form-create-devolutions input[type="text"], input[type="url"], input[type="number"], input[type="date"], textarea {
     padding: 10px;
     font-size: 14px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--corBranca);
     border-radius: 4px;
-    background-color: #fff;
+    background-color: var(--corBranca);
     transition: border-color 0.3s;
 }
 
 .form-create-devolutions input[type="text"]:focus, input[type="url"]:focus, input[type="number"]:focus, input[type="date"]:focus, textarea:focus {
-    border-color: #db34cd;
+    border-color: var(--destaque);
     outline: none;
 }
 
@@ -425,22 +425,22 @@
 .form-create-devolutions select {
     padding: 10px;
     font-size: 14px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--corBranca);
     border-radius: 4px;
-    background-color: #fff;
+    background-color: var(--corBranca);
     transition: border-color 0.3s;
 }
 
 .form-create-devolutions select:focus {
-    border-color: #db34cd;
+    border-color: var(--destaque);
     outline: none;
 }
 
 .form-create-devolutions button {
     padding: 10px 20px;
     font-size: 16px;
-    background-color: #db34cd;
-    color: #fff;
+    background-color: var(--destaque);
+    color: var(--corBranca);
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -466,7 +466,7 @@
     left: 50%;
     transform: translateX(-50%);
     background-color: #333;
-    color: #fff;
+    color: var(--corBranca);
     padding: 8px;
     border-radius: 5px;
     font-size: 14px;
@@ -505,7 +505,7 @@
     left: 50%;
     transform: translateX(-50%);
     background-color: #333;
-    color: #fff;
+    color: var(--corBranca);
     padding: 8px;
     border-radius: 5px;
     font-size: 14px;
@@ -540,7 +540,7 @@
     gap: 15px;
     max-width: 600px;
     margin: 20px auto;
-    background-color: #f9f9f9;
+    background-color: var(--corBranca);
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -561,14 +561,14 @@
 .form-register-emprestimo input[type="text"], input[type="url"], input[type="number"], input[type="date"], textarea {
     padding: 10px;
     font-size: 14px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--corBranca);
     border-radius: 4px;
-    background-color: #fff;
+    background-color: var(--corBranca);
     transition: border-color 0.3s;
 }
 
 .form-register-emprestimo input[type="text"]:focus, input[type="url"]:focus, input[type="number"]:focus, input[type="date"]:focus, textarea:focus {
-    border-color: #db34cd;
+    border-color: var(--destaque);
     outline: none;
 }
 
@@ -579,22 +579,22 @@
 .form-register-emprestimo select {
     padding: 10px;
     font-size: 14px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--corBranca);
     border-radius: 4px;
-    background-color: #fff;
+    background-color: var(--corBranca);
     transition: border-color 0.3s;
 }
 
 .form-register-emprestimo select:focus {
-    border-color: #db34cd;
+    border-color: var(--destaque);
     outline: none;
 }
 
 .form-register-emprestimo button {
     padding: 10px 20px;
     font-size: 16px;
-    background-color: #db34cd;
-    color: #fff;
+    background-color: var(--destaque);
+    color: var(--corBranca);
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -620,7 +620,7 @@
     left: 50%;
     transform: translateX(-50%);
     background-color: #333;
-    color: #fff;
+    color: var(--corBranca);
     padding: 8px;
     border-radius: 5px;
     font-size: 14px;
@@ -659,7 +659,7 @@
     left: 50%;
     transform: translateX(-50%);
     background-color: #333;
-    color: #fff;
+    color: var(--corBranca);
     padding: 8px;
     border-radius: 5px;
     font-size: 14px;
@@ -694,7 +694,7 @@
     gap: 15px;
     max-width: 600px;
     margin: 20px auto;
-    background-color: #f9f9f9;
+    background-color: var(--corBranca);
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -715,14 +715,14 @@
 .form-register-advertencia input[type="text"], input[type="url"], input[type="number"], input[type="date"], textarea {
     padding: 10px;
     font-size: 14px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--corBranca);
     border-radius: 4px;
-    background-color: #fff;
+    background-color: var(--corBranca);
     transition: border-color 0.3s;
 }
 
 .form-register-advertencia input[type="text"]:focus, input[type="url"]:focus, input[type="number"]:focus, input[type="date"]:focus, textarea:focus {
-    border-color: #db34cd;
+    border-color: var(--destaque);
     outline: none;
 }
 
@@ -733,22 +733,22 @@
 .form-register-advertencia select {
     padding: 10px;
     font-size: 14px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--corBranca);
     border-radius: 4px;
-    background-color: #fff;
+    background-color: var(--corBranca);
     transition: border-color 0.3s;
 }
 
 .form-register-advertencia select:focus {
-    border-color: #db34cd;
+    border-color: var(--destaque);
     outline: none;
 }
 
 .form-register-advertencia button {
     padding: 10px 20px;
     font-size: 16px;
-    background-color: #db34cd;
-    color: #fff;
+    background-color: var(--destaque);
+    color: var(--corBranca);
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -773,7 +773,7 @@
     left: 50%;
     transform: translateX(-50%);
     background-color: #333;
-    color: #fff;
+    color: var(--corBranca);
     padding: 8px;
     border-radius: 5px;
     font-size: 14px;
@@ -812,7 +812,7 @@
     left: 50%;
     transform: translateX(-50%);
     background-color: #333;
-    color: #fff;
+    color: var(--corBranca);
     padding: 8px;
     border-radius: 5px;
     font-size: 14px;
@@ -851,7 +851,7 @@
     left: 50%;
     transform: translateX(-50%);
     background-color: #333;
-    color: #fff;
+    color: var(--corBranca);
     padding: 8px;
     border-radius: 5px;
     font-size: 14px;
@@ -890,7 +890,7 @@
     left: 50%;
     transform: translateX(-50%);
     background-color: #333;
-    color: #fff;
+    color: var(--corBranca);
     padding: 8px;
     border-radius: 5px;
     font-size: 14px;
@@ -925,7 +925,7 @@
     gap: 15px;
     max-width: 600px;
     margin: 20px auto;
-    background-color: #f9f9f9;
+    background-color: var(--corBranca);
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -946,14 +946,14 @@
 .form-atualizar-emprestimo input[type="text"], input[type="url"], input[type="number"], input[type="date"], textarea {
     padding: 10px;
     font-size: 14px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--corBranca);
     border-radius: 4px;
-    background-color: #fff;
+    background-color: var(--corBranca);
     transition: border-color 0.3s;
 }
 
 .form-atualizar-emprestimo input[type="text"]:focus, input[type="url"]:focus, input[type="number"]:focus, input[type="date"]:focus, textarea:focus {
-    border-color: #db34cd;
+    border-color: var(--destaque);
     outline: none;
 }
 
@@ -964,22 +964,22 @@
 .form-atualizar-emprestimo select {
     padding: 10px;
     font-size: 14px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--corBranca);
     border-radius: 4px;
-    background-color: #fff;
+    background-color: var(--corBranca);
     transition: border-color 0.3s;
 }
 
 .form-atualizar-emprestimo select:focus {
-    border-color: #db34cd;
+    border-color: var(--destaque);
     outline: none;
 }
 
 .form-atualizar-emprestimo button {
     padding: 10px 20px;
     font-size: 16px;
-    background-color: #db34cd;
-    color: #fff;
+    background-color: var(--destaque);
+    color: var(--corBranca);
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -1000,7 +1000,7 @@
     gap: 15px;
     max-width: 600px;
     margin: 20px auto;
-    background-color: #f9f9f9;
+    background-color: var(--corBranca);
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -1021,14 +1021,14 @@
 .form-atualizar-suporte input[type="text"], input[type="url"], input[type="number"], input[type="datetime-local"], textarea {
     padding: 10px;
     font-size: 14px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--corBranca);
     border-radius: 4px;
-    background-color: #fff;
+    background-color: var(--corBranca);
     transition: border-color 0.3s;
 }
 
 .form-atualizar-suporte input[type="text"]:focus, input[type="url"]:focus, input[type="number"]:focus, input[type="datetime-local"]:focus, textarea:focus {
-    border-color: #db34cd;
+    border-color: var(--destaque);
     outline: none;
 }
 
@@ -1039,22 +1039,22 @@
 .form-atualizar-suporte select {
     padding: 10px;
     font-size: 14px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--corBranca);
     border-radius: 4px;
-    background-color: #fff;
+    background-color: var(--corBranca);
     transition: border-color 0.3s;
 }
 
 .form-atualizar-suporte select:focus {
-    border-color: #db34cd;
+    border-color: var(--destaque);
     outline: none;
 }
 
 .form-atualizar-suporte button {
     padding: 10px 20px;
     font-size: 16px;
-    background-color: #db34cd;
-    color: #fff;
+    background-color: var(--destaque);
+    color: var(--corBranca);
     border: none;
     border-radius: 4px;
     cursor: pointer;
