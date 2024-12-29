@@ -4,7 +4,9 @@
     --destaque-escuro: #11203b;
     --corAprovado: #31888a;
     --corlist: #31888a, #00aafb, #4678d8, #4678d8, #00aafb, #31888a;
-    --alinhar-logo: flex-start; /* flex-start (esquerda), center (meio) ou flex-end (direita) */
+    --alinhar-logo: flex-start;
+    --corAzulEscuro: #4678d8;
+    --corAzulClaro: #00aafb;
 }
 
 .article .rarity h1 {
