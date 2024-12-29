@@ -1,7 +1,7 @@
 :root {
   --destaque: #11203b;
   --destaque-escuro: #11203b;
-  --corlist: #31888a, #00aafb, #4678d8, #3b4add, #301fb9, #120a8f;
+  --corlist: #31888a, #00aafb, #4678d8, #4678d8, #00aafb, #31888a;
   --alinhar-logo: flex-start; /* flex-start (esquerda), center (meio) ou flex-end (direita) */
 }
 
@@ -257,8 +257,9 @@ a.is-muted:hover {
 }
 
 .list svg {
-  margin-right: 5px;
-  color: var(--corlist);
+  background: linear-gradient(90deg, var(--corlist));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 #online {
