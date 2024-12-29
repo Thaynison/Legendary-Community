@@ -59,7 +59,7 @@
     line-height: 1.5;
     margin: 10px 0;
     text-align: center;
-    color: #000000;
+    color: var(--corBranca);
 }
 
 .alert-modal button {

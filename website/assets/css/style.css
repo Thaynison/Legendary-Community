@@ -426,14 +426,14 @@ a.is-muted:hover {
   }
   
 .painelstaff .button.is-primary {
-    background-color: #9b4caf; /* Cor de fundo verde */
+    background-color: var(--destaque);
     color:  var(--corBranca);
     border: none;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
   }
   
 .painelstaff .button.is-primary:hover {
-    background-color: #ad5cc5; /* Cor mais escura no hover */
+    background-color: var(--destaque);
     transform: translateY(-2px); /* Efeito de movimento */
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Sombra mais intensa */
   }
