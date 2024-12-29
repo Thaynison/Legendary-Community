@@ -1,3 +1,12 @@
+:root {
+    --corBranca: #ffffff;
+    --destaque: #11203b;
+    --destaque-escuro: #11203b;
+    --corAprovado: #31888a;
+    --corlist: #31888a, #00aafb, #4678d8, #4678d8, #00aafb, #31888a;
+    --alinhar-logo: flex-start; /* flex-start (esquerda), center (meio) ou flex-end (direita) */
+  }
+
 .alert-overlay {
     position: fixed;
     top: 0;

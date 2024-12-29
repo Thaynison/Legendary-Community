@@ -1,5 +1,6 @@
 :root {
   --corBranca: #ffffff;
+  --corCinza: #191919fd;
   --destaque: #11203b;
   --destaque-escuro: #11203b;
   --corAprovado: #31888a;
@@ -134,7 +135,7 @@ footer.section {
 }
 
 .article-content {
-  background-color: #191919fd;
+  background-color: var(--corCinza);
   padding: 1rem;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
