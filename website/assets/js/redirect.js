@@ -266,6 +266,15 @@ function redirecionarParaSuporte() {
 window.location.href = `suporte.html?username=${encodeURIComponent(username)}&userid=${encodeURIComponent(userid)}&avatar=${encodeURIComponent(avatar)}`;
 }
 
+function redirecionarPara_Painel_Inventory() {
+  const username = document.getElementById('username').textContent;
+  const userid = document.getElementById('userid').textContent;
+  const avatar = document.getElementById('avatar').src;
+
+window.location.href = `inventario.html?username=${encodeURIComponent(username)}&userid=${encodeURIComponent(userid)}&avatar=${encodeURIComponent(avatar)}`;
+}
+
+
 function redirecionarPara_PainelStaff() {
   const username = document.getElementById('username').textContent;
   const userid = document.getElementById('userid').textContent;
