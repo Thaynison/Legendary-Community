@@ -75,6 +75,66 @@
             "file": "minecraft:gui/container/brewing_guide_right.png",
             "ascent": 27, "height": 193,
             "chars": ["\uEff2"]
+        },
+    {   "type": "bitmap",
+            "file": "minecraft:font/demonio_cinza.png",
+            "ascent": 13, "height": 48,
+            "chars": ["\uE001"]
+        },
+    {   "type": "bitmap",
+            "file": "minecraft:font/demonio_vermelho.png",
+            "ascent": 13, "height": 48,
+            "chars": ["\uE002"]
+        },
+    {   "type": "bitmap",
+            "file": "minecraft:font/boss_derieri.png",
+            "ascent": 13, "height": 48,
+            "chars": ["\uE003"]
+        },
+    {   "type": "bitmap",
+            "file": "minecraft:font/boss_drole.png",
+            "ascent": 13, "height": 48,
+            "chars": ["\uE004"]
+        },
+    {   "type": "bitmap",
+            "file": "minecraft:font/boss_estarossa.png",
+            "ascent": 13, "height": 48,
+            "chars": ["\uE005"]
+        },
+    {   "type": "bitmap",
+            "file": "minecraft:font/boss_fraudrin.png",
+            "ascent": 13, "height": 48,
+            "chars": ["\uE006"]
+        },
+    {   "type": "bitmap",
+            "file": "minecraft:font/boss_galand.png",
+            "ascent": 13, "height": 48,
+            "chars": ["\uE007"]
+        },
+    {   "type": "bitmap",
+            "file": "minecraft:font/boss_gloxinia.png",
+            "ascent": 13, "height": 48,
+            "chars": ["\uE008"]
+        },
+    {   "type": "bitmap",
+            "file": "minecraft:font/boss_gowther.png",
+            "ascent": 13, "height": 48,
+            "chars": ["\uE009"]
+        },
+    {   "type": "bitmap",
+            "file": "minecraft:font/boss_melascula.png",
+            "ascent": 13, "height": 48,
+            "chars": ["\uE010"]
+        },
+    {   "type": "bitmap",
+            "file": "minecraft:font/boss_monspiet.png",
+            "ascent": 13, "height": 48,
+            "chars": ["\uE011"]
+        },
+    {   "type": "bitmap",
+            "file": "minecraft:font/boss_zeldris.png",
+            "ascent": 13, "height": 48,
+            "chars": ["\uE012"]
         }
     ]
 }

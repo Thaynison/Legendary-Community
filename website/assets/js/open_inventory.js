@@ -24,10 +24,14 @@ function changeContent(contentType) {
 
     switch(contentType) {
         case 'open-inventario':
-            contentArea.innerHTML = ``;
+            contentArea.innerHTML = `
+            
+            `;
             break;
         case 'open-ender-chest':
-            contentArea.innerHTML = ``;
+            contentArea.innerHTML = `
+            
+            `;
             break;
         default:
             contentArea.innerHTML = "<p>Escolha uma opção.</p>";
