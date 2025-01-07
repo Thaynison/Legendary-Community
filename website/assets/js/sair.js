@@ -1,7 +1,1 @@
-document.getElementById('logout-button').addEventListener('click', function () {
-    localStorage.removeItem('discord_access_token');
-    sessionStorage.removeItem('discord_access_token');
-    const currentUrl = window.location.href.split('#')[0];
-    window.history.replaceState(null, null, currentUrl);
-    window.location.href = 'index.html';
-});
+eval(function(m,c,h){function z(i){return(i< 62?'':z(parseInt(i/62)))+((i=i%62)>35?String.fromCharCode(i+29):i.toString(36))}for(var i=0;i< m.length;i++)h[z(i)]=m[i];function d(w){return h[w]?h[w]:w;};return c.replace(/\b\w+\b/g,d);}('|document|getElementById|logout|button|addEventListener|click|function|localStorage|removeItem|discord_access_token|sessionStorage|constcurrentUrl|window|location|href|split|history|replaceState|null|currentUrl|index|html'.split('|'),'1.2(\'3-4\').5(\'6\',7 (){8.9(\'a\');b.9(\'a\');c=d.e.f.g(\'#\')[0];d.h.i(j,j,k);d.e.f=\'l.m\';});',{}))
