@@ -1,1 +1,9 @@
-eval(function(m,c,h){function z(i){return(i< 62?'':z(parseInt(i/62)))+((i=i%62)>35?String.fromCharCode(i+29):i.toString(36))}for(var i=0;i< m.length;i++)h[z(i)]=m[i];function d(w){return h[w]?h[w]:w;};return c.replace(/\b\w+\b/g,d);}('window|addEventListener|DOMContentLoaded|constparams|new|URLSearchParams|location|search|constusername|params|get|username|constuserid|userid|constavatar|avatar|document|getElementById|textContent|src'.split('|'),'0.1(\'2\',()=>{3=4 5(0.6.7);8=9.a(\'b\');c=9.a(\'d\');e=9.a(\'f\');g.h(\'b\').i=b;g.h(\'d\').i=d;g.h(\'f\').j=f;});',{}))
+window.addEventListener('DOMContentLoaded', () => {
+    const params = new URLSearchParams(window.location.search);
+    const username = params.get('username');
+    const userid = params.get('userid');
+    const avatar = params.get('avatar');
+    document.getElementById('username').textContent = username;
+    document.getElementById('userid').textContent = userid;
+    document.getElementById('avatar').src = avatar;
+});

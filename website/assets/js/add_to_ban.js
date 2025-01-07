@@ -1,1 +1,32 @@
-eval(function(m,c,h){function z(i){return(i< 62?'':z(parseInt(i/62)))+((i=i%62)>35?String.fromCharCode(i+29):i.toString(36))}for(var i=0;i< m.length;i++)h[z(i)]=m[i];function d(w){return h[w]?h[w]:w;};return c.replace(/\b\w+\b/g,d);}('function|submitFormData|constformData|new|FormData|formData|append|userid|document|getElementById|user|id|value|ip_ban|banned|ip|discord_ban|discord|name|minecraft_name|minecraft|print_link|print|link|ban_reason|ban|reason|fetch|https|dash|legendarycommunity|com|br|api|api_registrar_ban|php||method|POST|body|then|response|json|data|if|success|alert|else|error|catch|console|Erro|querySelector|form|addEventListener|submit|preventDefault'.split('|'),'0 1(){2=3 4();5.6("7",8.9("a-b").c);5.6("d",8.9("e-f").c);5.6("g",8.9("h-i").c);5.6("j",8.9("k-i").c);5.6("l",8.9("m-n").c);5.6("o",8.9("p-q").c);r(\'s://t.u.v.w/x/y.z\',{B:\'C\',D:5}).E(F=>F.G()).E(H=>{I(H.J){K(H.J);}L I(H.M){K(H.M);}}).N(M=>{O.M(\'P:\',M);});}8.Q(\'R\').S(\'T\',0(A){A.U();1();});',{}))
+function submitFormData() {
+    const formData = new FormData();
+    formData.append("userid", document.getElementById("user-id").value);
+    formData.append("ip_ban", document.getElementById("banned-ip").value);
+    formData.append("discord_ban", document.getElementById("discord-name").value);
+    formData.append("minecraft_name", document.getElementById("minecraft-name").value);
+    formData.append("print_link", document.getElementById("print-link").value);
+    formData.append("ban_reason", document.getElementById("ban-reason").value);
+
+    // Enviar os dados para a API
+    fetch('https://dash.legendarycommunity.com.br/api/api_registrar_ban.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            alert(data.success); // Exibe sucesso
+        } else if (data.error) {
+            alert(data.error); // Exibe erro
+        }
+    })
+    .catch(error => {
+        console.error('Erro:', error);
+    });
+}
+
+// Adicionar o evento de envio no formulário
+document.querySelector('form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Impede o envio do formulário tradicional
+    submitFormData();
+});

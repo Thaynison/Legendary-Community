@@ -1,1 +1,121 @@
-eval(function(m,c,h){function z(i){return(i< 62?'':z(parseInt(i/62)))+((i=i%62)>35?String.fromCharCode(i+29):i.toString(36))}for(var i=0;i< m.length;i++)h[z(i)]=m[i];function d(w){return h[w]?h[w]:w;};return c.replace(/\b\w+\b/g,d);}('|document|addEventListener|DOMContentLoaded|function|constapiUrl|https|dash|legendarycommunity|com|||br|api|api_buscar_rarity_itens|php|constalertOverlay|querySelector||alert|overlay|constalertMessage|getElementById||||message|constalertClose|close|letcachedItems|showAlert|alertMessage|innerHTML|alertOverlay|style|display|flex|alertClose|click|none|asyncfunction|fetchRarityItems|if|cachedItems|length|displayItems|return|try|constresponse||awaitfetch|apiUrl|response|ok|thrownew|Error|Erronarequisi|status|statusText|constitems|awaitresponse|json|items|catch|error|console|Erro|ao|buscar|os|itens|foi|poss|vel|carregar|Tente|novamente|mais|tarde|formatLore|lore|typeof|string|split|map|line|join|formatPrice|price|new|Intl|NumberFormat|pt|BR|currency|BRL|format|getRarityColor|rarity|constrarityColors|Comum|545454|Raro|ffbd59|pico|8c52ff|Lend|rio|ff009d|Divino|5ce1e6|rarityColors|000000|sortItemsByRarityAndPrice|constrarityOrder|sort|constrarityComparison|rarityOrder|indexOf|rarityComparison|constprodutosUl|produtos|produtosUl|constsortedItems|sortedItems|forEach|item|constli|createElement|li|constloreFormatted|constformattedPrice|constrarityColor|imgsrc|print|alt|h1|h2|formattedPrice|h2style|color|rarityColor|divclass|buttons|is|centered|ahref|class|button|primary|data|encodeURIComponent|loreFormatted|spanclass|icon|small|iclass|fas|fa|eye|span|div|constbutton|mouseover|constlore|decodeURIComponent|getAttribute|appendChild'.split('|'),'1.2("3",4 (){5="6://7.8.9.c/d/e.f";g=1.h(".j-k");l=1.m("j-q");r=1.m("j-s");t=[];4 u(q){v.w=q;x.y.z="A";}B.2("C",()=>{x.y.z="D";});E F(){G(H.I>0){J(H);K;}L{M=O(P);G(!Q.R){S T(`Ução:${Q.V}${Q.W}`);}X=Y.Z();H=10;J(10);}11(12){13.12("14 15 16 17 18:",12);u("Não 19 1aí1b 1c 17 18. 1d 1e 1f 1g.");}}4 1h(1i){G(1j 1i===\'1k\'){1i=1i.1l(\'\\n\');}K 1i.1m(1n=>`<p>${1n}</p>`).1o(\'\');}4 1p(1q){K 1r 1s.1t("1u-1v",{y:"1w",1w:"1x"}).1y(1q);}4 1z(1A){1B={"1C":"#1D","1E":"#1F","É1G":"#1H","1Iá1J":"#1K","1L":"#1M"};K 1N[1A]||"#1O";}4 1P(10){1Q=["1L","1Iá1J","É1G","1E","1C"];K 10.1R((a,b)=>{1S=1T.1U(a.1A)-1T.1U(b.1A);G(1V!==0)K 1V;K b.1q-a.1q;});}4 J(10){1W=1.h(".1X");1Y.w="";1Z=1P(10);20.21(22=>{23=1.24("25");26=1h(22.1i);27=1p(22.1q);28=1z(22.1A);25.w=`<29="${22.2a}"2b="${22.22}"><2c>${22.22}</2c><2d>${2e}</2d><2f="2g: ${2h};">${22.1A}</2d><2i="2j 2k-2l"><2m="#"2n="2o 2k-2p"2q-1i="${2r(2s)}"><2t="2u 2k-2v"><2w="2x 2y-2z"></i></2A></a></2B>`;2C=25.h("a");2o.2("2D",4 (){2E=2F(2o.2G("2q-1i"));u(1i);});1Y.2H(25);});}F();});',{}))
+document.addEventListener("DOMContentLoaded", function () {
+    const apiUrl = "https://dash.legendarycommunity.com.br/api/api_buscar_rarity_itens.php";
+    const alertOverlay = document.querySelector(".alert-overlay");
+    const alertMessage = document.getElementById("alert-message");
+    const alertClose = document.getElementById("alert-close");
+    let cachedItems = []; // Cache para itens carregados
+
+    // Mostrar alerta
+    function showAlert(message) {
+        alertMessage.innerHTML = message;
+        alertOverlay.style.display = "flex";
+    }
+
+    alertClose.addEventListener("click", () => {
+        alertOverlay.style.display = "none";
+    });
+
+    // Função para buscar os itens com cache
+    async function fetchRarityItems() {
+        if (cachedItems.length > 0) {
+            // Se já temos os itens em cache, apenas os exibe
+            displayItems(cachedItems);
+            return;
+        }
+
+        try {
+            const response = await fetch(apiUrl);
+            if (!response.ok) {
+                throw new Error(`Erro na requisição: ${response.status} ${response.statusText}`);
+            }
+            const items = await response.json();
+            cachedItems = items; // Cache os itens
+            displayItems(items);
+        } catch (error) {
+            console.error("Erro ao buscar os itens:", error);
+            showAlert("Não foi possível carregar os itens. Tente novamente mais tarde.");
+        }
+    }
+
+    // Função para formatar o lore do item
+    function formatLore(lore) {
+        if (typeof lore === 'string') {
+            lore = lore.split('\n');
+        }
+        return lore.map(line => `<p>${line}</p>`).join('');
+    }
+
+    // Formatar preço
+    function formatPrice(price) {
+        return new Intl.NumberFormat("pt-BR", {
+            style: "currency",
+            currency: "BRL"
+        }).format(price);
+    }
+
+    // Obter cor da raridade
+    function getRarityColor(rarity) {
+        const rarityColors = {
+            "Comum": "#545454",
+            "Raro": "#ffbd59",
+            "Épico": "#8c52ff",
+            "Lendário": "#ff009d",
+            "Divino": "#5ce1e6"
+        };
+        return rarityColors[rarity] || "#000000"; // cor padrão
+    }
+
+    // Ordenar os itens pela raridade e preço
+    function sortItemsByRarityAndPrice(items) {
+        const rarityOrder = ["Divino", "Lendário", "Épico", "Raro", "Comum"];
+        return items.sort((a, b) => {
+            // Ordena por raridade
+            const rarityComparison = rarityOrder.indexOf(a.rarity) - rarityOrder.indexOf(b.rarity);
+            if (rarityComparison !== 0) return rarityComparison;
+
+            // Se as raridades forem iguais, ordena por preço de forma decrescente
+            return b.price - a.price; 
+        });
+    }
+
+    // Exibir os itens
+    function displayItems(items) {
+        const produtosUl = document.querySelector(".produtos");
+        produtosUl.innerHTML = "";
+
+        // Ordena os itens pela raridade e preço
+        const sortedItems = sortItemsByRarityAndPrice(items);
+
+        sortedItems.forEach(item => {
+            const li = document.createElement("li");
+            const loreFormatted = formatLore(item.lore);
+            const formattedPrice = formatPrice(item.price);
+            const rarityColor = getRarityColor(item.rarity);
+
+            li.innerHTML = `
+                <img src="${item.print}" alt="${item.item}">
+                <h1>${item.item}</h1>
+                <h2>${formattedPrice}</h2>
+                <h2 style="color: ${rarityColor};">${item.rarity}</h2>
+                <div class="buttons is-centered">
+                    <a href="#" class="button is-primary" 
+                       data-lore="${encodeURIComponent(loreFormatted)}">
+                        <span class="icon is-small"><i class="fas fa-eye"></i></span>
+                    </a>
+                </div>
+            `;
+
+            // Event listener para mostrar o lore
+            const button = li.querySelector("a");
+            button.addEventListener("mouseover", function () {
+                const lore = decodeURIComponent(button.getAttribute("data-lore"));
+                showAlert(lore);
+            });
+
+            produtosUl.appendChild(li);
+        });
+    }
+
+    // Inicia o carregamento dos itens
+    fetchRarityItems();
+});

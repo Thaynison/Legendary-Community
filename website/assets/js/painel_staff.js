@@ -1,1 +1,1486 @@
-eval(function(m,c,h){function z(i){return(i< 62?'':z(parseInt(i/62)))+((i=i%62)>35?String.fromCharCode(i+29):i.toString(36))}for(var i=0;i< m.length;i++)h[z(i)]=m[i];function d(w){return h[w]?h[w]:w;};return c.replace(/\b\w+\b/g,d);}('|||||||window|addEventListener|DOMContentLoaded||constparams|new|URLSearchParams||location|search|constusername||params|get|username|constuserid|userid|||constavatar|avatar|document|getElementById|textContent|src|if|getHistoricoTicketsSTAFF|getHistoricoDevolutionsSTAFF|getHistoricoEmprestimosSTAFF|||getHistoricoAdvertenciaSTAFF|getHistoricoBansSTAFF|else|console|log|erro|no|function|constapiUrl|https|fetch|apiUrl|then|response|ok|thrownew|Error||ErronaAPI|statusText|return|json|data|constcontainer||querySelector|form|list|tickets|error||container|innerHTML|pclass|Array|isArray|length|info|Nenhumticketencontrado|constgetStatusInfo|status|switch|case|Concluido|emoji|title|Ticket|Conclu|do|Reprovado|Em|Analise|An|lise|default|Desconhecido|lethtmlContent||tableclass|table|is|fullwidth|thead|tr|th|ID|Username|Titulo|Print|Status|tbody|forEach|ticket|conststatusInfo|getStatusInfo|htmlContent|td|id_ticket|titulo|buttonclass|eye|button|onclick|showImage|print|event|spantitle|statusInfo|span|catch|Erroaocarregarosdados|message|devolutions|Nenhumadevolu|oencontrado|constgetStatusInfoDevolucao|Devolu|da|Reprovada|Desconhecida|IDTicket|Descri|devolucao|conststatusInfodevolucao|getStatusInfoDevolucao|descricao|showImageDevolution|statusInfodevolucao|emprestimo|oencontrada|constgetStatusInfoEmprestimo|Empr|stimo|Pago||Cancelado|Pagamento|constformatarBRL|valor||Intl|NumberFormat|pt|BR|style|currency|BRL|format|Agiota|Cidad|Valor|Parcelas|ParcelasPg|conststatusInfoEmprestimo|getStatusInfoEmprestimo|agiota|formatarBRL|price|parcelas|parcelas_pagas|statusInfoEmprestimo|advertencia|Nenhumaadvert|nciaencontrada|constgetStatusInfoAdvertencia|Advert|ncia|3x|Nick|Regra|Data|conststatusInfoAdvertencia|getStatusInfoAdvertencia|regra|statusInfoAdvertencia|ban|Nenhumbanencontrado|IPBan|ip_ban|motivo|showImageBan|isImageUrl|jpg|jpeg|png|gif|bmp|test|preventDefault|constmodal|createElement|div|modal|position|fixed|top||left|width|100|height||backgroundColor|rgba|display|flex|alignItems|center|justifyContent|zIndex|9999|constimg|img|maxWidth|90|maxHeight|constcloseButton|closeButton|innerText|Fechar|absolute|20px|right|padding|10px|31888a|color|white|border|none|borderRadius|8px|fontSize|16px|fontWeight|bold|cursor|pointer|boxShadow|0px|4px|6px|transition|background|ease|transform|mouseover|11203b|mouseout|mousedown|scale|95|mouseup|click|body|removeChild|appendChild|open|_blank|changeContent|var|content|area|register|formclass|divclass|field|labelfor|InformarIDdo|Discord|label|inputtype|text|id|name|placeholder|Digite|User|required|InformarIPBanido|IP|Banido|discord_ban|InformarNomedo|nome|Minecraft|InformarLinkdo|url|Cole|link|InformarMotivodo|Banimento|textareaid|Descreva|banimento|rows|textarea|buttontype|submit|class|primary|submitBtn2|RegistrarBanimento|constform|constsubmitBtn2|letisSubmitting2|false|isSubmitting2|true|disabled|constformData|FormData|dash|legendarycommunity|com|br|api|api_registrar_ban|php|method|POST|formData|success|avisos5|setTimeout|5000|reset|avisos4|finally|break|sale|codigo|Codigodo|Produto|produto|InformarValordo|number|data_compra|InformarDatadaCompra|date|Compra|submitBtn3|RegistrarVenda|constform2|constsubmitBtn3|letisSubmitting3|form2|isSubmitting3|api_registrar_venda|rarity|item|Item|Nome|lore|InformarLoredo|Lore|InformarPrintdo|Insira|SelecionarRaridade|selectid|optionvalue|Comum|option|Raro|pico|Lend|rio|Divino|select|submitBtn|CriarRarity|constform3|constsubmitBtn|letisSubmitting|form3|isSubmitting|api_registrar_rarity|Carregandohist|ricodetickets|create|post|InformarTitutodaPublica|Publica|InformarDescri|odaPublica|InformarPrintdaPublica|autor|InformarAutordaPublica|Autor|submitBtn4|CriarPublica|constform4|constsubmitBtn4|letisSubmitting4|form4|isSubmitting4|api_registrar_post|InformarIDdiscorddo|Membro|discord|Informarnickdo|membronoMinecraft|nick|membro|SelecionarTicketReferente|Carregando|odaDevolu|InformarPrintdaDevolu|submitBtn5|CriarDevolu|constloadTicketsDev|async|constticketSelect|try|constresponse|awaitfetch|api_tickets|consttickets|awaitresponse|ticketSelect|value|Selecione|um|constoption|Erro|ao|carregar|loadTicketsDev|constform5|constsubmitBtn5|letisSubmitting5|form5|isSubmitting5|api_registrar_devolution|ricodedevolu|es|Informar|InformarNickdo|userid2|Discorddo|Minecraftdo|Emprestimo|InformarValordeParcelas|de|submitBtn6|RegistrarEmprestimo|constform6|constsubmitBtn6|letisSubmitting6|form6|isSubmitting6|api_registrar_emprestimo|Advertido|InformardescricaodaAdvert|advert|SelecionaraRegraDescumprida|SelecionarAdvert|ncia1x|ncia2x|ncia3x|submitBtn8|RegistrarAdvert|constloadTickets|loadTickets|constloadRegras|constregraSelect|api_buscar_regras|constregras|regraSelect|uma|regras|loadRegras|constform8|constsubmitBtn8|letisSubmitting8|form8|isSubmitting8|api_registrar_advertencia|ricodeadvert|ncias|ricodebans|atualizar|id_emprestimo|SelecionarEmprestimoReferente|InformarParcelaPaga|parcela|paga|SelecionarStatus|stimoPago|stimoCancelado|stimoEmPagamento|submitBtn9|AtualizarEmprestimo|constloadEmprestimo|constemprestimoSelect|api_buscar_emprestimo|constemprestimos|emprestimoSelect|emprestimos|loadEmprestimo|constform9|constsubmitBtn9|letisSubmitting9|form9|isSubmitting9|api_update_emprestimo|suporte|odo|readonly|DatadeAberturado|datetime|local|hora|resposta|Respostado|Resposta|EmAnalise|submitBtn10|EnviarMensagem|constloadTicketsResposta|constfetchTicketDescription|ticketId|constdescricaoTextarea|descricaoTextarea|descri|ErroHTTP|constticketData|ticketData|Nenhuma|dispon|vel|encontrada|constfetchTicketDate|constdataInput|dataInput|constticketDate|ticketDate|constdateObject|Date|replace||constformattedDate|dateObject|toISOString|slice||formattedDate|change|constselectedTicketId|this|selectedTicketId|fetchTicketDescription|fetchTicketDate|loadTicketsResposta|constform10|constsubmitBtn10|letisSubmitting10|form10|isSubmitting10|api_update_suporte|Escolha|op'.split('|'),'7.8(\'9\',()=>{b=c d(7.f.g);h=j.k(\'l\');m=j.k(\'n\');q=j.k(\'r\');s.t(\'l\').u=l;s.t(\'n\').u=n;s.t(\'r\').v=r;w(n){x();y();z();C();D();}E {F.G("H I n")}});J x(){K=`L:M(N).O(P=>{w(!P.Q){R S(`U:${P.V}`);}W P.X();}).O(Y=>{Z=s.11(\'.12-13-14\');w(Y.15){17.18=`<19="15">${Y.15}</p>`;W;}w(!1a.1b(Y)||Y.1c===0){17.18=`<19="1d">1e.</p>`;W;}1f=(1g)=>{1h(1g){1i\'1j\':W {1k:\'✅\',1l:\'1m 1ní1o\'};1i\'1p\':W {1k:\'❌\',1l:\'1m 1p\'};1i\'1q 1r\':W {1k:\'🔎\',1l:\'1m 1q 1sá1t\'};1u:W {1k:\'❓\',1l:\'1m 1v\'};}};1w=`<1y="1z 1A-1B"><1C><1D><1E>1F</1E><1E>1G</1E><1E>1H</1E><1E>1I</1E><1E>1J</1E></1D></1C><1K>`;Y.1L(1M=>{1N=1O(1M.1g);1P+=`<1D><1Q>${1M.1R}</1Q><1Q>${1M.l}</1Q><1Q>${1M.1S}</1Q><1Q><1T="1U-1V"1W="1X(\'${1M.1Y}\', 1Z)">👁️</1V></1Q><1Q><20="${21.1l}">${21.1k}</22></1Q></1D>`;});1P+=\'</1K></1z>\';17.18=1P;}).23(15=>{Z=s.11(\'.12-13-14\');17.18=`<19="15">24:${15.25}</p>`;});}J y(){K=`L:M(N).O(P=>{w(!P.Q){R S(`U:${P.V}`);}W P.X();}).O(Y=>{Z=s.11(\'.12-13-26\');w(Y.15){17.18=`<19="15">${Y.15}</p>`;W;}w(!1a.1b(Y)||Y.1c===0){17.18=`<19="1d">27çã28.</p>`;W;}29=(1g)=>{1h(1g){1i\'1j\':W {1k:\'✅\',1l:\'2ação 1ní2b\'};1i\'1p\':W {1k:\'❌\',1l:\'2ação 2c\'};1i\'1q 1r\':W {1k:\'🔎\',1l:\'2ação 1q 1sá1t\'};1u:W {1k:\'❓\',1l:\'2ação 2d\'};}};1w=`<1y="1z 1A-1B"><1C><1D><1E>2e</1E><1E>1G</1E><1E>2fção</1E><1E>1I</1E><1E>1J</1E></1D></1C><1K>`;Y.1L(2g=>{2h=2i(2g.1g);1P+=`<1D><1Q>${2g.1R}</1Q><1Q>${2g.l}</1Q><1Q>${2g.2j}</1Q><1Q><1T="1U-1V"1W="2k(\'${2g.1Y}\', 1Z)">👁️</1V></1Q><1Q><20="${2l.1l}">${2l.1k}</22></1Q></1D>`;});1P+=\'</1K></1z>\';17.18=1P;}).23(15=>{Z=s.11(\'.12-13-26\');17.18=`<19="15">24:${15.25}</p>`;});}J z(){K=`L:M(N).O(P=>{w(!P.Q){R S(`U:${P.V}`);}W P.X();}).O(Y=>{Z=s.11(\'.12-13-2m\');w(Y.15){17.18=`<19="15">${Y.15}</p>`;W;}w(!1a.1b(Y)||Y.1c===0){17.18=`<19="1d">27çã2n.</p>`;W;}2o=(1g)=>{1h(1g){1i\'2pé2q 2r\':W {1k:\'✅\',1l:\'2pé2q 2r\'};1i\'2pé2q 2t\':W {1k:\'❌\',1l:\'2pé2q 2t\'};1i\'2pé2q 1q 2u\':W {1k:\'🧭\',1l:\'2pé2q 1q 2u\'};1u:W {1k:\'❓\',1l:\'2pé2q 1v\'};}};2v=(2w)=>{W c 2y.2z(\'2A-2B\',{2C:\'2D\',2D:\'2E\'}).2F(2w);};1w=`<1y="1z 1A-1B"><1C><1D><1E>2G</1E><1E>2Hão</1E><1E>2I</1E><1E>2J</1E><1E>2K</1E><1E>1J</1E></1D></1C><1K>`;Y.1L(2m=>{2L=2M(2m.1g);1P+=`<1D><1Q>${2m.2N}</1Q><1Q>${2m.l}</1Q><1Q>${2O(2m.2P)}</1Q><1Q>${2m.2Q}</1Q><1Q>${2m.2R}</1Q><1Q><20="${2S.1l}">${2S.1k}</22></1Q></1D>`;});1P+=\'</1K></1z>\';17.18=1P;}).23(15=>{Z=s.11(\'.12-13-2m\');17.18=`<19="15">24:${15.25}</p>`;});}J C(){K=`L:M(N).O(P=>{w(!P.Q){R S(`U:${P.V}`);}W P.X();}).O(Y=>{Z=s.11(\'.12-13-2T\');w(Y.15){17.18=`<19="15">${Y.15}</p>`;W;}w(!1a.1b(Y)||Y.1c===0){17.18=`<19="1d">2Uê2V.</p>`;W;}2W=(1g)=>{1h(1g){1i\'2Xê2Y 1x\':W {1k:\'1️⃣\',1l:\'2Xê2Y 1x\'};1i\'2Xê2Y 2x\':W {1k:\'2️⃣\',1l:\'2Xê2Y 2x\'};1i\'2Xê2Y 2Z\':W {1k:\'3️⃣\',1l:\'2Xê2Y 2Z\'};1u:W {1k:\'❓\',1l:\'2Xê2Y 1v\'};}};1w=`<1y="1z 1A-1B"><1C><1D><1E>2e</1E><1E>30</1E><1E>2fção</1E><1E>31</1E><1E>32</1E><1E>1J</1E></1D></1C><1K>`;Y.1L(2T=>{33=34(2T.1g);1P+=`<1D><1Q>${2T.1R}</1Q><1Q>${2T.l}</1Q><1Q>${2T.2j}</1Q><1Q>${2T.35}</1Q><1Q>${2T.Y}</1Q><1Q><20="${36.1l}">${36.1k}</22></1Q></1D>`;});1P+=\'</1K></1z>\';17.18=1P;}).23(15=>{Z=s.11(\'.12-13-2T\');17.18=`<19="15">24:${15.25}</p>`;});}J D(){K=`L:M(N).O(P=>{w(!P.Q){R S(`U:${P.V}`);}W P.X();}).O(Y=>{Z=s.11(\'.12-13-37\');w(Y.15){17.18=`<19="15">${Y.15}</p>`;W;}w(!1a.1b(Y)||Y.1c===0){17.18=`<19="1d">38.</p>`;W;}1w=`<1y="1z 1A-1B"><1C><1D><1E>39</1E><1E>30</1E><1E>2fção</1E><1E>1I</1E></1D></1C><1K>`;Y.1L(37=>{1P+=`<1D><1Q>${37.3a}</1Q><1Q>${37.l}</1Q><1Q>${37.3b}</1Q><1Q><1T="1U-1V"1W="3c(\'${37.1Y}\', 1Z)">👁️</1V></1Q></1D>`;});1P+=\'</1K></1z>\';17.18=1P;}).23(15=>{Z=s.11(\'.12-13-37\');17.18=`<19="15">24:${15.25}</p>`;});}J 3d(A){W /\\.(3e|3f|3g|3h|3i)$/i.3j(A);}J 1X(A,B){B.3k();w(3d(A)){3l=s.3m(\'3n\');3o.2C.3p=\'3q\';3o.2C.3r=\'0\';3o.2C.3t=\'0\';3o.2C.3u=\'3v%\';3o.2C.3w=\'3v%\';3o.2C.3y=\'3z(0, 0, 0, 0.5)\';3o.2C.3A=\'3B\';3o.2C.3C=\'3D\';3o.2C.3E=\'3D\';3o.2C.3F=\'3G\';3H=s.3m(\'3I\');3I.v=A;3I.2C.3J=\'3K%\';3I.2C.3L=\'3K%\';3M=s.3m(\'1V\');3N.3O=\'3P\';3N.2C.3p=\'3Q\';3N.2C.3r=\'3R\';3N.2C.3S=\'3R\';3N.2C.3T=\'3U 3R\';3N.2C.3y=\'#3V\';3N.2C.3W=\'3X\';3N.2C.3Y=\'3Z\';3N.2C.40=\'41\';3N.2C.42=\'43\';3N.2C.44=\'45\';3N.2C.46=\'47\';3N.2C.48=\'49 4a 4b 3z(0, 0, 0, 0.1)\';3N.2C.4c=\'4d-3W 0.3s 4e, 4f 0.2s 4e\';3N.8(\'4g\',()=>{3N.2C.3y=\'#4h\';});3N.8(\'4i\',()=>{3N.2C.3y=\'#3V\';});3N.8(\'4j\',()=>{3N.2C.4f=\'4k(0.4l)\';});3N.8(\'4m\',()=>{3N.2C.4f=\'4k(1)\';});3N.8(\'4n\',()=>{s.4o.4p(3o);});3o.4q(3I);3o.4q(3N);s.4o.4q(3o);}E {7.4r(A,\'4s\');}}J 2k(A){1Z.3k();3l=s.3m(\'3n\');3o.2C.3p=\'3q\';3o.2C.3r=\'0\';3o.2C.3t=\'0\';3o.2C.3u=\'3v%\';3o.2C.3w=\'3v%\';3o.2C.3y=\'3z(0, 0, 0, 0.5)\';3o.2C.3A=\'3B\';3o.2C.3C=\'3D\';3o.2C.3E=\'3D\';3o.2C.3F=\'3G\';3H=s.3m(\'3I\');3I.v=A;3I.2C.3J=\'3K%\';3I.2C.3L=\'3K%\';3M=s.3m(\'1V\');3N.3O=\'3P\';3N.2C.3p=\'3Q\';3N.2C.3r=\'3R\';3N.2C.3S=\'3R\';3N.2C.3T=\'3U 3R\';3N.2C.3y=\'#3V\';3N.2C.3W=\'3X\';3N.2C.3Y=\'3Z\';3N.2C.40=\'41\';3N.2C.42=\'43\';3N.2C.44=\'45\';3N.2C.46=\'47\';3N.2C.48=\'49 4a 4b 3z(0, 0, 0, 0.1)\';3N.2C.4c=\'4d-3W 0.3s 4e, 4f 0.2s 4e\';3N.8(\'4g\',()=>{3N.2C.3y=\'#4h\';});3N.8(\'4i\',()=>{3N.2C.3y=\'#3V\';});3N.8(\'4j\',()=>{3N.2C.4f=\'4k(0.4l)\';});3N.8(\'4m\',()=>{3N.2C.4f=\'4k(1)\';});3N.8(\'4n\',()=>{s.4o.4p(3o);});3o.4q(3I);3o.4q(3N);s.4o.4q(3o);}J 3c(A){1Z.3k();3l=s.3m(\'3n\');3o.2C.3p=\'3q\';3o.2C.3r=\'0\';3o.2C.3t=\'0\';3o.2C.3u=\'3v%\';3o.2C.3w=\'3v%\';3o.2C.3y=\'3z(0, 0, 0, 0.5)\';3o.2C.3A=\'3B\';3o.2C.3C=\'3D\';3o.2C.3E=\'3D\';3o.2C.3F=\'3G\';3H=s.3m(\'3I\');3I.v=A;3I.2C.3J=\'3K%\';3I.2C.3L=\'3K%\';3M=s.3m(\'1V\');3N.3O=\'3P\';3N.2C.3p=\'3Q\';3N.2C.3r=\'3R\';3N.2C.3S=\'3R\';3N.2C.3T=\'3U 3R\';3N.2C.3y=\'#3V\';3N.2C.3W=\'3X\';3N.2C.3Y=\'3Z\';3N.2C.40=\'41\';3N.2C.42=\'43\';3N.2C.44=\'45\';3N.2C.46=\'47\';3N.2C.48=\'49 4a 4b 3z(0, 0, 0, 0.1)\';3N.2C.4c=\'4d-3W 0.3s 4e, 4f 0.2s 4e\';3N.8(\'4g\',()=>{3N.2C.3y=\'#4h\';});3N.8(\'4i\',()=>{3N.2C.3y=\'#3V\';});3N.8(\'4j\',()=>{3N.2C.4f=\'4k(0.4l)\';});3N.8(\'4m\',()=>{3N.2C.4f=\'4k(1)\';});3N.8(\'4n\',()=>{s.4o.4p(3o);});3o.4q(3I);3o.4q(3N);s.4o.4q(3o);}J 4t(A){4u B=s.t("4v-4w");1h(A){1i\'4x-37\':B.18=`<4y="12-4x-37"><4z="12-4A"><4B="n">4C 4D:</4E><4F="4G"4H="n"4I="n"4J="4K o 4L 1F"4M></3n><4z="12-4A"><4B="3a">4N:</4E><4F="4G"4H="3a"4I="3a"4J="4K o 4O 4P"4M></3n><4z="12-4A"><4B="4Q">4R 4D:</4E><4F="4G"4H="4Q"4I="4Q"4J="4K o 4S 1o 4D"4M></3n><4z="12-4A"><4B="l">4R 4T:</4E><4F="4G"4H="l"4I="l"4J="4K o 4S 1o 4T"4M></3n><4z="12-4A"><4B="1Y">4U 1I:</4E><4F="4V"4H="1Y"4I="1Y"4J="4W o 4X 1o 1Y"4M></3n><4z="12-4A"><4B="3b">4Y 4Z:</4E><50="3b"4I="3b"4J="51 o 3b 1o 52"53="4"4M></54></3n><55="56"57="1V 1A-58"4H="59">5a</1V></12>`;5b=s.11(\'.12-4x-37\');5c=s.t(\'59\');5d=5e;12.8(\'56\',J(1Z){1Z.3k();w(5f)W;5f=5g;59.5h=5g;5i=c 5j(12);M(\'L://5k.5l.5m.5n/5o/5p.5q\',{5r:\'5s\',4o:5t}).O(P=>P.X()).O(Y=>{w(Y.5u){s.11(\'.5v\').2C.3A=\'3B\';5w(J(){s.11(\'.5v\').2C.3A=\'3Z\';},5x);12.5y();}E w(Y.15){s.11(\'.5z\').2C.3A=\'3B\';5w(J(){s.11(\'.5z\').2C.3A=\'3Z\';},5x);12.5y();}}).23(15=>{s.11(\'.5z\').2C.3A=\'3B\';5w(J(){s.11(\'.5z\').2C.3A=\'3Z\';},5x);12.5y();}).5A(()=>{5f=5e;59.5h=5e;});});5B;1i\'4x-5C\':B.18=`<4y="12-4x-5C"><4z="12-4A"><4B="l">4R 4T:</4E><4F="4G"4H="l"4I="l"4J="4K o 4S 1o 4T"4M></3n><4z="12-4A"><4B="n">4C 4D:</4E><4F="4G"4H="n"4I="n"4J="4K o 4L 1F 1o 4D"4M></3n><4z="12-4A"><4B="5D">5E 5F:</4E><4F="4G"4H="5D"4I="5D"4J="4K o 5D 1o 5F"4M></3n><4z="12-4A"><4B="5G">4R 5F:</4E><4F="4G"4H="5G"4I="5G"4J="4K o 4S 1o 5F"4M></3n><4z="12-4A"><4B="2w">5H 5F:</4E><4F="5I"4H="2w"4I="2w"4J="4K o 2w 1o 5F"4M></3n><4z="12-4A"><4B="5J">5K:</4E><4F="5L"4H="5J"4I="5J"4J="4K a Y 2b 5M"4M></3n><55="56"57="1V 1A-58"4H="5N">5O</1V></12>`;5P=s.11(\'.12-4x-5C\');5Q=s.t(\'5N\');5R=5e;5S.8(\'56\',J(1Z){1Z.3k();w(5T)W;5T=5g;5N.5h=5g;5i=c 5j(5S);M(\'L://5k.5l.5m.5n/5o/5U.5q\',{5r:\'5s\',4o:5t}).O(P=>P.X()).O(Y=>{w(Y.5u){s.11(\'.5v\').2C.3A=\'3B\';5w(J(){s.11(\'.5v\').2C.3A=\'3Z\';},5x);5S.5y();}E w(Y.15){s.11(\'.5z\').2C.3A=\'3B\';5w(J(){s.11(\'.5z\').2C.3A=\'3Z\';},5x);5S.5y();}}).23(15=>{s.11(\'.5z\').2C.3A=\'3B\';5w(J(){s.11(\'.5z\').2C.3A=\'3Z\';},5x);5S.5y();}).5A(()=>{5T=5e;5N.5h=5e;});});5B;1i\'4x-5V\':B.18=`<4y="12-4x-5V"><4z="12-4A"><4B="5W">4R 5X:</4E><4F="4G"4H="5W"4I="5W"4J="4K o 5Y 1o 5X"4M></3n><4z="12-4A"><4B="5Z">60 5X:</4E><50="5Z"4I="5Z"4J="4K a 61 1o 5X"53="10"4M></54></3n><4z="12-4A"><4B="2P">5H 5X:</4E><4F="5I"4H="2P"4I="2P"4J="4K o 2w 1o 5X"4M></3n><4z="12-4A"><4B="1Y">62 5X:</4E><4F="4V"4H="1Y"4I="1Y"4J="63 a 1I 1o 5X"4M></3n><4z="12-4A"><4B="5V">64:</4E><65="5V"4I="5V"4M><66="67">67</68><66="69">69</68><66="É6a">É6a</68><66="6bá6c">6bá6c</68><66="6d">6d</68></6e></3n><55="56"57="1V 1A-58"4H="6f">6g</1V></12>`;6h=s.11(\'.12-4x-5V\');6i=s.t(\'6f\');6j=5e;6k.8(\'56\',J(1Z){1Z.3k();w(6l)W;6l=5g;6f.5h=5g;5i=c 5j(6k);M(\'L://5k.5l.5m.5n/5o/6m.5q\',{5r:\'5s\',4o:5t}).O(P=>P.X()).O(Y=>{w(Y.5u){s.11(\'.5v\').2C.3A=\'3B\';5w(J(){s.11(\'.5v\').2C.3A=\'3Z\';},5x);6k.5y();}E w(Y.15){s.11(\'.5z\').2C.3A=\'3B\';5w(J(){s.11(\'.5z\').2C.3A=\'3Z\';},5x);6k.5y();}}).23(15=>{s.11(\'.5z\').2C.3A=\'3B\';5w(J(){s.11(\'.5z\').2C.3A=\'3Z\';},5x);6k.5y();}).5A(()=>{6l=5e;6f.5h=5e;});});5B;1i\'13-14\':B.18=`<4y="12-13-14"><p>6nó6o...</p></12>`;x();5B;1i\'6p-6q\':B.18=`<4y="12-6p-6q"><4z="12-4A"><4B="1S">6rção:</4E><4F="4G"4H="1S"4I="1S"4J="4K o 1H 2b 6sção"4M></3n><4z="12-4A"><4B="2j">6tçã6ução:</4E><50="2j"4I="2j"4J="4K a 2fção 2b 6sção"53="10"4M></54></3n><4z="12-4A"><4B="1Y">6vção:</4E><4F="4V"4H="1Y"4I="1Y"4J="63 a 1I 2b 6sção"4M></3n><4z="12-4A"><4B="6w">6xção:</4E><4F="4G"4H="6w"4I="6w"4J="63 o 5Y 1o 6y 2b 6sção"4M></3n><55="56"57="1V 1A-58"4H="6z">6Ação</1V></12>`;6B=s.11(\'.12-6p-6q\');6C=s.t(\'6z\');6D=5e;6E.8(\'56\',J(1Z){1Z.3k();w(6F)W;6F=5g;6z.5h=5g;5i=c 5j(6E);M(\'L://5k.5l.5m.5n/5o/6G.5q\',{5r:\'5s\',4o:5t}).O(P=>P.X()).O(Y=>{w(Y.5u){s.11(\'.5v\').2C.3A=\'3B\';5w(J(){s.11(\'.5v\').2C.3A=\'3Z\';},5x);6E.5y();}E w(Y.15){s.11(\'.5z\').2C.3A=\'3B\';5w(J(){s.11(\'.5z\').2C.3A=\'3Z\';},5x);6E.5y();}}).23(15=>{s.11(\'.5z\').2C.3A=\'3B\';5w(J(){s.11(\'.5z\').2C.3A=\'3Z\';},5x);6E.5y();}).5A(()=>{6F=5e;6z.5h=5e;});});5B;1i\'6p-26\':B.18=`<4y="12-6p-26"><4z="12-4A"><4B="n">6H 6I:</4E><4F="4G"4H="n"4I="n"4J="4K o 1F 6J 1o 6I"4M></3n><4z="12-4A"><4B="l">6K 6L:</4E><4F="4G"4H="l"4I="l"4J="4K o 6M 1o 6N I 4T"4M></3n><4z="12-4A"><4B="1R">6O:</4E><65="1R"4I="1R"4M><66="">6P...</68></6e></3n><4z="12-4A"><4B="2j">6tçã6Qção:</4E><50="2j"4I="2j"4J="4K a 2fção 2b 2ação"53="6"4M></54></3n><4z="12-4A"><4B="1Y">6Rção:</4E><4F="4V"4H="1Y"4I="1Y"4J="63 a 1I 2b 2ação"4M></3n><55="56"57="1V 1A-58"4H="6S">6Tção</1V></12>`;6U=6V()=>{6W=s.t(\'1R\');6X{6Y=6Z(\'L://5k.5l.5m.5n/5o/70.5q\');71=72.X();73.18=\'<68 74="">75 76 1m</68>\';14.1L(1M=>{77=s.3m(\'68\');68.74=1M.1R;68.u=`${1M.1R}|${1M.2j}`;73.4q(68);});}23(15){F.15(\'78 79 7a 14:\',15);73.18=\'<68 74="">78 79 7a 14</68>\';}};7b();7c=s.11(\'.12-6p-26\');7d=s.t(\'6S\');7e=5e;7f.8(\'56\',J(1Z){1Z.3k();w(7g)W;7g=5g;6S.5h=5g;5i=c 5j(7f);M(\'L://5k.5l.5m.5n/5o/7h.5q\',{5r:\'5s\',4o:5t}).O(P=>P.X()).O(Y=>{w(Y.5u){s.11(\'.5v\').2C.3A=\'3B\';5w(J(){s.11(\'.5v\').2C.3A=\'3Z\';},5x);7f.5y();}E w(Y.15){s.11(\'.5z\').2C.3A=\'3B\';5w(J(){s.11(\'.5z\').2C.3A=\'3Z\';},5x);7f.5y();}}).23(15=>{s.11(\'.5z\').2C.3A=\'3B\';5w(J(){s.11(\'.5z\').2C.3A=\'3Z\';},5x);7f.5y();}).5A(()=>{7g=5e;6S.5h=5e;});});5B;1i\'13-26\':B.18=`<4y="12-13-26"><p>6nó7içõ7j...</p></12>`;y();5B;1i\'4x-2m\':B.18=`<4y="12-4x-2m"><4z="12-4A"><4B="n">4C 4D:</4E><4F="4G"4H="n"4I="n"4J="7k 1F 1o 4D"4M></3n><4z="12-4A"><4B="l">7l 4T</4E><4F="4G"4H="l"4I="l"4J="4K o 30 1o 4T"4M></3n><4z="12-4A"><4B="7m">4C 7n 2G:</4E><4F="4G"4H="7m"4I="7m"4J="4K o 1F 1o 4D 1o 2G"4M></3n><4z="12-4A"><4B="2N">7l 7o 2G</4E><4F="4G"4H="2N"4I="2N"4J="4K o 30 1o 4T 1o 2G"4M></3n><4z="12-4A"><4B="2P">5H 7p</4E><4F="5I"4H="2P"4I="2P"4J="4K o 2I 1o 7p"4M></3n><4z="12-4A"><4B="2Q">7q</4E><4F="5I"4H="2Q"4I="2Q"4J="4K o 2I 7r 2J"4M></3n><55="56"57="1V 1A-58"4H="7s">7t</1V></12>`;7u=s.11(\'.12-4x-2m\');7v=s.t(\'7s\');7w=5e;7x.8(\'56\',J(1Z){1Z.3k();w(7y)W;7y=5g;7s.5h=5g;5i=c 5j(7x);M(\'L://5k.5l.5m.5n/5o/7z.5q\',{5r:\'5s\',4o:5t}).O(P=>P.X()).O(Y=>{w(Y.5u){s.11(\'.5v\').2C.3A=\'3B\';5w(()=>{s.11(\'.5v\').2C.3A=\'3Z\';},5x);7x.5y();}E w(Y.15){s.11(\'.5z\').2C.3A=\'3B\';5w(()=>{s.11(\'.5z\').2C.3A=\'3Z\';},5x);7x.5y();}}).23(15=>{s.11(\'.5z\').2C.3A=\'3B\';5w(()=>{s.11(\'.5z\').2C.3A=\'3Z\';},5x);7x.5y();}).5A(()=>{7y=5e;7s.5h=5e;});});5B;1i\'13-2m\':B.18=`<4y="12-13-2m"><p>6nó7içõ7j...</p></12>`;z();5B;1i\'4x-2T\':B.18=`<4y="12-4x-2T"><4z="12-4A"><4B="n">4C 4D:</4E><4F="4G"4H="n"4I="n"4J="4K o 4L 1F 1o 7A"4M></3n><4z="12-4A"><4B="l">4R 4T:</4E><4F="4G"4H="l"4I="l"4J="4K o 4S 1o 4T"4M></3n><4z="12-4A"><4B="2j">7Bê2Y:</4E><50="2j"4I="2j"4J="51 a 7Cê2Y"53="4"4M></54></3n><4z="12-4A"><4B="35">7D:</4E><65="35"4I="35"4M><66="">6P...</68></6e></3n><4z="12-4A"><4B="1g">7Eê2Y:</4E><65="1g"4I="1g"4M><66="2Xê2Y 1x">2Xê7F</68><66="2Xê2Y 2x">2Xê7G</68><66="2Xê2Y 3x">2Xê7H</68></6e></3n><4z="12-4A"><4B="1R">6O:</4E><65="1R"4I="1R"4M><66="">6P...</68></6e></3n><55="56"57="1V 1A-58"4H="7I">7Jê2Y</1V></12>`;7K=6V()=>{6W=s.t(\'1R\');6X{6Y=6Z(\'L://5k.5l.5m.5n/5o/70.5q\');71=72.X();73.18=\'<68 74="">75 76 1m</68>\';14.1L(1M=>{77=s.3m(\'68\');68.74=1M.1R;68.u=`${1M.1R}|${1M.2j}`;73.4q(68);});}23(15){F.15(\'78 79 7a 14:\',15);73.18=\'<68 74="">78 79 7a 14</68>\';}};7L();7M=6V()=>{7N=s.t(\'35\');6X{6Y=6Z(\'L://5k.5l.5m.5n/5o/7O.5q\');7P=72.X();7Q.18=\'<68 74="">75 7R 31</68>\';7S.1L(35=>{77=s.3m(\'68\');68.74=35.1S;68.u=`${35.1S}`;7Q.4q(68);});}23(15){F.15(\'78 79 7a 7S:\',15);7Q.18=\'<68 74="">78 79 7a 7S</68>\';}};7T();7U=s.11(\'.12-4x-2T\');7V=s.t(\'7I\');7W=5e;7X.8(\'56\',J(1Z){1Z.3k();w(7Y)W;7Y=5g;7I.5h=5g;5i=c 5j(7X);M(\'L://5k.5l.5m.5n/5o/7Z.5q\',{5r:\'5s\',4o:5t}).O(P=>P.X()).O(Y=>{w(Y.5u){s.11(\'.5v\').2C.3A=\'3B\';5w(()=>{s.11(\'.5v\').2C.3A=\'3Z\';},5x);7X.5y();}E w(Y.15){s.11(\'.5z\').2C.3A=\'3B\';5w(()=>{s.11(\'.5z\').2C.3A=\'3Z\';},5x);7X.5y();}}).23(15=>{s.11(\'.5z\').2C.3A=\'3B\';5w(()=>{s.11(\'.5z\').2C.3A=\'3Z\';},5x);7X.5y();}).5A(()=>{7Y=5e;7I.5h=5e;});});5B;1i\'13-2T\':B.18=`<4y="12-13-2T"><p>6nó80ê81...</p></12>`;C();5B;1i\'13-37\':B.18=`<4y="12-13-37"><p>6nó82...</p></12>`;D();5B;1i\'83-2m\':B.18=`<4y="12-83-2m"><4z="12-4A"><4B="84">85:</4E><65="84"4I="84"4M><66="">6P...</68></6e></3n><4z="12-4A"><4B="2R">86:</4E><4F="5I"4H="2R"4I="2R"4J="4K a 87 88"4M></3n><4z="12-4A"><4B="1g">89:</4E><65="1g"4I="1g"4M><66="2pé2q 2r">2pé8a</68><66="2pé2q 2t">2pé8b</68><66="2pé2q 1q 2u">2pé8c</68></6e></3n><55="56"57="1V 1A-58"4H="8d">8e</1V></12>`;2v=(2w)=>{W c 2y.2z(\'2A-2B\',{2C:\'2D\',2D:\'2E\'}).2F(2w);};8f=6V()=>{8g=s.t(\'84\');6X{6Y=6Z(\'L://5k.5l.5m.5n/5o/8h.5q\');8i=72.X();8j.18=\'<68 74="">75 o 7p</68>\';8k.1L(2m=>{77=s.3m(\'68\');68.74=2m.84;68.u=`${2m.84}|${2O(2m.2P)}|${2m.1g}|2J:|${2m.2R}/${2m.2Q}`;8j.4q(68);});}23(15){F.15(\'78 79 7a 2m:\',15);8j.18=\'<68 74="">78 79 7a 8k</68>\';}};8l();8m=s.11(\'.12-83-2m\');8n=s.t(\'8d\');8o=5e;8p.8(\'56\',J(1Z){1Z.3k();w(8q)W;8q=5g;8d.5h=5g;5i=c 5j(8p);M(\'L://5k.5l.5m.5n/5o/8r.5q\',{5r:\'5s\',4o:5t}).O(P=>P.X()).O(Y=>{w(Y.5u){s.11(\'.5v\').2C.3A=\'3B\';5w(()=>{s.11(\'.5v\').2C.3A=\'3Z\';},5x);8p.5y();}E w(Y.15){s.11(\'.5z\').2C.3A=\'3B\';5w(()=>{s.11(\'.5z\').2C.3A=\'3Z\';},5x);8p.5y();}}).23(15=>{s.11(\'.5z\').2C.3A=\'3B\';5w(()=>{s.11(\'.5z\').2C.3A=\'3Z\';},5x);8p.5y();}).5A(()=>{8q=5e;8d.5h=5e;});});5B;1i\'83-8s\':B.18=`<4y="12-83-8s"><4z="12-4A"><4B="1R">6O:</4E><65="1R"4I="1R"4M><66="">6P...</68></6e></3n><4z="12-4A"><4B="2j">2fçã8t 1m:</4E><50="2j"4J="2fção 1o 1m"53="4"8u></54></3n><4z="12-4A"><4B="Y">8v 1m:</4E><4F="8w-8x"4H="Y"4I="Y"4J="4K a Y e 8y"8u></3n><4z="12-4A"><4B="8z">8A 1m:</4E><50="8z"4I="8z"4J="8B 1o 1m"53="4"4M></54></3n><4z="12-4A"><4B="1g">89:</4E><65="1g"4I="1g"4M><66="1q 1r">8C</68><66="1p">1p</68><66="1j">1j</68></6e></3n><55="56"57="1V 1A-58"4H="8D">8E</1V></12>`;8F=6V()=>{6W=s.t(\'1R\');6X{6Y=6Z(\'L://5k.5l.5m.5n/5o/70.5q\');71=72.X();73.18=\'<68 74="">75 76 1m</68>\';14.1L(1M=>{77=s.3m(\'68\');68.74=1M.1R;68.u=`${1M.1R}|${1M.1S}|${1M.1g}`;73.4q(68);});}23(15){F.15(\'78 79 7a 14:\',15);73.18=\'<68 74="">78 79 7a 14</68>\';}};8G=6V(8H)=>{8I=s.t(\'2j\');8J.74=\'6P 8Kção...\';6X{6Y=6Z(`L:w(!P.Q){R S(`8L:${P.1g}`);}8M=72.X();w(1a.1b(8N)&&8N.1c>0){8J.74=8N[0].2j||\'8O 8Kção 8Pí8Q.\';}E {8J.74=\'8O 8Kção 8R.\';}}23(15){F.15(\'78 79 7a 8Kção 1o 1M:\',15);8J.74=\'78 79 7a 8Kção.\';}};8S=6V(8H)=>{8T=s.t(\'Y\');8U.74=\'\';6X{6Y=6Z(`L:w(!P.Q){R S(`8L:${P.1g}`);}8M=72.X();w(1a.1b(8N)&&8N.1c>0){8V=8N[0].Y;w(8W){8X=c 8Y(8W.8Z(\' \',\'T\'));91=92.93().94(0,16);8U.74=96;}E {8U.74=\'\';}}E {8U.74=\'\';}}23(15){F.15(\'78 79 7a Y 1o 1M:\',15);8U.74=\'\';}};s.t(\'1R\').8(\'97\',J (){98=99.74;w(9a){9b(9a);9c(9a)}E {s.t(\'2j\').74=\'\';s.t(\'Y\').74=\'\';}});9d();9e=s.11(\'.12-83-8s\');9f=s.t(\'8D\');9g=5e;9h.8(\'56\',J(1Z){1Z.3k();w(9i)W;9i=5g;8D.5h=5g;5i=c 5j(9h);M(\'L://5k.5l.5m.5n/5o/9j.5q\',{5r:\'5s\',4o:5t}).O(P=>P.X()).O(Y=>{w(Y.5u){s.11(\'.5v\').2C.3A=\'3B\';5w(()=>{s.11(\'.5v\').2C.3A=\'3Z\';},5x);9h.5y();}E w(Y.15){s.11(\'.5z\').2C.3A=\'3B\';5w(()=>{s.11(\'.5z\').2C.3A=\'3Z\';},5x);9h.5y();}}).23(15=>{s.11(\'.5z\').2C.3A=\'3B\';5w(()=>{s.11(\'.5z\').2C.3A=\'3Z\';},5x);9h.5y();}).5A(()=>{9i=5e;8D.5h=5e;});});5B;1u:B.18="<p>9k 7R 9lção.</p>";}}',{}))
+window.addEventListener('DOMContentLoaded', () => {
+    const params = new URLSearchParams(window.location.search);
+    const username = params.get('username');
+    const userid = params.get('userid');
+    const avatar = params.get('avatar');
+
+    document.getElementById('username').textContent = username;
+    document.getElementById('userid').textContent = userid;
+    document.getElementById('avatar').src = avatar;
+
+    if (userid) {
+        getHistoricoTicketsSTAFF();
+        getHistoricoDevolutionsSTAFF();
+        getHistoricoEmprestimosSTAFF();
+        getHistoricoAdvertenciaSTAFF();
+        getHistoricoBansSTAFF();
+    } else {
+        console.log("erro no userid")
+    }
+
+});
+
+function getHistoricoTicketsSTAFF() {
+    const apiUrl = `https://dash.legendarycommunity.com.br/api/api_tickets.php`;
+
+    fetch(apiUrl)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`Erro na API: ${response.statusText}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            const container = document.querySelector('.form-list-tickets');
+
+            if (data.error) {
+                container.innerHTML = `<p class="error">${data.error}</p>`;
+                return;
+            }
+
+            if (!Array.isArray(data) || data.length === 0) {
+                container.innerHTML = `<p class="info">Nenhum ticket encontrado.</p>`;
+                return;
+            }
+
+            // Função para mapear o status para emojis e títulos
+            const getStatusInfo = (status) => {
+                switch (status) {
+                    case 'Concluido':
+                        return { emoji: '✅', title: 'Ticket Concluído' };
+                    case 'Reprovado':
+                        return { emoji: '❌', title: 'Ticket Reprovado' };
+                    case 'Em Analise':
+                        return { emoji: '🔎', title: 'Ticket Em Análise' };
+                    default:
+                        return { emoji: '❓', title: 'Ticket Desconhecido' };
+                }
+            };
+
+            let htmlContent = `
+                <table class="table is-fullwidth">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Username</th>
+                            <th>Titulo</th>
+                            <th>Print</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+            `;
+
+            data.forEach(ticket => {
+                const statusInfo = getStatusInfo(ticket.status);
+                htmlContent += `
+                    <tr>
+                        <td>${ticket.id_ticket}</td>
+                        <td>${ticket.username}</td>
+                        <td>${ticket.titulo}</td>
+                        <td>
+                            <button class="eye-button" onclick="showImage('${ticket.print}', event)">👁️</button>
+                        </td>
+                        <td>
+                            <span title="${statusInfo.title}">${statusInfo.emoji}</span>
+                        </td>
+                    </tr>`;
+            });
+
+            htmlContent += '</tbody></table>';
+            container.innerHTML = htmlContent;
+        })
+        .catch(error => {
+            const container = document.querySelector('.form-list-tickets');
+            container.innerHTML = `<p class="error">Erro ao carregar os dados: ${error.message}</p>`;
+        });
+}
+
+function getHistoricoDevolutionsSTAFF() {
+    const apiUrl = `https://dash.legendarycommunity.com.br/api/api_buscar_devolution.php`;
+
+    fetch(apiUrl)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`Erro na API: ${response.statusText}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            const container = document.querySelector('.form-list-devolutions');
+
+            if (data.error) {
+                container.innerHTML = `<p class="error">${data.error}</p>`;
+                return;
+            }
+
+            if (!Array.isArray(data) || data.length === 0) {
+                container.innerHTML = `<p class="info">Nenhuma devolução encontrado.</p>`;
+                return;
+            }
+
+            // Função para mapear o status para emojis e títulos
+            const getStatusInfoDevolucao = (status) => {
+                switch (status) {
+                    case 'Concluido':
+                        return { emoji: '✅', title: 'Devolução Concluída' };
+                    case 'Reprovado':
+                        return { emoji: '❌', title: 'Devolução Reprovada' };
+                    case 'Em Analise':
+                        return { emoji: '🔎', title: 'Devolução Em Análise' };
+                    default:
+                        return { emoji: '❓', title: 'Devolução Desconhecida' };
+                }
+            };
+
+            let htmlContent = `
+                <table class="table is-fullwidth">
+                    <thead>
+                        <tr>
+                            <th>ID Ticket</th>
+                            <th>Username</th>
+                            <th>Descrição</th>
+                            <th>Print</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+            `;
+
+            data.forEach(devolucao => {
+                const statusInfodevolucao = getStatusInfoDevolucao(devolucao.status);
+                htmlContent += `
+                    <tr>
+                        <td>${devolucao.id_ticket}</td>
+                        <td>${devolucao.username}</td>
+                        <td>${devolucao.descricao}</td>
+                        <td>
+                            <button class="eye-button" onclick="showImageDevolution('${devolucao.print}', event)">👁️</button>
+                        </td>
+                        <td>
+                            <span title="${statusInfodevolucao.title}">${statusInfodevolucao.emoji}</span>
+                        </td>
+                    </tr>`;
+            });
+
+            htmlContent += '</tbody></table>';
+            container.innerHTML = htmlContent;
+        })
+        .catch(error => {
+            const container = document.querySelector('.form-list-devolutions');
+            container.innerHTML = `<p class="error">Erro ao carregar os dados: ${error.message}</p>`;
+        });
+}
+
+function getHistoricoEmprestimosSTAFF() {
+    const apiUrl = `https://dash.legendarycommunity.com.br/api/api_buscar_emprestimo.php`;
+
+    fetch(apiUrl)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`Erro na API: ${response.statusText}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            const container = document.querySelector('.form-list-emprestimo');
+
+            if (data.error) {
+                container.innerHTML = `<p class="error">${data.error}</p>`;
+                return;
+            }
+
+            if (!Array.isArray(data) || data.length === 0) {
+                container.innerHTML = `<p class="info">Nenhuma devolução encontrada.</p>`;
+                return;
+            }
+
+            // Função para mapear o status para emojis e títulos
+            const getStatusInfoEmprestimo = (status) => {
+                switch (status) {
+                    case 'Empréstimo Pago':
+                        return { emoji: '✅', title: 'Empréstimo Pago' };
+                    case 'Empréstimo Cancelado':
+                        return { emoji: '❌', title: 'Empréstimo Cancelado' };
+                    case 'Empréstimo Em Pagamento':
+                        return { emoji: '🧭', title: 'Empréstimo Em Pagamento' };
+                    default:
+                        return { emoji: '❓', title: 'Empréstimo Desconhecido' };
+                }
+            };
+
+            // Função para formatar valores em BRL
+            const formatarBRL = (valor) => {
+                return new Intl.NumberFormat('pt-BR', {
+                    style: 'currency',
+                    currency: 'BRL'
+                }).format(valor);
+            };
+
+            let htmlContent = `
+                <table class="table is-fullwidth">
+                    <thead>
+                        <tr>
+                            <th>Agiota</th>
+                            <th>Cidadão</th>
+                            <th>Valor</th>
+                            <th>Parcelas</th>
+                            <th>Parcelas Pg</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+            `;
+
+            data.forEach(emprestimo => {
+                const statusInfoEmprestimo = getStatusInfoEmprestimo(emprestimo.status);
+                htmlContent += `
+                    <tr>
+                        <td>${emprestimo.agiota}</td>
+                        <td>${emprestimo.username}</td>
+                        <td>${formatarBRL(emprestimo.price)}</td>
+                        <td>${emprestimo.parcelas}</td>
+                        <td>${emprestimo.parcelas_pagas}</td>
+                        <td>
+                            <span title="${statusInfoEmprestimo.title}">${statusInfoEmprestimo.emoji}</span>
+                        </td>
+                    </tr>`;
+            });
+
+            htmlContent += '</tbody></table>';
+            container.innerHTML = htmlContent;
+        })
+        .catch(error => {
+            const container = document.querySelector('.form-list-emprestimo');
+            container.innerHTML = `<p class="error">Erro ao carregar os dados: ${error.message}</p>`;
+        });
+}
+
+function getHistoricoAdvertenciaSTAFF() {
+    const apiUrl = `https://dash.legendarycommunity.com.br/api/api_buscar_advertencia.php`;
+
+    fetch(apiUrl)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`Erro na API: ${response.statusText}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            const container = document.querySelector('.form-list-advertencia');
+
+            if (data.error) {
+                container.innerHTML = `<p class="error">${data.error}</p>`;
+                return;
+            }
+
+            if (!Array.isArray(data) || data.length === 0) {
+                container.innerHTML = `<p class="info">Nenhuma advertência encontrada.</p>`;
+                return;
+            }
+
+            // Função para mapear o status para emojis e títulos
+            const getStatusInfoAdvertencia = (status) => {
+                switch (status) {
+                    case 'Advertência 1x':
+                        return { emoji: '1️⃣', title: 'Advertência 1x' };
+                    case 'Advertência 2x':
+                        return { emoji: '2️⃣', title: 'Advertência 2x' };
+                    case 'Advertência 3x':
+                        return { emoji: '3️⃣', title: 'Advertência 3x' };
+                    default:
+                        return { emoji: '❓', title: 'Advertência Desconhecido' };
+                }
+            };
+
+            let htmlContent = `
+                <table class="table is-fullwidth">
+                    <thead>
+                        <tr>
+                            <th>ID Ticket</th>
+                            <th>Nick</th>
+                            <th>Descrição</th>
+                            <th>Regra</th>
+                            <th>Data</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+            `;
+
+            data.forEach(advertencia => {
+                const statusInfoAdvertencia = getStatusInfoAdvertencia(advertencia.status);
+                htmlContent += `
+                    <tr>
+                        <td>${advertencia.id_ticket}</td>
+                        <td>${advertencia.username}</td>
+                        <td>${advertencia.descricao}</td>
+                        <td>${advertencia.regra}</td>
+                        <td>${advertencia.data}</td>
+                        <td>
+                            <span title="${statusInfoAdvertencia.title}">${statusInfoAdvertencia.emoji}</span>
+                        </td>
+                    </tr>`;
+            });
+
+            htmlContent += '</tbody></table>';
+            container.innerHTML = htmlContent;
+        })
+        .catch(error => {
+            const container = document.querySelector('.form-list-advertencia');
+            container.innerHTML = `<p class="error">Erro ao carregar os dados: ${error.message}</p>`;
+        });
+}
+
+function getHistoricoBansSTAFF() {
+    const apiUrl = `https://dash.legendarycommunity.com.br/api/api_buscar_ban.php`;
+
+    fetch(apiUrl)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`Erro na API: ${response.statusText}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            const container = document.querySelector('.form-list-ban');
+
+            if (data.error) {
+                container.innerHTML = `<p class="error">${data.error}</p>`;
+                return;
+            }
+
+            if (!Array.isArray(data) || data.length === 0) {
+                container.innerHTML = `<p class="info">Nenhum ban encontrado.</p>`;
+                return;
+            }
+
+            let htmlContent = `
+                <table class="table is-fullwidth">
+                    <thead>
+                        <tr>
+                            <th>IP Ban</th>
+                            <th>Nick</th>
+                            <th>Descrição</th>
+                            <th>Print</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+            `;
+
+            data.forEach(ban => {
+                htmlContent += `
+                    <tr>
+                        <td>${ban.ip_ban}</td>
+                        <td>${ban.username}</td>
+                        <td>${ban.motivo}</td>
+                        <td><button class="eye-button" onclick="showImageBan('${ban.print}', event)">👁️</button></td>
+                    </tr>`;
+            });
+
+            htmlContent += '</tbody></table>';
+            container.innerHTML = htmlContent;
+        })
+        .catch(error => {
+            const container = document.querySelector('.form-list-ban');
+            container.innerHTML = `<p class="error">Erro ao carregar os dados: ${error.message}</p>`;
+        });
+}
+
+function isImageUrl(url) {
+    return /\.(jpg|jpeg|png|gif|bmp)$/i.test(url);
+}
+
+function showImage(imageUrl, event) {
+    event.preventDefault();
+
+    // Verifica se o URL é de uma imagem ou não
+    if (isImageUrl(imageUrl)) {
+        const modal = document.createElement('div');
+        modal.style.position = 'fixed';
+        modal.style.top = '0';
+        modal.style.left = '0';
+        modal.style.width = '100%';
+        modal.style.height = '100%';
+        modal.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+        modal.style.display = 'flex';
+        modal.style.alignItems = 'center';
+        modal.style.justifyContent = 'center';
+        modal.style.zIndex = '9999';
+
+        const img = document.createElement('img');
+        img.src = imageUrl;
+        img.style.maxWidth = '90%';
+        img.style.maxHeight = '90%';
+
+        const closeButton = document.createElement('button');
+        closeButton.innerText = 'Fechar';
+        closeButton.style.position = 'absolute';
+        closeButton.style.top = '20px';
+        closeButton.style.right = '20px';
+        closeButton.style.padding = '10px 20px';
+        closeButton.style.backgroundColor = '#31888a'; // Fundo rosa
+        closeButton.style.color = 'white'; // Cor da fonte branca
+        closeButton.style.border = 'none';
+        closeButton.style.borderRadius = '8px';
+        closeButton.style.fontSize = '16px';
+        closeButton.style.fontWeight = 'bold';
+        closeButton.style.cursor = 'pointer';
+        closeButton.style.boxShadow = '0px 4px 6px rgba(0, 0, 0, 0.1)';
+        closeButton.style.transition = 'background-color 0.3s ease, transform 0.2s ease';
+
+        closeButton.addEventListener('mouseover', () => {
+            closeButton.style.backgroundColor = '#11203b'; // Tom mais claro ao passar o mouse
+        });
+        closeButton.addEventListener('mouseout', () => {
+            closeButton.style.backgroundColor = '#31888a'; // Retorna ao fundo original
+        });
+        closeButton.addEventListener('mousedown', () => {
+            closeButton.style.transform = 'scale(0.95)'; // Efeito de clique
+        });
+        closeButton.addEventListener('mouseup', () => {
+            closeButton.style.transform = 'scale(1)'; // Volta ao tamanho original
+        });
+
+        closeButton.addEventListener('click', () => {
+            document.body.removeChild(modal);
+        });
+
+        modal.appendChild(img);
+        modal.appendChild(closeButton);
+        document.body.appendChild(modal);
+    } else {
+        // Redireciona para o link em uma nova aba caso não seja uma imagem
+        window.open(imageUrl, '_blank');
+    }
+}
+
+function showImageDevolution(imageUrl) {
+    event.preventDefault();
+    const modal = document.createElement('div');
+    modal.style.position = 'fixed';
+    modal.style.top = '0';
+    modal.style.left = '0';
+    modal.style.width = '100%';
+    modal.style.height = '100%';
+    modal.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+    modal.style.display = 'flex';
+    modal.style.alignItems = 'center';
+    modal.style.justifyContent = 'center';
+    modal.style.zIndex = '9999';
+
+    const img = document.createElement('img');
+    img.src = imageUrl;
+    img.style.maxWidth = '90%';
+    img.style.maxHeight = '90%';
+
+    const closeButton = document.createElement('button');
+    closeButton.innerText = 'Fechar';
+    closeButton.style.position = 'absolute';
+    closeButton.style.top = '20px';
+    closeButton.style.right = '20px';
+    closeButton.style.padding = '10px 20px';
+    closeButton.style.backgroundColor = '#31888a'; // Fundo rosa
+    closeButton.style.color = 'white'; // Cor da fonte branca
+    closeButton.style.border = 'none';
+    closeButton.style.borderRadius = '8px';
+    closeButton.style.fontSize = '16px';
+    closeButton.style.fontWeight = 'bold';
+    closeButton.style.cursor = 'pointer';
+    closeButton.style.boxShadow = '0px 4px 6px rgba(0, 0, 0, 0.1)';
+    closeButton.style.transition = 'background-color 0.3s ease, transform 0.2s ease';
+
+    closeButton.addEventListener('mouseover', () => {
+        closeButton.style.backgroundColor = '#11203b'; // Tom mais claro ao passar o mouse
+    });
+    closeButton.addEventListener('mouseout', () => {
+        closeButton.style.backgroundColor = '#31888a'; // Retorna ao fundo original
+    });
+    closeButton.addEventListener('mousedown', () => {
+        closeButton.style.transform = 'scale(0.95)'; // Efeito de clique
+    });
+    closeButton.addEventListener('mouseup', () => {
+        closeButton.style.transform = 'scale(1)'; // Volta ao tamanho original
+    });
+
+    closeButton.addEventListener('click', () => {
+        document.body.removeChild(modal);
+    });
+
+    modal.appendChild(img);
+    modal.appendChild(closeButton);
+    document.body.appendChild(modal);
+}
+
+function showImageBan(imageUrl) {
+    event.preventDefault();
+    const modal = document.createElement('div');
+    modal.style.position = 'fixed';
+    modal.style.top = '0';
+    modal.style.left = '0';
+    modal.style.width = '100%';
+    modal.style.height = '100%';
+    modal.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+    modal.style.display = 'flex';
+    modal.style.alignItems = 'center';
+    modal.style.justifyContent = 'center';
+    modal.style.zIndex = '9999';
+
+    const img = document.createElement('img');
+    img.src = imageUrl;
+    img.style.maxWidth = '90%';
+    img.style.maxHeight = '90%';
+
+    const closeButton = document.createElement('button');
+    closeButton.innerText = 'Fechar';
+    closeButton.style.position = 'absolute';
+    closeButton.style.top = '20px';
+    closeButton.style.right = '20px';
+    closeButton.style.padding = '10px 20px';
+    closeButton.style.backgroundColor = '#31888a'; // Fundo rosa
+    closeButton.style.color = 'white'; // Cor da fonte branca
+    closeButton.style.border = 'none';
+    closeButton.style.borderRadius = '8px';
+    closeButton.style.fontSize = '16px';
+    closeButton.style.fontWeight = 'bold';
+    closeButton.style.cursor = 'pointer';
+    closeButton.style.boxShadow = '0px 4px 6px rgba(0, 0, 0, 0.1)';
+    closeButton.style.transition = 'background-color 0.3s ease, transform 0.2s ease';
+
+    closeButton.addEventListener('mouseover', () => {
+        closeButton.style.backgroundColor = '#11203b'; // Tom mais claro ao passar o mouse
+    });
+    closeButton.addEventListener('mouseout', () => {
+        closeButton.style.backgroundColor = '#31888a'; // Retorna ao fundo original
+    });
+    closeButton.addEventListener('mousedown', () => {
+        closeButton.style.transform = 'scale(0.95)'; // Efeito de clique
+    });
+    closeButton.addEventListener('mouseup', () => {
+        closeButton.style.transform = 'scale(1)'; // Volta ao tamanho original
+    });
+
+    closeButton.addEventListener('click', () => {
+        document.body.removeChild(modal);
+    });
+
+    modal.appendChild(img);
+    modal.appendChild(closeButton);
+    document.body.appendChild(modal);
+}
+
+function changeContent(contentType) {
+    var contentArea = document.getElementById("content-area");
+
+    switch(contentType) {
+        case 'register-ban':
+            contentArea.innerHTML = `
+                    <form class="form-register-ban">
+                        <div class="form-field">
+                            <label for="userid">Informar ID do Discord:</label>
+                            <input type="text" id="userid" name="userid" placeholder="Digite o User ID" required>
+                        </div>
+                        <div class="form-field">
+                            <label for="ip_ban">Informar IP Banido:</label>
+                            <input type="text" id="ip_ban" name="ip_ban" placeholder="Digite o IP Banido" required>
+                        </div>
+                        <div class="form-field">
+                            <label for="discord_ban">Informar Nome do Discord:</label>
+                            <input type="text" id="discord_ban" name="discord_ban" placeholder="Digite o nome do Discord" required>
+                        </div>
+                        <div class="form-field">
+                            <label for="username">Informar Nome do Minecraft:</label>
+                            <input type="text" id="username" name="username" placeholder="Digite o nome do Minecraft" required>
+                        </div>
+                        <div class="form-field">
+                            <label for="print">Informar Link do Print:</label>
+                            <input type="url" id="print" name="print" placeholder="Cole o link do print" required>
+                        </div>
+                        <div class="form-field">
+                            <label for="motivo">Informar Motivo do Banimento:</label>
+                            <textarea id="motivo" name="motivo" placeholder="Descreva o motivo do banimento" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="button is-primary" id="submitBtn2">Registrar Banimento</button>
+                    </form>
+            `;
+            const form = document.querySelector('.form-register-ban');
+            const submitBtn2 = document.getElementById('submitBtn2');
+            let isSubmitting2 = false;  // Flag to prevent multiple submissions
+
+            form.addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                // Prevent multiple submissions
+                if (isSubmitting2) return;
+
+                isSubmitting2 = true;  // Set flag to true
+                submitBtn2.disabled = true;  // Disable the submit button to prevent multiple clicks
+                                
+                const formData = new FormData(form);
+                fetch('https://dash.legendarycommunity.com.br/api/api_registrar_ban.php', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        document.querySelector('.avisos5').style.display = 'flex';
+                        setTimeout(function() {
+                            document.querySelector('.avisos5').style.display = 'none';
+                        }, 5000);
+                        form.reset();
+                    } else if (data.error) {
+                        document.querySelector('.avisos4').style.display = 'flex';
+                        setTimeout(function() {
+                            document.querySelector('.avisos4').style.display = 'none';
+                        }, 5000);
+                        form.reset();
+                    }
+                })
+                .catch(error => {
+                    document.querySelector('.avisos4').style.display = 'flex';
+                    setTimeout(function() {
+                        document.querySelector('.avisos4').style.display = 'none';
+                    }, 5000);
+                    form.reset();
+                })
+                .finally(() => {
+                    isSubmitting2 = false;  // Reset flag
+                    submitBtn2.disabled = false;  // Re-enable the submit button
+                });
+            });
+            break;
+        case 'register-sale':
+            contentArea.innerHTML = `
+                    <form class="form-register-sale">
+                        <div class="form-field">
+                            <label for="username">Informar Nome do Minecraft:</label>
+                            <input type="text" id="username" name="username" placeholder="Digite o nome do Minecraft" required>
+                        </div>
+                        <div class="form-field">
+                            <label for="userid">Informar ID do Discord:</label>
+                            <input type="text" id="userid" name="userid" placeholder="Digite o User ID do Discord" required>
+                        </div>
+                        <div class="form-field">
+                            <label for="codigo">Codigo do Produto:</label>
+                            <input type="text" id="codigo" name="codigo" placeholder="Digite o codigo do Produto" required>
+                        </div>
+                        <div class="form-field">
+                            <label for="produto">Informar Nome do Produto:</label>
+                            <input type="text" id="produto" name="produto" placeholder="Digite o nome do Produto" required>
+                        </div>
+                        <div class="form-field">
+                            <label for="valor">Informar Valor do Produto:</label>
+                            <input type="number" id="valor" name="valor" placeholder="Digite o valor do Produto" required>
+                        </div>
+                        <div class="form-field">
+                            <label for="data_compra">Informar Data da Compra:</label>
+                            <input type="date" id="data_compra" name="data_compra" placeholder="Digite a data da Compra" required>
+                        </div>
+                        <button type="submit" class="button is-primary" id="submitBtn3">Registrar Venda</button>
+                    </form>
+            `;
+            const form2 = document.querySelector('.form-register-sale');
+            const submitBtn3 = document.getElementById('submitBtn3');
+            let isSubmitting3 = false;  // Flag to prevent multiple submissions
+
+            form2.addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                // Prevent multiple submissions
+                if (isSubmitting3) return;
+
+                isSubmitting3 = true;  // Set flag to true
+                submitBtn3.disabled = true;  // Disable the submit button to prevent multiple clicks
+
+                const formData = new FormData(form2);
+                fetch('https://dash.legendarycommunity.com.br/api/api_registrar_venda.php', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        document.querySelector('.avisos5').style.display = 'flex';
+                        setTimeout(function() {
+                            document.querySelector('.avisos5').style.display = 'none';
+                        }, 5000);
+                        form2.reset();
+                    } else if (data.error) {
+                        document.querySelector('.avisos4').style.display = 'flex';
+                        setTimeout(function() {
+                            document.querySelector('.avisos4').style.display = 'none';
+                        }, 5000);
+                        form2.reset();
+                    }
+                })
+                .catch(error => {
+                    document.querySelector('.avisos4').style.display = 'flex';
+                    setTimeout(function() {
+                        document.querySelector('.avisos4').style.display = 'none';
+                    }, 5000);
+                    form2.reset();
+                })
+                .finally(() => {
+                    isSubmitting3 = false;  // Reset flag
+                    submitBtn3.disabled = false;  // Re-enable the submit button
+                });
+            });
+            break;
+        case 'register-rarity':
+            contentArea.innerHTML = `
+                <form class="form-register-rarity">
+                    <div class="form-field">
+                        <label for="item">Informar Nome do Item:</label>
+                        <input type="text" id="item" name="item" placeholder="Digite o Nome do Item" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="lore">Informar Lore do Item:</label>
+                        <textarea id="lore" name="lore" placeholder="Digite a Lore do Item" rows="10" required></textarea>
+                    </div>
+                    <div class="form-field">
+                        <label for="price">Informar Valor do Item:</label>
+                        <input type="number" id="price" name="price" placeholder="Digite o valor do Item" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="print">Informar Print do Item:</label>
+                        <input type="url" id="print" name="print" placeholder="Insira a Print do Item" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="rarity">Selecionar Raridade:</label>
+                        <select id="rarity" name="rarity" required>
+                            <option value="Comum">Comum</option>
+                            <option value="Raro">Raro</option>
+                            <option value="Épico">Épico</option>
+                            <option value="Lendário">Lendário</option>
+                            <option value="Divino">Divino</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="button is-primary" id="submitBtn">Criar Rarity</button>
+                </form>
+            `;
+            const form3 = document.querySelector('.form-register-rarity');
+            const submitBtn = document.getElementById('submitBtn');
+            let isSubmitting = false;  // Flag to prevent multiple submissions
+
+            form3.addEventListener('submit', function(event) {
+                event.preventDefault();
+
+
+                // Prevent multiple submissions
+                if (isSubmitting) return;
+
+                isSubmitting = true;  // Set flag to true
+                submitBtn.disabled = true;  // Disable the submit button to prevent multiple clicks
+        
+                                
+                const formData = new FormData(form3);
+                fetch('https://dash.legendarycommunity.com.br/api/api_registrar_rarity.php', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        document.querySelector('.avisos5').style.display = 'flex';
+                        setTimeout(function() {
+                            document.querySelector('.avisos5').style.display = 'none';
+                        }, 5000);
+                        form3.reset();
+                    } else if (data.error) {
+                        document.querySelector('.avisos4').style.display = 'flex';
+                        setTimeout(function() {
+                            document.querySelector('.avisos4').style.display = 'none';
+                        }, 5000);
+                        form3.reset();
+                    }
+                })
+                .catch(error => {
+                    document.querySelector('.avisos4').style.display = 'flex';
+                    setTimeout(function() {
+                        document.querySelector('.avisos4').style.display = 'none';
+                    }, 5000);
+                    form3.reset();
+                })
+                .finally(() => {
+                    isSubmitting = false;  // Reset flag
+                    submitBtn.disabled = false;  // Re-enable the submit button
+                });
+            });
+            break;
+        case 'list-tickets':
+            contentArea.innerHTML = `
+                <form class="form-list-tickets">
+                    <p>Carregando histórico de tickets...</p>
+                </form>`;
+            getHistoricoTicketsSTAFF();
+            break;
+        case 'create-post':
+            contentArea.innerHTML = `
+                <form class="form-create-post">
+                    <div class="form-field">
+                        <label for="titulo">Informar Tituto da Publicação:</label>
+                        <input type="text" id="titulo" name="titulo" placeholder="Digite o Titulo da Publicação" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="descricao">Informar Descrição da Publicação:</label>
+                        <textarea id="descricao" name="descricao" placeholder="Digite a Descrição da Publicação" rows="10" required></textarea>
+                    </div>
+                    <div class="form-field">
+                        <label for="print">Informar Print da Publicação:</label>
+                        <input type="url" id="print" name="print" placeholder="Insira a Print da Publicação" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="autor">Informar Autor da Publicação:</label>
+                        <input type="text" id="autor" name="autor" placeholder="Insira o Nome do Autor da Publicação" required>
+                    </div>
+                    <button type="submit" class="button is-primary" id="submitBtn4">Criar Publicação</button>
+                </form>
+            `;
+            const form4 = document.querySelector('.form-create-post');
+            const submitBtn4 = document.getElementById('submitBtn4');
+            let isSubmitting4 = false;  // Flag to prevent multiple submissions
+
+            form4.addEventListener('submit', function(event) {
+                event.preventDefault();
+
+
+                // Prevent multiple submissions
+                if (isSubmitting4) return;
+
+                isSubmitting4 = true;  // Set flag to true
+                submitBtn4.disabled = true;  // Disable the submit button to prevent multiple clicks
+        
+                                
+                const formData = new FormData(form4);
+                fetch('https://dash.legendarycommunity.com.br/api/api_registrar_post.php', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        document.querySelector('.avisos5').style.display = 'flex';
+                        setTimeout(function() {
+                            document.querySelector('.avisos5').style.display = 'none';
+                        }, 5000);
+                        form4.reset();
+                    } else if (data.error) {
+                        document.querySelector('.avisos4').style.display = 'flex';
+                        setTimeout(function() {
+                            document.querySelector('.avisos4').style.display = 'none';
+                        }, 5000);
+                        form4.reset();
+                    }
+                })
+                .catch(error => {
+                    document.querySelector('.avisos4').style.display = 'flex';
+                    setTimeout(function() {
+                        document.querySelector('.avisos4').style.display = 'none';
+                    }, 5000);
+                    form4.reset();
+                })
+                .finally(() => {
+                    isSubmitting4 = false;  // Reset flag
+                    submitBtn4.disabled = false;  // Re-enable the submit button
+                });
+            });
+            break;
+        case 'create-devolutions':
+            contentArea.innerHTML = `
+                <form class="form-create-devolutions">
+                    <div class="form-field">
+                        <label for="userid">Informar ID discord do Membro:</label>
+                        <input type="text" id="userid" name="userid" placeholder="Digite o ID discord do Membro" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="username">Informar nick do membro no Minecraft:</label>
+                        <input type="text" id="username" name="username" placeholder="Digite o nick do membro no Minecraft" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="id_ticket">Selecionar Ticket Referente:</label>
+                        <select id="id_ticket" name="id_ticket" required>
+                            <option value="">Carregando...</option>
+                        </select>
+                    </div>
+                    <div class="form-field">
+                        <label for="descricao">Informar Descrição da Devolução:</label>
+                        <textarea id="descricao" name="descricao" placeholder="Digite a Descrição da Devolução" rows="6" required></textarea>
+                    </div>
+                    <div class="form-field">
+                        <label for="print">Informar Print da Devolução:</label>
+                        <input type="url" id="print" name="print" placeholder="Insira a Print da Devolução" required>
+                    </div>
+                    <button type="submit" class="button is-primary" id="submitBtn5">Criar Devolução</button>
+                </form>
+            `;
+
+            const loadTicketsDev = async () => {
+                const ticketSelect = document.getElementById('id_ticket');
+                try {
+                    const response = await fetch('https://dash.legendarycommunity.com.br/api/api_tickets.php');
+                    const tickets = await response.json();
+                    ticketSelect.innerHTML = '<option value="">Selecione um Ticket</option>';
+                    tickets.forEach(ticket => {
+                        const option = document.createElement('option');
+                        option.value = ticket.id_ticket;
+                        option.textContent = `${ticket.id_ticket} | ${ticket.descricao}`;
+                        ticketSelect.appendChild(option);
+                    });
+                } catch (error) {
+                    console.error('Erro ao carregar tickets:', error);
+                    ticketSelect.innerHTML = '<option value="">Erro ao carregar tickets</option>';
+                }
+            };
+            loadTicketsDev();
+            
+            const form5 = document.querySelector('.form-create-devolutions');
+            const submitBtn5 = document.getElementById('submitBtn5');
+            let isSubmitting5 = false;  // Flag to prevent multiple submissions
+
+            form5.addEventListener('submit', function(event) {
+                event.preventDefault();
+
+
+                // Prevent multiple submissions
+                if (isSubmitting5) return;
+
+                isSubmitting5 = true;  // Set flag to true
+                submitBtn5.disabled = true;  // Disable the submit button to prevent multiple clicks
+        
+                                
+                const formData = new FormData(form5);
+                fetch('https://dash.legendarycommunity.com.br/api/api_registrar_devolution.php', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        document.querySelector('.avisos5').style.display = 'flex';
+                        setTimeout(function() {
+                            document.querySelector('.avisos5').style.display = 'none';
+                        }, 5000);
+                        form5.reset();
+                    } else if (data.error) {
+                        document.querySelector('.avisos4').style.display = 'flex';
+                        setTimeout(function() {
+                            document.querySelector('.avisos4').style.display = 'none';
+                        }, 5000);
+                        form5.reset();
+                    }
+                })
+                .catch(error => {
+                    document.querySelector('.avisos4').style.display = 'flex';
+                    setTimeout(function() {
+                        document.querySelector('.avisos4').style.display = 'none';
+                    }, 5000);
+                    form5.reset();
+                })
+                .finally(() => {
+                    isSubmitting5 = false;  // Reset flag
+                    submitBtn5.disabled = false;  // Re-enable the submit button
+                });
+            });
+            break;
+        case 'list-devolutions':
+            contentArea.innerHTML = `
+                <form class="form-list-devolutions">
+                    <p>Carregando histórico de devoluções...</p>
+                </form>`;
+            getHistoricoDevolutionsSTAFF();
+            break;
+        case 'register-emprestimo':
+            contentArea.innerHTML = `
+                <form class="form-register-emprestimo">
+                    <div class="form-field">
+                        <label for="userid">Informar ID do Discord:</label>
+                        <input type="text" id="userid" name="userid" placeholder="Informar ID do Discord" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="username">Informar Nick do Minecraft</label>
+                        <input type="text" id="username" name="username" placeholder="Digite o Nick do Minecraft" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="userid2">Informar ID do Discord do Agiota:</label>
+                        <input type="text" id="userid2" name="userid2" placeholder="Digite o ID do Discord do Agiota" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="agiota">Informar Nick do Minecraft do Agiota</label>
+                        <input type="text" id="agiota" name="agiota" placeholder="Digite o Nick do Minecraft do Agiota" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="price">Informar Valor do Emprestimo</label>
+                        <input type="number" id="price" name="price" placeholder="Digite o Valor do Emprestimo" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="parcelas">Informar Valor de Parcelas</label>
+                        <input type="number" id="parcelas" name="parcelas" placeholder="Digite o Valor de Parcelas" required>
+                    </div>
+                    <button type="submit" class="button is-primary" id="submitBtn6">Registrar Emprestimo</button>
+                </form>
+            `;
+            
+            const form6 = document.querySelector('.form-register-emprestimo');
+            const submitBtn6 = document.getElementById('submitBtn6');
+            let isSubmitting6 = false;  // Flag to prevent multiple submissions
+        
+            form6.addEventListener('submit', function(event) {
+                event.preventDefault();
+        
+                if (isSubmitting6) return;
+        
+                isSubmitting6 = true;  
+                submitBtn6.disabled = true; 
+        
+                const formData = new FormData(form6);
+                fetch('https://dash.legendarycommunity.com.br/api/api_registrar_emprestimo.php', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        document.querySelector('.avisos5').style.display = 'flex';
+                        setTimeout(() => {
+                            document.querySelector('.avisos5').style.display = 'none';
+                        }, 5000);
+                        form6.reset();
+                    } else if (data.error) {
+                        document.querySelector('.avisos4').style.display = 'flex';
+                        setTimeout(() => {
+                            document.querySelector('.avisos4').style.display = 'none';
+                        }, 5000);
+                        form6.reset();
+                    }
+                })
+                .catch(error => {
+                    document.querySelector('.avisos4').style.display = 'flex';
+                    setTimeout(() => {
+                        document.querySelector('.avisos4').style.display = 'none';
+                    }, 5000);
+                    form6.reset();
+                })
+                .finally(() => {
+                    isSubmitting6 = false;
+                    submitBtn6.disabled = false;
+                });
+            });
+            break;
+        case 'list-emprestimo':
+            contentArea.innerHTML = `
+                <form class="form-list-emprestimo">
+                    <p>Carregando histórico de devoluções...</p>
+                </form>`;
+            getHistoricoEmprestimosSTAFF();
+            break;
+        case 'register-advertencia':
+            contentArea.innerHTML = `
+                <form class="form-register-advertencia">
+                    <div class="form-field">
+                        <label for="userid">Informar ID do Discord:</label>
+                        <input type="text" id="userid" name="userid" placeholder="Digite o User ID do Advertido" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="username">Informar Nome do Minecraft:</label>
+                        <input type="text" id="username" name="username" placeholder="Digite o nome do Minecraft" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="descricao">Informar descricao da Advertência:</label>
+                        <textarea id="descricao" name="descricao" placeholder="Descreva a advertência" rows="4" required></textarea>
+                    </div>
+                    <div class="form-field">
+                        <label for="regra">Selecionar a Regra Descumprida:</label>
+                        <select id="regra" name="regra" required>
+                            <option value="">Carregando...</option>
+                        </select>
+                    </div>
+                    <div class="form-field">
+                        <label for="status">Selecionar Advertência:</label>
+                        <select id="status" name="status" required>
+                            <option value="Advertência 1x">Advertência 1x</option>
+                            <option value="Advertência 2x">Advertência 2x</option>
+                            <option value="Advertência 3x">Advertência 3x</option>
+                        </select>
+                    </div>
+                    <div class="form-field">
+                        <label for="id_ticket">Selecionar Ticket Referente:</label>
+                        <select id="id_ticket" name="id_ticket" required>
+                            <option value="">Carregando...</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="button is-primary" id="submitBtn8">Registrar Advertência</button>
+                </form>
+            `;
+        
+            const loadTickets = async () => {
+                const ticketSelect = document.getElementById('id_ticket');
+                try {
+                    const response = await fetch('https://dash.legendarycommunity.com.br/api/api_tickets.php');
+                    const tickets = await response.json();
+                    ticketSelect.innerHTML = '<option value="">Selecione um Ticket</option>';
+                    tickets.forEach(ticket => {
+                        const option = document.createElement('option');
+                        option.value = ticket.id_ticket;
+                        option.textContent = `${ticket.id_ticket} | ${ticket.descricao}`;
+                        ticketSelect.appendChild(option);
+                    });
+                } catch (error) {
+                    console.error('Erro ao carregar tickets:', error);
+                    ticketSelect.innerHTML = '<option value="">Erro ao carregar tickets</option>';
+                }
+            };
+            loadTickets();
+
+            const loadRegras = async () => {
+                const regraSelect = document.getElementById('regra');
+                try {
+                    const response = await fetch('https://dash.legendarycommunity.com.br/api/api_buscar_regras.php');
+                    const regras = await response.json();
+                    regraSelect.innerHTML = '<option value="">Selecione uma Regra</option>';
+                    regras.forEach(regra => {
+                        const option = document.createElement('option');
+                        option.value = regra.titulo;
+                        option.textContent = `${regra.titulo}`;
+                        regraSelect.appendChild(option);
+                    });
+                } catch (error) {
+                    console.error('Erro ao carregar regras:', error);
+                    regraSelect.innerHTML = '<option value="">Erro ao carregar regras</option>';
+                }
+            };
+            loadRegras();
+        
+            const form8 = document.querySelector('.form-register-advertencia');
+            const submitBtn8 = document.getElementById('submitBtn8');
+            let isSubmitting8 = false;  // Flag to prevent multiple submissions
+        
+            form8.addEventListener('submit', function(event) {
+                event.preventDefault();
+        
+                if (isSubmitting8) return;
+        
+                isSubmitting8 = true;  
+                submitBtn8.disabled = true; 
+        
+                const formData = new FormData(form8);
+                fetch('https://dash.legendarycommunity.com.br/api/api_registrar_advertencia.php', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        document.querySelector('.avisos5').style.display = 'flex';
+                        setTimeout(() => {
+                            document.querySelector('.avisos5').style.display = 'none';
+                        }, 5000);
+                        form8.reset();
+                    } else if (data.error) {
+                        document.querySelector('.avisos4').style.display = 'flex';
+                        setTimeout(() => {
+                            document.querySelector('.avisos4').style.display = 'none';
+                        }, 5000);
+                        form8.reset();
+                    }
+                })
+                .catch(error => {
+                    document.querySelector('.avisos4').style.display = 'flex';
+                    setTimeout(() => {
+                        document.querySelector('.avisos4').style.display = 'none';
+                    }, 5000);
+                    form8.reset();
+                })
+                .finally(() => {
+                    isSubmitting8 = false;
+                    submitBtn8.disabled = false;
+                });
+            });
+            break;
+        case 'list-advertencia':
+            contentArea.innerHTML = `
+                <form class="form-list-advertencia">
+                    <p>Carregando histórico de advertências...</p>
+                </form>`;
+            getHistoricoAdvertenciaSTAFF();
+            break;
+        case 'list-ban':
+            contentArea.innerHTML = `
+                <form class="form-list-ban">
+                    <p>Carregando histórico de bans...</p>
+                </form>`;
+            getHistoricoBansSTAFF();
+            break;
+        case 'atualizar-emprestimo':
+            contentArea.innerHTML = `
+                <form class="form-atualizar-emprestimo">
+                    
+                    <div class="form-field">
+                        <label for="id_emprestimo">Selecionar Emprestimo Referente:</label>
+                        <select id="id_emprestimo" name="id_emprestimo" required>
+                            <option value="">Carregando...</option>
+                        </select>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="parcelas_pagas">Informar Parcela Paga:</label>
+                        <input type="number" id="parcelas_pagas" name="parcelas_pagas" placeholder="Digite a parcela paga" required>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="status">Selecionar Status:</label>
+                        <select id="status" name="status" required>
+                            <option value="Empréstimo Pago">Empréstimo Pago</option>
+                            <option value="Empréstimo Cancelado">Empréstimo Cancelado</option>
+                            <option value="Empréstimo Em Pagamento">Empréstimo Em Pagamento</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="button is-primary" id="submitBtn9">Atualizar Emprestimo</button>
+                </form>
+            `;
+                   
+            const formatarBRL = (valor) => {
+                return new Intl.NumberFormat('pt-BR', {
+                    style: 'currency',
+                    currency: 'BRL'
+                }).format(valor);
+            };
+
+            const loadEmprestimo = async () => {
+                const emprestimoSelect = document.getElementById('id_emprestimo');
+                try {
+                    const response = await fetch('https://dash.legendarycommunity.com.br/api/api_buscar_emprestimo.php');
+                    const emprestimos = await response.json();
+                    emprestimoSelect.innerHTML = '<option value="">Selecione o Emprestimo</option>';
+                    emprestimos.forEach(emprestimo => {
+                        const option = document.createElement('option');
+                        option.value = emprestimo.id_emprestimo;
+                        option.textContent = `${emprestimo.id_emprestimo} | ${formatarBRL(emprestimo.price)} | ${emprestimo.status} | Parcelas: | ${emprestimo.parcelas_pagas}/${emprestimo.parcelas}`;
+                        emprestimoSelect.appendChild(option);
+                    });
+                } catch (error) {
+                    console.error('Erro ao carregar emprestimo:', error);
+                    emprestimoSelect.innerHTML = '<option value="">Erro ao carregar emprestimos</option>';
+                }
+            };
+            loadEmprestimo();
+
+            const form9 = document.querySelector('.form-atualizar-emprestimo');
+            const submitBtn9 = document.getElementById('submitBtn9');
+            let isSubmitting9 = false;  // Flag to prevent multiple submissions
+        
+            form9.addEventListener('submit', function(event) {
+                event.preventDefault();
+        
+                if (isSubmitting9) return;
+        
+                isSubmitting9 = true;  
+                submitBtn9.disabled = true; 
+        
+                const formData = new FormData(form9);
+                fetch('https://dash.legendarycommunity.com.br/api/api_update_emprestimo.php', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        document.querySelector('.avisos5').style.display = 'flex';
+                        setTimeout(() => {
+                            document.querySelector('.avisos5').style.display = 'none';
+                        }, 5000);
+                        form9.reset();
+                    } else if (data.error) {
+                        document.querySelector('.avisos4').style.display = 'flex';
+                        setTimeout(() => {
+                            document.querySelector('.avisos4').style.display = 'none';
+                        }, 5000);
+                        form9.reset();
+                    }
+                })
+                .catch(error => {
+                    document.querySelector('.avisos4').style.display = 'flex';
+                    setTimeout(() => {
+                        document.querySelector('.avisos4').style.display = 'none';
+                    }, 5000);
+                    form9.reset();
+                })
+                .finally(() => {
+                    isSubmitting9 = false;
+                    submitBtn9.disabled = false;
+                });
+            });
+            break;
+        case 'atualizar-suporte':
+            contentArea.innerHTML = `
+                <form class="form-atualizar-suporte">
+                
+                    <div class="form-field">
+                        <label for="id_ticket">Selecionar Ticket Referente:</label>
+                        <select id="id_ticket" name="id_ticket" required>
+                            <option value="">Carregando...</option>
+                        </select>
+                    </div>
+        
+                    <div class="form-field">
+                        <label for="descricao">Descrição do Ticket:</label>
+                        <textarea id="descricao" placeholder="Descrição do Ticket" rows="4" readonly></textarea>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="data">Data de Abertura do Ticket:</label>
+                        <input type="datetime-local" id="data" name="data" placeholder="Digite a data e hora" readonly>
+                    </div>
+        
+                    <div class="form-field">
+                        <label for="resposta">Resposta do Ticket:</label>
+                        <textarea id="resposta" name="resposta" placeholder="Resposta do Ticket" rows="4" required></textarea>
+                    </div>
+      
+                    <div class="form-field">
+                        <label for="status">Selecionar Status:</label>
+                        <select id="status" name="status" required>
+                            <option value="Em Analise">Em Analise</option>
+                            <option value="Reprovado">Reprovado</option>
+                            <option value="Concluido">Concluido</option>
+                        </select>
+                    </div>
+        
+                    <button type="submit" class="button is-primary" id="submitBtn10">Enviar Mensagem</button>
+                </form>
+            `;
+        
+            const loadTicketsResposta = async () => {
+                const ticketSelect = document.getElementById('id_ticket');
+                try {
+                    const response = await fetch('https://dash.legendarycommunity.com.br/api/api_tickets.php');
+                    const tickets = await response.json();
+                    ticketSelect.innerHTML = '<option value="">Selecione um Ticket</option>';
+                    tickets.forEach(ticket => {
+                        const option = document.createElement('option');
+                        option.value = ticket.id_ticket;
+                        option.textContent = `${ticket.id_ticket} | ${ticket.titulo} | ${ticket.status}`;
+                        ticketSelect.appendChild(option);
+                    });
+                } catch (error) {
+                    console.error('Erro ao carregar tickets:', error);
+                    ticketSelect.innerHTML = '<option value="">Erro ao carregar tickets</option>';
+                }
+            };
+        
+            const fetchTicketDescription = async (ticketId) => {
+                const descricaoTextarea = document.getElementById('descricao');
+                descricaoTextarea.value = 'Carregando descrição...';
+                try {
+                    const response = await fetch(`https://dash.legendarycommunity.com.br/api/api_tickets_id.php?id_ticket=${ticketId}`);
+                    if (!response.ok) {
+                        throw new Error(`Erro HTTP: ${response.status}`);
+                    }
+                    const ticketData = await response.json();
+                    if (Array.isArray(ticketData) && ticketData.length > 0) {
+                        descricaoTextarea.value = ticketData[0].descricao || 'Nenhuma descrição disponível.';
+                    } else {
+                        descricaoTextarea.value = 'Nenhuma descrição encontrada.';
+                    }
+                } catch (error) {
+                    console.error('Erro ao carregar descrição do ticket:', error);
+                    descricaoTextarea.value = 'Erro ao carregar descrição.';
+                }
+            };
+
+            const fetchTicketDate = async (ticketId) => {
+                const dataInput = document.getElementById('data');
+                dataInput.value = '';  // Clear value before loading the date
+                try {
+                    const response = await fetch(`https://dash.legendarycommunity.com.br/api/api_tickets_id.php?id_ticket=${ticketId}`);
+                    if (!response.ok) {
+                        throw new Error(`Erro HTTP: ${response.status}`);
+                    }
+                    const ticketData = await response.json();
+                    if (Array.isArray(ticketData) && ticketData.length > 0) {
+                        // Supondo que a API retorne uma data no formato "yyyy-MM-dd HH:mm:ss"
+                        const ticketDate = ticketData[0].data; // Substitua por sua chave de data
+            
+                        if (ticketDate) {
+                            // Converte a data para o formato "yyyy-MM-dd HH:mm:ss" do MySQL
+                            const dateObject = new Date(ticketDate.replace(' ', 'T')); // Converte para ISO 8601
+                            // Formata a data para o formato "yyyy-MM-ddThh:mm"
+                            const formattedDate = dateObject.toISOString().slice(0, 16);
+                            dataInput.value = formattedDate;  // Assign the correctly formatted date
+                        } else {
+                            dataInput.value = '';  // If no date, clear the value
+                        }
+                    } else {
+                        dataInput.value = '';  // If no data, clear the value
+                    }
+                } catch (error) {
+                    console.error('Erro ao carregar data do ticket:', error);
+                    dataInput.value = '';  // Clear the value on error
+                }
+            };
+                   
+            document.getElementById('id_ticket').addEventListener('change', function () {
+                const selectedTicketId = this.value;
+                if (selectedTicketId) {
+                    fetchTicketDescription(selectedTicketId);
+                    fetchTicketDate(selectedTicketId)
+                } else {
+                    document.getElementById('descricao').value = '';
+                    document.getElementById('data').value = '';
+                }
+            });
+        
+            loadTicketsResposta();
+               
+            const form10 = document.querySelector('.form-atualizar-suporte');
+            const submitBtn10 = document.getElementById('submitBtn10');
+            let isSubmitting10 = false;  // Flag to prevent multiple submissions
+        
+            form10.addEventListener('submit', function(event) {
+                event.preventDefault();
+        
+                if (isSubmitting10) return;
+        
+                isSubmitting10 = true;  
+                submitBtn10.disabled = true; 
+        
+                const formData = new FormData(form10);
+                fetch('https://dash.legendarycommunity.com.br/api/api_update_suporte.php', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        document.querySelector('.avisos5').style.display = 'flex';
+                        setTimeout(() => {
+                            document.querySelector('.avisos5').style.display = 'none';
+                        }, 5000);
+                        form10.reset();
+                    } else if (data.error) {
+                        document.querySelector('.avisos4').style.display = 'flex';
+                        setTimeout(() => {
+                            document.querySelector('.avisos4').style.display = 'none';
+                        }, 5000);
+                        form10.reset();
+                    }
+                })
+                .catch(error => {
+                    document.querySelector('.avisos4').style.display = 'flex';
+                    setTimeout(() => {
+                        document.querySelector('.avisos4').style.display = 'none';
+                    }, 5000);
+                    form10.reset();
+                })
+                .finally(() => {
+                    isSubmitting10 = false;
+                    submitBtn10.disabled = false;
+                });
+            });
+            
+            break;
+        default:
+            contentArea.innerHTML = "<p>Escolha uma opção.</p>";
+    }
+}

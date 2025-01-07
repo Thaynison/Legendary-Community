@@ -1,1 +1,58 @@
-eval(function(m,c,h){function z(i){return(i< 62?'':z(parseInt(i/62)))+((i=i%62)>35?String.fromCharCode(i+29):i.toString(36))}for(var i=0;i< m.length;i++)h[z(i)]=m[i];function d(w){return h[w]?h[w]:w;};return c.replace(/\b\w+\b/g,d);}('|var|ip|document|querySelector|ipSpan|span|ipTextarea|textarea|addEventListener||click|function|classList|add|is|active|setTimeout||remove|1500|value|innerHTML|select|||setSelectionRange|99999|execCommand|copy|getJSON|https|api|minetools|eu|ping||innerText|25565|if|error|status|html|class|fas|fa|times|Servidor|offline||motd|online|players|list|foi|poss|vel|obter|os|jogadores|else|check|description|replace|gi|sample|letplayerNames|map|player|li|imgsrc|http|cravatar|head|name|128|png|alt|h1|h2class|cor|Membro|h2|join|playerNames|Nenhum|jogador|no|momento|navbar|burger|on|menu|toggle'.split('|'),'1 2=3.4(\'#2\');1 5=2.4(\'6\');1 7=2.4(\'8\');2.9(\'b\',c (){2.d.e(\'f-g\');h(()=>{2.d.j(\'f-g\');},k);7.d.e(\'f-g\');7.l=5.m;7.n();7.q(0,r);3.s("t");7.d.j(\'f-g\');});$.u(\'v://w.x.y/z/\'+5.B+\'/C\',c(A){D(A.E){$(\'#F\').G(\'<i H="I J-K"></i> L M\');$(\'#O\').G(\'-\');$(\'#P\').G(\'-\');$(\'#Q-R\').G(\'<p>Não S TíU V W X.</p>\');}Y {$(\'#F\').G(\'<i H="I J-Z"></i> L P\');$(\'#O\').G(A.10.11(/§(.+?)/12,\'\'));$(\'#P\').G(A.Q.P);D(A.Q.13){14=A.Q.13.15(16=>`<17><18="19://1a.y/1b/${16.1c}/1d.1e"1f="${16.1c}"><1g>${16.1c}</1g><1h="1i-a">1j</1k></17>`).1l(\'\');$(\'#Q-R\').G(1m);}Y {$(\'#Q-R\').G(\'<p>1n 1o P 1p 1q.</p>\');}}});$(\'.1r-1s\').1t(\'b\',c(){3.4(\'.1r-1u\').d.1v(\'f-g\');});',{}))
+//
+//  COPIAR IP
+//
+var ip = document.querySelector('#ip');
+var ipSpan = ip.querySelector('span');
+var ipTextarea = ip.querySelector('textarea');
+ip.addEventListener('click', function () {
+  ip.classList.add('is-active');
+  setTimeout(() => {
+    ip.classList.remove('is-active');
+  }, 1500);
+
+  ipTextarea.classList.add('is-active');
+  ipTextarea.value = ipSpan.innerHTML;
+  ipTextarea.select();
+  ipTextarea.setSelectionRange(0, 99999);
+  document.execCommand("copy");
+  ipTextarea.classList.remove('is-active');
+});
+
+//
+//  STATUS DO SERVIDOR
+//
+$.getJSON('https://api.minetools.eu/ping/' + ipSpan.innerText + '/25565', function(data) {
+  if (data.error) {
+    $('#status').html('<i class="fas fa-times"></i> Servidor offline');
+    $('#motd').html('-');
+    $('#online').html('-');
+    $('#players-list').html('<p>Não foi possível obter os jogadores.</p>');
+  } else {
+    $('#status').html('<i class="fas fa-check"></i> Servidor online');
+    $('#motd').html(data.description.replace(/§(.+?)/gi, ''));
+    $('#online').html(data.players.online);
+
+    // Renderizar lista de jogadores
+    if (data.players.sample) {
+      let playerNames = data.players.sample.map(player => `
+        <li>
+          <img src="http://cravatar.eu/head/${player.name}/128.png" alt="${player.name}">
+          <h1>${player.name}</h1>
+          <h2 class="cor-a">Membro</h2>
+        </li>
+      `).join('');
+      $('#players-list').html(playerNames);
+    } else {
+      $('#players-list').html('<p>Nenhum jogador online no momento.</p>');
+    }
+  }
+});
+
+
+
+//
+//  MENU MOBILE
+//
+$('.navbar-burger').on('click', function() {
+  document.querySelector('.navbar-menu').classList.toggle('is-active');
+});
