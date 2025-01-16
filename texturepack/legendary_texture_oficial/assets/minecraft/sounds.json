@@ -1,0 +1,35 @@
+{
+    "nanatsu_logo": {
+      "sounds": [
+        {
+          "name": "music/nanatsu_logo",
+          "stream": true
+        }
+      ]
+    },
+    "black_clover": {
+      "sounds": [
+        {
+          "name": "music/black_clover",
+          "stream": true
+        }
+      ]
+    },
+    "after_dark": {
+      "sounds": [
+        {
+          "name": "music/after_dark",
+          "stream": true
+        }
+      ]
+    },
+    "infinity": {
+      "sounds": [
+        {
+          "name": "music/infinity",
+          "stream": true
+        }
+      ]
+    }    
+  }
+  
