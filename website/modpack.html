@@ -35,12 +35,13 @@
             <a href="#" onclick="redirecionarParaDashboard()" class="navbar-item"><i class="fas fa-home"></i> Início</a>
             <a href="#" onclick="redirecionarParaRegras()" class="navbar-item"><i class="fas fa-book"></i> Regras</a>
             <a href="#" onclick="redirecionarParaVotar()" class="navbar-item"><i class="fas fa-vote-yea"></i> Votar</a>
-             <!--  -->
-             <div class="navbar-item has-dropdown is-hoverable">
-              <a class="navbar-item"><i class="fas fa-gamepad"></i> Modpack</a>
+            <!--  -->
+            <div class="navbar-item has-dropdown is-hoverable">
+              <a class="navbar-link"><i class="fas fas fa-gamepad"></i> Modpack</a>
               <div class="navbar-dropdown">
                 <a href="#" onclick="redirecionarParaModpack()" class="navbar-item"><i class="fas fa-gamepad"></i> Modpacks</a>
                 <a href="#" onclick="redirecionarParaLaunchers()" class="navbar-item"><i class="fas fa-gamepad"></i> Launchers</a>
+                <a href="#" onclick="redirecionarParaTutoriais()" class="navbar-item"><i class="fas fa-gamepad"></i> Tutoriais</a>
                 <hr class="navbar-divider">
                 <a href="#" onclick="redirecionarParaInstalacoes()" class="navbar-item">Detalhes de Instalações</a>
               </div>
@@ -89,19 +90,16 @@
       <h1 class="article-title"><i class="fas fa-vote-yea"></i> Download Modpacks</h1>
       <div class="article-content" style="background-color: transparent;">
         <div class="container section">
-          <!-- <h2 class="text-center mb-5">Última Versão Disponível</h2>z -->
           <div class="row justify-content-center">
             <div class="col-md-5 modpack-card" style="background-image: url('assets/img/survival.png');">
               <button id="downloadBtnVanilla" class="btn btn-primary btn-lg">Baixar Modpack</button>
             </div>
-            <!--  -->
             <div class="col-md-5 modpack-card" style="background-image: url('assets/img/industrial.png');">
               <button id="downloadBtnIndustrial" class="btn btn-primary btn-lg">Baixar Modpack</button>
             </div>
           </div>
         </div>
       </div>
-    </article>
   </div>
 </main>
 
