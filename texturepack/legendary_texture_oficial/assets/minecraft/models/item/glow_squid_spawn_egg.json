@@ -1,6 +1,0 @@
-{
-	"parent": "item/squid_spawn_egg",
-	"textures": {
-		"0": "item/glow_squid_spawn_egg"
-	}
-}
