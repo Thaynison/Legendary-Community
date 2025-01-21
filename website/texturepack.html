@@ -93,13 +93,14 @@
         <div class="container section">
           <div class="row justify-content-center">
             <div class="col-md-5 modpack-card" style="background-image: url('assets/img/survival.png');">
-              <button id="downloadBtnTextureSurvival" class="btn btn-primary btn-lg">Baixar Textura</button>
+              <button id="downloadBtnTexture" class="btn btn-primary btn-lg">Baixar Textura</button>
             </div>
           </div>
         </div>
       </div>
   </div>
 </main>
+
 
 
 <footer class="section">
@@ -115,11 +116,28 @@
 <script src="/assets/js/scripts.js"></script>
 <script defer src="https://use.fontawesome.com/releases/v5.12.1/js/all.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="/assets/js/modpack.js"></script>
 <script src="/assets/js/redirect.js"></script>
 <script src="/assets/js/sair.js"></script>
 <script src="/assets/js/connect_discord.js"></script>
 <script src="/assets/js/copy.js"></script>
+<script>
+  document.getElementById('downloadBtnTexture').addEventListener('click', function() {
+    fetch('https://api.github.com/repos/Thaynison/LegendaryTexture/releases/latest')
+        .then(response => response.json())
+        .then(data => {
+            const asset = data.assets[0];
+            if (asset) {
+                window.location.href = asset.browser_download_url;
+            } else {
+                alert('Nenhum arquivo disponível para download.');
+            }
+        })
+        .catch(error => {
+            console.error('Erro ao obter a última release:', error);
+            alert('Erro ao obter a última release.');
+        });
+});
+</script>
 </body>
 
 </html>
