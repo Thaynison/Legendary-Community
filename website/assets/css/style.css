@@ -224,6 +224,10 @@ a.is-muted:hover {
   height: 128px;
 }
 
+.classes img {
+  height: 256px;
+}
+
 .equipe li {
   width: 33.33333%;
   text-align: center;

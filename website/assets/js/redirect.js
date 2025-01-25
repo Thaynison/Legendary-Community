@@ -117,6 +117,16 @@ function redirecionarParaRarity() {
 window.location.href = `rarity.html?username=${encodeURIComponent(username)}&userid=${encodeURIComponent(userid)}&avatar=${encodeURIComponent(avatar)}`;
 }
 
+// CLASSES
+
+function redirecionarParaClasses() {
+  const username = document.getElementById('username').textContent;
+  const userid = document.getElementById('userid').textContent;
+  const avatar = document.getElementById('avatar').src;
+
+window.location.href = `classes.html?username=${encodeURIComponent(username)}&userid=${encodeURIComponent(userid)}&avatar=${encodeURIComponent(avatar)}`;
+}
+
 // INFO BAN
 
 function redirecionarParaInfoBan() {
@@ -147,6 +157,11 @@ function redirecionarPara_vip_warrior() {
   window.location.href = `products/vip_warrior.html?username=${encodeURIComponent(username)}&userid=${encodeURIComponent(userid)}&avatar=${encodeURIComponent(avatar)}`;
 }
 
+function redirecionarPara_vip_warrior_promo() {
+
+  window.location.href = `products/vip_warrior_promo.html`;
+}
+
 function redirecionarPara_vip_wizzard() {
     const username = document.getElementById('username').textContent;
     const userid = document.getElementById('userid').textContent;
@@ -154,6 +169,18 @@ function redirecionarPara_vip_wizzard() {
 
   window.location.href = `products/vip_wizzard.html?username=${encodeURIComponent(username)}&userid=${encodeURIComponent(userid)}&avatar=${encodeURIComponent(avatar)}`;
 }
+
+function redirecionarPara_vip_wizzard_promo() {
+
+  window.location.href = `products/vip_wizzard_promo.html`;
+}
+
+function redirecionarPara_vip_eterno_promo() {
+
+  window.location.href = `products/vip_eterno_promo.html`;
+}
+
+
 
 function redirecionarPara_vip_king() {
     const username = document.getElementById('username').textContent;
@@ -275,6 +302,76 @@ function redirecionarPara_caixa_drops() {
   window.location.href = `products/caixa_drops.html?username=${encodeURIComponent(username)}&userid=${encodeURIComponent(userid)}&avatar=${encodeURIComponent(avatar)}`;
 }
 
+// SISTEMA DE CLASSES
+
+function redirecionarPara_classe_AinzOoalGown() {
+  const username = document.getElementById('username').textContent;
+  const userid = document.getElementById('userid').textContent;
+  const avatar = document.getElementById('avatar').src;
+
+window.location.href = `products/ainzooalgown.html?username=${encodeURIComponent(username)}&userid=${encodeURIComponent(userid)}&avatar=${encodeURIComponent(avatar)}`;
+}
+
+function redirecionarPara_classe_Albedo() {
+  const username = document.getElementById('username').textContent;
+  const userid = document.getElementById('userid').textContent;
+  const avatar = document.getElementById('avatar').src;
+
+window.location.href = `products/albedo.html?username=${encodeURIComponent(username)}&userid=${encodeURIComponent(userid)}&avatar=${encodeURIComponent(avatar)}`;
+}
+
+function redirecionarPara_classe_SupremaDivindades() {
+  const username = document.getElementById('username').textContent;
+  const userid = document.getElementById('userid').textContent;
+  const avatar = document.getElementById('avatar').src;
+
+window.location.href = `products/supremadivindade.html?username=${encodeURIComponent(username)}&userid=${encodeURIComponent(userid)}&avatar=${encodeURIComponent(avatar)}`;
+}
+
+function redirecionarPara_classe_ReiDemonio() {
+  const username = document.getElementById('username').textContent;
+  const userid = document.getElementById('userid').textContent;
+  const avatar = document.getElementById('avatar').src;
+
+window.location.href = `products/reidemonio.html?username=${encodeURIComponent(username)}&userid=${encodeURIComponent(userid)}&avatar=${encodeURIComponent(avatar)}`;
+}
+
+function redirecionarPara_classe_CaosDivindade() {
+  const username = document.getElementById('username').textContent;
+  const userid = document.getElementById('userid').textContent;
+  const avatar = document.getElementById('avatar').src;
+
+window.location.href = `products/caosdivindade.html?username=${encodeURIComponent(username)}&userid=${encodeURIComponent(userid)}&avatar=${encodeURIComponent(avatar)}`;
+}
+
+function redirecionarPara_classe_Demiurgo() {
+  const username = document.getElementById('username').textContent;
+  const userid = document.getElementById('userid').textContent;
+  const avatar = document.getElementById('avatar').src;
+
+window.location.href = `products/Demiurgo.html?username=${encodeURIComponent(username)}&userid=${encodeURIComponent(userid)}&avatar=${encodeURIComponent(avatar)}`;
+}
+
+function redirecionarPara_classe_Mereoleona() {
+  const username = document.getElementById('username').textContent;
+  const userid = document.getElementById('userid').textContent;
+  const avatar = document.getElementById('avatar').src;
+
+window.location.href = `products/mereoleona.html?username=${encodeURIComponent(username)}&userid=${encodeURIComponent(userid)}&avatar=${encodeURIComponent(avatar)}`;
+}
+
+function redirecionarPara_classe_Lemiel() {
+  const username = document.getElementById('username').textContent;
+  const userid = document.getElementById('userid').textContent;
+  const avatar = document.getElementById('avatar').src;
+
+window.location.href = `products/lemiel.html?username=${encodeURIComponent(username)}&userid=${encodeURIComponent(userid)}&avatar=${encodeURIComponent(avatar)}`;
+}
+
+
+// 
+
+
 function redirecionarParaSuporte() {
   const username = document.getElementById('username').textContent;
   const userid = document.getElementById('userid').textContent;
@@ -358,5 +455,9 @@ window.location.href = `regras.html?username=${encodeURIComponent(username)}&use
 
 function redirecionarParaRegras2() {
 
-window.location.href = `regras2.html`;
+  window.location.href = `regras2.html`;
+}
+
+function redirecionarParaSobreNos() {
+  window.location.href = `sobre.html`;
 }
