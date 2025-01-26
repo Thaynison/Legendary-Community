@@ -349,7 +349,7 @@ function redirecionarPara_classe_Demiurgo() {
   const userid = document.getElementById('userid').textContent;
   const avatar = document.getElementById('avatar').src;
 
-window.location.href = `products/Demiurgo.html?username=${encodeURIComponent(username)}&userid=${encodeURIComponent(userid)}&avatar=${encodeURIComponent(avatar)}`;
+window.location.href = `products/demiurgo.html?username=${encodeURIComponent(username)}&userid=${encodeURIComponent(userid)}&avatar=${encodeURIComponent(avatar)}`;
 }
 
 function redirecionarPara_classe_Mereoleona() {
