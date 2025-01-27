@@ -368,6 +368,14 @@ function redirecionarPara_classe_Lemiel() {
 window.location.href = `products/lemiel.html?username=${encodeURIComponent(username)}&userid=${encodeURIComponent(userid)}&avatar=${encodeURIComponent(avatar)}`;
 }
 
+function redirecionarPara_classe_DorothyUnsworth() {
+  const username = document.getElementById('username').textContent;
+  const userid = document.getElementById('userid').textContent;
+  const avatar = document.getElementById('avatar').src;
+
+window.location.href = `products/dorothyunsworth.html?username=${encodeURIComponent(username)}&userid=${encodeURIComponent(userid)}&avatar=${encodeURIComponent(avatar)}`;
+}
+
 
 // 
 
