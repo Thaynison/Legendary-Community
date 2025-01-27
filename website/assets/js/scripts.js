@@ -21,7 +21,7 @@ ip.addEventListener('click', function () {
 //
 //  STATUS DO SERVIDOR
 //
-$.getJSON('https://api.minetools.eu/ping/' + ipSpan.innerText + '/10119', function(data) {
+$.getJSON('https://api.minetools.eu/ping/' + 'rpg.legendarycommunity.com.br' + '/10119', function(data) {
   if (data.error) {
     $('#status').html('<i class="fas fa-times"></i> Servidor offline');
     $('#motd').html('-');
