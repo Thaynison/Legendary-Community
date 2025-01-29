@@ -14,6 +14,8 @@ window.addEventListener('DOMContentLoaded', () => {
         getHistoricoEmprestimosSTAFF();
         getHistoricoAdvertenciaSTAFF();
         getHistoricoBansSTAFF();
+        getHistoricoVendas();
+        getHistoricoPagamentos();
     } else {
         console.log("erro no userid")
     }
@@ -1480,7 +1482,87 @@ function changeContent(contentType) {
             });
             
             break;
+        case 'list-vendas':
+            contentArea.innerHTML = `
+                <form class="form-list-vendas">
+                    <p>Carregando histórico de vendas...</p>
+                </form>`;
+                getHistoricoVendas();
+            break;
+        case 'list-pagamentos':
+            contentArea.innerHTML = `
+                <form class="form-list-pagamentos">
+                    <p>Carregando histórico de pagamentos...</p>
+                </form>`;
+                getHistoricoPagamentos();
+            break;
         default:
             contentArea.innerHTML = "<p>Escolha uma opção.</p>";
     }
+}
+
+
+function getHistoricoVendas() {
+    const apiUrl = `https://dash.legendarycommunity.com.br/api/api_buscar_vendas_staff.php`;
+
+    fetch(apiUrl)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`Erro na API: ${response.statusText}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            const container = document.querySelector('.form-list-vendas');
+
+            if (data.error) {
+                container.innerHTML = `<p class="error">${data.error}</p>`;
+                return;
+            }
+
+            if (!Array.isArray(data) || data.length === 0) {
+                container.innerHTML = `<p class="info">Nenhuma devolução encontrada.</p>`;
+                return;
+            }
+
+            // Função para formatar valores em BRL
+            const formatarBRL = (valor) => {
+                return new Intl.NumberFormat('pt-BR', {
+                    style: 'currency',
+                    currency: 'BRL'
+                }).format(valor);
+            };
+
+            let htmlContent = `
+                <table class="table is-fullwidth">
+                    <thead>
+                        <tr>
+                            <th>Cidadão</th>
+                            <th>Codigo</th>
+                            <th>Valor</th>
+                            <th>Produtos</th>
+                            <th>Data</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+            `;
+
+            data.forEach(compra => {
+                htmlContent += `
+                    <tr>
+                        <td>${compra.username}</td>
+                        <td>${compra.codigo}</td>
+                        <td>${formatarBRL(compra.valor)}</td>
+                        <td>${compra.produto}</td>
+                        <td>${compra.data_compra}</td>
+                    </tr>`;
+            });
+
+            htmlContent += '</tbody></table>';
+            container.innerHTML = htmlContent;
+        })
+        .catch(error => {
+            const container = document.querySelector('.form-list-vendas');
+            container.innerHTML = `<p class="error">Erro ao carregar os dados: ${error.message}</p>`;
+        });
 }
