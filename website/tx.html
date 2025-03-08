@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  <title>.+* Legendary Community *+.</title>
+  <link rel="stylesheet" href="/assets/css/bulma.min.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="icon" href="/assets/img/icon_server.png" type="image/png">
+</head>
+
+<body>
+
+<header class="section">
+  <div class="logo container">
+    <a href="index.html">
+      <img src="/assets/img/logo.png">
+    </a>
+  </div>
+
+  <div class="container">
+    <nav class="navbar">
+      <div class="navbar-brand">
+        <a class="navbar-burger burger">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+    
+      <div class="navbar-menu">
+        <div class="navbar-start">
+          <a onclick="redirecionarParaIndex()" class="navbar-item"><i class="fas fa-home"></i> Início</a>
+          <a onclick="redirecionarParaPublicacoes()" class="navbar-item"><i class="fas fa-comments"></i> Publicações</a>
+          <a onclick="redirecionarParaRegras2()" class="navbar-item"><i class="fas fa-book"></i> Regras</a>
+          <a onclick="redirecionarParaSobreNos()" class="navbar-item"><i class="fas fa-book"></i> Sobre</a>
+          <a href="https://discord.gg/DVA2hq4SaN" class="navbar-item"><i class="fab fa-discord"></i> Discord</a>
+        </div>
+    
+        <div class="navbar-end">
+          <a onclick="loginWithDiscord()" class="navbar-item"><i class="fas fa-user"></i> Login</a>
+          <a id="ip" class="navbar-item">
+            <i class="fas fa-copy"></i> <span>rpg.legendarycommunity.com.br:10119</span>
+            <textarea></textarea>
+          </a>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main class="section">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <article class="article">
+          <h1 class="article-title"><i class="fas fa-gamepad"></i> Loja em Promoção!!!</h1>
+          <div class="article-content">
+            <ul class="produtos">
+              <!-- <li>
+                <img src="/assets/img/vip_warrior.png">
+                <h1>VIP Warrior</h1>
+                <h2>R$15,00<small>/mês</small></h2>
+                <div class="buttons is-centered">
+                  <a href="#" onclick="redirecionarPara_vip_warrior_promo()" class="button is-primary">
+                    <span class="icon is-small"><i class="fas fa-eye"></i></span>
+                  </a>
+                  <a href="#" onclick="redirecionarPara_vip_warrior_promo()" class="button is-success">
+                    <span class="icon"><i class="fas fa-shopping-cart"></i></span>
+                    <span>Comprar</span>
+                  </a>
+                </div>
+              </li> -->
+
+              <li>
+                <img src="/assets/img/vip_wizzard.png">
+                <h1>VIP Wizzard</h1>
+                <h2><span class="cor-b">R$15,00</span><small>/mês</small></h2>
+                <div class="buttons is-centered">
+                  <a href="#" onclick="redirecionarPara_vip_wizzard_promo()" class="button is-primary">
+                    <span class="icon is-small"><i class="fas fa-eye"></i></span>
+                  </a>
+                  <a href="#" onclick="redirecionarPara_vip_wizzard_promo()" class="button is-success">
+                    <span class="icon"><i class="fas fa-shopping-cart"></i></span>
+                    <span>Comprar</span>
+                  </a>
+                </div>
+              </li>
+
+              <li>
+                <img src="/assets/img/vip_eterno.png">
+                <h1>VIP Eterno</h1>
+                <h2><span class="cor-b">R$200,00</span><small>/anual</small></h2>
+                <div class="buttons is-centered">
+                  <a href="#" onclick="redirecionarPara_vip_eterno_promo()" class="button is-primary">
+                    <span class="icon is-small"><i class="fas fa-eye"></i></span>
+                  </a>
+                  <a href="#" onclick="redirecionarPara_vip_eterno_promo()" class="button is-success">
+                    <span class="icon"><i class="fas fa-shopping-cart"></i></span>
+                    <span>Comprar</span>
+                  </a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        
+
+
+        </article>
+      </div>
+      <div class="column is-4">
+        <article class="article">
+          <h1 id="status" class="article-title"><i class="fas fa-sync is-spinning"></i> Atualizando...</h1>
+          <div class="article-content">
+            <b>Jogadores Online:</b> <span id="online">[...]</span><br>
+            <b>MOTD:</b> <span id="motd">[...]</span>
+          </div>
+        </article>
+        <br>
+        <article class="article">
+          <div class="discord" style="background-color: transparent;">
+            <div class="responsive-iframe-container">
+              <iframe src="https://discord.com/widget?id=1250486201459277946&theme=dark" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+            </div>  
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</main>
+
+<div class="peixe nemo"></div>
+<div class="peixe dory"></div>
+
+<footer class="section">
+  <div class="container">
+    <article class="footer">
+      <span>Legendary Community <script>document.write(new Date().getFullYear())</script> &copy; Todos os direitos reservados.</span>
+      <a href="https://thaynison.vercel.app" target="_blank" class="is-muted"><i class="fas fa-tools"></i> Desenvolvido por Thaynison</a>
+    </article>
+  </div>
+</footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="/assets/js/scripts.js"></script>
+<script defer src="https://use.fontawesome.com/releases/v5.12.1/js/all.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="/assets/js/redirect.js"></script>
+<script src="/assets/js/copy.js"></script>
+</body>
+
+</html>
