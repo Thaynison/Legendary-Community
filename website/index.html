@@ -1,153 +1,350 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-  <title>.+* Legendary Community *+.</title>
-  <link rel="stylesheet" href="/assets/css/bulma.min.css">
-  <link rel="stylesheet" href="/assets/css/style.css">
-  <link rel="icon" href="/assets/img/icon_server.png" type="image/png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yggdrasil</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Fonte Medieval -->
+    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+    <!-- Ícones -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <!-- Estilos personalizados -->
+    <style>
+        body {
+            font-family: 'MedievalSharp', cursive;
+            background-color: #1e1e1e;
+            color: #d44e37;
+            background-image: url('img/background.png');
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        .navbar {
+            background-color: #2c1a0d !important;
+            border-bottom: 3px solid #d44e37;
+        }
+        .navbar-brand, .nav-link {
+            color: #d44e37 !important;
+        }
+        .card {
+            background-color: #2c1a0d;
+            border: 2px solid #d44e37;
+            color: #d44e37;
+            transition: transform 0.3s;
+            width: 200px; /* Largura fixa para os cards */
+            height: 500px; /* Altura fixa para os cards */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .btn-primary {
+            background-color: #8b4513;
+            border: 1px solid #d44e37;
+            margin-top: auto; /* Empurra o botão para o final */
+            align-self: center; /* Centraliza o botão */
+        }
+        .btn-primary:hover {
+            background-color: #a0522d;
+        }
+        h1, h2 {
+            text-shadow: 2px 2px 4px #000000;
+        }
+        .modal-content {
+            background-color: #2c1a0d;
+            color: #d44e37;
+            border: 2px solid #d44e37;
+        }
+        .modal-header, .modal-footer {
+            border-bottom: 1px solid #d44e37;
+            border-top: 1px solid #d44e37;
+        }
+        /* Estilo para as imagens dentro dos cards */
+        .card-img-top {
+            max-width: 150px; /* Tamanho fixo para as imagens */
+            max-height: 150px;
+            width: auto;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            padding: 10px; /* Espaçamento interno */
+        }
+        /* Ajuste para o texto dentro dos cards */
+        .card-body {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .card-title {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        .card-text {
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+    </style>
 </head>
-
 <body>
-
-<header class="section">
-  <div class="logo container">
-    <a href="index.html">
-      <img src="/assets/img/logo.png">
-    </a>
-  </div>
-
-  <div class="container">
-    <nav class="navbar">
-      <div class="navbar-brand">
-        <a class="navbar-burger burger">
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-        </a>
-      </div>
-    
-      <div class="navbar-menu">
-        <div class="navbar-start">
-          <a onclick="redirecionarParaIndex()" class="navbar-item"><i class="fas fa-home"></i> Início</a>
-          <a onclick="redirecionarParaPublicacoes()" class="navbar-item"><i class="fas fa-comments"></i> Publicações</a>
-          <a onclick="redirecionarParaRegras2()" class="navbar-item"><i class="fas fa-book"></i> Regras</a>
-          <a onclick="redirecionarParaSobreNos()" class="navbar-item"><i class="fas fa-book"></i> Sobre</a>
-          <a href="https://discord.gg/DVA2hq4SaN" class="navbar-item"><i class="fab fa-discord"></i> Discord</a>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-dragon"></i> Wiki Yggdrasil
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#racas">Raças</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#classes">Classes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#itens">Itens</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#sobre">Sobre</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-    
-        <div class="navbar-end">
-          <a onclick="loginWithDiscord()" class="navbar-item"><i class="fas fa-user"></i> Login</a>
-          <a id="ip" class="navbar-item">
-            <i class="fas fa-copy"></i> <span>rpg.legendarycommunity.com.br:10119</span>
-            <textarea></textarea>
-          </a>
-        </div>
-      </div>
     </nav>
-  </div>
-</header>
 
-<main class="section">
-  <div class="container">
-    <div class="columns">
-      <div class="column">
-        <article class="article">
-          <h1 class="article-title"><i class="fas fa-gamepad"></i> Loja em Promoção!!!</h1>
-          <div class="article-content">
-            <ul class="produtos">
-              <!-- <li>
-                <img src="/assets/img/vip_warrior.png">
-                <h1>VIP Warrior</h1>
-                <h2>R$15,00<small>/mês</small></h2>
-                <div class="buttons is-centered">
-                  <a href="#" onclick="redirecionarPara_vip_warrior_promo()" class="button is-primary">
-                    <span class="icon is-small"><i class="fas fa-eye"></i></span>
-                  </a>
-                  <a href="#" onclick="redirecionarPara_vip_warrior_promo()" class="button is-success">
-                    <span class="icon"><i class="fas fa-shopping-cart"></i></span>
-                    <span>Comprar</span>
-                  </a>
+    <!-- Conteúdo Principal -->
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Bem-vindo à Wiki Yggdrasil</h1>
+
+        <!-- Seção de Raças -->
+        <section id="racas" class="mt-5">
+            <h2><i class="fas fa-users"></i> Raças</h2>
+            <div class="row">
+                <!-- Card Raça 1 -->
+                <div class="col-md-2 mb-4">
+                    <div class="card">
+                        <img src="img/humano.png" class="card-img-top" alt="Humano">
+                        <div class="card-body">
+                            <h5 class="card-title">Humano</h5>
+                            <p class="card-text">Os humanos são conhecidos por sua versatilidade e capacidade de se adaptar a qualquer situação. Eles prosperam em todas as áreas, desde o comércio até a guerra.</p>
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalHumano">Saiba Mais</button>
+                        </div>
+                    </div>
                 </div>
-              </li> -->
-
-              <li>
-                <img src="/assets/img/vip_wizzard.png">
-                <h1>VIP Wizzard</h1>
-                <h2><span class="cor-b">R$15,00</span><small>/mês</small></h2>
-                <div class="buttons is-centered">
-                  <a href="#" onclick="redirecionarPara_vip_wizzard_promo()" class="button is-primary">
-                    <span class="icon is-small"><i class="fas fa-eye"></i></span>
-                  </a>
-                  <a href="#" onclick="redirecionarPara_vip_wizzard_promo()" class="button is-success">
-                    <span class="icon"><i class="fas fa-shopping-cart"></i></span>
-                    <span>Comprar</span>
-                  </a>
+                <!-- Card Raça 2 -->
+                <div class="col-md-2 mb-4">
+                    <div class="card">
+                        <img src="img/anao.png" class="card-img-top" alt="Anao">
+                        <div class="card-body">
+                            <h5 class="card-title">Anão</h5>
+                            <p class="card-text">Os anões são exímios ferreiros e mineradores, conhecidos por sua resistência e bravura. Eles prosperam nas profundezas das montanhas, construindo fortalezas e empunhando armas lendárias.</p>
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalAnao">Saiba Mais</button>
+                        </div>
+                    </div>
                 </div>
-              </li>
-
-              <li>
-                <img src="/assets/img/vip_eterno.png">
-                <h1>VIP Eterno</h1>
-                <h2><span class="cor-b">R$200,00</span><small>/anual</small></h2>
-                <div class="buttons is-centered">
-                  <a href="#" onclick="redirecionarPara_vip_eterno_promo()" class="button is-primary">
-                    <span class="icon is-small"><i class="fas fa-eye"></i></span>
-                  </a>
-                  <a href="#" onclick="redirecionarPara_vip_eterno_promo()" class="button is-success">
-                    <span class="icon"><i class="fas fa-shopping-cart"></i></span>
-                    <span>Comprar</span>
-                  </a>
+                <!-- Card Raça 3 -->
+                <div class="col-md-2 mb-4">
+                    <div class="card">
+                        <img src="img/demonio.png" class="card-img-top" alt="Demonio">
+                        <div class="card-body">
+                            <h5 class="card-title">Demônio</h5>
+                            <p class="card-text">Os demônios são criaturas sombrias, temidos por seu poder e astúcia. Eles prosperam no caos, manipulando as trevas e aterrorizando seus inimigos com sua força sobrenatural.</p>
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalDemonio">Saiba Mais</button>
+                        </div>
+                    </div>
                 </div>
-              </li>
-            </ul>
-          </div>
-        
+                <!-- Card Raça 4 -->
+                <div class="col-md-2 mb-4">
+                    <div class="card">
+                        <img src="img/elfo.png" class="card-img-top" alt="Elfo">
+                        <div class="card-body">
+                            <h5 class="card-title">Elfo</h5>
+                            <p class="card-text">Os elfos são ágeis e sábios, conectados à natureza e à magia. Eles prosperam nas florestas encantadas, dominando a arte do arco e protegendo seus lares com grande habilidade.</p>
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalElfo">Saiba Mais</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card Raça 5 -->
+                <div class="col-md-2 mb-4">
+                    <div class="card">
+                        <img src="img/mago.png" class="card-img-top" alt="Mago">
+                        <div class="card-body">
+                            <h5 class="card-title">Mago</h5>
+                            <p class="card-text">Os magos são estudiosos da magia, capazes de dobrar a realidade à sua vontade. Eles prosperam no conhecimento, buscando dominar feitiços antigos e desvendar os mistérios do arcano.</p>
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalMago">Saiba Mais</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Adicione mais raças aqui -->
+            </div>
+        </section>
 
-
-        </article>
-      </div>
-      <div class="column is-4">
-        <article class="article">
-          <h1 id="status" class="article-title"><i class="fas fa-sync is-spinning"></i> Atualizando...</h1>
-          <div class="article-content">
-            <b>Jogadores Online:</b> <span id="online">[...]</span><br>
-            <b>MOTD:</b> <span id="motd">[...]</span>
-          </div>
-        </article>
-        <br>
-        <article class="article">
-          <div class="discord" style="background-color: transparent;">
-            <div class="responsive-iframe-container">
-              <iframe src="https://discord.com/widget?id=1250486201459277946&theme=dark" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
-            </div>  
-          </div>
-        </article>
-      </div>
+        <!-- Seção de Classes -->
     </div>
-  </div>
-</main>
 
-<div class="peixe nemo"></div>
-<div class="peixe dory"></div>
+    <!-- Modais -->
+    <!-- Modal Humano -->
+    <div class="modal fade" id="modalHumano" tabindex="-1" aria-labelledby="modalHumanoLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalHumanoLabel">Humano</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p><strong>Habilidades:</strong></p>
+                    <ul>
+                        <li>Possui 10% de força aumentada ao usar espadas</li>
+                        <li>É capaz de usar todos os tipos de armaduras</li>
+                    </ul>
+                    <p><strong>Inferioridade:</strong></p>
+                    <ul>
+                        <li>Não é capaz de crafitar nenhum tipo de armaduras.</li>
+                        <li>Não é capaz de crafitar ferramentas de Ouro, Diamante e Netherite</li>
+                        <li>Não crafita Shulker Box</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
-<footer class="section">
-  <div class="container">
-    <article class="footer">
-      <span>Legendary Community <script>document.write(new Date().getFullYear())</script> &copy; Todos os direitos reservados.</span>
-      <a href="https://thaynison.vercel.app" target="_blank" class="is-muted"><i class="fas fa-tools"></i> Desenvolvido por Thaynison</a>
-    </article>
-  </div>
-</footer>
+    <!-- Modal Anão -->
+    <div class="modal fade" id="modalAnao" tabindex="-1" aria-labelledby="modalAnaoLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalAnaoLabel">Anão</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p><strong>Habilidades:</strong></p>
+                    <ul>
+                        <li>Acesso a Grande Forja de Nidavellir use: /nidavellir.</li>
+                        <li>É capaz de forjar runas melhoradas.</li>
+                        <li>É capaz de Crafitar todos os tipos de armaduras.</li>
+                        <li>É capaz de Crafitar todos os tipos de ferramentas.</li>
+                        <li>Possui 10% resistência aumentada ao usar picaretas.</li>
+                        <li>Possui 10% sorte aumentada em trocas com villager.</li>
+                    </ul>
+                    <p><strong>Inferioridade:</strong></p>
+                    <ul>
+                        <li>Não é capaz de usar nenhum tipo de armaduras.</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="/assets/js/scripts.js"></script>
-<script defer src="https://use.fontawesome.com/releases/v5.12.1/js/all.js"></script>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="/assets/js/redirect.js"></script>
-<script src="/assets/js/copy.js"></script>
+    <!-- Modal Demonio -->
+    <div class="modal fade" id="modalDemonio" tabindex="-1" aria-labelledby="modalDemonioLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalDemonioLabel">Demônio</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p><strong>Habilidades:</strong></p>
+                    <ul>
+                        <li>Lança bolas de fogo.</li>
+                        <li>Não toma dano de mobs do Nether.</li>
+                        <li>Possui 10% regeneração aumentada ao estar no Nether.</li>
+                    </ul>
+                    <p><strong>Inferioridade:</strong></p>
+                    <ul>
+                        <li>Não é capaz de crafitar nenhum tipo de armaduras.</li>
+                        <li>Não é capaz de crafitar ferramentas de Ouro, Diamante e Netherite.</li>
+                        <li>Não é capaz de ir para o mundo The End.</li>
+                        <li>Não crafita Shulker Box</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Elfo -->
+    <div class="modal fade" id="modalElfo" tabindex="-1" aria-labelledby="modalElfoLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalElfoLabel">Elfo</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p><strong>Habilidades:</strong></p>
+                    <ul>
+                        <li>Acesso ao Templo Arcano use: /temploarcano.</li>
+                        <li>É capaz de criar runas.</li>
+                        <li>Se auto cura caso estiver sob a grama.</li>
+                        <li>Faz com que todas as plantações ao seu redor, em uma área de 10x10 blocos, cresçam instantaneamente.</li>
+                        <li>Possui 10% vida aumentada ao estiver sob a grama.</li>
+                    </ul>
+                    <p><strong>Inferioridade:</strong></p>
+                    <ul>
+                        <li>Não é capaz de crafitar nenhum tipo de armaduras.</li>
+                        <li>Não é capaz de crafitar ferramentas de Ouro, Diamante e Netherite</li>
+                        <li>Não é capaz de ir para o mundo Nether.</li>
+                        <li>Não crafita Shulker Box</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Mago -->
+    <div class="modal fade" id="modalMago" tabindex="-1" aria-labelledby="modalMagoLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalMagoLabel">Mago</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p><strong>Habilidades:</strong></p>
+                    <ul>
+                        <li>Lança uma bola de vento.</li>
+                        <li>É capaz usar qualquer tipo de runa.</li>
+                        <li>É capaz de utilizar qualquer tipo de varinha.</li>
+                    </ul>
+                    <p><strong>Inferioridade:</strong></p>
+                    <ul>
+                        <li>Não é capaz de crafitar nenhum tipo de armaduras.</li>
+                        <li>Não é capaz de crafitar ferramentas de Ouro, Diamante e Netherite</li>
+                        <li>Não crafita Shulker Box</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Adicione mais modais para outras raças e classes -->
+
+    <!-- Bootstrap JS e dependências -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
 </body>
-
 </html>
