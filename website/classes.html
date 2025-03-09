@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>.+* Yggdrasil *+.</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Fonte Medieval -->
+    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+    <!-- Ícones -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <!-- Estilos personalizados -->
+    <link rel="icon" href="/img/icon_server.png" type="image/png">
+    <style>
+        body {
+            font-family: 'MedievalSharp', cursive;
+            background-color: #1e1e1e;
+            color: #d44e37;
+            background-image: url('img/background.png');
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        .navbar {
+            background-color: #2c1a0d !important;
+            border-bottom: 3px solid #d44e37;
+        }
+        .navbar-brand, .nav-link {
+            color: #d44e37 !important;
+        }
+        .card {
+            background-color: #2c1a0d;
+            border: 2px solid #d44e37;
+            color: #d44e37;
+            transition: transform 0.3s;
+            width: 200px; /* Largura fixa para os cards */
+            height: 280px; /* Altura fixa para os cards */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .btn-primary {
+            background-color: #8b4513;
+            border: 1px solid #d44e37;
+            margin-top: auto; /* Empurra o botão para o final */
+            align-self: center; /* Centraliza o botão */
+        }
+        .btn-primary:hover {
+            background-color: #a0522d;
+        }
+        h1, h2 {
+            text-shadow: 2px 2px 4px #000000;
+        }
+        .modal-content {
+            background-color: #2c1a0d;
+            color: #d44e37;
+            border: 2px solid #d44e37;
+        }
+        .modal-header, .modal-footer {
+            border-bottom: 1px solid #d44e37;
+            border-top: 1px solid #d44e37;
+        }
+        /* Estilo para as imagens dentro dos cards */
+        .card-img-top {
+            max-width: 150px; /* Tamanho fixo para as imagens */
+            max-height: 150px;
+            width: auto;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            padding: 10px; /* Espaçamento interno */
+        }
+        /* Ajuste para o texto dentro dos cards */
+        .card-body {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .card-title {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        .card-text {
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+        /* Estilo para o container com barra de rolagem */
+        .scroll-container {
+            height: 800px; /* Altura fixa para o container */
+            overflow-y: auto; /* Habilita a rolagem vertical */
+            padding: 10px; /* Espaçamento interno */
+        }
+        /* Centralizar os cards */
+        .center-cards {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px; /* Espaçamento entre os cards */
+        }
+        /* Personalização da barra de rolagem */
+        .scroll-container::-webkit-scrollbar {
+            width: 10px; /* Largura da barra de rolagem */
+        }
+        .scroll-container::-webkit-scrollbar-track {
+            background: transparent; /* Fundo transparente */
+        }
+        .scroll-container::-webkit-scrollbar-thumb {
+            background: transparent;
+            border-radius: 5px; /* Bordas arredondadas */
+        }
+        .scroll-container::-webkit-scrollbar-thumb:hover {
+            background: transparent;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-dragon"></i> Wiki Yggdrasil
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="racas.html">Raças</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#classes">Classes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="itens.html">Itens</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="sobre.html">Sobre</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Conteúdo Principal -->
+    <div class="container-fluid mt-5">
+        <div class="row">
+            <!-- Coluna da lista de nav-link -->
+            <div class="col-md-3">
+                <div class="scroll-container">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#humanos">Humanos</a>
+                            <a class="nav-link" href="#anoes">Anões</a>
+                            <a class="nav-link" href="#demonios">Demônios</a>
+                            <a class="nav-link" href="#elfos">Elfos</a>
+                            <a class="nav-link" href="#magos">Magos</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Coluna dos cards -->
+            <div class="col-md-9">
+                <div class="scroll-container">
+                    <!-- Seção de Raças -->
+                    <section id="humanos">
+                        <h2><i class="fas fa-shield-alt"></i> Humanos</h2>
+                        <div class="center-cards">
+                            <!-- Card Raça 1 -->
+                            <div class="col-md-2 mb-4">
+                                <div class="card">
+                                    <img src="img/classes/Cavaleiro.png" class="card-img-top" alt="Cavaleiro">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Cavaleiro</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalCavaleiro">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card Raça 2 -->
+                            <div class="col-md-2 mb-4">
+                                <div class="card">
+                                    <img src="img/classes/Espadachim.png" class="card-img-top" alt="Espadachim">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Espadachim</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEspadachim">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card Raça 3 -->
+                            <div class="col-md-2 mb-4">
+                                <div class="card">
+                                    <img src="img/classes/MestreDaEspada.png" class="card-img-top" alt="MestreDaEspada">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Mestre Da Espada</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalMestreDaEspada">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>                
+                        </div>
+                        <div class="center-cards">
+                            <!-- Card Raça 1 -->
+                            <div class="col-md-2 mb-4">
+                                <div class="card">
+                                    <img src="img/classes/Barbaro.png" class="card-img-top" alt="Barbaro">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Barbaro</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalBarbaro">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card Raça 2 -->
+                            <div class="col-md-2 mb-4">
+                                <div class="card">
+                                    <img src="img/classes/BarbaroDeElite.png" class="card-img-top" alt="BarbaroDeElite">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Barbaro De Elite</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalBarbaroDeElite">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card Raça 3 -->
+                            <div class="col-md-2 mb-4">
+                                <div class="card">
+                                    <img src="img/classes/Beserker.png" class="card-img-top" alt="Beserker">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Beserker</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalBeserker">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>                
+                        </div>
+                        <div class="center-cards">
+                            <!-- Card Raça 1 -->
+                            <div class="col-md-2 mb-4">
+                                <div class="card">
+                                    <img src="img/classes/Templario.png" class="card-img-top" alt="Templario">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Templario</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalTemplario">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card Raça 2 -->
+                            <div class="col-md-2 mb-4">
+                                <div class="card">
+                                    <img src="img/classes/Paladino.png" class="card-img-top" alt="Paladino">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Paladino</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalPaladino">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card Raça 3 -->
+                            <div class="col-md-2 mb-4">
+                                <div class="card">
+                                    <img src="img/classes/GuardiaoReal.png" class="card-img-top" alt="GuardiaoReal">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Guardiao Real</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalGuardiaoReal">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>                
+                        </div>
+                        <div class="center-cards">
+                            <!-- Card Raça 1 -->
+                            <div class="col-md-2 mb-4">
+                                <div class="card">
+                                    <img src="img/classes/Ladrao.png" class="card-img-top" alt="Ladrao">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Ladrao</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalLadrao">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card Raça 2 -->
+                            <div class="col-md-2 mb-4">
+                                <div class="card">
+                                    <img src="img/classes/Assasino.png" class="card-img-top" alt="Assasino">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Assasino</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalAssasino">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card Raça 3 -->
+                            <div class="col-md-2 mb-4">
+                                <div class="card">
+                                    <img src="img/classes/Hitman.png" class="card-img-top" alt="Hitman">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Hitman</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalHitman">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>                
+                        </div>
+                        <div class="center-cards">
+                            <!-- Card Raça 1 -->
+                            <div class="col-md-2 mb-4">
+                                <div class="card">
+                                    <img src="img/classes/Alquimista.png" class="card-img-top" alt="Alquimista">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Alquimista</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalAlquimista">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card Raça 2 -->
+                            <div class="col-md-2 mb-4">
+                                <div class="card">
+                                    <img src="img/classes/Bioquimico.png" class="card-img-top" alt="Bioquimico">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Bioquimico</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalBioquimico">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card Raça 3 -->
+                            <div class="col-md-2 mb-4">
+                                <div class="card">
+                                    <img src="img/classes/Transmutador.png" class="card-img-top" alt="Transmutador">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Transmutador</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalTransmutador">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>                
+                        </div>
+                    </section>
+                    <!-- ANOES -->
+                    <section id="anoes">
+                        <h2><i class="fas fa-shield-alt"></i> Anões</h2>
+                        <div class="center-cards">
+                            <!-- Card Raça 1 -->
+                            <div class="col-md-2 mb-4">
+                                <div class="card">
+                                    <img src="img/classes/AnaoGuerreiro.png" class="card-img-top" alt="AnaoGuerreiro">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Anao Guerreiro</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalAnaoGuerreiro">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card Raça 2 -->
+                            <div class="col-md-2 mb-4">
+                                <div class="card">
+                                    <img src="img/classes/EscudeiroDaForja.png" class="card-img-top" alt="EscudeiroDaForja">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Escudeiro Da Forja</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEscudeiroDaForja">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card Raça 3 -->
+                            <div class="col-md-2 mb-4">
+                                <div class="card">
+                                    <img src="img/classes/SenhorDaGuerra.png" class="card-img-top" alt="SenhorDaGuerra">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Senhor Da Guerra</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalSenhorDaGuerra">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>                
+                        </div>
+                        <div class="center-cards">
+                            <!-- Card Raça 1 -->
+                            <div class="col-md-2 mb-4">
+                                <div class="card">
+                                    <img src="img/classes/AnaoFerreiro.png" class="card-img-top" alt="AnaoFerreiro">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Anao Ferreiro</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalAnaoFerreiro">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card Raça 2 -->
+                            <div class="col-md-2 mb-4">
+                                <div class="card">
+                                    <img src="img/classes/AprendizDaForja.png" class="card-img-top" alt="AprendizDaForja">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Aprendiz Da Forja</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalAprendizDaForja">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>     
+                            <!-- Card Raça 3 -->       
+                            <div class="col-md-2 mb-4">
+                                <div class="card">
+                                    <img src="img/classes/MestreDaForja.png" class="card-img-top" alt="MestreDaForja">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Mestre Da Forja</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalMestreDaForja">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>    
+                        </div>
+                        <div class="center-cards">
+                            <!-- Card Raça 1 -->
+                            <div class="col-md-2 mb-4">
+                                <div class="card">
+                                    <img src="img/classes/AnaoMinerador.png" class="card-img-top" alt="AnaoMinerador">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Anao Minerador</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalAnaoMinerador">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card Raça 2 -->
+                            <div class="col-md-2 mb-4">
+                                <div class="card">
+                                    <img src="img/classes/Escavador.png" class="card-img-top" alt="Escavador">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Escavador</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEscavador">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card Raça 3 -->
+                            <div class="col-md-2 mb-4">
+                                <div class="card">
+                                    <img src="img/classes/MestreDaRocha.png" class="card-img-top" alt="MestreDaRocha">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Mestre Da Rocha</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalMestreDaRocha">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>                
+                        </div>
+                        <div class="center-cards">
+                            <!-- Card Raça 1 -->
+                            <div class="col-md-2 mb-4">
+                                <div class="card">
+                                    <img src="img/classes/AnaoConstrutor.png" class="card-img-top" alt="AnaoConstrutor">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Anao Construtor</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalAnaoConstrutor">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card Raça 2 -->
+                            <div class="col-md-2 mb-4">
+                                <div class="card">
+                                    <img src="img/classes/Atersao.png" class="card-img-top" alt="Atersao">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Atersao</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalAtersao">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card Raça 3 -->
+                            <div class="col-md-2 mb-4">
+                                <div class="card">
+                                    <img src="img/classes/CriadorDeMonumentos.png" class="card-img-top" alt="CriadorDeMonumentos">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Criador De Monumentos</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalCriadorDeMonumentos">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>                
+                        </div>
+                        <div class="center-cards">
+                            <!-- Card Raça 1 -->
+                            <div class="col-md-2 mb-4">
+                                <div class="card">
+                                    <img src="img/classes/AnaoMercante.png" class="card-img-top" alt="AnaoMercante">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Anao Mercante</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalAnaoMercante">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card Raça 2 -->
+                            <div class="col-md-2 mb-4">
+                                <div class="card">
+                                    <img src="img/classes/Negociador.png" class="card-img-top" alt="Negociador">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Negociador</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalNegociador">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card Raça 3 -->
+                            <div class="col-md-2 mb-4">
+                                <div class="card">
+                                    <img src="img/classes/Andarilho.png" class="card-img-top" alt="Andarilho">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Andarilho</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalAndarilho">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>                
+                        </div>
+                    </section>
+                    <!-- Seção de Raças -->
+                    <section id="demonios">
+                        <h2><i class="fas fa-shield-alt"></i> Demônios</h2>
+                        <div class="center-cards">
+                            <!-- Card Raça 1 -->
+                            <div class="col-md-2 mb-4">
+                                <div class="card">
+                                    <img src="img/classes/Lamia.png" class="card-img-top" alt="Lamia">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Lamia</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalLamia">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card Raça 2 -->
+                            <div class="col-md-2 mb-4">
+                                <div class="card">
+                                    <img src="img/classes/Nosferatu.png" class="card-img-top" alt="Nosferatu">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Nosferatu</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalNosferatu">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card Raça 3 -->
+                            <div class="col-md-2 mb-4">
+                                <div class="card">
+                                    <img src="img/classes/Dracula.png" class="card-img-top" alt="Dracula">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Dracula</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalDracula">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>                
+                        </div>
+                        <div class="center-cards">
+                            <!-- Card Raça 1 -->
+                            <div class="col-md-2 mb-4">
+                                <div class="card">
+                                    <img src="img/classes/Tiefling.png" class="card-img-top" alt="Tiefling">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Tiefling</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalTiefling">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card Raça 2 -->
+                            <div class="col-md-2 mb-4">
+                                <div class="card">
+                                    <img src="img/classes/LinhagemInfernal.png" class="card-img-top" alt="LinhagemInfernal">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Linhagem Infernal</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalLinhagemInfernal">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card Raça 3 -->
+                            <div class="col-md-2 mb-4">
+                                <div class="card">
+                                    <img src="img/classes/AscendenteInfernal.png" class="card-img-top" alt="AscendenteInfernal">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Ascendente Infernal</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalAscendenteInfernal">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>                
+                        </div>
+                        <div class="center-cards">
+                            <!-- Card Raça 1 -->
+                            <div class="col-md-2 mb-4">
+                                <div class="card">
+                                    <img src="img/classes/Asmodeus.png" class="card-img-top" alt="Asmodeus">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Asmodeus</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalAsmodeus">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card Raça 2 -->
+                            <div class="col-md-2 mb-4">
+                                <div class="card">
+                                    <img src="img/classes/ServenteDoInferno.png" class="card-img-top" alt="ServenteDoInferno">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Servente Do Inferno</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalServenteDoInferno">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card Raça 3 -->
+                            <div class="col-md-2 mb-4">
+                                <div class="card">
+                                    <img src="img/classes/SenhorDoInferno.png" class="card-img-top" alt="SenhorDoInferno">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Senhor Do Inferno</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalSenhorDoInferno">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>                
+                        </div>
+                        <div class="center-cards">
+                            <!-- Card Raça 1 -->
+                            <div class="col-md-2 mb-4">
+                                <div class="card">
+                                    <img src="img/classes/Cambion.png" class="card-img-top" alt="Cambion">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Cambion</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalCambion">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card Raça 2 -->
+                            <div class="col-md-2 mb-4">
+                                <div class="card">
+                                    <img src="img/classes/FilhoDoAbismo.png" class="card-img-top" alt="FilhoDoAbismo">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Filho Do Abismo</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalFilhoDoAbismo">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card Raça 3 -->
+                            <div class="col-md-2 mb-4">
+                                <div class="card">
+                                    <img src="img/classes/Abismo.png" class="card-img-top" alt="Abismo">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Abismo</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalAbismo">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>                
+                        </div>
+                        <div class="center-cards">
+                            <!-- Card Raça 1 -->
+                            <div class="col-md-2 mb-4">
+                                <div class="card">
+                                    <img src="img/classes/Diabrete.png" class="card-img-top" alt="Diabrete">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Diabrete</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalDiabrete">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card Raça 2 -->
+                            <div class="col-md-2 mb-4">
+                                <div class="card">
+                                    <img src="img/classes/VingadorDasTrevas.png" class="card-img-top" alt="VingadorDasTrevas">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Vingador Das Trevas</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalVingadorDasTrevas">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card Raça 3 -->
+                            <div class="col-md-2 mb-4">
+                                <div class="card">
+                                    <img src="img/classes/LiderInfernal.png" class="card-img-top" alt="LiderInfernal">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Lider Infernal</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalLiderInfernal">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>                
+                        </div>
+                    </section>
+                    <section id="elfos">
+                        <h2><i class="fas fa-shield-alt"></i> Elfos</h2>
+                        <div class="center-cards">
+                            <!-- Card Raça 1 -->
+                            <div class="col-md-2 mb-4">
+                                <div class="card">
+                                    <img src="img/classes/Druida.png" class="card-img-top" alt="Druida">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Druida</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalDruida">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card Raça 2 -->
+                            <div class="col-md-2 mb-4">
+                                <div class="card">
+                                    <img src="img/classes/DefensorDaVida.png" class="card-img-top" alt="DefensorDaVida">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Defensor Da Vida</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalDefensorDaVida">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card Raça 3 -->
+                            <div class="col-md-2 mb-4">
+                                <div class="card">
+                                    <img src="img/classes/SabioDaNatureza.png" class="card-img-top" alt="SabioDaNatureza">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Sabio Da Natureza</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalSabioDaNatureza">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>                
+                        </div>
+                        <div class="center-cards">
+                            <!-- Card Raça 1 -->
+                            <div class="col-md-2 mb-4">
+                                <div class="card">
+                                    <img src="img/classes/TuathaDeDanann.png" class="card-img-top" alt="TuathaDeDanann">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Tuatha De Danann</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalTuathaDeDanann">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card Raça 2 -->
+                            <div class="col-md-2 mb-4">
+                                <div class="card">
+                                    <img src="img/classes/Guardiao.png" class="card-img-top" alt="Guardiao">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Guardiao</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalGuardiao">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card Raça 3 -->
+                            <div class="col-md-2 mb-4">
+                                <div class="card">
+                                    <img src="img/classes/GuardiaoMistico.png" class="card-img-top" alt="GuardiaoMistico">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Guardiao Mistico</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalGuardiaoMistico">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>                
+                        </div>
+                        <div class="center-cards">
+                            <!-- Card Raça 1 -->
+                            <div class="col-md-2 mb-4">
+                                <div class="card">
+                                    <img src="img/classes/Bardo.png" class="card-img-top" alt="Bardo">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Bardo</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalBardo">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card Raça 2 -->
+                            <div class="col-md-2 mb-4">
+                                <div class="card">
+                                    <img src="img/classes/Maestro.png" class="card-img-top" alt="Maestro">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Maestro</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalMaestro">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card Raça 3 -->
+                            <div class="col-md-2 mb-4">
+                                <div class="card">
+                                    <img src="img/classes/HarmoniaDaGuerra.png" class="card-img-top" alt="HarmoniaDaGuerra">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Harmonia Da Guerra</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalHarmoniaDaGuerra">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>                
+                        </div>
+                        <div class="center-cards">
+                            <!-- Card Raça 1 -->
+                            <div class="col-md-2 mb-4">
+                                <div class="card">
+                                    <img src="img/classes/Clerigo.png" class="card-img-top" alt="Clerigo">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Clerigo</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalClerigo">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card Raça 2 -->
+                            <div class="col-md-2 mb-4">
+                                <div class="card">
+                                    <img src="img/classes/DicipuloDaFe.png" class="card-img-top" alt="DicipuloDaFe">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Dicipulo Da Fe</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalDicipuloDaFe">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card Raça 3 -->
+                            <div class="col-md-2 mb-4">
+                                <div class="card">
+                                    <img src="img/classes/DicipuloSagrado.png" class="card-img-top" alt="DicipuloSagrado">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Dicipulo Sagrado</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalDicipuloSagrado">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>                
+                        </div>
+                        <div class="center-cards">
+                            <!-- Card Raça 1 -->
+                            <div class="col-md-2 mb-4">
+                                <div class="card">
+                                    <img src="img/classes/Arqueiro.png" class="card-img-top" alt="Arqueiro">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Arqueiro</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalArqueiro">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card Raça 2 -->
+                            <div class="col-md-2 mb-4">
+                                <div class="card">
+                                    <img src="img/classes/Defensor.png" class="card-img-top" alt="Defensor">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Defensor</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalDefensor">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card Raça 3 -->
+                            <div class="col-md-2 mb-4">
+                                <div class="card">
+                                    <img src="img/classes/Sentinela.png" class="card-img-top" alt="Sentinela">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Sentinela</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalSentinela">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>                
+                        </div>
+                    </section>
+                    <section id="magos">
+                        <h2><i class="fas fa-shield-alt"></i> Magos</h2>
+                        <div class="center-cards">
+                            <!-- Card Raça 1 -->
+                            <div class="col-md-2 mb-4">
+                                <div class="card">
+                                    <img src="img/classes/Arcanista.png" class="card-img-top" alt="Arcanista">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Arcanista</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalArcanista">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card Raça 2 -->
+                            <div class="col-md-2 mb-4">
+                                <div class="card">
+                                    <img src="img/classes/Estudante.png" class="card-img-top" alt="Estudante">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Estudante</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEstudante">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card Raça 3 -->
+                            <div class="col-md-2 mb-4">
+                                <div class="card">
+                                    <img src="img/classes/MagoDoArcano.png" class="card-img-top" alt="MagoDoArcano">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Mago Do Arcano</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalMagoDoArcano">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>                
+                        </div>
+                        <div class="center-cards">
+                            <!-- Card Raça 1 -->
+                            <div class="col-md-2 mb-4">
+                                <div class="card">
+                                    <img src="img/classes/Feiticeiro.png" class="card-img-top" alt="Feiticeiro">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Feiticeiro</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalFeiticeiro">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card Raça 2 -->
+                            <div class="col-md-2 mb-4">
+                                <div class="card">
+                                    <img src="img/classes/AprendizDaLinhagem.png" class="card-img-top" alt="AprendizDaLinhagem">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Aprendiz Da Linhagem</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalAprendizDaLinhagem">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card Raça 3 -->
+                            <div class="col-md-2 mb-4">
+                                <div class="card">
+                                    <img src="img/classes/FeiticieroSupremo.png" class="card-img-top" alt="FeiticieroSupremo">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Feiticiero Supremo</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalFeiticieroSupremo">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>                
+                        </div>
+                        <div class="center-cards">
+                            <!-- Card Raça 1 -->
+                            <div class="col-md-2 mb-4">
+                                <div class="card">
+                                    <img src="img/classes/Invocador.png" class="card-img-top" alt="Invocador">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Invocador</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalInvocador">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card Raça 2 -->
+                            <div class="col-md-2 mb-4">
+                                <div class="card">
+                                    <img src="img/classes/AprendizDoChamado.png" class="card-img-top" alt="AprendizDoChamado">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Aprendiz Do Chamado</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalAprendizDoChamado">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card Raça 3 -->
+                            <div class="col-md-2 mb-4">
+                                <div class="card">
+                                    <img src="img/classes/CriadorDeExercitos.png" class="card-img-top" alt="CriadorDeExercitos">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Criador De Exercitos</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalCriadorDeExercitos">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>                
+                        </div>
+                        <div class="center-cards">
+                            <!-- Card Raça 1 -->
+                            <div class="col-md-2 mb-4">
+                                <div class="card">
+                                    <img src="img/classes/Necromancer.png" class="card-img-top" alt="Necromancer">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Necromancer</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalNecromancer">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card Raça 2 -->
+                            <div class="col-md-2 mb-4">
+                                <div class="card">
+                                    <img src="img/classes/CaminhoDosMortos.png" class="card-img-top" alt="CaminhoDosMortos">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Caminho Dos Mortos</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalCaminhoDosMortos">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card Raça 3 -->
+                            <div class="col-md-2 mb-4">
+                                <div class="card">
+                                    <img src="img/classes/ConjuradorDaMorte.png" class="card-img-top" alt="ConjuradorDaMorte">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Conjurador Da Morte</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalConjuradorDaMorte">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>                
+                        </div>
+                        <div class="center-cards">
+                            <!-- Card Raça 1 -->
+                            <div class="col-md-2 mb-4">
+                                <div class="card">
+                                    <img src="img/classes/Dominador.png" class="card-img-top" alt="Dominador">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Dominador</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalDominador">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card Raça 2 -->
+                            <div class="col-md-2 mb-4">
+                                <div class="card">
+                                    <img src="img/classes/Soberano.png" class="card-img-top" alt="Soberano">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Soberano</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalSoberano">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card Raça 3 -->
+                            <div class="col-md-2 mb-4">
+                                <div class="card">
+                                    <img src="img/classes/Overlord.png" class="card-img-top" alt="Overlord">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Overlord</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalOverlord">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>                
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modais -->
+    <!-- Modal Humano -->
+    <div class="modal fade" id="modalHumano" tabindex="-1" aria-labelledby="modalHumanoLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalHumanoLabel">Humano</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p><strong>Habilidades:</strong></p>
+                    <ul>
+                        <li>Possui 10% de força aumentada ao usar espadas</li>
+                        <li>É capaz de usar todos os tipos de armaduras</li>
+                    </ul>
+                    <p><strong>Inferioridade:</strong></p>
+                    <ul>
+                        <li>Não é capaz de crafitar nenhum tipo de armaduras.</li>
+                        <li>Não é capaz de crafitar ferramentas de Ouro, Diamante e Netherite</li>
+                        <li>Não crafita Shulker Box</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Adicione mais modais para outras raças e classes -->
+
+    <!-- Bootstrap JS e dependências -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

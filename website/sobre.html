@@ -17,7 +17,7 @@
             font-family: 'MedievalSharp', cursive;
             background-color: #1e1e1e;
             color: #d44e37;
-            background-image: url('img/background.png');
+            background-image: url('img/background.jpg');
             background-size: cover;
             background-attachment: fixed;
         }
@@ -66,21 +66,21 @@
             margin: 0 auto;
             padding: 10px; /* Espaçamento interno */
         }
-        /* Estilo para o carrossel */
-        .carousel-item img {
-            max-height: 400px;
-            object-fit: cover;
-        }
-        .carousel-caption {
-            background-color: rgba(44, 26, 13, 0.7);
-            border-radius: 10px;
-        }
-        /* Estilo para a seção de introdução */
-        .intro-section {
+        /* Estilo para a seção Sobre */
+        .about-section {
             background-color: rgba(44, 26, 13, 0.8);
             padding: 20px;
             border-radius: 10px;
             margin-top: 20px;
+        }
+        .team-member {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .team-member img {
+            max-width: 150px;
+            border-radius: 50%;
+            border: 3px solid #d44e37;
         }
     </style>
 </head>
@@ -116,52 +116,45 @@
         </div>
     </nav>
 
-    <!-- Carrossel -->
-    <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="img/castle.png" class="d-block w-100" alt="Castelo Medieval">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>Um Mundo Medieval</h5>
-                    <p>Explore reinos, raças e classes em um universo de fantasia.</p>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img src="img/battle.png" class="d-block w-100" alt="Batalha Épica">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>Batalhas Épicas</h5>
-                    <p>Participe de combates lendários e prove seu valor.</p>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img src="img/magic.png" class="d-block w-100" alt="Magia">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>Magia e Mistério</h5>
-                    <p>Domine as artes arcanas e desvende os segredos do mundo.</p>
-                </div>
-            </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Anterior</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Próximo</span>
-        </button>
-    </div>
-
-    <!-- Introdução -->
+    <!-- Conteúdo Principal -->
     <div class="container mt-5">
-        <div class="intro-section">
-            <h1 class="text-center">Bem-vindo à Wiki Yggdrasil</h1>
+        <div class="about-section">
+            <h1 class="text-center">Sobre o Projeto</h1>
             <p class="text-center">
-                Este é o seu guia definitivo para o mundo de <strong>Yggdrasil</strong>, um reino repleto de magia, mistério e batalhas épicas. Aqui você encontrará informações detalhadas sobre as raças, classes e histórias que compõem este universo fascinante.
+                A <strong>Wiki Yggdrasil</strong> é um projeto criado para fornecer informações detalhadas sobre o mundo de <strong>Yggdrasil</strong>, um reino repleto de magia, mistério e batalhas épicas. Nosso objetivo é ajudar jogadores a entenderem as raças, classes e histórias que compõem este universo fascinante.
             </p>
-            <div class="text-center">
-                <a href="/racas.html" class="btn btn-primary me-2">Explorar Raças</a>
-                <a href="/classes.html" class="btn btn-primary">Explorar Classes</a>
+
+            <h2 class="text-center mt-5">Sobre o Servidor</h2>
+            <p class="text-center">
+                O servidor <strong>Yggdrasil RPG</strong> é um mundo aberto onde jogadores podem explorar dungeons, participar de batalhas épicas e construir suas próprias histórias. Nosso servidor é mantido por uma equipe dedicada de desenvolvedores e moderadores, garantindo uma experiência justa e divertida para todos.
+            </p>
+
+            <h2 class="text-center mt-5">Equipe de Desenvolvimento</h2>
+            <div class="row">
+                <!-- Membro 1 -->
+                <div class="col-md-4 team-member">
+                    <img src="img/humano.png" alt="Desenvolvedor 1">
+                    <h4>Thaynison Couto</h4>
+                    <p>Owner</p>
+                </div>
+                <!-- Membro 2 -->
+                <div class="col-md-4 team-member">
+                    <img src="img/anao.png" alt="Desenvolvedor 2">
+                    <h4>Isaac Santana</h4>
+                    <p>Owner</p>
+                </div>
+                <!-- Membro 3 -->
+                <div class="col-md-4 team-member">
+                    <img src="img/demonio.png" alt="Desenvolvedor 3">
+                    <h4>Vitor Martins</h4>
+                    <p>Owner</p>
+                </div>
             </div>
+
+            <h2 class="text-center mt-5">Contato</h2>
+            <p class="text-center">
+                Para mais informações, entre em contato conosco através do e-mail: <strong>contato.legendarycommunity@gmail.com</strong>.
+            </p>
         </div>
     </div>
 

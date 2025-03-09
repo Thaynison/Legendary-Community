@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>.+* Yggdrasil *+.</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Fonte Medieval -->
+    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+    <!-- Ícones -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <!-- Estilos personalizados -->
+    <link rel="icon" href="/img/icon_server.png" type="image/png">
+    <style>
+        body {
+            font-family: 'MedievalSharp', cursive;
+            background-color: #1e1e1e;
+            color: #d44e37;
+            background-image: url('img/background.png');
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        .navbar {
+            background-color: #2c1a0d !important;
+            border-bottom: 3px solid #d44e37;
+        }
+        .navbar-brand, .nav-link {
+            color: #d44e37 !important;
+        }
+        .card {
+            background-color: #2c1a0d;
+            border: 2px solid #d44e37;
+            color: #d44e37;
+            transition: transform 0.3s;
+            width: 200px; /* Largura fixa para os cards */
+            height: 280px; /* Altura fixa para os cards */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .comum {
+            border: 2px solid #3f3f3f;
+            color: #3f3f3f;
+        }
+        .rara {
+            border: 2px solid #be00be;
+            color: #be00be;
+        }
+        .epica {
+            border: 2px solid #d9a334;
+            color: #d9a334;
+        }
+        .legendaria {
+            border: 2px solid #fe3ffe;
+            color: #fe3ffe;
+        }
+        .divina {
+            border: 2px solid #3ffefe;
+            color: #3ffefe;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .btn-primary {
+            background-color: #8b4513;
+            border: 1px solid #d44e37;
+            margin-top: auto; /* Empurra o botão para o final */
+            align-self: center; /* Centraliza o botão */
+        }
+        .btn-primary:hover {
+            background-color: #a0522d;
+        }
+        h1, h2 {
+            text-shadow: 2px 2px 4px #000000;
+        }
+        .modal-content {
+            background-color: #2c1a0d;
+            color: #d44e37;
+            border: 2px solid #d44e37;
+        }
+        .modal-header, .modal-footer {
+            border-bottom: 1px solid #d44e37;
+            border-top: 1px solid #d44e37;
+        }
+        /* Estilo para as imagens dentro dos cards */
+        .card-img-top {
+            max-width: 150px; /* Tamanho fixo para as imagens */
+            max-height: 150px;
+            width: auto;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            padding: 10px; /* Espaçamento interno */
+        }
+        /* Ajuste para o texto dentro dos cards */
+        .card-body {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .card-title {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        .card-text {
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+        /* Estilo para o container com barra de rolagem */
+        .scroll-container {
+            height: 800px; /* Altura fixa para o container */
+            overflow-y: auto; /* Habilita a rolagem vertical */
+            padding: 10px; /* Espaçamento interno */
+        }
+        /* Centralizar os cards */
+        .center-cards {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px; /* Espaçamento entre os cards */
+        }
+        /* Personalização da barra de rolagem */
+        .scroll-container::-webkit-scrollbar {
+            width: 10px; /* Largura da barra de rolagem */
+        }
+        .scroll-container::-webkit-scrollbar-track {
+            background: transparent; /* Fundo transparente */
+        }
+        .scroll-container::-webkit-scrollbar-thumb {
+            background: transparent;
+            border-radius: 5px; /* Bordas arredondadas */
+        }
+        .scroll-container::-webkit-scrollbar-thumb:hover {
+            background: transparent;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-dragon"></i> Wiki Yggdrasil
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="racas.html">Raças</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#classes">Classes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="itens.html">Itens</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="sobre.html">Sobre</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Conteúdo Principal -->
+    <div class="container-fluid mt-5">
+        <div class="row">
+            <!-- Coluna da lista de nav-link -->
+            <div class="col-md-3">
+                <div class="scroll-container">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#tesouros">Itens Mundiais</a>
+                            <a class="nav-link" href="#armaduras">Armaduras</a>
+                            <a class="nav-link" href="#armas_ferramentas">Armas e Ferramentas</a>
+                            <a class="nav-link" href="#itens_usaveis">Itens e Utilizáveis</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Coluna dos cards -->
+            <div class="col-md-9">
+                <div class="scroll-container">
+                    <!-- Seção de Raças -->
+                    <section id="tesouros">
+                        <h2><i class="fas fa-shield-alt"></i> Itens Mundiais</h2>
+                        <!-- 1 -->
+                        <div class="center-cards">
+                            <!-- -->
+                            <div class="col-md-2 mb-4">
+                                <div class="card divina">
+                                    <img src="img/itens/aldan.png" class="card-img-top" alt="Aldan">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Tesouro Sagrado Aldan</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalAldan">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- -->
+                            <div class="col-md-2 mb-4">
+                                <div class="card divina">
+                                    <img src="img/itens/chastiefol.png" class="card-img-top" alt="Chastiefol">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Tesouro Sagrado Chastiefol</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalChastiefol">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- --> 
+                            <div class="col-md-2 mb-4">
+                                <div class="card divina">
+                                    <img src="img/itens/lostvayne.png" class="card-img-top" alt="Lostvayne">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Tesouro Sagrado Lostvayne</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalLostvayne">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>   
+                            <!-- -->       
+                            <div class="col-md-2 mb-4">
+                                <div class="card divina">
+                                    <img src="img/itens/rittha.png" class="card-img-top" alt="Rittha">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Tesouro Sagrado Rittha</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalRittha">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>                                 
+                            <!-- --> 
+                            <div class="col-md-2 mb-4">
+                                <div class="card divina">
+                                    <img src="img/itens/lostvayne.png" class="card-img-top" alt="Lostvayne">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Tesouro Sagrado Lostvayne</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalLostvayne">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>   
+                        </div>
+                        <!-- 2 -->
+                        <div class="center-cards">
+                            <!-- -->
+                            <div class="col-md-2 mb-4">
+                                <div class="card divina">
+                                    <img src="img/itens/representacao.png" class="card-img-top" alt="Representacao">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Item Mundial Representacão da Natureza e Sociedade</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalRepresentacao">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- -->       
+                            <div class="col-md-2 mb-4">
+                                <div class="card divina">
+                                    <img src="img/itens/armagedon.png" class="card-img-top" alt="Armagedon">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Item Mundial Armagedon</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalArmagedon">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>  
+                            <!-- --> 
+                            <div class="col-md-2 mb-4">
+                                <div class="card divina">
+                                    <img src="img/itens/ginnungagap.png" class="card-img-top" alt="Ginnungagap">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Item Mundial Ginnungagap</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalGinnungagap">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>     
+                            <!-- -->
+                            <div class="col-md-2 mb-4">
+                                <div class="card legendaria">
+                                    <img src="img/itens/zefero.png" class="card-img-top" alt="Zefero">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Espada do Espirito Zefero</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalZefero">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>   
+                            <!-- --> 
+                            <div class="col-md-2 mb-4">
+                                <div class="card legendaria">
+                                    <img src="img/itens/matadora_demonios.png" class="card-img-top" alt="MatadoraDeDemonios">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Espada Matadora De Demonios</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalMatadoraDeDemonios">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>   
+                        </div>
+                        <!-- 3 -->
+                        <div class="center-cards">
+                            <!-- --> 
+                            <div class="col-md-2 mb-4">
+                                <div class="card divina">
+                                    <img src="img/itens/socola_tokens.png" class="card-img-top" alt="SacolaDeTokens">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Sacola de Tokens</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalSacolaDeTokens">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>   
+                        </div>
+                    </section>
+                    <!--  -->
+                    <section id="armaduras">
+                        <h2><i class="fas fa-shield-alt"></i> Armaduras</h2>
+                        <!-- 1 -->
+                        <div class="center-cards">
+                            <!-- -->
+                            <div class="col-md-2 mb-4">
+                                <div class="card epica">
+                                    <img src="img/itens/armadura_diamond_item_helmet_semi_deuses.png" class="card-img-top" alt="armadura_diamond_item_helmet_semi_deuses">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Capacete Semi Deuses</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#armadura_diamond_item_helmet_semi_deuses">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- -->
+                            <div class="col-md-2 mb-4">
+                                <div class="card epica">
+                                    <img src="img/itens/armadura_diamond_item_chestplate_semi_deuses.png" class="card-img-top" alt="armadura_diamond_item_chestplate_semi_deuses">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Peitoral Semi Deuses</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#armadura_diamond_item_chestplate_semi_deuses">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- --> 
+                            <div class="col-md-2 mb-4">
+                                <div class="card epica">
+                                    <img src="img/itens/armadura_diamond_item_leggings_semi_deuses.png" class="card-img-top" alt="armadura_diamond_item_leggings_semi_deuses">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Calca Semi Deuses</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#armadura_diamond_item_leggings_semi_deuses">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>   
+                            <!-- -->       
+                            <div class="col-md-2 mb-4">
+                                <div class="card epica">
+                                    <img src="img/itens/armadura_diamond_item_boots_semi_deuses.png" class="card-img-top" alt="armadura_diamond_item_boots_semi_deuses">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Bota Semi Deuses</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#armadura_diamond_item_boots_semi_deuses">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>                                  
+                        </div>
+                        <!-- 2 -->
+                        <div class="center-cards">
+                            <!-- -->
+                            <div class="col-md-2 mb-4">
+                                <div class="card epica">
+                                    <img src="img/itens/armadura_netherite_item_blood_helmet.png" class="card-img-top" alt="Rearmadura_netherite_item_blood_helmetpresentacao">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Capacete de Sangue</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#armadura_netherite_item_blood_helmet">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- -->       
+                            <div class="col-md-2 mb-4">
+                                <div class="card epica">
+                                    <img src="img/itens/armadura_netherite_item_chestplate_blood.png" class="card-img-top" alt="armadura_netherite_item_chestplate_blood">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Peitoral de Sangue</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#armadura_netherite_item_chestplate_blood">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>  
+                            <!-- --> 
+                            <div class="col-md-2 mb-4">
+                                <div class="card epica">
+                                    <img src="img/itens/armadura_netherite_item_leggings_blood.png" class="card-img-top" alt="armadura_netherite_item_leggings_blood">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Calca de Sangue</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#armadura_netherite_item_leggings_blood">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>     
+                            <!-- -->
+                            <div class="col-md-2 mb-4">
+                                <div class="card epica">
+                                    <img src="img/itens/armadura_netherite_item_boots_blood.png" class="card-img-top" alt="armadura_netherite_item_boots_blood">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Bota de Sangue</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#armadura_netherite_item_boots_blood">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>   
+                        </div> 
+                        <!-- 3 -->
+                        <div class="center-cards">
+                            <!-- -->
+                            <div class="col-md-2 mb-4">
+                                <div class="card epica">
+                                    <img src="img/itens/armadura_netherite_item_zeus_helmet.png" class="card-img-top" alt="armadura_netherite_item_zeus_helmet">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Capacete de Zeus</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#armadura_netherite_item_zeus_helmet">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- -->       
+                            <div class="col-md-2 mb-4">
+                                <div class="card epica">
+                                    <img src="img/itens/armadura_netherite_item_chestplate_zeus.png" class="card-img-top" alt="armadura_netherite_item_chestplate_zeus">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Peitoral de Zeus</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#armadura_netherite_item_chestplate_zeus">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>  
+                            <!-- --> 
+                            <div class="col-md-2 mb-4">
+                                <div class="card epica">
+                                    <img src="img/itens/armadura_netherite_item_leggings_zeus.png" class="card-img-top" alt="armadura_netherite_item_leggings_zeus">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Calca de Zeus</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#armadura_netherite_item_leggings_zeus">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>     
+                            <!-- -->
+                            <div class="col-md-2 mb-4">
+                                <div class="card epica">
+                                    <img src="img/itens/armadura_netherite_item_boots_zeus.png" class="card-img-top" alt="armadura_netherite_item_boots_zeus">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Bota de Zeus</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#armadura_netherite_item_boots_zeus">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>   
+                        </div> 
+                        <!-- 4 -->
+                        <div class="center-cards">
+                            <!-- -->
+                            <div class="col-md-2 mb-4">
+                                <div class="card epica">
+                                    <img src="img/itens/armadura_netherite_item_void_helmet.png" class="card-img-top" alt="armadura_netherite_item_void_helmet">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Capacete de Void</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#armadura_netherite_item_void_helmet">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- -->       
+                            <div class="col-md-2 mb-4">
+                                <div class="card epica">
+                                    <img src="img/itens/armadura_netherite_item_chestplate_void.png" class="card-img-top" alt="armadura_netherite_item_chestplate_void">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Peitoral de Void</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#armadura_netherite_item_chestplate_void">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>  
+                            <!-- --> 
+                            <div class="col-md-2 mb-4">
+                                <div class="card epica">
+                                    <img src="img/itens/armadura_netherite_item_leggings_void.png" class="card-img-top" alt="armadura_netherite_item_leggings_void">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Calca de Void</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#armadura_netherite_item_leggings_void">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>     
+                            <!-- -->
+                            <div class="col-md-2 mb-4">
+                                <div class="card epica">
+                                    <img src="img/itens/armadura_netherite_item_boots_void.png" class="card-img-top" alt="armadura_netherite_item_boots_void">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Bota de Void</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#armadura_netherite_item_boots_void">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>   
+                        </div> 
+                    </section>
+                    <!--  -->
+                    <section id="armas_ferramentas">
+                        <h2><i class="fas fa-shield-alt"></i> Armas e Ferramentas</h2>
+                        <!-- 1 -->
+                        <div class="center-cards">
+                            <div class="col-md-2 mb-4">
+                                <div class="card comum">
+                                    <img src="img/itens/astral_pickaxe.png" class="card-img-top" alt="astral_pickaxe">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Picareta Astral</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#astral_pickaxe">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>  
+                            <div class="col-md-2 mb-4">
+                                <div class="card comum">
+                                    <img src="img/itens/truewyvern_pickaxe.png" class="card-img-top" alt="truewyvern_pickaxe">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Picareta TrueWyvern</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#truewyvern_pickaxe">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>  
+                            <div class="col-md-2 mb-4">
+                                <div class="card comum">
+                                    <img src="img/itens/voidhammer_pickaxe.png" class="card-img-top" alt="voidhammer_pickaxe">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Picareta VoidHammer</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#voidhammer_pickaxe">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div> 
+                            <div class="col-md-2 mb-4">
+                                <div class="card comum">
+                                    <img src="img/itens/neutronium_pickaxe.png" class="card-img-top" alt="neutronium_pickaxe">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Picareta Neutronium</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#neutronium_pickaxe">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div> 
+                            <div class="col-md-2 mb-4">
+                                <div class="card comum">
+                                    <img src="img/itens/neutronium_pickaxe.png" class="card-img-top" alt="neutronium_pickaxe">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Picareta Neutronium</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#neutronium_pickaxe">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div> 
+                            <div class="col-md-2 mb-4">
+                                <div class="card comum">
+                                    <img src="img/itens/blood_pickaxe.png" class="card-img-top" alt="blood_pickaxe">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Picareta Sangue</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#blood_pickaxe">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div> 
+                        </div>
+                    </section>
+                    <!--  -->
+                    <section id="itens_usaveis">
+                        <h2><i class="fas fa-shield-alt"></i> Itens e Utilizáveis</h2>
+                        <!-- 1 -->
+                        <div class="center-cards">
+                            <div class="col-md-2 mb-4">
+                                <div class="card rara">
+                                    <img src="img/itens/alma_demonios.png" class="card-img-top" alt="alma_demonios">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Alma de Demônio</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#alma_demonios">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>  
+                            <div class="col-md-2 mb-4">
+                                <div class="card rara">
+                                    <img src="img/itens/alma_deusas.png" class="card-img-top" alt="alma_deusas">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Alma de Deusas</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#alma_deusas">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>  
+                            <div class="col-md-2 mb-4">
+                                <div class="card rara">
+                                    <img src="img/itens/alma_fadas.png" class="card-img-top" alt="alma_fadas">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Alma de Fadas</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#alma_fadas">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>  
+                            <div class="col-md-2 mb-4">
+                                <div class="card rara">
+                                    <img src="img/itens/alma_humanos.png" class="card-img-top" alt="alma_humanos">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Alma de Humanos</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#alma_humanos">Saiba Mais</button>
+                                    </div>
+                                </div>
+                            </div>  
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modais -->
+    <!-- Modal Humano -->
+    <div class="modal fade" id="modalHumano" tabindex="-1" aria-labelledby="modalHumanoLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalHumanoLabel">Humano</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p><strong>Habilidades:</strong></p>
+                    <ul>
+                        <li>Possui 10% de força aumentada ao usar espadas</li>
+                        <li>É capaz de usar todos os tipos de armaduras</li>
+                    </ul>
+                    <p><strong>Inferioridade:</strong></p>
+                    <ul>
+                        <li>Não é capaz de crafitar nenhum tipo de armaduras.</li>
+                        <li>Não é capaz de crafitar ferramentas de Ouro, Diamante e Netherite</li>
+                        <li>Não crafita Shulker Box</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Adicione mais modais para outras raças e classes -->
+
+    <!-- Bootstrap JS e dependências -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
